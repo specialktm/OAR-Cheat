@@ -53,9 +53,6 @@ void cheat::tick()
 {
 	if (GetAsyncKeyState(VK_F8) & 1)
 	{
-
-	
-
 		for (auto robber : g_util.FindActors<ARobberController_C>())
 		{
 			if (robber == nullptr) {
@@ -89,8 +86,6 @@ void cheat::tick()
 
 	if (GetAsyncKeyState(VK_F9) & 1)
 	{
-
-
 		for (const auto& item : g_util.FindActors<AMoney_base_C>())
 		{
 			for (const auto& player : g_util.FindActors<APlayerCharacter_C>())
