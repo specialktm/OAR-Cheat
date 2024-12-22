@@ -9,6 +9,7 @@
 #include <SDK/ShopUI_classes.hpp>
 #include <SDK/Money_base_classes.hpp>
 
+#include <SDK/RobberTruck_classes.hpp>
 
 using namespace SDK;
 bool esp = false;
@@ -42,6 +43,12 @@ std::unordered_map<const char*, SDK::UClass*> maps
 	{"Misc Map", ASetup_map_Jewellery1_C::StaticClass()},
 };
 */
+
+void printFvector(const FVector& l)
+{
+	g_logger->send(levels::debug, "X {} Y {} Z {}", l.X, l.Y, l.Z);
+}
+
 void cheat::tick()
 {
 	if (GetAsyncKeyState(VK_F8) & 1)
@@ -78,13 +85,26 @@ void cheat::tick()
 
 		std::this_thread::sleep_for(400ms);
 	}
+
+
 	if (GetAsyncKeyState(VK_F9) & 1)
 	{
-		for (const auto& item : g_util.FindActors<APickupItem_base_C>())
+
+
+		for (const auto& item : g_util.FindActors<AMoney_base_C>())
 		{
 			for (const auto& player : g_util.FindActors<APlayerCharacter_C>())
 			{
-				item->K2_SetActorLocation(FVector{ player->K2_GetActorLocation().X,player->K2_GetActorLocation().Y, player->K2_GetActorLocation().Z - 3.f }, false, nullptr, true);
+				item->K2_SetActorLocation(player->K2_GetActorLocation(), false, nullptr, true);
+				if (item->Value <= 0)
+				{
+					item->Value = 10;
+				}
+				item->Value += item->Value * 10;
+				item->Exp += item->Exp * 10.f;
+
+				g_logger->send(levels::debug, "Item: {} ${} EXP {}", item->GetName(), item->Value, item->Exp);
+				
 			}
 			std::this_thread::sleep_for(30ms);
 		}

@@ -233,6 +233,7 @@
     <ClCompile Include="vendor\SDK\Engine_functions.cpp" />
     <ClCompile Include="vendor\SDK\PickupItem_base_functions.cpp" />
     <ClCompile Include="vendor\SDK\RobberController_functions.cpp" />
+    <ClCompile Include="vendor\SDK\RobberTruck_functions.cpp" />
     <ClCompile Include="vendor\SDK\ServerBrowser_Mapselect_functions.cpp" />
     <ClCompile Include="vendor\SDK\ShopBuyUI_functions.cpp" />
     <ClCompile Include="vendor\SDK\ShopUI_functions.cpp" />

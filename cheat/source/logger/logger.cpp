@@ -81,7 +81,7 @@ void logger::uninitialize()
 // g_logger.send(levels::trace,"Format Test {}","format");
 void logger::old_send(levels level, const std::string& msg)
 {
-    if (level >= m_log_level)
+   // if (level >= m_log_level)
         std::cout << level_to_string(level) << " " << msg << "\33[m" << '\n';
 }
 // Flush the queue.
