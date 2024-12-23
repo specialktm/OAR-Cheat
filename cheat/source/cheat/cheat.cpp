@@ -103,7 +103,7 @@ void cheat::tick()
 
 					item->K2_SetActorLocation(player->K2_GetActorLocation(), false, nullptr, true);
 					
-					if (item->Value <= 0 || item->Value >= INT_MAX || item->Value >= INT_MIN)
+					if (item->Value >= 0 && item->Value <= 100'000'000)
 					{
 						item->Value = 10;
 					}
