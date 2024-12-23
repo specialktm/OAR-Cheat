@@ -229,7 +229,9 @@
     <ClCompile Include="source\logger\logger.cpp" />
     <ClCompile Include="source\pch\pch.cpp" />
     <ClCompile Include="vendor\SDK\Basic.cpp" />
+    <ClCompile Include="vendor\SDK\CameraBP_functions.cpp" />
     <ClCompile Include="vendor\SDK\CoreUObject_functions.cpp" />
+    <ClCompile Include="vendor\SDK\DoorBP_functions.cpp" />
     <ClCompile Include="vendor\SDK\Engine_functions.cpp" />
     <ClCompile Include="vendor\SDK\PickupItem_base_functions.cpp" />
     <ClCompile Include="vendor\SDK\RobberController_functions.cpp" />
@@ -237,6 +239,7 @@
     <ClCompile Include="vendor\SDK\ServerBrowser_Mapselect_functions.cpp" />
     <ClCompile Include="vendor\SDK\ShopBuyUI_functions.cpp" />
     <ClCompile Include="vendor\SDK\ShopUI_functions.cpp" />
+    <ClCompile Include="vendor\SDK\Tool_Camerahack_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\NameCollisions.inl" />
