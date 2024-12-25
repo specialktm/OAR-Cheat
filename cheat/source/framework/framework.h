@@ -23,7 +23,6 @@
 static HANDLE g_MainThread;
 static HMODULE g_Module;
 
-
 inline bool keyDown(int key)
 {
 	return GetAsyncKeyState(key);

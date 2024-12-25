@@ -1,17 +1,5 @@
 #pragma once
-/*
-* File Name: Logger.hpp
-* Purpose: Contains the function definitions for the logger.
-* Author VoDKa
-* Date: 12.07.2024 | EU Format | 07/12/2024
-* Time: 01:48 : 1:48 AM
-*/
-
-// Includes
 #include "pch/pch.h"
-
-#define LOGGER_NAME "OS Cheats | On Top! | v1.0"
-
 
 enum class levels
 {
@@ -29,11 +17,10 @@ class logger
 public:
     logger()
     {
-        this->initialize(LOGGER_NAME);
+        this->initialize("OS Cheats | On Top! | v1.0");
     }
     ~logger()
     {
-        this->flush();
         this->uninitialize();
     }
 public:
@@ -49,10 +36,7 @@ public:
         std::string formatted = std::vformat(format, std::make_format_args(msg...));
         old_send(level, formatted);
     }
-
-
 private:
-    void flush();
     void initialize(const char* title);
     void uninitialize();
 
@@ -62,4 +46,4 @@ private:
     DWORD m_console_mode = 0;
 };
 
-inline std::shared_ptr<logger> g_logger;
+inline logger* g_logger;

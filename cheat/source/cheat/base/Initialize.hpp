@@ -22,7 +22,6 @@ public:
 
         for (const auto class_interface : m_class_interface)
         {
-         
             g_logger->send(levels::debug, "Created class -> {}", class_interface->ClassName());
         }
 
@@ -74,9 +73,7 @@ private:
         g_logger->send(levels::info, "Created Class -> {} [{:#X}]\n", paddedClassName, uintptr_t(class_interface));
     }
 
-
-
     std::vector<Baseclass*> m_class_interface;
 };
 
-inline Initializer* g_Initializer = nullptr;
+inline Initializer* g_Initializer;

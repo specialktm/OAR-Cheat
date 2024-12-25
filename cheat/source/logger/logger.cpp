@@ -1,20 +1,11 @@
-/*
-* File Name: Logger.cpp
-* Purpose: Contains the logic for the logger.
-* Author VoDKa
-* Date: 12.07.2024 | EU Format | 07/12/2024
-* Time: 01:48 : 1:48 AM
-*/
-
 #include "logger.hpp"
-// ***
 
-    // initialize logger
 void logger::initialize(const char* title)
 {
-
     if (!AllocConsole())
+    {
         MessageBoxA(nullptr, "The console window was not created", "Uh Oh", MB_ICONEXCLAMATION);
+    }
 
     freopen_s(&m_file, "CONOUT$", "w", stdout);
     freopen_s(&m_file, "CONOUT$", "w", stderr);
@@ -62,40 +53,33 @@ void logger::initialize(const char* title)
     set_level(levels::developer);
 #endif
     this->send(levels::info, "Logger Created: {}", title);
-
 }
 
-// uninitialize logger
 void logger::uninitialize()
 {
     this->send(levels::info, "Goodbye, You may now close this window.");
 
     if (fclose(m_file) != 0)
+    {
         MessageBox(NULL, L"Failed to close the file!", NULL, MB_ICONEXCLAMATION);
+    }
 
     if (!FreeConsole())
+    {
         MessageBox(NULL, L"Failed to free the console window!", NULL, MB_ICONEXCLAMATION);
+    }
 }
 
-// Old Logger Function. // Still used for the format.
-// g_logger.send(levels::trace,"Format Test {}","format");
 void logger::old_send(levels level, const std::string& msg)
 {
-   // if (level >= m_log_level)
-        std::cout << level_to_string(level) << " " << msg << "\33[m" << '\n';
+    std::cout << level_to_string(level) << " " << msg << "\33[m" << '\n';
 }
-// Flush the queue.
-void logger::flush()
-{
-    std::cout.flush();
-}
-// Setting The Log Level.
+
 void logger::set_level(levels level)
 {
     m_log_level = level;
 }
 
-// Convert enum class levels to strings and color them.
 std::string logger::level_to_string(levels level)
 {
     switch (level)

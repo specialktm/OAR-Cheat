@@ -2,8 +2,7 @@
 #include "framework/framework.h"
 #include <vector>
 
-class utility
-{
+class utility {
 public:
     utility() = default;
     ~utility() = default;
