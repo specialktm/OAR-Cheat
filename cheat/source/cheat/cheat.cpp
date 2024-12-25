@@ -103,12 +103,12 @@ void cheat::tick()
 
 					item->K2_SetActorLocation(player->K2_GetActorLocation(), false, nullptr, true);
 					
-					if (item->Value >= 0 && item->Value <= 100'000'000)
+					if (item->Value <= 0 && item->Value >= 100'000'000)
 					{
-						item->Value = 10;
+						item->Value = 100'000'000;
 					}
 
-					item->Value += item->Value * 10;
+					item->Value += item->Value * 20;
 					item->Exp += item->Exp * 10.f;
 			
 
