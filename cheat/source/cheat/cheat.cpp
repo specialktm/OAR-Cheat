@@ -17,11 +17,24 @@
 #include <SDK/DoorBP_classes.hpp>
 #include <SDK/GunBase_classes.hpp>
 #include <SDK/Shop_SkillBase_classes.hpp>
-
+#include "auth/auth.h"
 using namespace SDK;
 void cheat::Initialize()
 {
+	auth::auth authed("KEYAUTH-KKb-tmnwY-hGedIt-S");
+	if (!authed.IsAuthed())
+	{
+		g_logger->send(levels::error, "Contact Developer 0x1");
+		std::this_thread::sleep_for(5s);
+		exit(0);
+	}
 
+	if (authed.Updated())
+	{
+		g_logger->send(levels::error, "Contact Developer Error 0x2");
+		std::this_thread::sleep_for(5s);
+		exit(0);
+	}
 }
 
 void cheat::tick()
@@ -54,7 +67,6 @@ void cheat::tick()
 			StoreItem->UnlockLevel = 0;
 			StoreItem->CashCost = 1;
 			StoreItem->CoinCost = 1;
-			StoreItem->Rarity = ERarityNum::RarityNum_MAX;
 		}
 
 		std::this_thread::sleep_for(400ms);
