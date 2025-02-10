@@ -133,6 +133,34 @@ void APlayerCharacter_C::ExecuteUbergraph_PlayerCharacter(int32 EntryPoint)
 }
 
 
+// Function PlayerCharacter.PlayerCharacter_C.ShootVisualServer
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+
+void APlayerCharacter_C::ShootVisualServer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerCharacter_C", "ShootVisualServer");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PlayerCharacter.PlayerCharacter_C.ShootVisualMulti
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void APlayerCharacter_C::ShootVisualMulti()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerCharacter_C", "ShootVisualMulti");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function PlayerCharacter.PlayerCharacter_C.GiveImmunityLevel
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1341,15 +1369,15 @@ void APlayerCharacter_C::ForceSwitch(int32 Slot)
 }
 
 
-// Function PlayerCharacter.PlayerCharacter_C.Interactholding
+// Function PlayerCharacter.PlayerCharacter_C.InteractHolding
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 
-void APlayerCharacter_C::Interactholding()
+void APlayerCharacter_C::InteractHolding()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerCharacter_C", "Interactholding");
+		Func = Class->GetFunction("PlayerCharacter_C", "InteractHolding");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2568,22 +2596,16 @@ void APlayerCharacter_C::UserConstructionScript()
 
 
 // Function PlayerCharacter.PlayerCharacter_C.Shootvisuals
-// (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FHitResult                       Hit                                                    (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// (Private, BlueprintCallable, BlueprintEvent)
 
-void APlayerCharacter_C::Shootvisuals(const struct FHitResult& Hit)
+void APlayerCharacter_C::Shootvisuals()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("PlayerCharacter_C", "Shootvisuals");
 
-	Params::PlayerCharacter_C_Shootvisuals Parms{};
-
-	Parms.Hit = std::move(Hit);
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -2888,7 +2910,7 @@ void APlayerCharacter_C::Get_Any_Gun_Stats(const struct FAttachmentArrayStructur
 
 
 // Function PlayerCharacter.PlayerCharacter_C.InaccuracyFunc
-// (Private, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Private, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -3037,6 +3059,26 @@ void APlayerCharacter_C::SetupControllerSkills()
 		Func = Class->GetFunction("PlayerCharacter_C", "SetupControllerSkills");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PlayerCharacter.PlayerCharacter_C.BulletTraceVisuals
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FHitResult                       HitResult                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+
+void APlayerCharacter_C::BulletTraceVisuals(const struct FHitResult& HitResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerCharacter_C", "BulletTraceVisuals");
+
+	Params::PlayerCharacter_C_BulletTraceVisuals Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

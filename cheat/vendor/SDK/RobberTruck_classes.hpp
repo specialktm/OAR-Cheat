@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass RobberTruck.RobberTruck_C
-// 0x0208 (0x0428 - 0x0220)
+// 0x0210 (0x0430 - 0x0220)
 class ARobberTruck_C final : public AActor
 {
 public:
@@ -91,19 +91,20 @@ public:
 	bool                                          CanEndGame_;                                       // 0x041C(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_41D[0x3];                                      // 0x041D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTimespan                              Timer;                                             // 0x0420(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FTimespan                              Ms;                                                // 0x0428(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_RobberTruck(int32 EntryPoint);
+	void ReceiveBeginPlay();
 	void StopTimer();
-	void CountTimer(float DeltaTime);
 	void CountPlayers(class APlayerCharacter_C* Player, bool EndOverlap_);
 	void RemoveMoney(class AMoney_base_C* MoneyActor);
 	void BndEvt__RobberTruck_MoneyOverlapper_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	void CountMoney(class AMoney_base_C* MoneyActor);
 	void BndEvt__RobberTruck_MoneyOverlapper_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
-	void ReceiveTick(float DeltaSeconds);
 	void UserConstructionScript();
 	void CheckAllMoney();
+	void Countdown();
 
 public:
 	static class UClass* StaticClass()
@@ -116,7 +117,7 @@ public:
 	}
 };
 static_assert(alignof(ARobberTruck_C) == 0x000008, "Wrong alignment on ARobberTruck_C");
-static_assert(sizeof(ARobberTruck_C) == 0x000428, "Wrong size on ARobberTruck_C");
+static_assert(sizeof(ARobberTruck_C) == 0x000430, "Wrong size on ARobberTruck_C");
 static_assert(offsetof(ARobberTruck_C, UberGraphFrame) == 0x000220, "Member 'ARobberTruck_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ARobberTruck_C, Box) == 0x000228, "Member 'ARobberTruck_C::Box' has a wrong offset!");
 static_assert(offsetof(ARobberTruck_C, SteamAchievementComponent) == 0x000230, "Member 'ARobberTruck_C::SteamAchievementComponent' has a wrong offset!");
@@ -184,6 +185,7 @@ static_assert(offsetof(ARobberTruck_C, MinimumTake) == 0x000414, "Member 'ARobbe
 static_assert(offsetof(ARobberTruck_C, OverlappingPlayers) == 0x000418, "Member 'ARobberTruck_C::OverlappingPlayers' has a wrong offset!");
 static_assert(offsetof(ARobberTruck_C, CanEndGame_) == 0x00041C, "Member 'ARobberTruck_C::CanEndGame_' has a wrong offset!");
 static_assert(offsetof(ARobberTruck_C, Timer) == 0x000420, "Member 'ARobberTruck_C::Timer' has a wrong offset!");
+static_assert(offsetof(ARobberTruck_C, Ms) == 0x000428, "Member 'ARobberTruck_C::Ms' has a wrong offset!");
 
 }
 

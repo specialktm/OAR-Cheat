@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "RarityNum_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "ShopItemCategory_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params

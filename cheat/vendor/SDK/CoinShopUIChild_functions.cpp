@@ -37,15 +37,43 @@ void UCoinShopUIChild_C::ExecuteUbergraph_CoinShopUIChild(int32 EntryPoint)
 }
 
 
-// Function CoinShopUIChild.CoinShopUIChild_C.BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
+// Function CoinShopUIChild.CoinShopUIChild_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UCoinShopUIChild_C::BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+void UCoinShopUIChild_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CoinShopUIChild_C", "BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+		Func = Class->GetFunction("CoinShopUIChild_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CoinShopUIChild.CoinShopUIChild_C.BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UCoinShopUIChild_C::BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CoinShopUIChild_C", "BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CoinShopUIChild.CoinShopUIChild_C.BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UCoinShopUIChild_C::BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CoinShopUIChild_C", "BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -71,53 +99,17 @@ void UCoinShopUIChild_C::PreConstruct(bool IsDesignTime)
 }
 
 
-// Function CoinShopUIChild.CoinShopUIChild_C.BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature
+// Function CoinShopUIChild.CoinShopUIChild_C.BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
 
-void UCoinShopUIChild_C::BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature()
+void UCoinShopUIChild_C::BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CoinShopUIChild_C", "BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature");
+		Func = Class->GetFunction("CoinShopUIChild_C", "BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function CoinShopUIChild.CoinShopUIChild_C.BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UCoinShopUIChild_C::BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CoinShopUIChild_C", "BndEvt__CoinShopUIChild_Buy1500_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function CoinShopUIChild.CoinShopUIChild_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UCoinShopUIChild_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CoinShopUIChild_C", "Tick");
-
-	Params::CoinShopUIChild_C_Tick Parms{};
-
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -190,9 +182,9 @@ struct FSlateBrush UCoinShopUIChild_C::GetBrush_0()
 // Parameters:
 // class FString                           Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// TArray<int32>                           Param_Price_array                                      (Parm, OutParm)
+// TArray<int32>                           Param_Price_Array                                      (Parm, OutParm)
 
-void UCoinShopUIChild_C::FindItemprices(const class FString& Data, const class FString& Key, TArray<int32>* Param_Price_array)
+void UCoinShopUIChild_C::FindItemprices(const class FString& Data, const class FString& Key, TArray<int32>* Param_Price_Array)
 {
 	static class UFunction* Func = nullptr;
 
@@ -206,8 +198,108 @@ void UCoinShopUIChild_C::FindItemprices(const class FString& Data, const class F
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Price_array != nullptr)
-		*Param_Price_array = std::move(Parms.Param_Price_array);
+	if (Param_Price_Array != nullptr)
+		*Param_Price_Array = std::move(Parms.Param_Price_Array);
+}
+
+
+// Function CoinShopUIChild.CoinShopUIChild_C.GetVisibility_0
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+ESlateVisibility UCoinShopUIChild_C::GetVisibility_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CoinShopUIChild_C", "GetVisibility_0");
+
+	Params::CoinShopUIChild_C_GetVisibility_0 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CoinShopUIChild.CoinShopUIChild_C.GetText_0
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+class FText UCoinShopUIChild_C::GetText_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CoinShopUIChild_C", "GetText_0");
+
+	Params::CoinShopUIChild_C_GetText_0 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CoinShopUIChild.CoinShopUIChild_C.GetVisibility_1
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+ESlateVisibility UCoinShopUIChild_C::GetVisibility_1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CoinShopUIChild_C", "GetVisibility_1");
+
+	Params::CoinShopUIChild_C_GetVisibility_1 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CoinShopUIChild.CoinShopUIChild_C.GetText_1
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+class FText UCoinShopUIChild_C::GetText_1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CoinShopUIChild_C", "GetText_1");
+
+	Params::CoinShopUIChild_C_GetText_1 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CoinShopUIChild.CoinShopUIChild_C.Get_SkinBundleBorder_Visibility_0
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+ESlateVisibility UCoinShopUIChild_C::Get_SkinBundleBorder_Visibility_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CoinShopUIChild_C", "Get_SkinBundleBorder_Visibility_0");
+
+	Params::CoinShopUIChild_C_Get_SkinBundleBorder_Visibility_0 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

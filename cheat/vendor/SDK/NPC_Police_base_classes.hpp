@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "NPCBase_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "NPCBase_classes.hpp"
 #include "AIModule_structs.hpp"
 
 
@@ -81,6 +81,7 @@ public:
 	void Shoot();
 	void SetTarget(class AActor* Target);
 	void BndEvt__NPC_Police_PawnSensing_K2Node_ComponentBoundEvent_0_SeePawnDelegate__DelegateSignature(class APawn* Pawn);
+	void ReceiveBeginPlay();
 	void OnSuccess_D72A09BB4846C507EDCEE78EF2293331(EPathFollowingResult MovementResult);
 	void OnFail_D72A09BB4846C507EDCEE78EF2293331(EPathFollowingResult MovementResult);
 	void OnSuccess_FFD927C649BBA39C366E5BA4336B9B80(EPathFollowingResult MovementResult);
@@ -94,7 +95,6 @@ public:
 	void CheckClearView();
 	void CheckIfPointIsOnPlayerLevel(const struct FVector& Player_location, const struct FVector& PointLocation, bool* OnLevel_);
 	void FindActivePowerbox();
-	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

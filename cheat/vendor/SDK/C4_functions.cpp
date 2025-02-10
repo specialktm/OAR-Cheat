@@ -37,6 +37,30 @@ void AC4_C::ExecuteUbergraph_C4(int32 EntryPoint)
 }
 
 
+// Function C4.C4_C.AddForceMulti
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UPrimitiveComponent*              Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          Force                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AC4_C::AddForceMulti(class UPrimitiveComponent* Target, const struct FVector& Force, const struct FVector& Location)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("C4_C", "AddForceMulti");
+
+	Params::C4_C_AddForceMulti Parms{};
+
+	Parms.Target = Target;
+	Parms.Force = std::move(Force);
+	Parms.Location = std::move(Location);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function C4.C4_C.ExplodeServer
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 

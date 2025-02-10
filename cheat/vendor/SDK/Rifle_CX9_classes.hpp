@@ -17,17 +17,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Rifle_CX9.Rifle_CX9_C
-// 0x0038 (0x0348 - 0x0310)
+// 0x0038 (0x0368 - 0x0330)
 class ARifle_CX9_C final : public AGunBase_C
 {
 public:
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Trigger_01;                           // 0x0310(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Stock_02;                             // 0x0318(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Grip_01;                              // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Rail_Large_01;                        // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Handguard_03;                         // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Handguard_02;                         // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Barrel_01;                            // 0x0340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Trigger_01;                           // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Stock_02;                             // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Grip_01;                              // 0x0340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Rail_Large_01;                        // 0x0348(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Handguard_03;                         // 0x0350(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Handguard_02;                         // 0x0358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Barrel_01;                            // 0x0360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -40,14 +40,14 @@ public:
 	}
 };
 static_assert(alignof(ARifle_CX9_C) == 0x000008, "Wrong alignment on ARifle_CX9_C");
-static_assert(sizeof(ARifle_CX9_C) == 0x000348, "Wrong size on ARifle_CX9_C");
-static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Trigger_01) == 0x000310, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Trigger_01' has a wrong offset!");
-static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Stock_02) == 0x000318, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Stock_02' has a wrong offset!");
-static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Grip_01) == 0x000320, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Grip_01' has a wrong offset!");
-static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Rail_Large_01) == 0x000328, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Rail_Large_01' has a wrong offset!");
-static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Handguard_03) == 0x000330, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Handguard_03' has a wrong offset!");
-static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Handguard_02) == 0x000338, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Handguard_02' has a wrong offset!");
-static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Barrel_01) == 0x000340, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Barrel_01' has a wrong offset!");
+static_assert(sizeof(ARifle_CX9_C) == 0x000368, "Wrong size on ARifle_CX9_C");
+static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Trigger_01) == 0x000330, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Trigger_01' has a wrong offset!");
+static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Stock_02) == 0x000338, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Stock_02' has a wrong offset!");
+static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Grip_01) == 0x000340, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Grip_01' has a wrong offset!");
+static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Rail_Large_01) == 0x000348, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Rail_Large_01' has a wrong offset!");
+static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Handguard_03) == 0x000350, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Handguard_03' has a wrong offset!");
+static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Handguard_02) == 0x000358, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Handguard_02' has a wrong offset!");
+static_assert(offsetof(ARifle_CX9_C, SM_Wep_Mod_A_Barrel_01) == 0x000360, "Member 'ARifle_CX9_C::SM_Wep_Mod_A_Barrel_01' has a wrong offset!");
 
 }
 

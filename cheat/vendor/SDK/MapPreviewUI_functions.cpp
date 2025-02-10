@@ -79,20 +79,6 @@ void UMapPreviewUI_C::BndEvt__MapPreviewUI_CoinBuyButton_K2Node_ComponentBoundEv
 }
 
 
-// Function MapPreviewUI.MapPreviewUI_C.BndEvt__MapPreviewUI_Button_134_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UMapPreviewUI_C::BndEvt__MapPreviewUI_Button_134_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapPreviewUI_C", "BndEvt__MapPreviewUI_Button_134_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function MapPreviewUI.MapPreviewUI_C.MediaOpened
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -110,6 +96,20 @@ void UMapPreviewUI_C::MediaOpened(const class FString& OpenedUrl)
 	Parms.OpenedUrl = std::move(OpenedUrl);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function MapPreviewUI.MapPreviewUI_C.BndEvt__MapPreviewUI_Button_134_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UMapPreviewUI_C::BndEvt__MapPreviewUI_Button_134_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapPreviewUI_C", "BndEvt__MapPreviewUI_Button_134_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

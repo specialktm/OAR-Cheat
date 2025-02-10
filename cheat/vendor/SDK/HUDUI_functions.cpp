@@ -615,6 +615,26 @@ ESlateVisibility UHUDUI_C::Get_ImmunityVignette_Visibility_0()
 }
 
 
+// Function HUDUI.HUDUI_C.Get_Timertest_Text_0
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+class FText UHUDUI_C::Get_Timertest_Text_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDUI_C", "Get_Timertest_Text_0");
+
+	Params::HUDUI_C_Get_Timertest_Text_0 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function HUDUI.HUDUI_C.GetCurrentInstruction
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:

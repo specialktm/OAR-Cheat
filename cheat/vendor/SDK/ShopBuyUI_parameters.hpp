@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "UMG_structs.hpp"
 #include "ShopItemCategory_structs.hpp"
 #include "AttachmentArrayStructure_structs.hpp"
-#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
@@ -20,7 +20,7 @@ namespace SDK::Params
 {
 
 // Function ShopBuyUI.ShopBuyUI_C.ExecuteUbergraph_ShopBuyUI
-// 0x0260 (0x0260 - 0x0000)
+// 0x0268 (0x0268 - 0x0000)
 struct ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI final
 {
 public:
@@ -49,76 +49,78 @@ public:
 	bool                                          CallFunc_SpendCash_Success_;                       // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_AddInventoryItem_Index;                   // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets;  // 0x0068(0x0010)(ReferenceParm, ContainsInstancedReference)
-	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUserWidget*                            CallFunc_Array_Get_Item;                           // 0x0080(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface;            // 0x0088(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_1;          // 0x00A0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B1[0x3];                                       // 0x00B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00BD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x00BE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BF[0x1];                                       // 0x00BF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAttachmentArrayStructure              CallFunc_Update_Attachment_New_attachments_structure; // 0x00C0(0x0010)(HasGetValueTypeHash)
-	TArray<class UModifyWeaponUI_C*>              CallFunc_GetAllWidgetsOfClass_FoundWidgets;        // 0x00D0(0x0010)(ReferenceParm, ContainsInstancedReference)
-	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UModifyWeaponUI_C*                      CallFunc_Array_Get_Item_1;                         // 0x00E8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x00F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1; // 0x0100(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0120(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0130(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0140(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_4;              // 0x0150(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class UClass*                                 K2Node_ClassDynamicCast_AsShop_Item_Map_Base;      // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ClassDynamicCast_bSuccess;                  // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Check_Multiplied_Value_Can_purchase_;     // 0x0169(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_16A[0x2];                                      // 0x016A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_LastIndex_ReturnValue;              // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0174(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_175[0x3];                                      // 0x0175(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1; // 0x0178(0x0010)(ReferenceParm, ContainsInstancedReference)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0188(0x0010)(ZeroConstructor, NoDestructor)
-	class UUserWidget*                            CallFunc_Array_Get_Item_2;                         // 0x0198(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_2;          // 0x01A0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1B1[0x3];                                      // 0x01B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1B9[0x7];                                      // 0x01B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors;      // 0x01C0(0x0010)(ReferenceParm)
-	class AActor*                                 CallFunc_Array_Get_Item_3;                         // 0x01D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x01D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1DC[0x4];                                      // 0x01DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_3;          // 0x01E0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x01F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1F2[0x6];                                      // 0x01F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors_1;    // 0x01F8(0x0010)(ReferenceParm)
-	class AActor*                                 CallFunc_Array_Get_Item_4;                         // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0210(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_214[0x4];                                      // 0x0214(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_4;          // 0x0218(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_5;                     // 0x0228(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x0229(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_22A[0x6];                                      // 0x022A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_5;          // 0x0230(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_6;                     // 0x0240(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_241[0x7];                                      // 0x0241(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<EShopItemCategory>                     K2Node_MakeArray_Array;                            // 0x0248(0x0010)(ConstParm, ReferenceParm)
-	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0258(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Consume_Coins_Success_;                   // 0x0259(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets;  // 0x0070(0x0010)(ReferenceParm, ContainsInstancedReference)
+	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUserWidget*                            CallFunc_Array_Get_Item;                           // 0x0088(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface;            // 0x0090(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_1;          // 0x00A8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x00BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00C4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00C5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x00C6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C7[0x1];                                       // 0x00C7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAttachmentArrayStructure              CallFunc_Update_Attachment_New_attachments_structure; // 0x00C8(0x0010)(HasGetValueTypeHash)
+	TArray<class UModifyWeaponUI_C*>              CallFunc_GetAllWidgetsOfClass_FoundWidgets;        // 0x00D8(0x0010)(ReferenceParm, ContainsInstancedReference)
+	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UModifyWeaponUI_C*                      CallFunc_Array_Get_Item_1;                         // 0x00F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1; // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0118(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0128(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0148(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_4;              // 0x0158(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UClass*                                 K2Node_ClassDynamicCast_AsShop_Item_Map_Base;      // 0x0168(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ClassDynamicCast_bSuccess;                  // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Check_Multiplied_Value_Can_purchase_;     // 0x0171(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_172[0x2];                                      // 0x0172(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_LastIndex_ReturnValue;              // 0x0174(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x0178(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x017C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1; // 0x0180(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0190(0x0010)(ZeroConstructor, NoDestructor)
+	class UUserWidget*                            CallFunc_Array_Get_Item_2;                         // 0x01A0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_2;          // 0x01A8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1B9[0x3];                                      // 0x01B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x01BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1C1[0x7];                                      // 0x01C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors;      // 0x01C8(0x0010)(ReferenceParm)
+	class AActor*                                 CallFunc_Array_Get_Item_3;                         // 0x01D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x01E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1E4[0x4];                                      // 0x01E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_3;          // 0x01E8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x01F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x01F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1FA[0x6];                                      // 0x01FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors_1;    // 0x0200(0x0010)(ReferenceParm)
+	class AActor*                                 CallFunc_Array_Get_Item_4;                         // 0x0210(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21C[0x4];                                      // 0x021C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_4;          // 0x0220(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_5;                     // 0x0230(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x0231(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_232[0x6];                                      // 0x0232(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_5;          // 0x0238(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_6;                     // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_249[0x7];                                      // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<EShopItemCategory>                     K2Node_MakeArray_Array;                            // 0x0250(0x0010)(ConstParm, ReferenceParm)
+	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0260(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Consume_Coins_Success_;                   // 0x0261(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI) == 0x000008, "Wrong alignment on ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI");
-static_assert(sizeof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI) == 0x000260, "Wrong size on ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI");
+static_assert(sizeof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI) == 0x000268, "Wrong size on ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI");
 static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, EntryPoint) == 0x000000, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::EntryPoint' has a wrong offset!");
 static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_CreateDelegate_OutputDelegate) == 0x000004, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
 static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, Temp_bool_Has_Been_Initd_Variable) == 0x000014, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
@@ -139,59 +141,60 @@ static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCas
 static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Add_IntInt_ReturnValue_3) == 0x00005C, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
 static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_SpendCash_Success_) == 0x000060, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_SpendCash_Success_' has a wrong offset!");
 static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_AddInventoryItem_Index) == 0x000064, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_AddInventoryItem_Index' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllWidgetsWithInterface_FoundWidgets) == 0x000068, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllWidgetsWithInterface_FoundWidgets' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, Temp_int_Loop_Counter_Variable_3) == 0x000078, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item) == 0x000080, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface) == 0x000088, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_1) == 0x000098, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_1) == 0x0000A0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_2) == 0x0000B0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Add_IntInt_ReturnValue_4) == 0x0000B4, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Length_ReturnValue) == 0x0000B8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue) == 0x0000BC, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_IsValid_ReturnValue) == 0x0000BD, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, Temp_bool_Has_Been_Initd_Variable_1) == 0x0000BE, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::Temp_bool_Has_Been_Initd_Variable_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Update_Attachment_New_attachments_structure) == 0x0000C0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Update_Attachment_New_attachments_structure' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllWidgetsOfClass_FoundWidgets) == 0x0000D0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllWidgetsOfClass_FoundWidgets' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, Temp_bool_IsClosed_Variable_1) == 0x0000E0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::Temp_bool_IsClosed_Variable_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item_1) == 0x0000E8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue) == 0x0000F0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1) == 0x000100, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue) == 0x000110, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000120, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue_2) == 0x000130, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue_3) == 0x000140, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue_4) == 0x000150, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_ClassDynamicCast_AsShop_Item_Map_Base) == 0x000160, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_ClassDynamicCast_AsShop_Item_Map_Base' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_ClassDynamicCast_bSuccess) == 0x000168, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_ClassDynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Check_Multiplied_Value_Can_purchase_) == 0x000169, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Check_Multiplied_Value_Can_purchase_' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_LastIndex_ReturnValue) == 0x00016C, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_LastIndex_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Add_IntInt_ReturnValue_5) == 0x000170, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue_1) == 0x000174, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1) == 0x000178, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_CreateDelegate_OutputDelegate_1) == 0x000188, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item_2) == 0x000198, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_2) == 0x0001A0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_2' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_3) == 0x0001B0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Length_ReturnValue_1) == 0x0001B4, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue_2) == 0x0001B8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllActorsWithInterface_OutActors) == 0x0001C0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllActorsWithInterface_OutActors' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item_3) == 0x0001D0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item_3' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Length_ReturnValue_2) == 0x0001D8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_3) == 0x0001E0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_3' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_4) == 0x0001F0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_4' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue_3) == 0x0001F1, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllActorsWithInterface_OutActors_1) == 0x0001F8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllActorsWithInterface_OutActors_1' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item_4) == 0x000208, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item_4' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Length_ReturnValue_3) == 0x000210, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_4) == 0x000218, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_4' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_5) == 0x000228, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_5' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue_4) == 0x000229, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_5) == 0x000230, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_5' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_6) == 0x000240, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_6' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_MakeArray_Array) == 0x000248, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Contains_ReturnValue) == 0x000258, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Contains_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Consume_Coins_Success_) == 0x000259, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Consume_Coins_Success_' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Conv_IntToFloat_ReturnValue) == 0x000068, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Conv_IntToFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllWidgetsWithInterface_FoundWidgets) == 0x000070, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllWidgetsWithInterface_FoundWidgets' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, Temp_int_Loop_Counter_Variable_3) == 0x000080, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item) == 0x000088, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface) == 0x000090, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_1) == 0x0000A0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_1) == 0x0000A8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_2) == 0x0000B8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Add_IntInt_ReturnValue_4) == 0x0000BC, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Length_ReturnValue) == 0x0000C0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue) == 0x0000C4, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_IsValid_ReturnValue) == 0x0000C5, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, Temp_bool_Has_Been_Initd_Variable_1) == 0x0000C6, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::Temp_bool_Has_Been_Initd_Variable_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Update_Attachment_New_attachments_structure) == 0x0000C8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Update_Attachment_New_attachments_structure' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllWidgetsOfClass_FoundWidgets) == 0x0000D8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllWidgetsOfClass_FoundWidgets' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, Temp_bool_IsClosed_Variable_1) == 0x0000E8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::Temp_bool_IsClosed_Variable_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item_1) == 0x0000F0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue) == 0x0000F8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1) == 0x000108, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue) == 0x000118, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000128, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue_2) == 0x000138, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue_3) == 0x000148, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Concat_StrStr_ReturnValue_4) == 0x000158, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Concat_StrStr_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_ClassDynamicCast_AsShop_Item_Map_Base) == 0x000168, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_ClassDynamicCast_AsShop_Item_Map_Base' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_ClassDynamicCast_bSuccess) == 0x000170, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_ClassDynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Check_Multiplied_Value_Can_purchase_) == 0x000171, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Check_Multiplied_Value_Can_purchase_' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_LastIndex_ReturnValue) == 0x000174, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_LastIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Add_IntInt_ReturnValue_5) == 0x000178, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue_1) == 0x00017C, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1) == 0x000180, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_CreateDelegate_OutputDelegate_1) == 0x000190, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item_2) == 0x0001A0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_2) == 0x0001A8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_2' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_3) == 0x0001B8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Length_ReturnValue_1) == 0x0001BC, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue_2) == 0x0001C0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllActorsWithInterface_OutActors) == 0x0001C8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllActorsWithInterface_OutActors' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item_3) == 0x0001D8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Length_ReturnValue_2) == 0x0001E0, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_3) == 0x0001E8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_3' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_4) == 0x0001F8, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_4' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue_3) == 0x0001F9, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_GetAllActorsWithInterface_OutActors_1) == 0x000200, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_GetAllActorsWithInterface_OutActors_1' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Get_Item_4) == 0x000210, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Get_Item_4' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Length_ReturnValue_3) == 0x000218, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_4) == 0x000220, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_4' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_5) == 0x000230, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_5' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Less_IntInt_ReturnValue_4) == 0x000231, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_AsMenu_UIInteraface_5) == 0x000238, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_AsMenu_UIInteraface_5' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_DynamicCast_bSuccess_6) == 0x000248, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_DynamicCast_bSuccess_6' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, K2Node_MakeArray_Array) == 0x000250, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Array_Contains_ReturnValue) == 0x000260, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Array_Contains_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI, CallFunc_Consume_Coins_Success_) == 0x000261, "Member 'ShopBuyUI_C_ExecuteUbergraph_ShopBuyUI::CallFunc_Consume_Coins_Success_' has a wrong offset!");
 
 // Function ShopBuyUI.ShopBuyUI_C.GetText_0
 // 0x00A8 (0x00A8 - 0x0000)

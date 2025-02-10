@@ -19,193 +19,241 @@ namespace SDK::Params
 {
 
 // Function GunBase.GunBase_C.ExecuteUbergraph_GunBase
-// 0x0240 (0x0240 - 0x0000)
+// 0x02E0 (0x02E0 - 0x0000)
 struct GunBase_C_ExecuteUbergraph_GunBase final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Temp_float_Variable;                               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_GetActorRightVector_ReturnValue;          // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue;      // 0x001C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UParticleSystemComponent*               CallFunc_SpawnEmitterAttached_ReturnValue;         // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  CallFunc_GetInstigator_ReturnValue;                // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0049(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4A[0x6];                                       // 0x004A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character;             // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue_1;    // 0x0060(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x006C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0080(0x0030)(IsPlainOldData, NoDestructor)
-	TArray<class UStaticMeshComponent*>           CallFunc_GetComponentsByTag_ReturnValue;           // 0x00B0(0x0010)(ReferenceParm, ContainsInstancedReference)
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item;                           // 0x00C0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x00CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x00CD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_CE[0x2];                                       // 0x00CE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_GetActorRightVector_ReturnValue_1;        // 0x00D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetActorForwardVector_ReturnValue;        // 0x00DC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue;         // 0x00E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_1;       // 0x00F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FAttachmentArrayStructure              K2Node_CustomEvent_Attachments;                    // 0x0108(0x0010)(HasGetValueTypeHash)
-	class AActor*                                 CallFunc_FinishSpawningActor_ReturnValue;          // 0x0118(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AMag_C*                                 K2Node_DynamicCast_AsMag;                          // 0x0120(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_129[0x3];                                      // 0x0129(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x012C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0138(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetWorldDeltaSeconds_ReturnValue;         // 0x0144(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0148(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsLocallyControlled_ReturnValue;          // 0x014C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x014D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_14E[0x2];                                      // 0x014E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Temp_float_Variable_1;                             // 0x0150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Get_Item_1;                         // 0x0154(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_159[0x7];                                      // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UStaticMeshComponent*>           CallFunc_GetComponentsByTag_ReturnValue_1;         // 0x0160(0x0010)(ReferenceParm, ContainsInstancedReference)
-	bool                                          Temp_bool_Variable;                                // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AAttachment_mag_base_C*                 K2Node_DynamicCast_AsAttachment_Mag_Base;          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Variable;                                // 0x0013(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            Temp_object_Variable;                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UStaticMesh*                            K2Node_Select_Default;                             // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_GetActorRightVector_ReturnValue;          // 0x002C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue;      // 0x0038(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x0044(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UParticleSystemComponent*               CallFunc_SpawnEmitterAttached_ReturnValue;         // 0x0050(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_1;                              // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_GetInstigator_ReturnValue;                // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0069(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6A[0x6];                                       // 0x006A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character;             // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue_1;    // 0x0080(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_1;    // 0x008C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x00A0(0x0030)(IsPlainOldData, NoDestructor)
+	TArray<class UStaticMeshComponent*>           CallFunc_GetComponentsByTag_ReturnValue;           // 0x00D0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item;                           // 0x00E0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x00EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x00ED(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_EE[0x2];                                       // 0x00EE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_GetActorRightVector_ReturnValue_1;        // 0x00F0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetActorForwardVector_ReturnValue;        // 0x00FC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue;         // 0x0108(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_1;       // 0x0114(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FAttachmentArrayStructure              K2Node_CustomEvent_Attachments;                    // 0x0120(0x0010)(HasGetValueTypeHash)
+	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AMag_C*                                 CallFunc_FinishSpawningActor_ReturnValue;          // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0144(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0150(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetWorldDeltaSeconds_ReturnValue;         // 0x015C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0160(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsLocallyControlled_ReturnValue;          // 0x0164(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_6;                    // 0x0165(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_166[0x2];                                      // 0x0166(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Temp_float_Variable;                               // 0x0168(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Get_Item_1;                         // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_171[0x7];                                      // 0x0171(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_2;                         // 0x0178(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_181[0x3];                                      // 0x0181(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Select_Default;                             // 0x0184(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UStaticMeshComponent*>           CallFunc_GetComponentsByTag_ReturnValue_1;         // 0x0178(0x0010)(ReferenceParm, ContainsInstancedReference)
 	float                                         CallFunc_GetThisGunStats_Zoom;                     // 0x0188(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetThisGunStats_Recoil;                   // 0x018C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetThisGunStats_Accuracy;                 // 0x0190(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetThisGunStats_Reload_time;              // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetThisGunStats_Damage;                   // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetThisGunStats_Bullets;                  // 0x019C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Zoom_1;                   // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Recoil_1;                 // 0x01A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Accuracy_1;               // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Reload_time_1;            // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Damage_1;                 // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetThisGunStats_Bullets_1;                // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 CallFunc_GetAttachmentFromCategory_Class;          // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Zoom_2;                   // 0x01C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Recoil_2;                 // 0x01C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Accuracy_2;               // 0x01C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Reload_time_2;            // 0x01CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Damage_2;                 // 0x01D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetThisGunStats_Bullets_2;                // 0x01D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 K2Node_ClassDynamicCast_AsAttachment_Mag_Base;     // 0x01D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ClassDynamicCast_bSuccess;                  // 0x01E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1E1[0x3];                                      // 0x01E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x01E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_ClassClass_ReturnValue;          // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1E9[0x3];                                      // 0x01E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_2;        // 0x01EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 CallFunc_GetAttachmentFromCategory_Class_1;        // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 K2Node_ClassDynamicCast_AsAttachment_Barrel_Base;  // 0x01F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ClassDynamicCast_bSuccess_1;                // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_201[0x3];                                      // 0x0201(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_3;        // 0x0204(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_4;        // 0x0208(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x020C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_5;        // 0x0218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_2;       // 0x021C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Zoom_3;                   // 0x0228(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Recoil_3;                 // 0x022C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Accuracy_3;               // 0x0230(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Reload_time_3;            // 0x0234(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetThisGunStats_Damage_3;                 // 0x0238(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetThisGunStats_Bullets_3;                // 0x023C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_2;                         // 0x01A0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_7;                    // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetThisGunStats_Zoom_1;                   // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Recoil_1;                 // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Accuracy_1;               // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Reload_time_1;            // 0x01B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Damage_1;                 // 0x01BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetThisGunStats_Bullets_1;                // 0x01C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C4[0x4];                                      // 0x01C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 CallFunc_GetAttachmentFromCategory_Class;          // 0x01C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 K2Node_ClassDynamicCast_AsAttachment_Mag_Base;     // 0x01D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ClassDynamicCast_bSuccess;                  // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1D9[0x3];                                      // 0x01D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetThisGunStats_Zoom_2;                   // 0x01DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Recoil_2;                 // 0x01E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Accuracy_2;               // 0x01E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Reload_time_2;            // 0x01E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Damage_2;                 // 0x01EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetThisGunStats_Bullets_2;                // 0x01F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_ClassClass_ReturnValue;          // 0x01F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1F5[0x3];                                      // 0x01F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 CallFunc_GetAttachmentFromCategory_Class_1;        // 0x01F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 K2Node_ClassDynamicCast_AsAttachment_Barrel_Base;  // 0x0200(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ClassDynamicCast_bSuccess_1;                // 0x0208(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_209[0x3];                                      // 0x0209(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetThisGunStats_Zoom_3;                   // 0x020C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Recoil_3;                 // 0x0210(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Accuracy_3;               // 0x0214(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Reload_time_3;            // 0x0218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetThisGunStats_Damage_3;                 // 0x021C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetThisGunStats_Bullets_3;                // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Temp_float_Variable_1;                             // 0x0224(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0228(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Select_Default_1;                           // 0x022C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x0230(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_2;        // 0x0234(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_3;        // 0x0238(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_4;        // 0x023C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x0240(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsLocallyControlled_ReturnValue_1;        // 0x024C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_24D[0x3];                                      // 0x024D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_5;        // 0x0250(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_254[0x4];                                      // 0x0254(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  K2Node_CustomEvent_Instigator;                     // 0x0258(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_2;       // 0x0260(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_8;                    // 0x026C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_26D[0x3];                                      // 0x026D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               CallFunc_K2_GetComponentRotation_ReturnValue_2;    // 0x0270(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue_2;    // 0x027C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_288[0x8];                                      // 0x0288(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_MakeTransform_ReturnValue_1;              // 0x0290(0x0030)(IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x02C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1; // 0x02C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABulletCasing_C*                        CallFunc_FinishSpawningActor_ReturnValue_1;        // 0x02D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GunBase_C_ExecuteUbergraph_GunBase) == 0x000010, "Wrong alignment on GunBase_C_ExecuteUbergraph_GunBase");
-static_assert(sizeof(GunBase_C_ExecuteUbergraph_GunBase) == 0x000240, "Wrong size on GunBase_C_ExecuteUbergraph_GunBase");
+static_assert(sizeof(GunBase_C_ExecuteUbergraph_GunBase) == 0x0002E0, "Wrong size on GunBase_C_ExecuteUbergraph_GunBase");
 static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, EntryPoint) == 0x000000, "Member 'GunBase_C_ExecuteUbergraph_GunBase::EntryPoint' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000004, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, Temp_float_Variable) == 0x000008, "Member 'GunBase_C_ExecuteUbergraph_GunBase::Temp_float_Variable' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue) == 0x00000C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetActorRightVector_ReturnValue) == 0x000010, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetActorRightVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentRotation_ReturnValue) == 0x00001C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentLocation_ReturnValue) == 0x000028, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_SpawnEmitterAttached_ReturnValue) == 0x000038, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_SpawnEmitterAttached_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetInstigator_ReturnValue) == 0x000040, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetInstigator_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_1) == 0x000048, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_2) == 0x000049, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_DynamicCast_AsPlayer_Character) == 0x000050, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_DynamicCast_AsPlayer_Character' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_DynamicCast_bSuccess) == 0x000058, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Subtract_IntInt_ReturnValue) == 0x00005C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Subtract_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentRotation_ReturnValue_1) == 0x000060, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentRotation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentLocation_ReturnValue_1) == 0x00006C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_MakeTransform_ReturnValue) == 0x000080, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_MakeTransform_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetComponentsByTag_ReturnValue) == 0x0000B0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetComponentsByTag_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_Get_Item) == 0x0000C0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_Length_ReturnValue) == 0x0000C8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_3) == 0x0000CC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Greater_IntInt_ReturnValue) == 0x0000CD, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetActorRightVector_ReturnValue_1) == 0x0000D0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetActorRightVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetActorForwardVector_ReturnValue) == 0x0000DC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetActorForwardVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_VectorFloat_ReturnValue) == 0x0000E8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_VectorFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_VectorFloat_ReturnValue_1) == 0x0000F4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue) == 0x000100, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_CustomEvent_Attachments) == 0x000108, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_CustomEvent_Attachments' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_FinishSpawningActor_ReturnValue) == 0x000118, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_FinishSpawningActor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_DynamicCast_AsMag) == 0x000120, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_DynamicCast_AsMag' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_DynamicCast_bSuccess_1) == 0x000128, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetActorLocation_ReturnValue) == 0x00012C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x000138, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetWorldDeltaSeconds_ReturnValue) == 0x000144, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetWorldDeltaSeconds_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000148, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsLocallyControlled_ReturnValue) == 0x00014C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsLocallyControlled_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_4) == 0x00014D, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, Temp_float_Variable_1) == 0x000150, "Member 'GunBase_C_ExecuteUbergraph_GunBase::Temp_float_Variable_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_Get_Item_1) == 0x000154, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000158, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetComponentsByTag_ReturnValue_1) == 0x000160, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetComponentsByTag_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, Temp_bool_Variable) == 0x000170, "Member 'GunBase_C_ExecuteUbergraph_GunBase::Temp_bool_Variable' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_Get_Item_2) == 0x000178, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_5) == 0x000180, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_Select_Default) == 0x000184, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_DynamicCast_AsAttachment_Mag_Base) == 0x000008, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_DynamicCast_AsAttachment_Mag_Base' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_DynamicCast_bSuccess) == 0x000010, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue) == 0x000011, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_BooleanAND_ReturnValue) == 0x000012, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, Temp_bool_Variable) == 0x000013, "Member 'GunBase_C_ExecuteUbergraph_GunBase::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, Temp_object_Variable) == 0x000018, "Member 'GunBase_C_ExecuteUbergraph_GunBase::Temp_object_Variable' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_Select_Default) == 0x000020, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_1) == 0x000028, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetActorRightVector_ReturnValue) == 0x00002C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetActorRightVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentRotation_ReturnValue) == 0x000038, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentRotation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentLocation_ReturnValue) == 0x000044, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_SpawnEmitterAttached_ReturnValue) == 0x000050, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_SpawnEmitterAttached_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, Temp_bool_Variable_1) == 0x000058, "Member 'GunBase_C_ExecuteUbergraph_GunBase::Temp_bool_Variable_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetInstigator_ReturnValue) == 0x000060, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetInstigator_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_2) == 0x000068, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_3) == 0x000069, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_DynamicCast_AsPlayer_Character) == 0x000070, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_DynamicCast_AsPlayer_Character' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_DynamicCast_bSuccess_1) == 0x000078, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Subtract_IntInt_ReturnValue) == 0x00007C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Subtract_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentRotation_ReturnValue_1) == 0x000080, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentRotation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentLocation_ReturnValue_1) == 0x00008C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_MakeTransform_ReturnValue) == 0x0000A0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_MakeTransform_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetComponentsByTag_ReturnValue) == 0x0000D0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetComponentsByTag_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_Get_Item) == 0x0000E0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_Length_ReturnValue) == 0x0000E8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_4) == 0x0000EC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Greater_IntInt_ReturnValue) == 0x0000ED, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetActorRightVector_ReturnValue_1) == 0x0000F0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetActorRightVector_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetActorForwardVector_ReturnValue) == 0x0000FC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetActorForwardVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_VectorFloat_ReturnValue) == 0x000108, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_VectorFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_VectorFloat_ReturnValue_1) == 0x000114, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_CustomEvent_Attachments) == 0x000120, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_CustomEvent_Attachments' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue) == 0x000130, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_FinishSpawningActor_ReturnValue) == 0x000138, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_FinishSpawningActor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_5) == 0x000140, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000144, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x000150, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetWorldDeltaSeconds_ReturnValue) == 0x00015C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetWorldDeltaSeconds_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000160, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsLocallyControlled_ReturnValue) == 0x000164, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsLocallyControlled_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_6) == 0x000165, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, Temp_float_Variable) == 0x000168, "Member 'GunBase_C_ExecuteUbergraph_GunBase::Temp_float_Variable' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_Get_Item_1) == 0x00016C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000170, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetComponentsByTag_ReturnValue_1) == 0x000178, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetComponentsByTag_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Zoom) == 0x000188, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Zoom' has a wrong offset!");
 static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Recoil) == 0x00018C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Recoil' has a wrong offset!");
 static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Accuracy) == 0x000190, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Accuracy' has a wrong offset!");
 static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Reload_time) == 0x000194, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Reload_time' has a wrong offset!");
 static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Damage) == 0x000198, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Damage' has a wrong offset!");
 static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Bullets) == 0x00019C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Bullets' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Zoom_1) == 0x0001A0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Zoom_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Recoil_1) == 0x0001A4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Recoil_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Accuracy_1) == 0x0001A8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Accuracy_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Reload_time_1) == 0x0001AC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Reload_time_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Damage_1) == 0x0001B0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Damage_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Bullets_1) == 0x0001B4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Bullets_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetAttachmentFromCategory_Class) == 0x0001B8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetAttachmentFromCategory_Class' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Zoom_2) == 0x0001C0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Zoom_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Recoil_2) == 0x0001C4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Recoil_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Accuracy_2) == 0x0001C8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Accuracy_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Reload_time_2) == 0x0001CC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Reload_time_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Damage_2) == 0x0001D0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Damage_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Bullets_2) == 0x0001D4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Bullets_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_ClassDynamicCast_AsAttachment_Mag_Base) == 0x0001D8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_ClassDynamicCast_AsAttachment_Mag_Base' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_ClassDynamicCast_bSuccess) == 0x0001E0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_ClassDynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x0001E4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_NotEqual_ClassClass_ReturnValue) == 0x0001E8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_NotEqual_ClassClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_2) == 0x0001EC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetAttachmentFromCategory_Class_1) == 0x0001F0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetAttachmentFromCategory_Class_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_ClassDynamicCast_AsAttachment_Barrel_Base) == 0x0001F8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_ClassDynamicCast_AsAttachment_Barrel_Base' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_ClassDynamicCast_bSuccess_1) == 0x000200, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_ClassDynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_3) == 0x000204, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_4) == 0x000208, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_MakeVector_ReturnValue) == 0x00020C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_MakeVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_5) == 0x000218, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_VectorFloat_ReturnValue_2) == 0x00021C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_VectorFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Zoom_3) == 0x000228, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Zoom_3' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Recoil_3) == 0x00022C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Recoil_3' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Accuracy_3) == 0x000230, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Accuracy_3' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Reload_time_3) == 0x000234, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Reload_time_3' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Damage_3) == 0x000238, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Damage_3' has a wrong offset!");
-static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Bullets_3) == 0x00023C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Bullets_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Array_Get_Item_2) == 0x0001A0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_7) == 0x0001A8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Zoom_1) == 0x0001AC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Zoom_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Recoil_1) == 0x0001B0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Recoil_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Accuracy_1) == 0x0001B4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Accuracy_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Reload_time_1) == 0x0001B8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Reload_time_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Damage_1) == 0x0001BC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Damage_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Bullets_1) == 0x0001C0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Bullets_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetAttachmentFromCategory_Class) == 0x0001C8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetAttachmentFromCategory_Class' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_ClassDynamicCast_AsAttachment_Mag_Base) == 0x0001D0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_ClassDynamicCast_AsAttachment_Mag_Base' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_ClassDynamicCast_bSuccess) == 0x0001D8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_ClassDynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Zoom_2) == 0x0001DC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Zoom_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Recoil_2) == 0x0001E0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Recoil_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Accuracy_2) == 0x0001E4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Accuracy_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Reload_time_2) == 0x0001E8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Reload_time_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Damage_2) == 0x0001EC, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Damage_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Bullets_2) == 0x0001F0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Bullets_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_NotEqual_ClassClass_ReturnValue) == 0x0001F4, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_NotEqual_ClassClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetAttachmentFromCategory_Class_1) == 0x0001F8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetAttachmentFromCategory_Class_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_ClassDynamicCast_AsAttachment_Barrel_Base) == 0x000200, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_ClassDynamicCast_AsAttachment_Barrel_Base' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_ClassDynamicCast_bSuccess_1) == 0x000208, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_ClassDynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Zoom_3) == 0x00020C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Zoom_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Recoil_3) == 0x000210, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Recoil_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Accuracy_3) == 0x000214, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Accuracy_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Reload_time_3) == 0x000218, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Reload_time_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Damage_3) == 0x00021C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Damage_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_GetThisGunStats_Bullets_3) == 0x000220, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_GetThisGunStats_Bullets_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, Temp_float_Variable_1) == 0x000224, "Member 'GunBase_C_ExecuteUbergraph_GunBase::Temp_float_Variable_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000228, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_Select_Default_1) == 0x00022C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_Select_Default_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x000230, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_2) == 0x000234, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_3) == 0x000238, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_4) == 0x00023C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_MakeVector_ReturnValue) == 0x000240, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_MakeVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsLocallyControlled_ReturnValue_1) == 0x00024C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsLocallyControlled_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_FloatFloat_ReturnValue_5) == 0x000250, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_FloatFloat_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, K2Node_CustomEvent_Instigator) == 0x000258, "Member 'GunBase_C_ExecuteUbergraph_GunBase::K2Node_CustomEvent_Instigator' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Multiply_VectorFloat_ReturnValue_2) == 0x000260, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Multiply_VectorFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_IsValid_ReturnValue_8) == 0x00026C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_IsValid_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentRotation_ReturnValue_2) == 0x000270, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentRotation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_K2_GetComponentLocation_ReturnValue_2) == 0x00027C, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_K2_GetComponentLocation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_MakeTransform_ReturnValue_1) == 0x000290, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_MakeTransform_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_Not_PreBool_ReturnValue) == 0x0002C0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1) == 0x0002C8, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GunBase_C_ExecuteUbergraph_GunBase, CallFunc_FinishSpawningActor_ReturnValue_1) == 0x0002D0, "Member 'GunBase_C_ExecuteUbergraph_GunBase::CallFunc_FinishSpawningActor_ReturnValue_1' has a wrong offset!");
+
+// Function GunBase.GunBase_C.SpawnCasing
+// 0x0008 (0x0008 - 0x0000)
+struct GunBase_C_SpawnCasing final
+{
+public:
+	class APawn*                                  Param_Instigator;                                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GunBase_C_SpawnCasing) == 0x000008, "Wrong alignment on GunBase_C_SpawnCasing");
+static_assert(sizeof(GunBase_C_SpawnCasing) == 0x000008, "Wrong size on GunBase_C_SpawnCasing");
+static_assert(offsetof(GunBase_C_SpawnCasing, Param_Instigator) == 0x000000, "Member 'GunBase_C_SpawnCasing::Param_Instigator' has a wrong offset!");
 
 // Function GunBase.GunBase_C.SetupAttachmentsMulti
 // 0x0010 (0x0010 - 0x0000)

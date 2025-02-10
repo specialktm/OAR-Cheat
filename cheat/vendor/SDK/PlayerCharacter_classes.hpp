@@ -13,9 +13,9 @@
 #include "PhysicsCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "SettingsStruct_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "AttachmentArrayStructure_structs.hpp"
-#include "SettingsStruct_structs.hpp"
 #include "SteamCore_structs.hpp"
 
 
@@ -162,6 +162,8 @@ public:
 	void WarningAreaDisp__DelegateSignature(class ARestrictedAreaVolume_C* Area, bool Exit_);
 	void SwitchedGun__DelegateSignature(int32 Number);
 	void ExecuteUbergraph_PlayerCharacter(int32 EntryPoint);
+	void ShootVisualServer();
+	void ShootVisualMulti();
 	void GiveImmunityLevel(float Duration);
 	void SetupStartStats();
 	void SetupSkills();
@@ -235,7 +237,7 @@ public:
 	void PutMaskOn();
 	void SetPlayerLoaded();
 	void ForceSwitch(int32 Slot);
-	void Interactholding();
+	void InteractHolding();
 	void BndEvt__PlayerCharacter_DamageComponent_K2Node_ComponentBoundEvent_1_Damage__DelegateSignature(int32 Amount, class FName Bone, const struct FVector& HitLocation, const struct FVector& StartLocation, class AActor* Param_Instigator);
 	void Temp();
 	void StartRevive();
@@ -303,7 +305,7 @@ public:
 	void InterpRagdoll__UpdateFunc();
 	void InterpRagdoll__FinishedFunc();
 	void UserConstructionScript();
-	void Shootvisuals(const struct FHitResult& Hit);
+	void Shootvisuals();
 	void OnRep_ShootHit();
 	void ShootFunction(const struct FHitResult& Hit);
 	void SwitchGun(int32 Number, bool* Willswitch_);
@@ -328,6 +330,7 @@ public:
 	void OnRep_SkinColorPlayer();
 	void OnRep_Dancing_();
 	void SetupControllerSkills();
+	void BulletTraceVisuals(const struct FHitResult& HitResult);
 	void CheckIfDowned_(bool* Param_Downed_);
 	void AddAmmoInterfaceCall(int32 Amount, bool* DidAddAmmo_);
 	void CheckHoldingItemInterfaceCall(class AActor** HoldingItem);

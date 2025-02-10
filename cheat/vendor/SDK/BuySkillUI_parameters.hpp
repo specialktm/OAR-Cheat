@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SkillSaveStruct_structs.hpp"
 #include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "SkillSaveStruct_structs.hpp"
 #include "SkillProgressStruct_structs.hpp"
 
 

@@ -1351,9 +1351,9 @@ void UAdvancedIdentityLibrary::GetUserAccountDisplayName(const struct FBPUserOnl
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // struct FBPUserOnlineAccount             AccountInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           Username                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           UserName                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAdvancedIdentityLibrary::GetUserAccountRealName(const struct FBPUserOnlineAccount& AccountInfo, class FString* Username)
+void UAdvancedIdentityLibrary::GetUserAccountRealName(const struct FBPUserOnlineAccount& AccountInfo, class FString* UserName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1371,8 +1371,8 @@ void UAdvancedIdentityLibrary::GetUserAccountRealName(const struct FBPUserOnline
 
 	Func->FunctionFlags = Flgs;
 
-	if (Username != nullptr)
-		*Username = std::move(Parms.Username);
+	if (UserName != nullptr)
+		*UserName = std::move(Parms.UserName);
 }
 
 

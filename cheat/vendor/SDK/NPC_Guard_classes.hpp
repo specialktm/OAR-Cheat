@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "NPCBase_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "NPCBase_classes.hpp"
 #include "AIModule_structs.hpp"
 
 
@@ -106,6 +106,7 @@ public:
 	void InvestigateQuestion(const struct FVector& Location);
 	void BndEvt__NPC_Guard_SpotPlayerComponent_K2Node_ComponentBoundEvent_0_PlayerSpotted__DelegateSignature(class APawn* Player);
 	void See_pawn(class APawn* Pawn);
+	void ReceiveBeginPlay();
 	void FindNearestGuardAsActor(class AActor* GuardActor, float Distance);
 	void OnSuccess_D4CF885043E71FB6876C1D9B6A317D0A(EPathFollowingResult MovementResult);
 	void OnFail_D4CF885043E71FB6876C1D9B6A317D0A(EPathFollowingResult MovementResult);
@@ -131,7 +132,6 @@ public:
 	void LooseHat();
 	void FindClosestGuardOnPath(const struct FVector& Location, class ANPC_Guard_C** ClosestGuard, float* Distance);
 	void UpdateAttachedKeycardLocation();
-	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

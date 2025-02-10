@@ -37,6 +37,20 @@ void USkinShop_C::ExecuteUbergraph_SkinShop(int32 EntryPoint)
 }
 
 
+// Function SkinShop.SkinShop_C.FindCurrentSkin
+// (BlueprintCallable, BlueprintEvent)
+
+void USkinShop_C::FindCurrentSkin()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkinShop_C", "FindCurrentSkin");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function SkinShop.SkinShop_C.AddItemsFromCategory
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -477,6 +491,27 @@ void USkinShop_C::AddPreviousRotationItemsToFeatured()
 		Func = Class->GetFunction("SkinShop_C", "AddPreviousRotationItemsToFeatured");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function SkinShop.SkinShop_C.GetCurrentSkinsInRotation
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UClass*>                   Array                                                  (Parm, OutParm)
+
+void USkinShop_C::GetCurrentSkinsInRotation(TArray<class UClass*>* Array)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkinShop_C", "GetCurrentSkinsInRotation");
+
+	Params::SkinShop_C_GetCurrentSkinsInRotation Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Array != nullptr)
+		*Array = std::move(Parms.Array);
 }
 
 }

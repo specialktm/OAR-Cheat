@@ -93,6 +93,7 @@ public:
 	ESlateVisibility LoadedGunVisibility();
 	float GetPercent_0();
 	ESlateVisibility Get_ImmunityVignette_Visibility_0();
+	class FText Get_Timertest_Text_0();
 	void GetCurrentInstruction(struct FInstructionStruct* Instruction);
 
 public:

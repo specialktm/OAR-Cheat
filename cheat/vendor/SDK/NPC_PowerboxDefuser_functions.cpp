@@ -119,6 +119,20 @@ void ANPC_PowerboxDefuser_C::FindPowerbox()
 }
 
 
+// Function NPC_PowerboxDefuser.NPC_PowerboxDefuser_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ANPC_PowerboxDefuser_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NPC_PowerboxDefuser_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function NPC_PowerboxDefuser.NPC_PowerboxDefuser_C.OnSuccess_3509034549C3312B5217008101EAB530
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -221,20 +235,6 @@ void ANPC_PowerboxDefuser_C::FindActivePowerbox(bool* FoundBox_, bool* AllBoxesD
 
 	if (AllBoxesDestroyed_ != nullptr)
 		*AllBoxesDestroyed_ = Parms.AllBoxesDestroyed_;
-}
-
-
-// Function NPC_PowerboxDefuser.NPC_PowerboxDefuser_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ANPC_PowerboxDefuser_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NPC_PowerboxDefuser_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

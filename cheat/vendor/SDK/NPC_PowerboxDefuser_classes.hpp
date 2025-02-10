@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "NPCBase_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "NPCBase_classes.hpp"
 #include "AIModule_structs.hpp"
 
 
@@ -43,12 +43,12 @@ public:
 	void StartWarningPowerBox();
 	void DieEvent(class AActor* Player);
 	void FindPowerbox();
+	void ReceiveBeginPlay();
 	void OnSuccess_3509034549C3312B5217008101EAB530(EPathFollowingResult MovementResult);
 	void OnFail_3509034549C3312B5217008101EAB530(EPathFollowingResult MovementResult);
 	void OnSuccess_1257E76C4D301D8096FB3EBDACA4EE95(EPathFollowingResult MovementResult);
 	void OnFail_1257E76C4D301D8096FB3EBDACA4EE95(EPathFollowingResult MovementResult);
 	void FindActivePowerbox(bool* FoundBox_, bool* AllBoxesDestroyed_);
-	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

@@ -199,7 +199,7 @@ public:
 	static void GetUserAccountAttribute(const struct FBPUserOnlineAccount& AccountInfo, const class FString& AttributeName, class FString* AttributeValue, EBlueprintResultSwitch* Result);
 	static void GetUserAccountAuthAttribute(const struct FBPUserOnlineAccount& AccountInfo, const class FString& AttributeName, class FString* AuthAttribute, EBlueprintResultSwitch* Result);
 	static void GetUserAccountDisplayName(const struct FBPUserOnlineAccount& AccountInfo, class FString* DisplayName);
-	static void GetUserAccountRealName(const struct FBPUserOnlineAccount& AccountInfo, class FString* Username);
+	static void GetUserAccountRealName(const struct FBPUserOnlineAccount& AccountInfo, class FString* UserName);
 	static void GetUserID(const struct FBPUserOnlineAccount& AccountInfo, struct FBPUniqueNetId* UniqueNetId);
 	static void SetUserAccountAttribute(const struct FBPUserOnlineAccount& AccountInfo, const class FString& AttributeName, const class FString& NewAttributeValue, EBlueprintResultSwitch* Result);
 

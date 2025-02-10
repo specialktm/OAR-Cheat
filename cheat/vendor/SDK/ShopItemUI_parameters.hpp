@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "ShopItemCategory_structs.hpp"
 #include "UMG_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "RarityNum_structs.hpp"
+#include "ShopItemCategory_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 

@@ -253,6 +253,108 @@ void ARobberController_C::ExecuteUbergraph_RobberController(int32 EntryPoint)
 }
 
 
+// Function RobberController.RobberController_C.OnFullUpdate
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSteamInventoryFullUpdate        Data                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void ARobberController_C::OnFullUpdate(const struct FSteamInventoryFullUpdate& Data)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "OnFullUpdate");
+
+	Params::RobberController_C_OnFullUpdate Parms{};
+
+	Parms.Data = std::move(Data);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function RobberController.RobberController_C.UpdateWhenResultIsFinished
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSteamInventoryResult            Result                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+
+void ARobberController_C::UpdateWhenResultIsFinished(const struct FSteamInventoryResult& Result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "UpdateWhenResultIsFinished");
+
+	Params::RobberController_C_UpdateWhenResultIsFinished Parms{};
+
+	Parms.Result = std::move(Result);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function RobberController.RobberController_C.GrantCoinPacks
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ARobberController_C::GrantCoinPacks()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "GrantCoinPacks");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function RobberController.RobberController_C.CheckCoinPacks
+// (BlueprintCallable, BlueprintEvent)
+
+void ARobberController_C::CheckCoinPacks()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "CheckCoinPacks");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function RobberController.RobberController_C.UpdateSteamItemsEvent
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSteamInventoryResult            Param_InventoryHandle                                  (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+
+void ARobberController_C::UpdateSteamItemsEvent(const struct FSteamInventoryResult& Param_InventoryHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "UpdateSteamItemsEvent");
+
+	Params::RobberController_C_UpdateSteamItemsEvent Parms{};
+
+	Parms.Param_InventoryHandle = std::move(Param_InventoryHandle);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function RobberController.RobberController_C.OnUpdateAllSteamInventory
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ARobberController_C::OnUpdateAllSteamInventory()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "OnUpdateAllSteamInventory");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function RobberController.RobberController_C.OnBackupFileUploaded
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -527,26 +629,6 @@ void ARobberController_C::SaveMaps()
 }
 
 
-// Function RobberController.RobberController_C.InventoryFullUpdate
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FSteamInventoryFullUpdate        Data                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-
-void ARobberController_C::InventoryFullUpdate(const struct FSteamInventoryFullUpdate& Data)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RobberController_C", "InventoryFullUpdate");
-
-	Params::RobberController_C_InventoryFullUpdate Parms{};
-
-	Parms.Data = std::move(Data);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function RobberController.RobberController_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -604,9 +686,9 @@ void ARobberController_C::LoadSavefromCloud(const class FString& Save_name)
 // Function RobberController.RobberController_C.UploadToCloud
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Savename                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           SaveName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void ARobberController_C::UploadToCloud(const class FString& Savename)
+void ARobberController_C::UploadToCloud(const class FString& SaveName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -615,7 +697,7 @@ void ARobberController_C::UploadToCloud(const class FString& Savename)
 
 	Params::RobberController_C_UploadToCloud Parms{};
 
-	Parms.Savename = std::move(Savename);
+	Parms.SaveName = std::move(SaveName);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1013,6 +1095,26 @@ void ARobberController_C::ReceiveBeginPlay()
 }
 
 
+// Function RobberController.RobberController_C.OnSteamInventoryUpdated
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FSteamItemDetails>        Items                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void ARobberController_C::OnSteamInventoryUpdated(const TArray<struct FSteamItemDetails>& Items)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "OnSteamInventoryUpdated");
+
+	Params::RobberController_C_OnSteamInventoryUpdated Parms{};
+
+	Parms.Items = std::move(Items);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function RobberController.RobberController_C.OnCallback_AD45EEAC44D55B89E3CC16A1A002AE23
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1204,11 +1306,11 @@ void ARobberController_C::UpdateNewWeapon(int32 Param_Index)
 // Function RobberController.RobberController_C.Update Attachment
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UClass*                           Item_info                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UClass*                           Item_Info                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   Weaponindex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FAttachmentArrayStructure        New_attachments_structure                              (Parm, OutParm, HasGetValueTypeHash)
 
-void ARobberController_C::Update_Attachment(class UClass* Item_info, int32 Weaponindex, struct FAttachmentArrayStructure* New_attachments_structure)
+void ARobberController_C::Update_Attachment(class UClass* Item_Info, int32 Weaponindex, struct FAttachmentArrayStructure* New_attachments_structure)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1217,7 +1319,7 @@ void ARobberController_C::Update_Attachment(class UClass* Item_info, int32 Weapo
 
 	Params::RobberController_C_Update_Attachment Parms{};
 
-	Parms.Item_info = Item_info;
+	Parms.Item_Info = Item_Info;
 	Parms.Weaponindex = Weaponindex;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -1676,10 +1778,10 @@ struct FTimespan ARobberController_C::FindSkinTimeLeft(int32* RotationNumber)
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UOAR_Savegame_C*                  SaveGame                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Savename                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           SaveName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // TArray<uint8>                           LoadedBytes                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void ARobberController_C::CheckSteamID(class UOAR_Savegame_C* SaveGame, const class FString& Savename, TArray<uint8>& LoadedBytes)
+void ARobberController_C::CheckSteamID(class UOAR_Savegame_C* SaveGame, const class FString& SaveName, TArray<uint8>& LoadedBytes)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1689,7 +1791,7 @@ void ARobberController_C::CheckSteamID(class UOAR_Savegame_C* SaveGame, const cl
 	Params::RobberController_C_CheckSteamID Parms{};
 
 	Parms.SaveGame = SaveGame;
-	Parms.Savename = std::move(Savename);
+	Parms.SaveName = std::move(SaveName);
 	Parms.LoadedBytes = std::move(LoadedBytes);
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -1715,9 +1817,9 @@ void ARobberController_C::LockUserSteamID()
 // Function RobberController.RobberController_C.SaveFileByName
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Savename                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           SaveName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void ARobberController_C::SaveFileByName(const class FString& Savename)
+void ARobberController_C::SaveFileByName(const class FString& SaveName)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1726,7 +1828,7 @@ void ARobberController_C::SaveFileByName(const class FString& Savename)
 
 	Params::RobberController_C_SaveFileByName Parms{};
 
-	Parms.Savename = std::move(Savename);
+	Parms.SaveName = std::move(SaveName);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1869,11 +1971,11 @@ void ARobberController_C::GetCompletedSetupsForMap(class UClass* Map, int32* Set
 // Function RobberController.RobberController_C.LoadFileFromBackup
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Savename                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           SaveName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // TArray<uint8>                           LoadedBytes                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    Success_                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ARobberController_C::LoadFileFromBackup(const class FString& Savename, TArray<uint8>& LoadedBytes, bool* Success_)
+void ARobberController_C::LoadFileFromBackup(const class FString& SaveName, TArray<uint8>& LoadedBytes, bool* Success_)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1882,7 +1984,7 @@ void ARobberController_C::LoadFileFromBackup(const class FString& Savename, TArr
 
 	Params::RobberController_C_LoadFileFromBackup Parms{};
 
-	Parms.Savename = std::move(Savename);
+	Parms.SaveName = std::move(SaveName);
 	Parms.LoadedBytes = std::move(LoadedBytes);
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -1915,6 +2017,99 @@ void ARobberController_C::Convert_Save_Info_To_Bytes(int32 IntIn, TArray<uint8>*
 
 	if (Bytes != nullptr)
 		*Bytes = std::move(Parms.Bytes);
+}
+
+
+// Function RobberController.RobberController_C.MapsToInventory
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ARobberController_C::MapsToInventory()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "MapsToInventory");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function RobberController.RobberController_C.DoesItemExistInSteamInventory?
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   SteamDefID                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<class UClass*>                   Items                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool                                    Exists_                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   Param_Index                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ARobberController_C::DoesItemExistInSteamInventory_(int32 SteamDefID, TArray<class UClass*>& Items, bool* Exists_, int32* Param_Index)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "DoesItemExistInSteamInventory?");
+
+	Params::RobberController_C_DoesItemExistInSteamInventory_ Parms{};
+
+	Parms.SteamDefID = SteamDefID;
+	Parms.Items = std::move(Items);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Items = std::move(Parms.Items);
+
+	if (Exists_ != nullptr)
+		*Exists_ = Parms.Exists_;
+
+	if (Param_Index != nullptr)
+		*Param_Index = Parms.Param_Index;
+}
+
+
+// Function RobberController.RobberController_C.GetSteamItemsInCategory
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           Category                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FSteamInventoryResult            Inventory                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// TArray<int32>                           Items                                                  (Parm, OutParm)
+
+void ARobberController_C::GetSteamItemsInCategory(const class FString& Category, const struct FSteamInventoryResult& Inventory, TArray<int32>* Items)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "GetSteamItemsInCategory");
+
+	Params::RobberController_C_GetSteamItemsInCategory Parms{};
+
+	Parms.Category = std::move(Category);
+	Parms.Inventory = std::move(Inventory);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Items != nullptr)
+		*Items = std::move(Parms.Items);
+}
+
+
+// Function RobberController.RobberController_C.OnGetSteamInventoryItems
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FSteamItemDetails>        Items                                                  (Parm, OutParm)
+
+void ARobberController_C::OnGetSteamInventoryItems(TArray<struct FSteamItemDetails>* Items)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberController_C", "OnGetSteamInventoryItems");
+
+	Params::RobberController_C_OnGetSteamInventoryItems Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Items != nullptr)
+		*Items = std::move(Parms.Items);
 }
 
 }

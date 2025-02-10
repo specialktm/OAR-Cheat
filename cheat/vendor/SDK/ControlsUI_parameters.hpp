@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Slate_structs.hpp"
 #include "InputSettingStruct_structs.hpp"
+#include "Slate_structs.hpp"
 #include "Engine_structs.hpp"
 
 

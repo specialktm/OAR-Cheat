@@ -42,8 +42,8 @@ public:
 	void BndEvt__MapPreviewUI_PreviewMapButton_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();
 	void Construct();
 	void BndEvt__MapPreviewUI_CoinBuyButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();
-	void BndEvt__MapPreviewUI_Button_134_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 	void MediaOpened(const class FString& OpenedUrl);
+	void BndEvt__MapPreviewUI_Button_134_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 	class FText GetText_0();
 	class FText GetText_1();
 

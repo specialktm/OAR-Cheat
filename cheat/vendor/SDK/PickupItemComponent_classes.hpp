@@ -27,7 +27,7 @@ public:
 	FMulticastInlineDelegateProperty_             DropItem;                                          // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	bool                                          CollidesWithPlayer_;                               // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
 	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	FMulticastInlineDelegateProperty_             Interactholding;                                   // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	FMulticastInlineDelegateProperty_             InteractHolding;                                   // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	bool                                          MustOverlapInteract_;                              // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
 	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USoundBase*                             HitSound;                                          // 0x00F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
@@ -67,7 +67,7 @@ static_assert(offsetof(UPickupItemComponent_C, UberGraphFrame) == 0x0000B0, "Mem
 static_assert(offsetof(UPickupItemComponent_C, PickUpItem) == 0x0000B8, "Member 'UPickupItemComponent_C::PickUpItem' has a wrong offset!");
 static_assert(offsetof(UPickupItemComponent_C, DropItem) == 0x0000C8, "Member 'UPickupItemComponent_C::DropItem' has a wrong offset!");
 static_assert(offsetof(UPickupItemComponent_C, CollidesWithPlayer_) == 0x0000D8, "Member 'UPickupItemComponent_C::CollidesWithPlayer_' has a wrong offset!");
-static_assert(offsetof(UPickupItemComponent_C, Interactholding) == 0x0000E0, "Member 'UPickupItemComponent_C::Interactholding' has a wrong offset!");
+static_assert(offsetof(UPickupItemComponent_C, InteractHolding) == 0x0000E0, "Member 'UPickupItemComponent_C::InteractHolding' has a wrong offset!");
 static_assert(offsetof(UPickupItemComponent_C, MustOverlapInteract_) == 0x0000F0, "Member 'UPickupItemComponent_C::MustOverlapInteract_' has a wrong offset!");
 static_assert(offsetof(UPickupItemComponent_C, HitSound) == 0x0000F8, "Member 'UPickupItemComponent_C::HitSound' has a wrong offset!");
 static_assert(offsetof(UPickupItemComponent_C, Picked_up_) == 0x000100, "Member 'UPickupItemComponent_C::Picked_up_' has a wrong offset!");

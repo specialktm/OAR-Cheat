@@ -677,12 +677,12 @@ struct AdvancedIdentityLibrary_GetUserAccountRealName final
 {
 public:
 	struct FBPUserOnlineAccount                   AccountInfo;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class FString                                 Username;                                          // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 UserName;                                          // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(AdvancedIdentityLibrary_GetUserAccountRealName) == 0x000008, "Wrong alignment on AdvancedIdentityLibrary_GetUserAccountRealName");
 static_assert(sizeof(AdvancedIdentityLibrary_GetUserAccountRealName) == 0x000020, "Wrong size on AdvancedIdentityLibrary_GetUserAccountRealName");
 static_assert(offsetof(AdvancedIdentityLibrary_GetUserAccountRealName, AccountInfo) == 0x000000, "Member 'AdvancedIdentityLibrary_GetUserAccountRealName::AccountInfo' has a wrong offset!");
-static_assert(offsetof(AdvancedIdentityLibrary_GetUserAccountRealName, Username) == 0x000010, "Member 'AdvancedIdentityLibrary_GetUserAccountRealName::Username' has a wrong offset!");
+static_assert(offsetof(AdvancedIdentityLibrary_GetUserAccountRealName, UserName) == 0x000010, "Member 'AdvancedIdentityLibrary_GetUserAccountRealName::UserName' has a wrong offset!");
 
 // Function AdvancedSessions.AdvancedIdentityLibrary.GetUserID
 // 0x0030 (0x0030 - 0x0000)

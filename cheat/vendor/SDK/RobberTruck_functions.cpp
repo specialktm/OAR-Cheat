@@ -37,6 +37,20 @@ void ARobberTruck_C::ExecuteUbergraph_RobberTruck(int32 EntryPoint)
 }
 
 
+// Function RobberTruck.RobberTruck_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ARobberTruck_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberTruck_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function RobberTruck.RobberTruck_C.StopTimer
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 
@@ -48,26 +62,6 @@ void ARobberTruck_C::StopTimer()
 		Func = Class->GetFunction("RobberTruck_C", "StopTimer");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function RobberTruck.RobberTruck_C.CountTimer
-// (Net, NetServer, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ARobberTruck_C::CountTimer(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RobberTruck_C", "CountTimer");
-
-	Params::RobberTruck_C_CountTimer Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -189,26 +183,6 @@ void ARobberTruck_C::BndEvt__RobberTruck_MoneyOverlapper_K2Node_ComponentBoundEv
 }
 
 
-// Function RobberTruck.RobberTruck_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ARobberTruck_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RobberTruck_C", "ReceiveTick");
-
-	Params::RobberTruck_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function RobberTruck.RobberTruck_C.UserConstructionScript
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
@@ -232,6 +206,20 @@ void ARobberTruck_C::CheckAllMoney()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("RobberTruck_C", "CheckAllMoney");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function RobberTruck.RobberTruck_C.Countdown
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ARobberTruck_C::Countdown()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RobberTruck_C", "Countdown");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

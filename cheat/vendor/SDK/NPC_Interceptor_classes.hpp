@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "NPCBase_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "NPCBase_classes.hpp"
 #include "AIModule_structs.hpp"
 
 
@@ -35,6 +35,7 @@ public:
 public:
 	void ExecuteUbergraph_NPC_Interceptor(int32 EntryPoint);
 	void OnDeathStats(class AActor* Player);
+	void ReceiveBeginPlay();
 	void MoveHome();
 	void MoveToPlayer();
 	void PlaceTrap();
@@ -44,7 +45,6 @@ public:
 	void OnSuccess_2587FC5248E52D8493EEB981357C5499(EPathFollowingResult MovementResult);
 	void OnFail_2587FC5248E52D8493EEB981357C5499(EPathFollowingResult MovementResult);
 	void CheckCanPlaceTrap(bool* CanPlace_);
-	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

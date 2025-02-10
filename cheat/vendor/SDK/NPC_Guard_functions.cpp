@@ -705,6 +705,20 @@ void ANPC_Guard_C::See_pawn(class APawn* Pawn)
 }
 
 
+// Function NPC_Guard.NPC_Guard_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ANPC_Guard_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NPC_Guard_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function NPC_Guard.NPC_Guard_C.FindNearestGuardAsActor
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1194,20 +1208,6 @@ void ANPC_Guard_C::UpdateAttachedKeycardLocation()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("NPC_Guard_C", "UpdateAttachedKeycardLocation");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function NPC_Guard.NPC_Guard_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ANPC_Guard_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NPC_Guard_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

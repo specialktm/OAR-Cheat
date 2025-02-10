@@ -66,7 +66,7 @@ static_assert(offsetof(RobberGameState_C_ExecuteUbergraph_RobberGameState, CallF
 struct RobberGameState_C_GetTotalPlayerPower final
 {
 public:
-	int32                                         Param_Total_power;                                 // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Param_Total_Power;                                 // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Param_MinimumPower;                                // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CurrentPlayerPower;                                // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         MinPo;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -94,12 +94,13 @@ public:
 	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_FTrunc_ReturnValue_1;                     // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Multiply_IntInt_ReturnValue;              // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Multiply_IntInt_ReturnValue_1;            // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x0084(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(RobberGameState_C_GetTotalPlayerPower) == 0x000008, "Wrong alignment on RobberGameState_C_GetTotalPlayerPower");
 static_assert(sizeof(RobberGameState_C_GetTotalPlayerPower) == 0x000088, "Wrong size on RobberGameState_C_GetTotalPlayerPower");
-static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, Param_Total_power) == 0x000000, "Member 'RobberGameState_C_GetTotalPlayerPower::Param_Total_power' has a wrong offset!");
+static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, Param_Total_Power) == 0x000000, "Member 'RobberGameState_C_GetTotalPlayerPower::Param_Total_Power' has a wrong offset!");
 static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, Param_MinimumPower) == 0x000004, "Member 'RobberGameState_C_GetTotalPlayerPower::Param_MinimumPower' has a wrong offset!");
 static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CurrentPlayerPower) == 0x000008, "Member 'RobberGameState_C_GetTotalPlayerPower::CurrentPlayerPower' has a wrong offset!");
 static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, MinPo) == 0x00000C, "Member 'RobberGameState_C_GetTotalPlayerPower::MinPo' has a wrong offset!");
@@ -122,8 +123,9 @@ static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_Add_IntIn
 static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000070, "Member 'RobberGameState_C_GetTotalPlayerPower::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_FTrunc_ReturnValue_1) == 0x000074, "Member 'RobberGameState_C_GetTotalPlayerPower::CallFunc_FTrunc_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_Multiply_IntInt_ReturnValue) == 0x000078, "Member 'RobberGameState_C_GetTotalPlayerPower::CallFunc_Multiply_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_Add_IntInt_ReturnValue_3) == 0x00007C, "Member 'RobberGameState_C_GetTotalPlayerPower::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_Add_IntInt_ReturnValue_4) == 0x000080, "Member 'RobberGameState_C_GetTotalPlayerPower::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_Multiply_IntInt_ReturnValue_1) == 0x00007C, "Member 'RobberGameState_C_GetTotalPlayerPower::CallFunc_Multiply_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_Add_IntInt_ReturnValue_3) == 0x000080, "Member 'RobberGameState_C_GetTotalPlayerPower::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberGameState_C_GetTotalPlayerPower, CallFunc_Add_IntInt_ReturnValue_4) == 0x000084, "Member 'RobberGameState_C_GetTotalPlayerPower::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
 
 // Function RobberGameState.RobberGameState_C.CheckPlayersLoaded
 // 0x0040 (0x0040 - 0x0000)

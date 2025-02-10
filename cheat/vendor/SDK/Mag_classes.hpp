@@ -17,11 +17,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Mag.Mag_C
-// 0x0008 (0x0228 - 0x0220)
+// 0x0010 (0x0230 - 0x0220)
 class AMag_C : public AActor
 {
 public:
 	class UStaticMeshComponent*                   Mag;                                               // 0x0220(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMesh*                            MagMesh;                                           // 0x0228(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+
+public:
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +38,9 @@ public:
 	}
 };
 static_assert(alignof(AMag_C) == 0x000008, "Wrong alignment on AMag_C");
-static_assert(sizeof(AMag_C) == 0x000228, "Wrong size on AMag_C");
+static_assert(sizeof(AMag_C) == 0x000230, "Wrong size on AMag_C");
 static_assert(offsetof(AMag_C, Mag) == 0x000220, "Member 'AMag_C::Mag' has a wrong offset!");
+static_assert(offsetof(AMag_C, MagMesh) == 0x000228, "Member 'AMag_C::MagMesh' has a wrong offset!");
 
 }
 

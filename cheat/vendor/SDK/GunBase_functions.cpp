@@ -37,6 +37,40 @@ void AGunBase_C::ExecuteUbergraph_GunBase(int32 EntryPoint)
 }
 
 
+// Function GunBase.GunBase_C.SpawnCasing
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class APawn*                            Param_Instigator                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AGunBase_C::SpawnCasing(class APawn* Param_Instigator)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GunBase_C", "SpawnCasing");
+
+	Params::GunBase_C_SpawnCasing Parms{};
+
+	Parms.Param_Instigator = Param_Instigator;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GunBase.GunBase_C.ShootAnimMulti
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void AGunBase_C::ShootAnimMulti()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GunBase_C", "ShootAnimMulti");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GunBase.GunBase_C.ReloadGunClient
 // (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
 

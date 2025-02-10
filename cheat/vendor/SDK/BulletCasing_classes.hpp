@@ -18,13 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BulletCasing.BulletCasing_C
-// 0x0018 (0x0238 - 0x0220)
+// 0x0020 (0x0240 - 0x0220)
 class ABulletCasing_C final : public AActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0220(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UStaticMeshComponent*                   Casing;                                            // 0x0228(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UStaticMesh*                            CasingMesh;                                        // 0x0230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class USoundWave*                             CasingSound;                                       // 0x0238(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BulletCasing(int32 EntryPoint);
@@ -43,10 +44,11 @@ public:
 	}
 };
 static_assert(alignof(ABulletCasing_C) == 0x000008, "Wrong alignment on ABulletCasing_C");
-static_assert(sizeof(ABulletCasing_C) == 0x000238, "Wrong size on ABulletCasing_C");
+static_assert(sizeof(ABulletCasing_C) == 0x000240, "Wrong size on ABulletCasing_C");
 static_assert(offsetof(ABulletCasing_C, UberGraphFrame) == 0x000220, "Member 'ABulletCasing_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABulletCasing_C, Casing) == 0x000228, "Member 'ABulletCasing_C::Casing' has a wrong offset!");
 static_assert(offsetof(ABulletCasing_C, CasingMesh) == 0x000230, "Member 'ABulletCasing_C::CasingMesh' has a wrong offset!");
+static_assert(offsetof(ABulletCasing_C, CasingSound) == 0x000238, "Member 'ABulletCasing_C::CasingSound' has a wrong offset!");
 
 }
 

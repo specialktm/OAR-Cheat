@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass M4_carbine_magBP.M4_carbine_magBP_C
-// 0x0000 (0x0228 - 0x0228)
+// 0x0000 (0x0230 - 0x0230)
 class AM4_carbine_magBP_C final : public AMag_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(AM4_carbine_magBP_C) == 0x000008, "Wrong alignment on AM4_carbine_magBP_C");
-static_assert(sizeof(AM4_carbine_magBP_C) == 0x000228, "Wrong size on AM4_carbine_magBP_C");
+static_assert(sizeof(AM4_carbine_magBP_C) == 0x000230, "Wrong size on AM4_carbine_magBP_C");
 
 }
 

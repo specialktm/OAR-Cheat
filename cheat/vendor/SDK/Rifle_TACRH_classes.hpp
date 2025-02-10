@@ -17,11 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Rifle_TACRH.Rifle_TACRH_C
-// 0x0008 (0x0318 - 0x0310)
+// 0x0010 (0x0340 - 0x0330)
 class ARifle_TACRH_C final : public AGunBase_C
 {
 public:
-	class UStaticMeshComponent*                   Scope_front;                                       // 0x0310(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          CollisionBox1;                                     // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Scope_front;                                       // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +35,9 @@ public:
 	}
 };
 static_assert(alignof(ARifle_TACRH_C) == 0x000008, "Wrong alignment on ARifle_TACRH_C");
-static_assert(sizeof(ARifle_TACRH_C) == 0x000318, "Wrong size on ARifle_TACRH_C");
-static_assert(offsetof(ARifle_TACRH_C, Scope_front) == 0x000310, "Member 'ARifle_TACRH_C::Scope_front' has a wrong offset!");
+static_assert(sizeof(ARifle_TACRH_C) == 0x000340, "Wrong size on ARifle_TACRH_C");
+static_assert(offsetof(ARifle_TACRH_C, CollisionBox1) == 0x000330, "Member 'ARifle_TACRH_C::CollisionBox1' has a wrong offset!");
+static_assert(offsetof(ARifle_TACRH_C, Scope_front) == 0x000338, "Member 'ARifle_TACRH_C::Scope_front' has a wrong offset!");
 
 }
 

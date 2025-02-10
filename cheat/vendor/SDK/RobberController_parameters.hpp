@@ -11,14 +11,14 @@
 #include "Basic.hpp"
 
 #include "SteamCore_structs.hpp"
-#include "AttachmentArrayStructure_structs.hpp"
 #include "SkillSaveStruct_structs.hpp"
-#include "ShopItemCategory_structs.hpp"
-#include "SkillProgressStruct_structs.hpp"
-#include "InputSettingStruct_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "SkillProgressStruct_structs.hpp"
 #include "AdvancedSessions_structs.hpp"
+#include "ShopItemCategory_structs.hpp"
+#include "InputSettingStruct_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "AttachmentArrayStructure_structs.hpp"
 
 
 namespace SDK::Params
@@ -36,886 +36,988 @@ static_assert(sizeof(RobberController_C_DownloadedFromCloud__DelegateSignature) 
 static_assert(offsetof(RobberController_C_DownloadedFromCloud__DelegateSignature, Save_name) == 0x000000, "Member 'RobberController_C_DownloadedFromCloud__DelegateSignature::Save_name' has a wrong offset!");
 
 // Function RobberController.RobberController_C.ExecuteUbergraph_RobberController
-// 0x1120 (0x1120 - 0x0000)
+// 0x1190 (0x1190 - 0x0000)
 struct RobberController_C_ExecuteUbergraph_RobberController final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 K2Node_CustomEvent_Data_3;                         // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_bWasSuccessful_2;               // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Variable;                                // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Temp_string_Variable;                              // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes;         // 0x0048(0x0010)(ReferenceParm)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0058(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void(struct FRemoteStorageFileWriteAsyncComplete& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0068(0x0010)(ZeroConstructor, NoDestructor)
-	class URemoteStorage*                         CallFunc_GetGameInstanceSubsystem_ReturnValue;     // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class URemoteStorage*                         CallFunc_GetGameInstanceSubsystem_ReturnValue_1;   // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(struct FRemoteStorageFileWriteAsyncComplete& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_2;            // 0x0088(0x0010)(ZeroConstructor, NoDestructor)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0098(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A9[0x3];                                       // 0x00A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x00B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C9[0x3];                                       // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const class FString& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_3;            // 0x00CC(0x0010)(ZeroConstructor, NoDestructor)
-	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x00DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x00E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue;         // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_1;       // 0x00F8(0x0010)(ReferenceParm)
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId; // 0x0108(0x0020)()
-	class FString                                 CallFunc_UniqueNetIdToString_String;               // 0x0128(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x0138(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13C[0x4];                                      // 0x013C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0140(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue;             // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue;            // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_159[0x7];                                      // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame;                 // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue;               // 0x0169(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_16A[0x2];                                      // 0x016A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_2;       // 0x0170(0x0010)(ReferenceParm)
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_1;       // 0x0180(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_1; // 0x0188(0x0020)()
-	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1AC[0x4];                                      // 0x01AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_UniqueNetIdToString_String_1;             // 0x01B0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_3;       // 0x01C0(0x0010)(ReferenceParm)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_4;              // 0x01D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_1;          // 0x01E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1E1[0x7];                                      // 0x01E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_1;           // 0x01E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_1;               // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x01F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_1;             // 0x01F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01FA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1FB[0x5];                                      // 0x01FB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors;      // 0x0200(0x0010)(ReferenceParm)
-	class ULoadingUI_C*                           CallFunc_Create_ReturnValue;                       // 0x0210(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x0218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x021C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_224[0x4];                                      // 0x0224(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_2;       // 0x0228(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_2; // 0x0230(0x0020)()
-	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x0250(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_254[0x4];                                      // 0x0254(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_UniqueNetIdToString_String_2;             // 0x0258(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_4;       // 0x0268(0x0010)(ReferenceParm)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_5;              // 0x0278(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_2;          // 0x0288(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_289[0x7];                                      // 0x0289(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_2;           // 0x0290(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_2;               // 0x0298(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x02A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_2;             // 0x02A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Variable_1;                              // 0x02A2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A3[0x5];                                      // 0x02A3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UClass*>                         K2Node_CustomEvent_Masks;                          // 0x02A8(0x0010)(ConstParm, ReferenceParm)
-	TArray<class UClass*>                         K2Node_CustomEvent_Outfits;                        // 0x02B8(0x0010)(ConstParm, ReferenceParm)
-	TArray<class UClass*>                         K2Node_CustomEvent_Emote;                          // 0x02C8(0x0010)(ConstParm, ReferenceParm)
-	TArray<class UClass*>                         K2Node_CustomEvent_Armor;                          // 0x02D8(0x0010)(ConstParm, ReferenceParm)
-	class UMaterialInterface*                     K2Node_CustomEvent_SkinColor;                      // 0x02E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_3;       // 0x02F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_3; // 0x02F8(0x0020)()
-	int32                                         CallFunc_Array_Length_ReturnValue_6;               // 0x0318(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31C[0x4];                                      // 0x031C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_UniqueNetIdToString_String_3;             // 0x0320(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_5;       // 0x0330(0x0010)(ReferenceParm)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_6;              // 0x0340(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_3;           // 0x0350(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_3;          // 0x0358(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_359[0x7];                                      // 0x0359(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_3;               // 0x0360(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0368(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_3;             // 0x0369(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_36A[0x2];                                      // 0x036A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x036C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_4;       // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_4; // 0x0378(0x0020)()
-	class FString                                 CallFunc_UniqueNetIdToString_String_4;             // 0x0398(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_7;              // 0x03A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_6;       // 0x03B8(0x0010)(ReferenceParm)
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_4;           // 0x03C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_4;          // 0x03D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3D1[0x7];                                      // 0x03D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_4;               // 0x03D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x03E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3E1[0x7];                                      // 0x03E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 CallFunc_Map_Keys_Keys;                            // 0x03E8(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Get_Item;                           // 0x03F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_4;             // 0x03FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3FD[0x3];                                      // 0x03FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_7;       // 0x0400(0x0010)(ReferenceParm)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0410(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_411[0x7];                                      // 0x0411(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_5;       // 0x0418(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_5; // 0x0420(0x0020)()
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_8;       // 0x0440(0x0010)(ReferenceParm)
-	class FString                                 CallFunc_UniqueNetIdToString_String_5;             // 0x0450(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_8;              // 0x0460(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_5;           // 0x0470(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_5;          // 0x0478(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_479[0x7];                                      // 0x0479(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_5;               // 0x0480(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_5;                     // 0x0488(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_489[0x7];                                      // 0x0489(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 CallFunc_Map_Keys_Keys_1;                          // 0x0490(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Get_Item_1;                         // 0x04A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4A4[0x4];                                      // 0x04A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_9;       // 0x04A8(0x0010)(ReferenceParm)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue_1;             // 0x04B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_5;             // 0x04B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4BA[0x2];                                      // 0x04BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x04BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x04C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4C4[0x4];                                      // 0x04C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USteamCoreInventoryAsyncActionRequestPricesResult* CallFunc_RequestPricesAsync_ReturnValue;           // 0x04C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSteamInventoryRequestPricesResult     Temp_struct_Variable;                              // 0x04D0(0x0018)()
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x04E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Variable_2;                              // 0x04E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4EA[0x6];                                      // 0x04EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UClass*>                         K2Node_CustomEvent_Weapons;                        // 0x04F0(0x0010)(ConstParm, ReferenceParm)
-	TArray<struct FAttachmentArrayStructure>      K2Node_CustomEvent_Mods;                           // 0x0500(0x0010)(ConstParm, ReferenceParm)
-	class FString                                 K2Node_CustomEvent_Message;                        // 0x0510(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 K2Node_CustomEvent_Name;                           // 0x0520(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 K2Node_CustomEvent_ChatLog;                        // 0x0530(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 K2Node_CustomEvent_NameLog;                        // 0x0540(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
-	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets;  // 0x0550(0x0010)(ReferenceParm, ContainsInstancedReference)
-	int32                                         CallFunc_Array_Length_ReturnValue_7;               // 0x0560(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_564[0x4];                                      // 0x0564(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ARobberController_C*>            CallFunc_GetAllActorsOfClass_OutActors;            // 0x0568(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0578(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_8;               // 0x057C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_4;                   // 0x0580(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_4;                  // 0x0584(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UUserWidget*                            CallFunc_Array_Get_Item_2;                         // 0x0588(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0590(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_591[0x7];                                      // 0x0591(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IChatInterface_C>      K2Node_DynamicCast_AsChat_Interface;               // 0x0598(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_6;                     // 0x05A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5A9[0x3];                                      // 0x05A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x05AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_InitFilterText_ReturnValue;               // 0x05B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5B1[0x7];                                      // 0x05B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetID_UniqueNetId;               // 0x05B8(0x0020)()
-	class FString                                 CallFunc_FilterText_FilteredText;                  // 0x05D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_FilterText_ReturnValue;                   // 0x05E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UClass*>                         K2Node_CustomEvent_Tools;                          // 0x05F0(0x0010)(ConstParm, ReferenceParm)
-	class ARobberController_C*                    K2Node_CustomEvent_Player_1;                       // 0x0600(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_9;               // 0x0608(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_60C[0x4];                                      // 0x060C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_Select_Default;                             // 0x0610(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0620(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_624[0x4];                                      // 0x0624(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class APlayerCharacter_C*>             CallFunc_GetAllActorsOfClass_OutActors_1;          // 0x0628(0x0010)(ReferenceParm)
-	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue;          // 0x0638(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_10;              // 0x0648(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x064C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_654[0x4];                                      // 0x0654(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_9;              // 0x0658(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_11;              // 0x0668(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x066C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x066D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_66E[0x2];                                      // 0x066E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_12;              // 0x0670(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_674[0x4];                                      // 0x0674(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_10;      // 0x0678(0x0010)(ReferenceParm)
-	TArray<class ARobberController_C*>            CallFunc_GetAllActorsOfClass_OutActors_2;          // 0x0688(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue_13;              // 0x0698(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_69C[0x4];                                      // 0x069C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ARobberController_C*                    K2Node_CustomEvent_Player;                         // 0x06A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x06A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_6A9[0x3];                                      // 0x06A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue_2;                  // 0x06AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_6;          // 0x06B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_6B1[0x7];                                      // 0x06B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_6;       // 0x06B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_6;             // 0x06C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_6C1[0x7];                                      // 0x06C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_6;           // 0x06C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_6;               // 0x06D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_7;                     // 0x06D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_6D9[0x7];                                      // 0x06D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamInventoryRequestPricesResult     K2Node_CustomEvent_Data_4;                         // 0x06E0(0x0018)(ConstParm)
-	bool                                          K2Node_CustomEvent_bWasSuccessful_3;               // 0x06F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_6F9[0x7];                                      // 0x06F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0700(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Round_ReturnValue;                        // 0x0710(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_714[0x4];                                      // 0x0714(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_10;             // 0x0718(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue_1;           // 0x0728(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_11;             // 0x0738(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue_2;           // 0x0748(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue_3;           // 0x0758(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_12;             // 0x0768(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_13;             // 0x0778(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TDelegate<void(struct FSteamInventoryRequestPricesResult& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_4;            // 0x0788(0x0010)(ZeroConstructor, NoDestructor)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue_4;           // 0x0798(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_14;             // 0x07A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue_5;           // 0x07B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_5;                   // 0x07C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_7CC[0x4];                                      // 0x07CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ARobberController_C*                    CallFunc_Array_Get_Item_3;                         // 0x07D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x07D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7D9[0x7];                                      // 0x07D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_CustomEvent_SaveName;                       // 0x07E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_15;             // 0x07F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0800(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_801[0x7];                                      // 0x0801(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_EncryptString_ReturnValue;                // 0x0808(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_16;             // 0x0818(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetProjectSavedDirectory_ReturnValue;     // 0x0828(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_17;             // 0x0838(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_18;             // 0x0848(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue_1;        // 0x0858(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_19;             // 0x0868(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0878(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_879[0x7];                                      // 0x0879(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 CallFunc_ReadFileToBytes_ReturnValue;              // 0x0880(0x0010)(ReferenceParm)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0890(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_891[0x7];                                      // 0x0891(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_CustomEvent_Save_name;                      // 0x0898(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x08A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_8A9[0x7];                                      // 0x08A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors_1;    // 0x08B0(0x0010)(ReferenceParm)
-	class AActor*                                 CallFunc_Array_Get_Item_4;                         // 0x08C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface;            // 0x08C8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_8;                     // 0x08D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_8D9[0x3];                                      // 0x08D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_14;              // 0x08DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x08E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_LoadItemDefinitions_ReturnValue;          // 0x08E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_8E2[0x6];                                      // 0x08E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 K2Node_MakeArray_Array;                            // 0x08E8(0x0010)(ReferenceParm)
-	TArray<int32>                                 K2Node_MakeArray_Array_1;                          // 0x08F8(0x0010)(ReferenceParm)
-	TDelegate<void(struct FSteamInventoryFullUpdate& Data)> K2Node_CreateDelegate_OutputDelegate_5;            // 0x0908(0x0010)(ZeroConstructor, NoDestructor)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0918(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSteamInventoryFullUpdate              K2Node_CustomEvent_Data_2;                         // 0x091C(0x0004)(ConstParm, NoDestructor)
-	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue_2;        // 0x0920(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x0930(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_931[0x7];                                      // 0x0931(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSteamItemDetails>              CallFunc_GetResultItems_Items;                     // 0x0938(0x0010)(ReferenceParm)
-	bool                                          CallFunc_GetResultItems_ReturnValue;               // 0x0948(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_949[0x3];                                      // 0x0949(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamInventoryResult                  CallFunc_GetAllItems_Handle;                       // 0x094C(0x0004)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetAllItems_ReturnValue;                  // 0x0950(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_951[0x7];                                      // 0x0951(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamItemDetails                      CallFunc_Array_Get_Item_5;                         // 0x0958(0x0020)()
-	int32                                         CallFunc_Array_Length_ReturnValue_15;              // 0x0978(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x097C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_97D[0x3];                                      // 0x097D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetItemDefinitionProperty_Value;          // 0x0980(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetItemDefinitionProperty_ReturnValue;    // 0x0990(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_3;          // 0x0991(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_992[0x2];                                      // 0x0992(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x0994(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FSteamItemInstanceID>           K2Node_MakeArray_Array_2;                          // 0x0998(0x0010)(ReferenceParm)
-	struct FSteamItemDef                          K2Node_MakeStruct_SteamItemDef;                    // 0x09A8(0x0004)(NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_9AC[0x4];                                      // 0x09AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSteamItemDef>                  K2Node_MakeArray_Array_3;                          // 0x09B0(0x0010)(ReferenceParm)
-	struct FSteamInventoryResult                  CallFunc_GetAllItems_Handle_1;                     // 0x09C0(0x0004)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetAllItems_ReturnValue_1;                // 0x09C4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9C5[0x3];                                      // 0x09C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamInventoryResult                  CallFunc_ExchangeItems_Result;                     // 0x09C8(0x0004)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_ExchangeItems_ReturnValue;                // 0x09CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BLoggedOn_ReturnValue;                    // 0x09CD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9CE[0x2];                                      // 0x09CE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_16;              // 0x09D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_9D4[0x4];                                      // 0x09D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_11;      // 0x09D8(0x0010)(ReferenceParm)
-	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue;              // 0x09E8(0x0008)(NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_BreakSteamID_ReturnValue;                 // 0x09F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_MakeLiteralString_ReturnValue;            // 0x0A00(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class USteamCoreWebAsyncActionGetUserInfo*    CallFunc_GetUserInfoAsync_ReturnValue;             // 0x0A10(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Len_ReturnValue;                          // 0x0A18(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0A1C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A1D[0x3];                                      // 0x0A1D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_FindSubstring_ReturnValue;                // 0x0A20(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_6;                 // 0x0A24(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetSubstring_ReturnValue;                 // 0x0A28(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_7;       // 0x0A38(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_6; // 0x0A40(0x0020)()
-	int32                                         CallFunc_Array_Length_ReturnValue_17;              // 0x0A60(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A64[0x4];                                      // 0x0A64(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_UniqueNetIdToString_String_6;             // 0x0A68(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_12;      // 0x0A78(0x0010)(ReferenceParm)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_20;             // 0x0A88(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_7;           // 0x0A98(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_7;          // 0x0AA0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_AA1[0x7];                                      // 0x0AA1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_7;               // 0x0AA8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_9;                     // 0x0AB0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_7;             // 0x0AB1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocalController_ReturnValue;            // 0x0AB2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocalController_ReturnValue_1;          // 0x0AB3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_8;          // 0x0AB4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_AB5[0x3];                                      // 0x0AB5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_8;           // 0x0AB8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_8;               // 0x0AC0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_10;                    // 0x0AC8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0004(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void(struct FRemoteStorageFileWriteAsyncComplete& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0014(0x0010)(ZeroConstructor, NoDestructor)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class URemoteStorage*                         CallFunc_GetGameInstanceSubsystem_ReturnValue;     // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class URemoteStorage*                         CallFunc_GetGameInstanceSubsystem_ReturnValue_1;   // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(struct FRemoteStorageFileWriteAsyncComplete& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_2;            // 0x0038(0x0010)(ZeroConstructor, NoDestructor)
+	class UInventory*                             CallFunc_GetGameInstanceSubsystem_ReturnValue_2;   // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(struct FSteamInventoryFullUpdate& Data)> K2Node_CreateDelegate_OutputDelegate_3;            // 0x0050(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0068(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0079(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0080(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSteamItemDetails>              K2Node_Event_Items;                                // 0x00A8(0x0010)(ConstParm, ReferenceParm)
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue;         // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes;         // 0x00C8(0x0010)(ReferenceParm)
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId; // 0x00D8(0x0020)()
+	class FString                                 CallFunc_UniqueNetIdToString_String;               // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue;             // 0x0118(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue;            // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame;                 // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue;               // 0x0131(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_132[0x2];                                      // 0x0132(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0134(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_1;       // 0x0138(0x0010)(ReferenceParm)
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_1;       // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_1; // 0x0158(0x0020)()
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_2;       // 0x0178(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_UniqueNetIdToString_String_1;             // 0x0188(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0198(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_1;          // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A9[0x7];                                      // 0x01A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_1;           // 0x01B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_1;               // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_1;             // 0x01C1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1C2[0x2];                                      // 0x01C2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x01C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1C9[0x3];                                      // 0x01C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x01CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_3;       // 0x01D0(0x0010)(ReferenceParm)
+	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors;      // 0x01E0(0x0010)(ReferenceParm)
+	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x01F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x01F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_4;              // 0x01F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_2;       // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_2; // 0x0210(0x0020)()
+	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x0230(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_234[0x4];                                      // 0x0234(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_UniqueNetIdToString_String_2;             // 0x0238(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_4;       // 0x0248(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_5;              // 0x0258(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_2;          // 0x0268(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_269[0x7];                                      // 0x0269(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_2;           // 0x0270(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_2;               // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0280(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_2;             // 0x0281(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_282[0x2];                                      // 0x0282(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x0284(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0288(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_28C[0x4];                                      // 0x028C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UClass*>                         K2Node_CustomEvent_Masks;                          // 0x0290(0x0010)(ConstParm, ReferenceParm)
+	TArray<class UClass*>                         K2Node_CustomEvent_Outfits;                        // 0x02A0(0x0010)(ConstParm, ReferenceParm)
+	TArray<class UClass*>                         K2Node_CustomEvent_Emote;                          // 0x02B0(0x0010)(ConstParm, ReferenceParm)
+	TArray<class UClass*>                         K2Node_CustomEvent_Armor;                          // 0x02C0(0x0010)(ConstParm, ReferenceParm)
+	class UMaterialInterface*                     K2Node_CustomEvent_SkinColor;                      // 0x02D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_3;       // 0x02D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_3; // 0x02E0(0x0020)()
+	int32                                         CallFunc_Array_Length_ReturnValue_6;               // 0x0300(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_304[0x4];                                      // 0x0304(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_UniqueNetIdToString_String_3;             // 0x0308(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_5;       // 0x0318(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_6;              // 0x0328(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_3;           // 0x0338(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_3;          // 0x0340(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_341[0x7];                                      // 0x0341(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_3;               // 0x0348(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0350(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_3;             // 0x0351(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_352[0x6];                                      // 0x0352(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_7;              // 0x0358(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_4;       // 0x0368(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_4; // 0x0370(0x0020)()
+	class FString                                 CallFunc_UniqueNetIdToString_String_4;             // 0x0390(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_8;              // 0x03A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_6;       // 0x03B0(0x0010)(ReferenceParm)
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_4;           // 0x03C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_4;          // 0x03C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3C9[0x7];                                      // 0x03C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_4;               // 0x03D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x03D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3D9[0x7];                                      // 0x03D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 CallFunc_Map_Keys_Keys;                            // 0x03E0(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Get_Item;                           // 0x03F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_4;             // 0x03F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3F5[0x3];                                      // 0x03F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_7;       // 0x03F8(0x0010)(ReferenceParm)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0408(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_409[0x7];                                      // 0x0409(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_5;       // 0x0410(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_5; // 0x0418(0x0020)()
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_8;       // 0x0438(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_UniqueNetIdToString_String_5;             // 0x0448(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_9;              // 0x0458(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_5;           // 0x0468(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_5;          // 0x0470(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_471[0x7];                                      // 0x0471(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_5;               // 0x0478(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_5;                     // 0x0480(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_481[0x7];                                      // 0x0481(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 CallFunc_Map_Keys_Keys_1;                          // 0x0488(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Get_Item_1;                         // 0x0498(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_49C[0x4];                                      // 0x049C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_9;       // 0x04A0(0x0010)(ReferenceParm)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue_1;             // 0x04B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_5;             // 0x04B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x04B2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4B3[0x5];                                      // 0x04B3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Temp_string_Variable;                              // 0x04B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x04C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4C9[0x7];                                      // 0x04C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UClass*>                         K2Node_CustomEvent_Weapons;                        // 0x04D0(0x0010)(ConstParm, ReferenceParm)
+	TArray<struct FAttachmentArrayStructure>      K2Node_CustomEvent_Mods;                           // 0x04E0(0x0010)(ConstParm, ReferenceParm)
+	class FString                                 K2Node_CustomEvent_Message;                        // 0x04F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 K2Node_CustomEvent_Name;                           // 0x0500(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 K2Node_CustomEvent_ChatLog;                        // 0x0510(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 K2Node_CustomEvent_NameLog;                        // 0x0520(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets;  // 0x0530(0x0010)(ReferenceParm, ContainsInstancedReference)
+	int32                                         CallFunc_Array_Length_ReturnValue_7;               // 0x0540(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_544[0x4];                                      // 0x0544(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ARobberController_C*>            CallFunc_GetAllActorsOfClass_OutActors;            // 0x0548(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0558(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_55C[0x4];                                      // 0x055C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ARobberController_C*                    CallFunc_Array_Get_Item_2;                         // 0x0560(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_8;               // 0x0568(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x056C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_56D[0x3];                                      // 0x056D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetID_UniqueNetId;               // 0x0570(0x0020)()
+	class FString                                 CallFunc_FilterText_FilteredText;                  // 0x0590(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_FilterText_ReturnValue;                   // 0x05A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_InitFilterText_ReturnValue;               // 0x05A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5A2[0x6];                                      // 0x05A2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UClass*>                         K2Node_CustomEvent_Tools;                          // 0x05A8(0x0010)(ConstParm, ReferenceParm)
+	class ARobberController_C*                    K2Node_CustomEvent_Player_1;                       // 0x05B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_9;               // 0x05C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5C4[0x4];                                      // 0x05C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class APlayerCharacter_C*>             CallFunc_GetAllActorsOfClass_OutActors_1;          // 0x05C8(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue;          // 0x05D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_10;              // 0x05E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x05EC(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5F4[0x4];                                      // 0x05F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_10;             // 0x05F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_11;              // 0x0608(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x060C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x060D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_60E[0x2];                                      // 0x060E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x0610(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0614(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_615[0x3];                                      // 0x0615(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_12;              // 0x0618(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_61C[0x4];                                      // 0x061C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_10;      // 0x0620(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x0630(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_634[0x4];                                      // 0x0634(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ARobberController_C*>            CallFunc_GetAllActorsOfClass_OutActors_2;          // 0x0638(0x0010)(ReferenceParm)
+	class ARobberController_C*                    K2Node_CustomEvent_Player;                         // 0x0648(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_13;              // 0x0650(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0654(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_655[0x3];                                      // 0x0655(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0658(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_6;          // 0x065C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_65D[0x3];                                      // 0x065D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_6;       // 0x0660(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_6;             // 0x0668(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_669[0x7];                                      // 0x0669(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_6;           // 0x0670(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_6;               // 0x0678(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_6;                     // 0x0680(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_681[0x7];                                      // 0x0681(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULoadingUI_C*                           CallFunc_Create_ReturnValue;                       // 0x0688(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 K2Node_CustomEvent_Data_3;                         // 0x0690(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_bWasSuccessful_2;               // 0x06A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6A1[0x7];                                      // 0x06A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x06A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Round_ReturnValue;                        // 0x06B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6BC[0x4];                                      // 0x06BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_11;             // 0x06C0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_1;           // 0x06D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_12;             // 0x06E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_2;           // 0x06F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_3;           // 0x0700(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_13;             // 0x0710(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_14;             // 0x0720(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TDelegate<void(const class FString& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_4;            // 0x0730(0x0010)(ZeroConstructor, NoDestructor)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_4;           // 0x0740(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_15;             // 0x0750(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_5;           // 0x0760(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_16;             // 0x0770(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 K2Node_CustomEvent_SaveName;                       // 0x0780(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_17;             // 0x0790(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x07A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7A1[0x7];                                      // 0x07A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_EncryptString_ReturnValue;                // 0x07A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_18;             // 0x07B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetProjectSavedDirectory_ReturnValue;     // 0x07C8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_19;             // 0x07D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_20;             // 0x07E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x07F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7FC[0x4];                                      // 0x07FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_21;             // 0x0800(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TArray<uint8>                                 CallFunc_ReadFileToBytes_ReturnValue;              // 0x0810(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue_1;        // 0x0820(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0830(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0831(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_832[0x6];                                      // 0x0832(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_CustomEvent_Save_name;                      // 0x0838(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0848(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_849[0x7];                                      // 0x0849(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors_1;    // 0x0850(0x0010)(ReferenceParm)
+	bool                                          Temp_bool_Variable_1;                              // 0x0860(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_861[0x3];                                      // 0x0861(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_14;              // 0x0864(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 K2Node_Select_Default;                             // 0x0868(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_2;                  // 0x0878(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LoadItemDefinitions_ReturnValue;          // 0x087C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_87D[0x3];                                      // 0x087D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 K2Node_MakeArray_Array;                            // 0x0880(0x0010)(ReferenceParm)
+	class USteamCoreInventoryAsyncActionRequestPricesResult* CallFunc_RequestPricesAsync_ReturnValue;           // 0x0890(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<int32>                                 K2Node_MakeArray_Array_1;                          // 0x0898(0x0010)(ReferenceParm)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x08A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8A9[0x3];                                      // 0x08A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x08AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_4;                  // 0x08B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8B4[0x4];                                      // 0x08B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue_2;        // 0x08B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x08C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x08C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8CA[0x2];                                      // 0x08CA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x08CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BLoggedOn_ReturnValue;                    // 0x08D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8D1[0x7];                                      // 0x08D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue;              // 0x08D8(0x0008)(NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BreakSteamID_ReturnValue;                 // 0x08E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_MakeLiteralString_ReturnValue;            // 0x08F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class USteamCoreWebAsyncActionGetUserInfo*    CallFunc_GetUserInfoAsync_ReturnValue;             // 0x0900(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Len_ReturnValue;                          // 0x0908(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x090C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_90D[0x3];                                      // 0x090D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_FindSubstring_ReturnValue;                // 0x0910(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x0914(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetSubstring_ReturnValue;                 // 0x0918(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_6; // 0x0928(0x0020)()
+	int32                                         Temp_int_Loop_Counter_Variable_5;                  // 0x0948(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_94C[0x4];                                      // 0x094C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_UniqueNetIdToString_String_6;             // 0x0950(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_22;             // 0x0960(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_6;                 // 0x0970(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_974[0x4];                                      // 0x0974(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_7;           // 0x0978(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_7;               // 0x0980(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_7;                     // 0x0988(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_7;          // 0x0989(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_98A[0x6];                                      // 0x098A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamInventoryRequestPricesResult     Temp_struct_Variable;                              // 0x0990(0x0018)()
+	bool                                          CallFunc_IsLocalController_ReturnValue;            // 0x09A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsLocalController_ReturnValue_1;          // 0x09A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_8;          // 0x09AA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9AB[0x5];                                      // 0x09AB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_8;           // 0x09B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_8;               // 0x09B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_8;                     // 0x09C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9C1[0x7];                                      // 0x09C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_6;           // 0x09C8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_23;             // 0x09D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_MakeLiteralString_ReturnValue_1;          // 0x09E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DeleteGameInSlot_ReturnValue;             // 0x09F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9F9[0x7];                                      // 0x09F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_9;           // 0x0A00(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_9;          // 0x0A08(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A09[0x7];                                      // 0x0A09(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_9;               // 0x0A10(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_9;                     // 0x0A18(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A19[0x7];                                      // 0x0A19(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_7;       // 0x0A20(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_7;             // 0x0A28(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A29[0x7];                                      // 0x0A29(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_8;       // 0x0A30(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_8;             // 0x0A38(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A39[0x7];                                      // 0x0A39(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors_2;    // 0x0A40(0x0010)(ReferenceParm)
+	class AActor*                                 CallFunc_Array_Get_Item_3;                         // 0x0A50(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_15;              // 0x0A58(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A5C[0x4];                                      // 0x0A5C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface;            // 0x0A60(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_10;                    // 0x0A70(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A71[0x7];                                      // 0x0A71(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_11;      // 0x0A78(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue_16;              // 0x0A88(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_2;                              // 0x0A8C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0A8D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A8E[0x2];                                      // 0x0A8E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1; // 0x0A90(0x0010)(ReferenceParm, ContainsInstancedReference)
+	int32                                         CallFunc_Array_Length_ReturnValue_17;              // 0x0AA0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_AA4[0x4];                                      // 0x0AA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_7; // 0x0AA8(0x0020)()
+	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x0AC8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_AC9[0x7];                                      // 0x0AC9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue_6;           // 0x0AD0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_21;             // 0x0AE0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_MakeLiteralString_ReturnValue_1;          // 0x0AF0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DeleteGameInSlot_ReturnValue;             // 0x0B00(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class FString                                 CallFunc_UniqueNetIdToString_String_7;             // 0x0AD0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_3;          // 0x0AE0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsLocalController_ReturnValue_2;          // 0x0AE1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_AE2[0x2];                                      // 0x0AE2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable_4;                   // 0x0AE4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_Array_Get_Item_4;                         // 0x0AE8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_1;          // 0x0AF0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_11;                    // 0x0B00(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_B01[0x7];                                      // 0x0B01(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_9;           // 0x0B08(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_9;          // 0x0B10(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B11[0x7];                                      // 0x0B11(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_9;               // 0x0B18(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_11;                    // 0x0B20(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B21[0x7];                                      // 0x0B21(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_8;       // 0x0B28(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_8;             // 0x0B30(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B31[0x7];                                      // 0x0B31(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_9;       // 0x0B38(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_9;             // 0x0B40(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B41[0x3];                                      // 0x0B41(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_5;                  // 0x0B44(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors_2;    // 0x0B48(0x0010)(ReferenceParm)
-	class AActor*                                 CallFunc_Array_Get_Item_6;                         // 0x0B58(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_18;              // 0x0B60(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B64[0x4];                                      // 0x0B64(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_1;          // 0x0B68(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_12;                    // 0x0B78(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x0B79(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x0B7A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B7B[0x1];                                      // 0x0B7B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_7;                 // 0x0B7C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_6;                  // 0x0B80(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_5;                // 0x0B84(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B85[0x3];                                      // 0x0B85(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_8;                 // 0x0B88(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B8C[0x4];                                      // 0x0B8C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1; // 0x0B90(0x0010)(ReferenceParm, ContainsInstancedReference)
-	class UUserWidget*                            CallFunc_Array_Get_Item_7;                         // 0x0BA0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FBPUniqueNetId                         CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_7; // 0x0BA8(0x0020)()
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_2;          // 0x0BC8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_13;                    // 0x0BD8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BD9[0x7];                                      // 0x0BD9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_UniqueNetIdToString_String_7;             // 0x0BE0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_4;          // 0x0BF0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BF1[0x3];                                      // 0x0BF1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_19;              // 0x0BF4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_6;                // 0x0BF8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocalController_ReturnValue_2;          // 0x0BF9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BFA[0x6];                                      // 0x0BFA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	int64                                         CallFunc_RandomInteger64InRange_ReturnValue;       // 0x0C00(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_6;                   // 0x0C08(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C0C[0x4];                                      // 0x0C0C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UHeistCoins_Popup_C*                    CallFunc_Create_ReturnValue_1;                     // 0x0C10(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerCharacter_C*                     CallFunc_Array_Get_Item_8;                         // 0x0C18(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x0C20(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocalController_ReturnValue_3;          // 0x0C21(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocalController_ReturnValue_4;          // 0x0C22(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C23[0x5];                                      // 0x0C23(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<int32, class UClass*>                    K2Node_MakeMap_Map;                                // 0x0C28(0x0050)()
-	TMap<int32, class UClass*>                    K2Node_MakeMap_Map_1;                              // 0x0C78(0x0050)()
-	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_1;            // 0x0CC8(0x0008)(NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_6;            // 0x0CD0(0x0010)(ZeroConstructor, NoDestructor)
-	class FString                                 CallFunc_BreakSteamID_ReturnValue_1;               // 0x0CE0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_2;            // 0x0CF0(0x0008)(NoDestructor, HasGetValueTypeHash)
-	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_2;                              // 0x0CF8(0x0050)()
-	class FString                                 CallFunc_BreakSteamID_ReturnValue_2;               // 0x0D48(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_3;                              // 0x0D58(0x0050)()
-	bool                                          CallFunc_IsLocalController_ReturnValue_5;          // 0x0DA8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_DA9[0x7];                                      // 0x0DA9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_10;      // 0x0DB0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_10;            // 0x0DB8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_10;         // 0x0DB9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocalController_ReturnValue_6;          // 0x0DBA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_DBB[0x5];                                      // 0x0DBB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_10;          // 0x0DC0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_FindSkinTimeLeft_RotationNumber;          // 0x0DC8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_DCC[0x4];                                      // 0x0DCC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimespan                              CallFunc_FindSkinTimeLeft_ReturnValue;             // 0x0DD0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_10;              // 0x0DD8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_14;                    // 0x0DE0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_DE1[0x3];                                      // 0x0DE1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_FindSkinTimeLeft_RotationNumber_1;        // 0x0DE4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTimespan                              CallFunc_FindSkinTimeLeft_ReturnValue_1;           // 0x0DE8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue_2;             // 0x0DF0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue_3;             // 0x0DF1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_DF2[0x2];                                      // 0x0DF2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_FindSkinTimeLeft_RotationNumber_2;        // 0x0DF4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTimespan                              CallFunc_FindSkinTimeLeft_ReturnValue_2;           // 0x0DF8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_3;            // 0x0E00(0x0008)(NoDestructor, HasGetValueTypeHash)
-	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_4;            // 0x0E08(0x0008)(NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_BreakSteamID_ReturnValue_3;               // 0x0E10(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_BreakSteamID_ReturnValue_4;               // 0x0E20(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_4;                              // 0x0E30(0x0050)()
-	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_5;                              // 0x0E80(0x0050)()
-	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_5;            // 0x0ED0(0x0008)(NoDestructor, HasGetValueTypeHash)
-	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_6;            // 0x0ED8(0x0008)(NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_BreakSteamID_ReturnValue_5;               // 0x0EE0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_BreakSteamID_ReturnValue_6;               // 0x0EF0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_6;                              // 0x0F00(0x0050)()
-	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_7;                              // 0x0F50(0x0050)()
-	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_7;            // 0x0FA0(0x0008)(NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_BreakSteamID_ReturnValue_7;               // 0x0FA8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_8;                              // 0x0FB8(0x0050)()
-	TArray<class UClass*>                         K2Node_CustomEvent_Setups;                         // 0x1008(0x0010)(ConstParm, ReferenceParm)
-	class ALobbyManager_C*                        CallFunc_GetActorOfClass_ReturnValue;              // 0x1018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_7;                   // 0x1020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int64                                         CallFunc_RandomInteger64InRange_ReturnValue;       // 0x0B08(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_5;                   // 0x0B10(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsLocalController_ReturnValue_3;          // 0x0B14(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B15[0x3];                                      // 0x0B15(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUserWidget*                            CallFunc_Array_Get_Item_5;                         // 0x0B18(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IChatInterface_C>      K2Node_DynamicCast_AsChat_Interface;               // 0x0B20(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_12;                    // 0x0B30(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsLocalController_ReturnValue_4;          // 0x0B31(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B32[0x6];                                      // 0x0B32(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, class UClass*>                    K2Node_MakeMap_Map;                                // 0x0B38(0x0050)()
+	TMap<int32, class UClass*>                    K2Node_MakeMap_Map_1;                              // 0x0B88(0x0050)()
+	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_1;            // 0x0BD8(0x0008)(NoDestructor, HasGetValueTypeHash)
+	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_2;            // 0x0BE0(0x0008)(NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BreakSteamID_ReturnValue_1;               // 0x0BE8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BreakSteamID_ReturnValue_2;               // 0x0BF8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_2;                              // 0x0C08(0x0050)()
+	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_3;                              // 0x0C58(0x0050)()
+	bool                                          CallFunc_IsLocalController_ReturnValue_5;          // 0x0CA8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_CA9[0x7];                                      // 0x0CA9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_9;       // 0x0CB0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_9;             // 0x0CB8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_10;         // 0x0CB9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsLocalController_ReturnValue_6;          // 0x0CBA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_CBB[0x5];                                      // 0x0CBB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_10;          // 0x0CC0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_FindSkinTimeLeft_RotationNumber;          // 0x0CC8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_CCC[0x4];                                      // 0x0CCC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimespan                              CallFunc_FindSkinTimeLeft_ReturnValue;             // 0x0CD0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_10;              // 0x0CD8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_13;                    // 0x0CE0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_CE1[0x3];                                      // 0x0CE1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_FindSkinTimeLeft_RotationNumber_1;        // 0x0CE4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTimespan                              CallFunc_FindSkinTimeLeft_ReturnValue_1;           // 0x0CE8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue_2;             // 0x0CF0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue_3;             // 0x0CF1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_CF2[0x2];                                      // 0x0CF2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_FindSkinTimeLeft_RotationNumber_2;        // 0x0CF4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTimespan                              CallFunc_FindSkinTimeLeft_ReturnValue_2;           // 0x0CF8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_3;            // 0x0D00(0x0008)(NoDestructor, HasGetValueTypeHash)
+	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_4;            // 0x0D08(0x0008)(NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BreakSteamID_ReturnValue_3;               // 0x0D10(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BreakSteamID_ReturnValue_4;               // 0x0D20(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_4;                              // 0x0D30(0x0050)()
+	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_5;                              // 0x0D80(0x0050)()
+	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_5;            // 0x0DD0(0x0008)(NoDestructor, HasGetValueTypeHash)
+	struct FSteamID                               CallFunc_GetSteamID_Pure_ReturnValue_6;            // 0x0DD8(0x0008)(NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BreakSteamID_ReturnValue_5;               // 0x0DE0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BreakSteamID_ReturnValue_6;               // 0x0DF0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_6;                              // 0x0E00(0x0050)()
+	TMap<class FString, class UClass*>            K2Node_MakeMap_Map_7;                              // 0x0E50(0x0050)()
+	int32                                         Temp_int_Loop_Counter_Variable_6;                  // 0x0EA0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_EA4[0x4];                                      // 0x0EA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UClass*>                         K2Node_CustomEvent_Setups;                         // 0x0EA8(0x0010)(ConstParm, ReferenceParm)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x0EB8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_EB9[0x3];                                      // 0x0EB9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_7;                 // 0x0EBC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ALobbyManager_C*                        CallFunc_GetActorOfClass_ReturnValue;              // 0x0EC0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_7;                  // 0x0EC8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_5;                // 0x0ECC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_ECD[0x3];                                      // 0x0ECD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_8;                 // 0x0ED0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_ED4[0x4];                                      // 0x0ED4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamInventoryRequestPricesResult     K2Node_CustomEvent_Data_4;                         // 0x0ED8(0x0018)(ConstParm)
+	bool                                          K2Node_CustomEvent_bWasSuccessful_3;               // 0x0EF0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_EF1[0x3];                                      // 0x0EF1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable_6;                   // 0x0EF4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ARobberController_C*                    CallFunc_Array_Get_Item_6;                         // 0x0EF8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0F00(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F01[0x3];                                      // 0x0F01(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable_7;                   // 0x0F04(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_Array_Get_Item_7;                         // 0x0F08(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_2;          // 0x0F10(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_14;                    // 0x0F20(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F21[0x7];                                      // 0x0F21(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_10;      // 0x0F28(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsLocalController_ReturnValue_7;          // 0x0F30(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SaveGameToSlot_ReturnValue_10;            // 0x0F31(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsLocalController_ReturnValue_8;          // 0x0F32(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_11;         // 0x0F33(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F34[0x4];                                      // 0x0F34(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_11;          // 0x0F38(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_11;              // 0x0F40(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_15;                    // 0x0F48(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_StoreStats_ReturnValue;                   // 0x0F49(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_RequestCurrentStats_ReturnValue;          // 0x0F4A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F4B[0x1];                                      // 0x0F4B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_GetStatInt_Data;                          // 0x0F4C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetStatInt_ReturnValue;                   // 0x0F50(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F51[0x3];                                      // 0x0F51(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_9;                 // 0x0F54(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue_4;             // 0x0F58(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetStatInt_ReturnValue;                   // 0x0F59(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsLocalController_ReturnValue_9;          // 0x0F5A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F5B[0x1];                                      // 0x0F5B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(struct FSteamInventoryRequestPricesResult& Data, bool bWasSuccessful)> K2Node_CreateDelegate_OutputDelegate_5;            // 0x0F5C(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          CallFunc_IsLocalController_ReturnValue_10;         // 0x0F6C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_StoreStats_ReturnValue_1;                 // 0x0F6D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F6E[0x2];                                      // 0x0F6E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0F70(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class URobberGI_C*                            K2Node_DynamicCast_AsRobber_GI;                    // 0x0F78(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_16;                    // 0x0F80(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F81[0x7];                                      // 0x0F81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSteamItemDetails>              CallFunc_GetResultItems_Items;                     // 0x0F88(0x0010)(ReferenceParm)
+	bool                                          CallFunc_GetResultItems_ReturnValue;               // 0x0F98(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_4;          // 0x0F99(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F9A[0x6];                                      // 0x0F9A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UHeistCoins_Popup_C*                    CallFunc_Create_ReturnValue_1;                     // 0x0FA0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_8;                  // 0x0FA8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_6;                // 0x0FAC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_FAD[0x3];                                      // 0x0FAD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_10;                // 0x0FB0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_9;                  // 0x0FB4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_18;              // 0x0FB8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_7;                // 0x0FBC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_FBD[0x3];                                      // 0x0FBD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_12;      // 0x0FC0(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_11;                // 0x0FD0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRemoteStorageFileWriteAsyncComplete   K2Node_CustomEvent_Data_2;                         // 0x0FD4(0x0001)(ConstParm, NoDestructor)
+	bool                                          K2Node_CustomEvent_bWasSuccessful_1;               // 0x0FD5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_FD6[0x2];                                      // 0x0FD6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_6;            // 0x0FD8(0x0010)(ZeroConstructor, NoDestructor)
+	struct FRemoteStorageFileWriteAsyncComplete   K2Node_CustomEvent_Data_1;                         // 0x0FE8(0x0001)(ConstParm, NoDestructor)
+	bool                                          K2Node_CustomEvent_bWasSuccessful;                 // 0x0FE9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_FEA[0x6];                                      // 0x0FEA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInventory*                             CallFunc_GetGameInstanceSubsystem_ReturnValue_3;   // 0x0FF0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x0FF8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class URobberGI_C*                            K2Node_DynamicCast_AsRobber_GI_1;                  // 0x1000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_17;                    // 0x1008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1009[0x7];                                     // 0x1009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ARobberTruck_C*                         CallFunc_GetActorOfClass_ReturnValue_1;            // 0x1010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetTotalSeconds_ReturnValue;              // 0x1018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_8;                   // 0x101C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_FTrunc_ReturnValue;                       // 0x1020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1024[0x4];                                     // 0x1024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 CallFunc_Array_Get_Item_9;                         // 0x1028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_3;          // 0x1030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_15;                    // 0x1040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1041[0x3];                                     // 0x1041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_7;                  // 0x1044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_7;                // 0x1048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1049[0x3];                                     // 0x1049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_9;                 // 0x104C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_8;                  // 0x1050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_8;                // 0x1054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1055[0x3];                                     // 0x1055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_10;                // 0x1058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_8;                   // 0x105C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ARobberController_C*                    CallFunc_Array_Get_Item_10;                        // 0x1060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        CallFunc_CreateSaveGameObject_ReturnValue_11;      // 0x1068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsLocalController_ReturnValue_7;          // 0x1070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SaveGameToSlot_ReturnValue_11;            // 0x1071(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocalController_ReturnValue_8;          // 0x1072(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_DoesSaveGameExist_ReturnValue_11;         // 0x1073(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1074[0x4];                                     // 0x1074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USaveGame*                              CallFunc_LoadGameFromSlot_ReturnValue_11;          // 0x1078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UOAR_Savegame_C*                        K2Node_DynamicCast_AsOAR_Savegame_11;              // 0x1080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_16;                    // 0x1088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_StoreStats_ReturnValue;                   // 0x1089(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_RequestCurrentStats_ReturnValue;          // 0x108A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_108B[0x1];                                     // 0x108B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_GetStatInt_Data;                          // 0x108C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetStatInt_ReturnValue;                   // 0x1090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1091[0x3];                                     // 0x1091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_11;                // 0x1094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue_4;             // 0x1098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetStatInt_ReturnValue;                   // 0x1099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_109A[0x6];                                     // 0x109A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInventory*                             CallFunc_GetGameInstanceSubsystem_ReturnValue_2;   // 0x10A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsLocalController_ReturnValue_9;          // 0x10A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocalController_ReturnValue_10;         // 0x10A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_StoreStats_ReturnValue_1;                 // 0x10AA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_10AB[0x5];                                     // 0x10AB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x10B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(const class FString& Save_name)> K2Node_CreateDelegate_OutputDelegate_7;            // 0x10B8(0x0010)(ZeroConstructor, NoDestructor)
-	class URobberGI_C*                            K2Node_DynamicCast_AsRobber_GI;                    // 0x10C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_17;                    // 0x10D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_10D1[0x7];                                     // 0x10D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_22;             // 0x10D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_5;          // 0x10E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_10E9[0x7];                                     // 0x10E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_23;             // 0x10F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FRemoteStorageFileWriteAsyncComplete   K2Node_CustomEvent_Data_1;                         // 0x1100(0x0001)(ConstParm, NoDestructor)
-	bool                                          K2Node_CustomEvent_bWasSuccessful_1;               // 0x1101(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1102[0x2];                                     // 0x1102(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_20;              // 0x1104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<uint8>                                 CallFunc_Convert_Save_Info_To_Bytes_Bytes_13;      // 0x1108(0x0010)(ReferenceParm)
-	struct FRemoteStorageFileWriteAsyncComplete   K2Node_CustomEvent_Data;                           // 0x1118(0x0001)(ConstParm, NoDestructor)
-	bool                                          K2Node_CustomEvent_bWasSuccessful;                 // 0x1119(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class APlayerCharacter_C*                     CallFunc_Array_Get_Item_8;                         // 0x1028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x1030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1031[0x7];                                     // 0x1031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamItemDetails                      CallFunc_Array_Get_Item_9;                         // 0x1038(0x0020)()
+	int32                                         CallFunc_Array_Length_ReturnValue_19;              // 0x1058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_8;                // 0x105C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_105D[0x3];                                     // 0x105D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetItemDefinitionProperty_Value;          // 0x1060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetItemDefinitionProperty_ReturnValue;    // 0x1070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_5;          // 0x1071(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1072[0x2];                                     // 0x1072(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_12;                // 0x1074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FSteamItemInstanceID>           K2Node_MakeArray_Array_2;                          // 0x1078(0x0010)(ReferenceParm)
+	struct FSteamItemDef                          K2Node_MakeStruct_SteamItemDef;                    // 0x1088(0x0004)(NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_108C[0x4];                                     // 0x108C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSteamItemDef>                  K2Node_MakeArray_Array_3;                          // 0x1090(0x0010)(ReferenceParm)
+	struct FSteamInventoryResult                  K2Node_CustomEvent_InventoryHandle;                // 0x10A0(0x0004)(NoDestructor, HasGetValueTypeHash)
+	struct FSteamInventoryResult                  CallFunc_ExchangeItems_Result;                     // 0x10A4(0x0004)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_ExchangeItems_ReturnValue;                // 0x10A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_10A9[0x7];                                     // 0x10A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets_2; // 0x10B0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class UUserWidget*                            CallFunc_Array_Get_Item_10;                        // 0x10C0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_20;              // 0x10C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_10CC[0x4];                                     // 0x10CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IControllerInterface_C> K2Node_DynamicCast_AsController_Interface;         // 0x10D0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_18;                    // 0x10E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_9;                // 0x10E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_10E2[0x2];                                     // 0x10E2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamInventoryResult                  K2Node_Event_Result;                               // 0x10E4(0x0004)(ConstParm, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_9;                   // 0x10E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_10EC[0x4];                                     // 0x10EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUserWidget*                            CallFunc_Array_Get_Item_11;                        // 0x10F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_3;          // 0x10F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_19;                    // 0x1108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESteamResult                                  CallFunc_GetResultStatus_ReturnValue;              // 0x1109(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_110A[0x2];                                     // 0x110A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamInventoryFullUpdate              K2Node_CustomEvent_Data;                           // 0x110C(0x0004)(ConstParm, NoDestructor)
+	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x1110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x1120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESteamResult                                  CallFunc_GetResultStatus_ReturnValue_1;            // 0x1121(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x1122(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1123[0x5];                                     // 0x1123(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1; // 0x1128(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FSteamInventoryResult                  CallFunc_GetAllItems_Handle;                       // 0x1138(0x0004)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetAllItems_ReturnValue;                  // 0x113C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_113D[0x3];                                     // 0x113D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamInventoryResult                  CallFunc_GetAllItems_Handle_1;                     // 0x1140(0x0004)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetAllItems_ReturnValue_1;                // 0x1144(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1145[0x3];                                     // 0x1145(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSteamItemDetails>              CallFunc_UpdateSteamInventoryFromActionResult_UpdatedInventory; // 0x1148(0x0010)(ReferenceParm)
+	struct FSteamInventoryResult                  CallFunc_UpdateSteamInventoryFromActionResult_Result_out; // 0x1158(0x0004)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsLocalController_ReturnValue_11;         // 0x115C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_115D[0x3];                                     // 0x115D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const class FString& Save_name)> K2Node_CreateDelegate_OutputDelegate_7;            // 0x1160(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          CallFunc_IsLocalController_ReturnValue_12;         // 0x1170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1171[0x7];                                     // 0x1171(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue_3;        // 0x1178(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsLocalController_ReturnValue_13;         // 0x1188(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_6;          // 0x1189(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(RobberController_C_ExecuteUbergraph_RobberController) == 0x000008, "Wrong alignment on RobberController_C_ExecuteUbergraph_RobberController");
-static_assert(sizeof(RobberController_C_ExecuteUbergraph_RobberController) == 0x001120, "Wrong size on RobberController_C_ExecuteUbergraph_RobberController");
+static_assert(sizeof(RobberController_C_ExecuteUbergraph_RobberController) == 0x001190, "Wrong size on RobberController_C_ExecuteUbergraph_RobberController");
 static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, EntryPoint) == 0x000000, "Member 'RobberController_C_ExecuteUbergraph_RobberController::EntryPoint' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue) == 0x000008, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data_3) == 0x000018, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_bWasSuccessful_2) == 0x000028, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_bWasSuccessful_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Variable) == 0x000029, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_string_Variable) == 0x000030, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_string_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue) == 0x000040, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes) == 0x000048, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate) == 0x000058, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_1) == 0x000068, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstanceSubsystem_ReturnValue) == 0x000078, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstanceSubsystem_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstanceSubsystem_ReturnValue_1) == 0x000080, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstanceSubsystem_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_2) == 0x000088, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000098, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Has_Been_Initd_Variable) == 0x0000A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable) == 0x0000AC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue) == 0x0000B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable) == 0x0000B4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_2) == 0x0000B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_IsClosed_Variable) == 0x0000C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_3) == 0x0000CC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_1) == 0x0000DC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_1) == 0x0000E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_1) == 0x0000E4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue) == 0x0000E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_1) == 0x0000F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_1) == 0x0000F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId) == 0x000108, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String) == 0x000128, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_2) == 0x000138, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_3) == 0x000140, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue) == 0x000150, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue) == 0x000158, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame) == 0x000160, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess) == 0x000168, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue) == 0x000169, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_2) == 0x00016C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_2) == 0x000170, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_1) == 0x000180, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_1) == 0x000188, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_3) == 0x0001A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_1) == 0x0001B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_3) == 0x0001C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_4) == 0x0001D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_1) == 0x0001E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_1) == 0x0001E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_1) == 0x0001F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_1) == 0x0001F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_1) == 0x0001F9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue) == 0x0001FA, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsWithInterface_OutActors) == 0x000200, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsWithInterface_OutActors' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Create_ReturnValue) == 0x000210, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Create_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_4) == 0x000218, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_2) == 0x00021C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_2) == 0x000220, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_2) == 0x000228, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_2) == 0x000230, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_5) == 0x000250, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_2) == 0x000258, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_4) == 0x000268, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_5) == 0x000278, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_2) == 0x000288, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_2) == 0x000290, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_2) == 0x000298, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_2) == 0x0002A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_2) == 0x0002A1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Variable_1) == 0x0002A2, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Variable_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Masks) == 0x0002A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Masks' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Outfits) == 0x0002B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Outfits' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Emote) == 0x0002C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Emote' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Armor) == 0x0002D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Armor' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_SkinColor) == 0x0002E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_SkinColor' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_3) == 0x0002F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_3) == 0x0002F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_6) == 0x000318, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_3) == 0x000320, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_5) == 0x000330, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_6) == 0x000340, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_3) == 0x000350, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_3) == 0x000358, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_3) == 0x000360, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_3) == 0x000368, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_3) == 0x000369, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_3) == 0x00036C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_4) == 0x000370, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_4) == 0x000378, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_4) == 0x000398, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_7) == 0x0003A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_6) == 0x0003B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_4) == 0x0003C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_4) == 0x0003D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_4) == 0x0003D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_4) == 0x0003E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Map_Keys_Keys) == 0x0003E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Map_Keys_Keys' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item) == 0x0003F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_4) == 0x0003FC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_7) == 0x000400, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue) == 0x000410, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_5) == 0x000418, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_5) == 0x000420, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_8) == 0x000440, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_5) == 0x000450, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_8) == 0x000460, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_5) == 0x000470, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_5) == 0x000478, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_5) == 0x000480, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_5) == 0x000488, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Map_Keys_Keys_1) == 0x000490, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Map_Keys_Keys_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_1) == 0x0004A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_9) == 0x0004A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue_1) == 0x0004B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_5) == 0x0004B9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_3) == 0x0004BC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_3) == 0x0004C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_RequestPricesAsync_ReturnValue) == 0x0004C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_RequestPricesAsync_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_struct_Variable) == 0x0004D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_struct_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_1) == 0x0004E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Variable_2) == 0x0004E9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Variable_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Weapons) == 0x0004F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Weapons' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Mods) == 0x000500, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Mods' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Message) == 0x000510, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Message' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Name) == 0x000520, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Name' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_ChatLog) == 0x000530, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_ChatLog' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_NameLog) == 0x000540, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_NameLog' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllWidgetsWithInterface_FoundWidgets) == 0x000550, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllWidgetsWithInterface_FoundWidgets' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_7) == 0x000560, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsOfClass_OutActors) == 0x000568, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Add_ReturnValue) == 0x000578, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_8) == 0x00057C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_4) == 0x000580, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_4) == 0x000584, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_2) == 0x000588, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue) == 0x000590, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsChat_Interface) == 0x000598, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsChat_Interface' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_6) == 0x0005A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_4) == 0x0005AC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_InitFilterText_ReturnValue) == 0x0005B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_InitFilterText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetID_UniqueNetId) == 0x0005B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetID_UniqueNetId' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FilterText_FilteredText) == 0x0005D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FilterText_FilteredText' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FilterText_ReturnValue) == 0x0005E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FilterText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Tools) == 0x0005F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Tools' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Player_1) == 0x000600, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Player_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_9) == 0x000608, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_Select_Default) == 0x000610, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_Select_Default' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Add_ReturnValue_1) == 0x000620, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsOfClass_OutActors_1) == 0x000628, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsOfClass_OutActors_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetCurrentLevelName_ReturnValue) == 0x000638, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetCurrentLevelName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_10) == 0x000648, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_StringToName_ReturnValue) == 0x00064C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_9) == 0x000658, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_11) == 0x000668, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x00066C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x00066D, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_12) == 0x000670, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_12' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_10) == 0x000678, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsOfClass_OutActors_2) == 0x000688, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsOfClass_OutActors_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_13) == 0x000698, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_13' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Player) == 0x0006A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Player' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Contains_ReturnValue) == 0x0006A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Contains_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Add_ReturnValue_2) == 0x0006AC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Add_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_6) == 0x0006B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_6) == 0x0006B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_6) == 0x0006C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_6) == 0x0006C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_6) == 0x0006D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_7) == 0x0006D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data_4) == 0x0006E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_bWasSuccessful_3) == 0x0006F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_bWasSuccessful_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue) == 0x000700, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Round_ReturnValue) == 0x000710, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Round_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_10) == 0x000718, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_1) == 0x000728, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_11) == 0x000738, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_2) == 0x000748, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_3) == 0x000758, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_12) == 0x000768, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_12' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_13) == 0x000778, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_13' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_4) == 0x000788, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_4) == 0x000798, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_14) == 0x0007A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_14' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_5) == 0x0007B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_5) == 0x0007C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_3) == 0x0007D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_2) == 0x0007D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_SaveName) == 0x0007E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_SaveName' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_15) == 0x0007F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_15' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_3) == 0x000800, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EncryptString_ReturnValue) == 0x000808, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EncryptString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_16) == 0x000818, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_16' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetProjectSavedDirectory_ReturnValue) == 0x000828, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetProjectSavedDirectory_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_17) == 0x000838, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_17' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_18) == 0x000848, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_18' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetCurrentLevelName_ReturnValue_1) == 0x000858, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetCurrentLevelName_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_19) == 0x000868, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_19' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000878, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_ReadFileToBytes_ReturnValue) == 0x000880, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_ReadFileToBytes_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_1) == 0x000890, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Save_name) == 0x000898, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Save_name' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_SwitchString_CmpSuccess) == 0x0008A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_SwitchString_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsWithInterface_OutActors_1) == 0x0008B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsWithInterface_OutActors_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_4) == 0x0008C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsMenu_UIInteraface) == 0x0008C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsMenu_UIInteraface' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_8) == 0x0008D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_14) == 0x0008DC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_14' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_1) == 0x0008E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadItemDefinitions_ReturnValue) == 0x0008E1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadItemDefinitions_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeArray_Array) == 0x0008E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeArray_Array_1) == 0x0008F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeArray_Array_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_5) == 0x000908, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_Event_DeltaSeconds) == 0x000918, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data_2) == 0x00091C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetCurrentLevelName_ReturnValue_2) == 0x000920, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetCurrentLevelName_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_2) == 0x000930, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetResultItems_Items) == 0x000938, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetResultItems_Items' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetResultItems_ReturnValue) == 0x000948, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetResultItems_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllItems_Handle) == 0x00094C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllItems_Handle' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllItems_ReturnValue) == 0x000950, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllItems_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_5) == 0x000958, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_15) == 0x000978, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_15' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_2) == 0x00097C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetItemDefinitionProperty_Value) == 0x000980, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetItemDefinitionProperty_Value' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetItemDefinitionProperty_ReturnValue) == 0x000990, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetItemDefinitionProperty_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_3) == 0x000991, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_5) == 0x000994, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeArray_Array_2) == 0x000998, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeArray_Array_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeStruct_SteamItemDef) == 0x0009A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeStruct_SteamItemDef' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeArray_Array_3) == 0x0009B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeArray_Array_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllItems_Handle_1) == 0x0009C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllItems_Handle_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllItems_ReturnValue_1) == 0x0009C4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllItems_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_ExchangeItems_Result) == 0x0009C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_ExchangeItems_Result' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_ExchangeItems_ReturnValue) == 0x0009CC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_ExchangeItems_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BLoggedOn_ReturnValue) == 0x0009CD, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BLoggedOn_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_16) == 0x0009D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_16' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_11) == 0x0009D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue) == 0x0009E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue) == 0x0009F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_MakeLiteralString_ReturnValue) == 0x000A00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_MakeLiteralString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUserInfoAsync_ReturnValue) == 0x000A10, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUserInfoAsync_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Len_ReturnValue) == 0x000A18, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Len_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_4) == 0x000A1C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSubstring_ReturnValue) == 0x000A20, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSubstring_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_6) == 0x000A24, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSubstring_ReturnValue) == 0x000A28, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSubstring_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_7) == 0x000A38, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_6) == 0x000A40, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_17) == 0x000A60, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_17' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_6) == 0x000A68, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_12) == 0x000A78, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_12' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_20) == 0x000A88, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_20' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_7) == 0x000A98, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_7) == 0x000AA0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_7) == 0x000AA8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_9) == 0x000AB0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_7) == 0x000AB1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue) == 0x000AB2, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_1) == 0x000AB3, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_8) == 0x000AB4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_8) == 0x000AB8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_8) == 0x000AC0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_10) == 0x000AC8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_6) == 0x000AD0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_21) == 0x000AE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_21' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_MakeLiteralString_ReturnValue_1) == 0x000AF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_MakeLiteralString_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DeleteGameInSlot_ReturnValue) == 0x000B00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DeleteGameInSlot_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_9) == 0x000B08, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_9) == 0x000B10, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_9) == 0x000B18, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_11) == 0x000B20, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_8) == 0x000B28, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_8) == 0x000B30, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_9) == 0x000B38, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_9) == 0x000B40, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_5) == 0x000B44, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsWithInterface_OutActors_2) == 0x000B48, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsWithInterface_OutActors_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_6) == 0x000B58, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_18) == 0x000B60, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_18' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsMenu_UIInteraface_1) == 0x000B68, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsMenu_UIInteraface_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_12) == 0x000B78, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_12' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_3) == 0x000B79, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_4) == 0x000B7A, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_7) == 0x000B7C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_6) == 0x000B80, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_5) == 0x000B84, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_8) == 0x000B88, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1) == 0x000B90, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_7) == 0x000BA0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_7) == 0x000BA8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsMenu_UIInteraface_2) == 0x000BC8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsMenu_UIInteraface_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_13) == 0x000BD8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_13' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_7) == 0x000BE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_4) == 0x000BF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_19) == 0x000BF4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_19' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_6) == 0x000BF8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_2) == 0x000BF9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_RandomInteger64InRange_ReturnValue) == 0x000C00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_RandomInteger64InRange_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_6) == 0x000C08, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Create_ReturnValue_1) == 0x000C10, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Create_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_8) == 0x000C18, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_5) == 0x000C20, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_3) == 0x000C21, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_4) == 0x000C22, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map) == 0x000C28, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_1) == 0x000C78, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_1) == 0x000CC8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_6) == 0x000CD0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_1) == 0x000CE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_2) == 0x000CF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_2) == 0x000CF8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_2) == 0x000D48, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_3) == 0x000D58, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_5) == 0x000DA8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_10) == 0x000DB0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_10) == 0x000DB8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_10) == 0x000DB9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_6) == 0x000DBA, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_10) == 0x000DC0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_RotationNumber) == 0x000DC8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_RotationNumber' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_ReturnValue) == 0x000DD0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_10) == 0x000DD8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_14) == 0x000DE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_14' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_RotationNumber_1) == 0x000DE4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_RotationNumber_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_ReturnValue_1) == 0x000DE8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue_2) == 0x000DF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue_3) == 0x000DF1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_RotationNumber_2) == 0x000DF4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_RotationNumber_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_ReturnValue_2) == 0x000DF8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_3) == 0x000E00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_4) == 0x000E08, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_3) == 0x000E10, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_4) == 0x000E20, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_4) == 0x000E30, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_5) == 0x000E80, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_5) == 0x000ED0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_6) == 0x000ED8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_5) == 0x000EE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_6) == 0x000EF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_6) == 0x000F00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_6' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_7) == 0x000F50, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_7) == 0x000FA0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_7) == 0x000FA8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_8) == 0x000FB8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Setups) == 0x001008, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Setups' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetActorOfClass_ReturnValue) == 0x001018, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetActorOfClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_7) == 0x001020, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_9) == 0x001028, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsMenu_UIInteraface_3) == 0x001030, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsMenu_UIInteraface_3' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_15) == 0x001040, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_15' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_7) == 0x001044, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_7) == 0x001048, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_9) == 0x00104C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_8) == 0x001050, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_8) == 0x001054, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_10) == 0x001058, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_8) == 0x00105C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_10) == 0x001060, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_11) == 0x001068, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_7) == 0x001070, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_11) == 0x001071, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_8) == 0x001072, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_11) == 0x001073, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_11) == 0x001078, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_11) == 0x001080, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_16) == 0x001088, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_16' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_StoreStats_ReturnValue) == 0x001089, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_StoreStats_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_RequestCurrentStats_ReturnValue) == 0x00108A, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_RequestCurrentStats_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetStatInt_Data) == 0x00108C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetStatInt_Data' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetStatInt_ReturnValue) == 0x001090, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetStatInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_11) == 0x001094, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue_4) == 0x001098, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SetStatInt_ReturnValue) == 0x001099, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SetStatInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstanceSubsystem_ReturnValue_2) == 0x0010A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstanceSubsystem_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_9) == 0x0010A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_10) == 0x0010A9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_StoreStats_ReturnValue_1) == 0x0010AA, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_StoreStats_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstance_ReturnValue) == 0x0010B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_7) == 0x0010B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_7' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsRobber_GI) == 0x0010C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsRobber_GI' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_17) == 0x0010D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_17' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_22) == 0x0010D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_22' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_5) == 0x0010E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_23) == 0x0010F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_23' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data_1) == 0x001100, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_bWasSuccessful_1) == 0x001101, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_bWasSuccessful_1' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_20) == 0x001104, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_20' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_13) == 0x001108, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_13' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data) == 0x001118, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data' has a wrong offset!");
-static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_bWasSuccessful) == 0x001119, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_bWasSuccessful' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate) == 0x000004, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_1) == 0x000014, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstanceSubsystem_ReturnValue) == 0x000028, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstanceSubsystem_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstanceSubsystem_ReturnValue_1) == 0x000030, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstanceSubsystem_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_2) == 0x000038, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstanceSubsystem_ReturnValue_2) == 0x000048, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstanceSubsystem_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_3) == 0x000050, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_HasAuthority_ReturnValue) == 0x000060, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_HasAuthority_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue) == 0x000068, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_IsClosed_Variable) == 0x000078, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Has_Been_Initd_Variable) == 0x000079, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000080, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable) == 0x000090, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_1) == 0x000094, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue) == 0x000098, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_1) == 0x00009C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable) == 0x0000A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_Event_Items) == 0x0000A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_Event_Items' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue) == 0x0000B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue) == 0x0000C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes) == 0x0000C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId) == 0x0000D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String) == 0x0000F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_2) == 0x000108, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue) == 0x000118, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue) == 0x000120, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame) == 0x000128, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess) == 0x000130, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue) == 0x000131, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_1) == 0x000134, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_1) == 0x000138, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_1) == 0x000148, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_2) == 0x000150, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_1) == 0x000158, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_2) == 0x000178, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_1) == 0x000188, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_3) == 0x000198, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_1) == 0x0001A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_1) == 0x0001B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_1) == 0x0001B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_1) == 0x0001C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_1) == 0x0001C1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_1) == 0x0001C4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue) == 0x0001C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_3) == 0x0001CC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_3) == 0x0001D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsWithInterface_OutActors) == 0x0001E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsWithInterface_OutActors' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_2) == 0x0001F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_4) == 0x0001F4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_4) == 0x0001F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_2) == 0x000208, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_2) == 0x000210, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_5) == 0x000230, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_2) == 0x000238, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_4) == 0x000248, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_5) == 0x000258, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_2) == 0x000268, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_2) == 0x000270, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_2) == 0x000278, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_2) == 0x000280, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_2) == 0x000281, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_2) == 0x000284, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_2) == 0x000288, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Masks) == 0x000290, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Masks' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Outfits) == 0x0002A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Outfits' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Emote) == 0x0002B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Emote' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Armor) == 0x0002C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Armor' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_SkinColor) == 0x0002D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_SkinColor' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_3) == 0x0002D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_3) == 0x0002E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_6) == 0x000300, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_3) == 0x000308, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_5) == 0x000318, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_6) == 0x000328, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_3) == 0x000338, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_3) == 0x000340, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_3) == 0x000348, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_3) == 0x000350, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_3) == 0x000351, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_7) == 0x000358, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_4) == 0x000368, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_4) == 0x000370, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_4) == 0x000390, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_8) == 0x0003A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_6) == 0x0003B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_4) == 0x0003C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_4) == 0x0003C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_4) == 0x0003D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_4) == 0x0003D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Map_Keys_Keys) == 0x0003E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Map_Keys_Keys' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item) == 0x0003F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_4) == 0x0003F4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_7) == 0x0003F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue) == 0x000408, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_5) == 0x000410, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_5) == 0x000418, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_8) == 0x000438, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_5) == 0x000448, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_9) == 0x000458, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_5) == 0x000468, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_5) == 0x000470, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_5) == 0x000478, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_5) == 0x000480, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Map_Keys_Keys_1) == 0x000488, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Map_Keys_Keys_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_1) == 0x000498, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_9) == 0x0004A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue_1) == 0x0004B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_5) == 0x0004B1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Has_Been_Initd_Variable_1) == 0x0004B2, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Has_Been_Initd_Variable_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_string_Variable) == 0x0004B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_string_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Variable) == 0x0004C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Weapons) == 0x0004D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Weapons' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Mods) == 0x0004E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Mods' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Message) == 0x0004F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Message' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Name) == 0x000500, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Name' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_ChatLog) == 0x000510, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_ChatLog' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_NameLog) == 0x000520, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_NameLog' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllWidgetsWithInterface_FoundWidgets) == 0x000530, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllWidgetsWithInterface_FoundWidgets' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_7) == 0x000540, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsOfClass_OutActors) == 0x000548, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Add_ReturnValue) == 0x000558, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_2) == 0x000560, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_8) == 0x000568, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_IsClosed_Variable_1) == 0x00056C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_IsClosed_Variable_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetID_UniqueNetId) == 0x000570, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetID_UniqueNetId' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FilterText_FilteredText) == 0x000590, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FilterText_FilteredText' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FilterText_ReturnValue) == 0x0005A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FilterText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_InitFilterText_ReturnValue) == 0x0005A1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_InitFilterText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Tools) == 0x0005A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Tools' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Player_1) == 0x0005B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Player_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_9) == 0x0005C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsOfClass_OutActors_1) == 0x0005C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsOfClass_OutActors_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetCurrentLevelName_ReturnValue) == 0x0005D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetCurrentLevelName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_10) == 0x0005E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_StringToName_ReturnValue) == 0x0005EC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_10) == 0x0005F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_11) == 0x000608, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x00060C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x00060D, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_3) == 0x000610, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue) == 0x000614, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_12) == 0x000618, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_10) == 0x000620, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_3) == 0x000630, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsOfClass_OutActors_2) == 0x000638, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsOfClass_OutActors_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Player) == 0x000648, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Player' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_13) == 0x000650, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_13' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Contains_ReturnValue) == 0x000654, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Contains_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Add_ReturnValue_1) == 0x000658, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_6) == 0x00065C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_6) == 0x000660, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_6) == 0x000668, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_6) == 0x000670, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_6) == 0x000678, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_6) == 0x000680, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Create_ReturnValue) == 0x000688, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data_3) == 0x000690, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_bWasSuccessful_2) == 0x0006A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_bWasSuccessful_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue) == 0x0006A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Round_ReturnValue) == 0x0006B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Round_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_11) == 0x0006C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_1) == 0x0006D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_12) == 0x0006E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_2) == 0x0006F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_3) == 0x000700, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_13) == 0x000710, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_13' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_14) == 0x000720, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_14' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_4) == 0x000730, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_4) == 0x000740, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_15) == 0x000750, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_15' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_5) == 0x000760, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_16) == 0x000770, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_16' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_SaveName) == 0x000780, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_SaveName' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_17) == 0x000790, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_17' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_1) == 0x0007A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EncryptString_ReturnValue) == 0x0007A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EncryptString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_18) == 0x0007B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_18' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetProjectSavedDirectory_ReturnValue) == 0x0007C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetProjectSavedDirectory_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_19) == 0x0007D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_19' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_20) == 0x0007E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_20' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_3) == 0x0007F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_21) == 0x000800, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_21' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_ReadFileToBytes_ReturnValue) == 0x000810, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_ReadFileToBytes_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetCurrentLevelName_ReturnValue_1) == 0x000820, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetCurrentLevelName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000830, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_1) == 0x000831, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Save_name) == 0x000838, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Save_name' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_SwitchString_CmpSuccess) == 0x000848, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_SwitchString_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsWithInterface_OutActors_1) == 0x000850, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsWithInterface_OutActors_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Variable_1) == 0x000860, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Variable_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_14) == 0x000864, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_14' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_Select_Default) == 0x000868, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Add_ReturnValue_2) == 0x000878, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Add_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadItemDefinitions_ReturnValue) == 0x00087C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadItemDefinitions_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeArray_Array) == 0x000880, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_RequestPricesAsync_ReturnValue) == 0x000890, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_RequestPricesAsync_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeArray_Array_1) == 0x000898, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeArray_Array_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_2) == 0x0008A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_Event_DeltaSeconds) == 0x0008AC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_4) == 0x0008B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetCurrentLevelName_ReturnValue_2) == 0x0008B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetCurrentLevelName_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_2) == 0x0008C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_1) == 0x0008C9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_4) == 0x0008CC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BLoggedOn_ReturnValue) == 0x0008D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BLoggedOn_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue) == 0x0008D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue) == 0x0008E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_MakeLiteralString_ReturnValue) == 0x0008F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_MakeLiteralString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUserInfoAsync_ReturnValue) == 0x000900, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUserInfoAsync_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Len_ReturnValue) == 0x000908, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Len_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_3) == 0x00090C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSubstring_ReturnValue) == 0x000910, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSubstring_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_5) == 0x000914, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSubstring_ReturnValue) == 0x000918, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSubstring_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_6) == 0x000928, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_5) == 0x000948, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_6) == 0x000950, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_22) == 0x000960, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_22' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_6) == 0x000970, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_7) == 0x000978, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_7) == 0x000980, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_7) == 0x000988, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_7) == 0x000989, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_struct_Variable) == 0x000990, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_struct_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue) == 0x0009A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_1) == 0x0009A9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_8) == 0x0009AA, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_8) == 0x0009B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_8) == 0x0009B8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_8) == 0x0009C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Conv_IntToString_ReturnValue_6) == 0x0009C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Conv_IntToString_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Concat_StrStr_ReturnValue_23) == 0x0009D8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Concat_StrStr_ReturnValue_23' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_MakeLiteralString_ReturnValue_1) == 0x0009E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_MakeLiteralString_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DeleteGameInSlot_ReturnValue) == 0x0009F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DeleteGameInSlot_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_9) == 0x000A00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_9) == 0x000A08, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_9) == 0x000A10, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_9) == 0x000A18, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_7) == 0x000A20, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_7) == 0x000A28, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_8) == 0x000A30, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_8) == 0x000A38, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllActorsWithInterface_OutActors_2) == 0x000A40, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllActorsWithInterface_OutActors_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_3) == 0x000A50, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_15) == 0x000A58, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_15' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsMenu_UIInteraface) == 0x000A60, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsMenu_UIInteraface' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_10) == 0x000A70, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_11) == 0x000A78, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_16) == 0x000A88, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_16' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_bool_Variable_2) == 0x000A8C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_bool_Variable_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_2) == 0x000A8D, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1) == 0x000A90, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllWidgetsWithInterface_FoundWidgets_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_17) == 0x000AA0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_17' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_7) == 0x000AA8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetUniqueNetIDFromPlayerState_UniqueNetId_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_3) == 0x000AC8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UniqueNetIdToString_String_7) == 0x000AD0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UniqueNetIdToString_String_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_3) == 0x000AE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_2) == 0x000AE1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_4) == 0x000AE4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_4) == 0x000AE8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsMenu_UIInteraface_1) == 0x000AF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsMenu_UIInteraface_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_11) == 0x000B00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_RandomInteger64InRange_ReturnValue) == 0x000B08, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_RandomInteger64InRange_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_5) == 0x000B10, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_3) == 0x000B14, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_5) == 0x000B18, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsChat_Interface) == 0x000B20, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsChat_Interface' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_12) == 0x000B30, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_12' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_4) == 0x000B31, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map) == 0x000B38, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_1) == 0x000B88, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_1) == 0x000BD8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_2) == 0x000BE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_1) == 0x000BE8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_2) == 0x000BF8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_2) == 0x000C08, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_3) == 0x000C58, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_5) == 0x000CA8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_9) == 0x000CB0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_9) == 0x000CB8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_10) == 0x000CB9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_6) == 0x000CBA, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_10) == 0x000CC0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_RotationNumber) == 0x000CC8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_RotationNumber' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_ReturnValue) == 0x000CD0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_10) == 0x000CD8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_13) == 0x000CE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_13' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_RotationNumber_1) == 0x000CE4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_RotationNumber_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_ReturnValue_1) == 0x000CE8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue_2) == 0x000CF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue_3) == 0x000CF1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_RotationNumber_2) == 0x000CF4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_RotationNumber_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FindSkinTimeLeft_ReturnValue_2) == 0x000CF8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FindSkinTimeLeft_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_3) == 0x000D00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_4) == 0x000D08, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_3) == 0x000D10, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_4) == 0x000D20, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_4) == 0x000D30, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_5) == 0x000D80, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_5) == 0x000DD0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetSteamID_Pure_ReturnValue_6) == 0x000DD8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetSteamID_Pure_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_5) == 0x000DE0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_BreakSteamID_ReturnValue_6) == 0x000DF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_BreakSteamID_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_6) == 0x000E00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeMap_Map_7) == 0x000E50, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeMap_Map_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_6) == 0x000EA0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Setups) == 0x000EA8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Setups' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_4) == 0x000EB8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_7) == 0x000EBC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetActorOfClass_ReturnValue) == 0x000EC0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetActorOfClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_7) == 0x000EC8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_5) == 0x000ECC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_8) == 0x000ED0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data_4) == 0x000ED8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_bWasSuccessful_3) == 0x000EF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_bWasSuccessful_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_6) == 0x000EF4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_6) == 0x000EF8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_4) == 0x000F00, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_7) == 0x000F04, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_7) == 0x000F08, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsMenu_UIInteraface_2) == 0x000F10, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsMenu_UIInteraface_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_14) == 0x000F20, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_14' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_CreateSaveGameObject_ReturnValue_10) == 0x000F28, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_CreateSaveGameObject_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_7) == 0x000F30, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SaveGameToSlot_ReturnValue_10) == 0x000F31, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SaveGameToSlot_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_8) == 0x000F32, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_DoesSaveGameExist_ReturnValue_11) == 0x000F33, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_DoesSaveGameExist_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_LoadGameFromSlot_ReturnValue_11) == 0x000F38, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_LoadGameFromSlot_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsOAR_Savegame_11) == 0x000F40, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsOAR_Savegame_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_15) == 0x000F48, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_15' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_StoreStats_ReturnValue) == 0x000F49, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_StoreStats_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_RequestCurrentStats_ReturnValue) == 0x000F4A, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_RequestCurrentStats_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetStatInt_Data) == 0x000F4C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetStatInt_Data' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetStatInt_ReturnValue) == 0x000F50, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetStatInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_9) == 0x000F54, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Greater_IntInt_ReturnValue_4) == 0x000F58, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Greater_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_SetStatInt_ReturnValue) == 0x000F59, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_SetStatInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_9) == 0x000F5A, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_5) == 0x000F5C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_10) == 0x000F6C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_StoreStats_ReturnValue_1) == 0x000F6D, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_StoreStats_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstance_ReturnValue) == 0x000F70, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsRobber_GI) == 0x000F78, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsRobber_GI' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_16) == 0x000F80, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_16' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetResultItems_Items) == 0x000F88, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetResultItems_Items' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetResultItems_ReturnValue) == 0x000F98, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetResultItems_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_4) == 0x000F99, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Create_ReturnValue_1) == 0x000FA0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Create_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_8) == 0x000FA8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_6) == 0x000FAC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_10) == 0x000FB0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Loop_Counter_Variable_9) == 0x000FB4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Loop_Counter_Variable_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_18) == 0x000FB8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_18' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_7) == 0x000FBC, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Convert_Save_Info_To_Bytes_Bytes_12) == 0x000FC0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Convert_Save_Info_To_Bytes_Bytes_12' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_11) == 0x000FD0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data_2) == 0x000FD4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_bWasSuccessful_1) == 0x000FD5, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_bWasSuccessful_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_6) == 0x000FD8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_6' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data_1) == 0x000FE8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_bWasSuccessful) == 0x000FE9, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_bWasSuccessful' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstanceSubsystem_ReturnValue_3) == 0x000FF0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstanceSubsystem_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetGameInstance_ReturnValue_1) == 0x000FF8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetGameInstance_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsRobber_GI_1) == 0x001000, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsRobber_GI_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_17) == 0x001008, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_17' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetActorOfClass_ReturnValue_1) == 0x001010, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetActorOfClass_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetTotalSeconds_ReturnValue) == 0x001018, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetTotalSeconds_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_8) == 0x00101C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_FTrunc_ReturnValue) == 0x001020, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_FTrunc_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_8) == 0x001028, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsValid_ReturnValue_5) == 0x001030, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsValid_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_9) == 0x001038, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_19) == 0x001058, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_19' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_8) == 0x00105C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetItemDefinitionProperty_Value) == 0x001060, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetItemDefinitionProperty_Value' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetItemDefinitionProperty_ReturnValue) == 0x001070, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetItemDefinitionProperty_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_5) == 0x001071, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Add_IntInt_ReturnValue_12) == 0x001074, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Add_IntInt_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeArray_Array_2) == 0x001078, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeArray_Array_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeStruct_SteamItemDef) == 0x001088, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeStruct_SteamItemDef' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_MakeArray_Array_3) == 0x001090, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_MakeArray_Array_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_InventoryHandle) == 0x0010A0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_InventoryHandle' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_ExchangeItems_Result) == 0x0010A4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_ExchangeItems_Result' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_ExchangeItems_ReturnValue) == 0x0010A8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_ExchangeItems_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllWidgetsWithInterface_FoundWidgets_2) == 0x0010B0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllWidgetsWithInterface_FoundWidgets_2' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_10) == 0x0010C0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_10' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Length_ReturnValue_20) == 0x0010C8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Length_ReturnValue_20' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsController_Interface) == 0x0010D0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsController_Interface' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_18) == 0x0010E0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_18' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Less_IntInt_ReturnValue_9) == 0x0010E1, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Less_IntInt_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_Event_Result) == 0x0010E4, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_Event_Result' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, Temp_int_Array_Index_Variable_9) == 0x0010E8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::Temp_int_Array_Index_Variable_9' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_Array_Get_Item_11) == 0x0010F0, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_Array_Get_Item_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_AsMenu_UIInteraface_3) == 0x0010F8, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_AsMenu_UIInteraface_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_DynamicCast_bSuccess_19) == 0x001108, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_DynamicCast_bSuccess_19' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetResultStatus_ReturnValue) == 0x001109, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetResultStatus_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CustomEvent_Data) == 0x00110C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CustomEvent_Data' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue) == 0x001110, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x001120, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetResultStatus_ReturnValue_1) == 0x001121, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetResultStatus_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x001122, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1) == 0x001128, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetEnumeratorUserFriendlyName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllItems_Handle) == 0x001138, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllItems_Handle' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllItems_ReturnValue) == 0x00113C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllItems_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllItems_Handle_1) == 0x001140, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllItems_Handle_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetAllItems_ReturnValue_1) == 0x001144, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetAllItems_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UpdateSteamInventoryFromActionResult_UpdatedInventory) == 0x001148, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UpdateSteamInventoryFromActionResult_UpdatedInventory' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_UpdateSteamInventoryFromActionResult_Result_out) == 0x001158, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_UpdateSteamInventoryFromActionResult_Result_out' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_11) == 0x00115C, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, K2Node_CreateDelegate_OutputDelegate_7) == 0x001160, "Member 'RobberController_C_ExecuteUbergraph_RobberController::K2Node_CreateDelegate_OutputDelegate_7' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_12) == 0x001170, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_GetCurrentLevelName_ReturnValue_3) == 0x001178, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_GetCurrentLevelName_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_IsLocalController_ReturnValue_13) == 0x001188, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_IsLocalController_ReturnValue_13' has a wrong offset!");
+static_assert(offsetof(RobberController_C_ExecuteUbergraph_RobberController, CallFunc_EqualEqual_StrStr_ReturnValue_6) == 0x001189, "Member 'RobberController_C_ExecuteUbergraph_RobberController::CallFunc_EqualEqual_StrStr_ReturnValue_6' has a wrong offset!");
+
+// Function RobberController.RobberController_C.OnFullUpdate
+// 0x0004 (0x0004 - 0x0000)
+struct RobberController_C_OnFullUpdate final
+{
+public:
+	struct FSteamInventoryFullUpdate              Data;                                              // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+};
+static_assert(alignof(RobberController_C_OnFullUpdate) == 0x000004, "Wrong alignment on RobberController_C_OnFullUpdate");
+static_assert(sizeof(RobberController_C_OnFullUpdate) == 0x000004, "Wrong size on RobberController_C_OnFullUpdate");
+static_assert(offsetof(RobberController_C_OnFullUpdate, Data) == 0x000000, "Member 'RobberController_C_OnFullUpdate::Data' has a wrong offset!");
+
+// Function RobberController.RobberController_C.UpdateWhenResultIsFinished
+// 0x0004 (0x0004 - 0x0000)
+struct RobberController_C_UpdateWhenResultIsFinished final
+{
+public:
+	struct FSteamInventoryResult                  Result;                                            // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(RobberController_C_UpdateWhenResultIsFinished) == 0x000004, "Wrong alignment on RobberController_C_UpdateWhenResultIsFinished");
+static_assert(sizeof(RobberController_C_UpdateWhenResultIsFinished) == 0x000004, "Wrong size on RobberController_C_UpdateWhenResultIsFinished");
+static_assert(offsetof(RobberController_C_UpdateWhenResultIsFinished, Result) == 0x000000, "Member 'RobberController_C_UpdateWhenResultIsFinished::Result' has a wrong offset!");
+
+// Function RobberController.RobberController_C.UpdateSteamItemsEvent
+// 0x0004 (0x0004 - 0x0000)
+struct RobberController_C_UpdateSteamItemsEvent final
+{
+public:
+	struct FSteamInventoryResult                  Param_InventoryHandle;                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(RobberController_C_UpdateSteamItemsEvent) == 0x000004, "Wrong alignment on RobberController_C_UpdateSteamItemsEvent");
+static_assert(sizeof(RobberController_C_UpdateSteamItemsEvent) == 0x000004, "Wrong size on RobberController_C_UpdateSteamItemsEvent");
+static_assert(offsetof(RobberController_C_UpdateSteamItemsEvent, Param_InventoryHandle) == 0x000000, "Member 'RobberController_C_UpdateSteamItemsEvent::Param_InventoryHandle' has a wrong offset!");
 
 // Function RobberController.RobberController_C.OnBackupFileUploaded
 // 0x0002 (0x0002 - 0x0000)
@@ -954,17 +1056,6 @@ static_assert(alignof(RobberController_C_SetCompletedSetupsServer) == 0x000008, 
 static_assert(sizeof(RobberController_C_SetCompletedSetupsServer) == 0x000010, "Wrong size on RobberController_C_SetCompletedSetupsServer");
 static_assert(offsetof(RobberController_C_SetCompletedSetupsServer, Setups) == 0x000000, "Member 'RobberController_C_SetCompletedSetupsServer::Setups' has a wrong offset!");
 
-// Function RobberController.RobberController_C.InventoryFullUpdate
-// 0x0004 (0x0004 - 0x0000)
-struct RobberController_C_InventoryFullUpdate final
-{
-public:
-	struct FSteamInventoryFullUpdate              Data;                                              // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-};
-static_assert(alignof(RobberController_C_InventoryFullUpdate) == 0x000004, "Wrong alignment on RobberController_C_InventoryFullUpdate");
-static_assert(sizeof(RobberController_C_InventoryFullUpdate) == 0x000004, "Wrong size on RobberController_C_InventoryFullUpdate");
-static_assert(offsetof(RobberController_C_InventoryFullUpdate, Data) == 0x000000, "Member 'RobberController_C_InventoryFullUpdate::Data' has a wrong offset!");
-
 // Function RobberController.RobberController_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)
 struct RobberController_C_ReceiveTick final
@@ -992,11 +1083,11 @@ static_assert(offsetof(RobberController_C_LoadSavefromCloud, Save_name) == 0x000
 struct RobberController_C_UploadToCloud final
 {
 public:
-	class FString                                 Savename;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 SaveName;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(RobberController_C_UploadToCloud) == 0x000008, "Wrong alignment on RobberController_C_UploadToCloud");
 static_assert(sizeof(RobberController_C_UploadToCloud) == 0x000010, "Wrong size on RobberController_C_UploadToCloud");
-static_assert(offsetof(RobberController_C_UploadToCloud, Savename) == 0x000000, "Member 'RobberController_C_UploadToCloud::Savename' has a wrong offset!");
+static_assert(offsetof(RobberController_C_UploadToCloud, SaveName) == 0x000000, "Member 'RobberController_C_UploadToCloud::SaveName' has a wrong offset!");
 
 // Function RobberController.RobberController_C.UpdateVotes
 // 0x0008 (0x0008 - 0x0000)
@@ -1088,6 +1179,17 @@ static_assert(offsetof(RobberController_C_UpdateAppearance, Outfits) == 0x000010
 static_assert(offsetof(RobberController_C_UpdateAppearance, Emote) == 0x000020, "Member 'RobberController_C_UpdateAppearance::Emote' has a wrong offset!");
 static_assert(offsetof(RobberController_C_UpdateAppearance, Armor) == 0x000030, "Member 'RobberController_C_UpdateAppearance::Armor' has a wrong offset!");
 static_assert(offsetof(RobberController_C_UpdateAppearance, Param_SkinColor) == 0x000040, "Member 'RobberController_C_UpdateAppearance::Param_SkinColor' has a wrong offset!");
+
+// Function RobberController.RobberController_C.OnSteamInventoryUpdated
+// 0x0010 (0x0010 - 0x0000)
+struct RobberController_C_OnSteamInventoryUpdated final
+{
+public:
+	TArray<struct FSteamItemDetails>              Items;                                             // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(RobberController_C_OnSteamInventoryUpdated) == 0x000008, "Wrong alignment on RobberController_C_OnSteamInventoryUpdated");
+static_assert(sizeof(RobberController_C_OnSteamInventoryUpdated) == 0x000010, "Wrong size on RobberController_C_OnSteamInventoryUpdated");
+static_assert(offsetof(RobberController_C_OnSteamInventoryUpdated, Items) == 0x000000, "Member 'RobberController_C_OnSteamInventoryUpdated::Items' has a wrong offset!");
 
 // Function RobberController.RobberController_C.OnCallback_AD45EEAC44D55B89E3CC16A1A002AE23
 // 0x0018 (0x0018 - 0x0000)
@@ -1314,7 +1416,7 @@ static_assert(offsetof(RobberController_C_UpdateNewWeapon, CallFunc_Update_Attac
 struct RobberController_C_Update_Attachment final
 {
 public:
-	class UClass*                                 Item_info;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 Item_Info;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Weaponindex;                                       // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAttachmentArrayStructure              New_attachments_structure;                         // 0x0010(0x0010)(Parm, OutParm, HasGetValueTypeHash)
@@ -1342,7 +1444,7 @@ public:
 };
 static_assert(alignof(RobberController_C_Update_Attachment) == 0x000008, "Wrong alignment on RobberController_C_Update_Attachment");
 static_assert(sizeof(RobberController_C_Update_Attachment) == 0x0000A0, "Wrong size on RobberController_C_Update_Attachment");
-static_assert(offsetof(RobberController_C_Update_Attachment, Item_info) == 0x000000, "Member 'RobberController_C_Update_Attachment::Item_info' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Update_Attachment, Item_Info) == 0x000000, "Member 'RobberController_C_Update_Attachment::Item_Info' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Update_Attachment, Weaponindex) == 0x000008, "Member 'RobberController_C_Update_Attachment::Weaponindex' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Update_Attachment, New_attachments_structure) == 0x000010, "Member 'RobberController_C_Update_Attachment::New_attachments_structure' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Update_Attachment, FoundIndex_) == 0x000020, "Member 'RobberController_C_Update_Attachment::FoundIndex_' has a wrong offset!");
@@ -1670,7 +1772,7 @@ static_assert(offsetof(RobberController_C_RandomSkinColorOnNewSave, CallFunc_Arr
 static_assert(offsetof(RobberController_C_RandomSkinColorOnNewSave, CallFunc_Array_Random_OutIndex) == 0x000018, "Member 'RobberController_C_RandomSkinColorOnNewSave::CallFunc_Array_Random_OutIndex' has a wrong offset!");
 
 // Function RobberController.RobberController_C.Update Coins
-// 0x0058 (0x0058 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct RobberController_C_Update_Coins final
 {
 public:
@@ -1679,32 +1781,29 @@ public:
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FSteamItemDetails>              CallFunc_GetResultItems_Items;                     // 0x0010(0x0010)(ReferenceParm)
-	bool                                          CallFunc_GetResultItems_ReturnValue;               // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamItemDetails                      CallFunc_Array_Get_Item;                           // 0x0030(0x0020)()
-	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamItemDetails                      CallFunc_Array_Get_Item;                           // 0x0018(0x0020)()
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x003D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_NotEqual_IntInt_ReturnValue_1;            // 0x003E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(RobberController_C_Update_Coins) == 0x000008, "Wrong alignment on RobberController_C_Update_Coins");
-static_assert(sizeof(RobberController_C_Update_Coins) == 0x000058, "Wrong size on RobberController_C_Update_Coins");
+static_assert(sizeof(RobberController_C_Update_Coins) == 0x000040, "Wrong size on RobberController_C_Update_Coins");
 static_assert(offsetof(RobberController_C_Update_Coins, HasCoins_) == 0x000000, "Member 'RobberController_C_Update_Coins::HasCoins_' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Update_Coins, Temp_int_Array_Index_Variable) == 0x000004, "Member 'RobberController_C_Update_Coins::Temp_int_Array_Index_Variable' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Update_Coins, Temp_int_Loop_Counter_Variable) == 0x000008, "Member 'RobberController_C_Update_Coins::Temp_int_Loop_Counter_Variable' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_Add_IntInt_ReturnValue) == 0x00000C, "Member 'RobberController_C_Update_Coins::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_GetResultItems_Items) == 0x000010, "Member 'RobberController_C_Update_Coins::CallFunc_GetResultItems_Items' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_GetResultItems_ReturnValue) == 0x000020, "Member 'RobberController_C_Update_Coins::CallFunc_GetResultItems_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_Array_Length_ReturnValue) == 0x000024, "Member 'RobberController_C_Update_Coins::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_Less_IntInt_ReturnValue) == 0x000028, "Member 'RobberController_C_Update_Coins::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_Array_Get_Item) == 0x000030, "Member 'RobberController_C_Update_Coins::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_NotEqual_IntInt_ReturnValue) == 0x000050, "Member 'RobberController_C_Update_Coins::CallFunc_NotEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x000051, "Member 'RobberController_C_Update_Coins::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_NotEqual_IntInt_ReturnValue) == 0x000010, "Member 'RobberController_C_Update_Coins::CallFunc_NotEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_Array_Get_Item) == 0x000018, "Member 'RobberController_C_Update_Coins::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_Array_Length_ReturnValue) == 0x000038, "Member 'RobberController_C_Update_Coins::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_Less_IntInt_ReturnValue) == 0x00003C, "Member 'RobberController_C_Update_Coins::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x00003D, "Member 'RobberController_C_Update_Coins::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Update_Coins, CallFunc_NotEqual_IntInt_ReturnValue_1) == 0x00003E, "Member 'RobberController_C_Update_Coins::CallFunc_NotEqual_IntInt_ReturnValue_1' has a wrong offset!");
 
 // Function RobberController.RobberController_C.Consume Coins
-// 0x0048 (0x0048 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct RobberController_C_Consume_Coins final
 {
 public:
@@ -1712,38 +1811,40 @@ public:
 	bool                                          Success_;                                          // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamItemDetails                      CallFunc_Array_Get_Item;                           // 0x0018(0x0020)()
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x003D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamItemDetails                      CallFunc_Array_Get_Item;                           // 0x0010(0x0020)()
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamInventoryResult                  CallFunc_ConsumeItem_Result;                       // 0x0038(0x0004)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_ConsumeItem_ReturnValue;                  // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x003D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSteamInventoryResult                  CallFunc_ConsumeItem_Result;                       // 0x0040(0x0004)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_ConsumeItem_ReturnValue;                  // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0046(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0047(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x004C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x004D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(RobberController_C_Consume_Coins) == 0x000008, "Wrong alignment on RobberController_C_Consume_Coins");
-static_assert(sizeof(RobberController_C_Consume_Coins) == 0x000048, "Wrong size on RobberController_C_Consume_Coins");
+static_assert(sizeof(RobberController_C_Consume_Coins) == 0x000050, "Wrong size on RobberController_C_Consume_Coins");
 static_assert(offsetof(RobberController_C_Consume_Coins, Amount) == 0x000000, "Member 'RobberController_C_Consume_Coins::Amount' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Consume_Coins, Success_) == 0x000004, "Member 'RobberController_C_Consume_Coins::Success_' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Consume_Coins, Temp_int_Array_Index_Variable) == 0x000008, "Member 'RobberController_C_Consume_Coins::Temp_int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, Temp_int_Loop_Counter_Variable) == 0x00000C, "Member 'RobberController_C_Consume_Coins::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Add_IntInt_ReturnValue) == 0x000010, "Member 'RobberController_C_Consume_Coins::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, Temp_bool_Has_Been_Initd_Variable) == 0x000014, "Member 'RobberController_C_Consume_Coins::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Array_Get_Item) == 0x000018, "Member 'RobberController_C_Consume_Coins::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Array_Length_ReturnValue) == 0x000038, "Member 'RobberController_C_Consume_Coins::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Less_IntInt_ReturnValue) == 0x00003C, "Member 'RobberController_C_Consume_Coins::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x00003D, "Member 'RobberController_C_Consume_Coins::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_ConsumeItem_Result) == 0x000040, "Member 'RobberController_C_Consume_Coins::CallFunc_ConsumeItem_Result' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_ConsumeItem_ReturnValue) == 0x000044, "Member 'RobberController_C_Consume_Coins::CallFunc_ConsumeItem_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x000045, "Member 'RobberController_C_Consume_Coins::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000046, "Member 'RobberController_C_Consume_Coins::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Consume_Coins, Temp_bool_IsClosed_Variable) == 0x000047, "Member 'RobberController_C_Consume_Coins::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Array_Get_Item) == 0x000010, "Member 'RobberController_C_Consume_Coins::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Array_Length_ReturnValue) == 0x000030, "Member 'RobberController_C_Consume_Coins::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000034, "Member 'RobberController_C_Consume_Coins::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x000035, "Member 'RobberController_C_Consume_Coins::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_ConsumeItem_Result) == 0x000038, "Member 'RobberController_C_Consume_Coins::CallFunc_ConsumeItem_Result' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_ConsumeItem_ReturnValue) == 0x00003C, "Member 'RobberController_C_Consume_Coins::CallFunc_ConsumeItem_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x00003D, "Member 'RobberController_C_Consume_Coins::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, Temp_int_Loop_Counter_Variable) == 0x000040, "Member 'RobberController_C_Consume_Coins::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Less_IntInt_ReturnValue) == 0x000044, "Member 'RobberController_C_Consume_Coins::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, CallFunc_Add_IntInt_ReturnValue) == 0x000048, "Member 'RobberController_C_Consume_Coins::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, Temp_bool_Has_Been_Initd_Variable) == 0x00004C, "Member 'RobberController_C_Consume_Coins::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Consume_Coins, Temp_bool_IsClosed_Variable) == 0x00004D, "Member 'RobberController_C_Consume_Coins::Temp_bool_IsClosed_Variable' has a wrong offset!");
 
 // Function RobberController.RobberController_C.AddMap
 // 0x0010 (0x0010 - 0x0000)
@@ -1759,24 +1860,21 @@ static_assert(offsetof(RobberController_C_AddMap, Map) == 0x000000, "Member 'Rob
 static_assert(offsetof(RobberController_C_AddMap, CallFunc_Array_Add_ReturnValue) == 0x000008, "Member 'RobberController_C_AddMap::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
 
 // Function RobberController.RobberController_C.Post Coin Analytics
-// 0x0030 (0x0030 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct RobberController_C_Post_Coin_Analytics final
 {
 public:
 	int32                                         DefID;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Price;                                             // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(RobberController_C_Post_Coin_Analytics) == 0x000008, "Wrong alignment on RobberController_C_Post_Coin_Analytics");
-static_assert(sizeof(RobberController_C_Post_Coin_Analytics) == 0x000030, "Wrong size on RobberController_C_Post_Coin_Analytics");
+static_assert(sizeof(RobberController_C_Post_Coin_Analytics) == 0x000028, "Wrong size on RobberController_C_Post_Coin_Analytics");
 static_assert(offsetof(RobberController_C_Post_Coin_Analytics, DefID) == 0x000000, "Member 'RobberController_C_Post_Coin_Analytics::DefID' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Post_Coin_Analytics, Price) == 0x000004, "Member 'RobberController_C_Post_Coin_Analytics::Price' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Post_Coin_Analytics, CallFunc_Conv_IntToString_ReturnValue) == 0x000008, "Member 'RobberController_C_Post_Coin_Analytics::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Post_Coin_Analytics, CallFunc_Conv_IntToFloat_ReturnValue) == 0x000018, "Member 'RobberController_C_Post_Coin_Analytics::CallFunc_Conv_IntToFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(RobberController_C_Post_Coin_Analytics, CallFunc_Concat_StrStr_ReturnValue) == 0x000020, "Member 'RobberController_C_Post_Coin_Analytics::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_Post_Coin_Analytics, CallFunc_Concat_StrStr_ReturnValue) == 0x000018, "Member 'RobberController_C_Post_Coin_Analytics::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
 
 // Function RobberController.RobberController_C.SwitchLoadout
 // 0x000C (0x000C - 0x0000)
@@ -1918,7 +2016,7 @@ struct RobberController_C_CheckSteamID final
 {
 public:
 	class UOAR_Savegame_C*                        SaveGame;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Savename;                                          // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 SaveName;                                          // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	TArray<uint8>                                 LoadedBytes;                                       // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue;          // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_LoadFileFromBackup_Success_;              // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -1946,7 +2044,7 @@ public:
 static_assert(alignof(RobberController_C_CheckSteamID) == 0x000008, "Wrong alignment on RobberController_C_CheckSteamID");
 static_assert(sizeof(RobberController_C_CheckSteamID) == 0x0000A0, "Wrong size on RobberController_C_CheckSteamID");
 static_assert(offsetof(RobberController_C_CheckSteamID, SaveGame) == 0x000000, "Member 'RobberController_C_CheckSteamID::SaveGame' has a wrong offset!");
-static_assert(offsetof(RobberController_C_CheckSteamID, Savename) == 0x000008, "Member 'RobberController_C_CheckSteamID::Savename' has a wrong offset!");
+static_assert(offsetof(RobberController_C_CheckSteamID, SaveName) == 0x000008, "Member 'RobberController_C_CheckSteamID::SaveName' has a wrong offset!");
 static_assert(offsetof(RobberController_C_CheckSteamID, LoadedBytes) == 0x000018, "Member 'RobberController_C_CheckSteamID::LoadedBytes' has a wrong offset!");
 static_assert(offsetof(RobberController_C_CheckSteamID, CallFunc_GetCurrentLevelName_ReturnValue) == 0x000028, "Member 'RobberController_C_CheckSteamID::CallFunc_GetCurrentLevelName_ReturnValue' has a wrong offset!");
 static_assert(offsetof(RobberController_C_CheckSteamID, CallFunc_LoadFileFromBackup_Success_) == 0x000038, "Member 'RobberController_C_CheckSteamID::CallFunc_LoadFileFromBackup_Success_' has a wrong offset!");
@@ -1992,12 +2090,12 @@ static_assert(offsetof(RobberController_C_LockUserSteamID, CallFunc_Greater_IntI
 struct RobberController_C_SaveFileByName final
 {
 public:
-	class FString                                 Savename;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 SaveName;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(RobberController_C_SaveFileByName) == 0x000008, "Wrong alignment on RobberController_C_SaveFileByName");
 static_assert(sizeof(RobberController_C_SaveFileByName) == 0x000018, "Wrong size on RobberController_C_SaveFileByName");
-static_assert(offsetof(RobberController_C_SaveFileByName, Savename) == 0x000000, "Member 'RobberController_C_SaveFileByName::Savename' has a wrong offset!");
+static_assert(offsetof(RobberController_C_SaveFileByName, SaveName) == 0x000000, "Member 'RobberController_C_SaveFileByName::SaveName' has a wrong offset!");
 static_assert(offsetof(RobberController_C_SaveFileByName, K2Node_SwitchString_CmpSuccess) == 0x000010, "Member 'RobberController_C_SaveFileByName::K2Node_SwitchString_CmpSuccess' has a wrong offset!");
 
 // Function RobberController.RobberController_C.AddSetup
@@ -2242,7 +2340,7 @@ static_assert(offsetof(RobberController_C_GetCompletedSetupsForMap, CallFunc_Arr
 struct RobberController_C_LoadFileFromBackup final
 {
 public:
-	class FString                                 Savename;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 SaveName;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	TArray<uint8>                                 LoadedBytes;                                       // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	bool                                          Success_;                                          // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2297,7 +2395,7 @@ public:
 };
 static_assert(alignof(RobberController_C_LoadFileFromBackup) == 0x000008, "Wrong alignment on RobberController_C_LoadFileFromBackup");
 static_assert(sizeof(RobberController_C_LoadFileFromBackup) == 0x0001D0, "Wrong size on RobberController_C_LoadFileFromBackup");
-static_assert(offsetof(RobberController_C_LoadFileFromBackup, Savename) == 0x000000, "Member 'RobberController_C_LoadFileFromBackup::Savename' has a wrong offset!");
+static_assert(offsetof(RobberController_C_LoadFileFromBackup, SaveName) == 0x000000, "Member 'RobberController_C_LoadFileFromBackup::SaveName' has a wrong offset!");
 static_assert(offsetof(RobberController_C_LoadFileFromBackup, LoadedBytes) == 0x000010, "Member 'RobberController_C_LoadFileFromBackup::LoadedBytes' has a wrong offset!");
 static_assert(offsetof(RobberController_C_LoadFileFromBackup, Success_) == 0x000020, "Member 'RobberController_C_LoadFileFromBackup::Success_' has a wrong offset!");
 static_assert(offsetof(RobberController_C_LoadFileFromBackup, RegularSaveName) == 0x000028, "Member 'RobberController_C_LoadFileFromBackup::RegularSaveName' has a wrong offset!");
@@ -2388,6 +2486,159 @@ static_assert(offsetof(RobberController_C_Convert_Save_Info_To_Bytes, CallFunc_B
 static_assert(offsetof(RobberController_C_Convert_Save_Info_To_Bytes, CallFunc_Add_Int64Int64_ReturnValue) == 0x000098, "Member 'RobberController_C_Convert_Save_Info_To_Bytes::CallFunc_Add_Int64Int64_ReturnValue' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Convert_Save_Info_To_Bytes, CallFunc_Conv_Int64ToText_ReturnValue) == 0x0000A0, "Member 'RobberController_C_Convert_Save_Info_To_Bytes::CallFunc_Conv_Int64ToText_ReturnValue' has a wrong offset!");
 static_assert(offsetof(RobberController_C_Convert_Save_Info_To_Bytes, CallFunc_Conv_TextToString_ReturnValue) == 0x0000B8, "Member 'RobberController_C_Convert_Save_Info_To_Bytes::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+
+// Function RobberController.RobberController_C.MapsToInventory
+// 0x00A8 (0x00A8 - 0x0000)
+struct RobberController_C_MapsToInventory final
+{
+public:
+	TArray<class UClass*>                         UserMaps;                                          // 0x0000(0x0010)(Edit, BlueprintVisible)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamItemDetails                      CallFunc_Array_Get_Item;                           // 0x0028(0x0020)()
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetItemDefinitionProperty_Value;          // 0x0050(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetItemDefinitionProperty_ReturnValue;    // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_62[0x2];                                       // 0x0062(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 CallFunc_Array_Get_Item_1;                         // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x007C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7D[0x3];                                       // 0x007D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamItemDef                          K2Node_MakeStruct_SteamItemDef;                    // 0x0080(0x0004)(NoDestructor, HasGetValueTypeHash)
+	struct FSteamInventoryResult                  CallFunc_AddPromoItem_Result;                      // 0x0084(0x0004)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_AddPromoItem_ReturnValue;                 // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0090(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DoesItemExistInSteamInventory__Exists_;   // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_DoesItemExistInSteamInventory__Index;     // 0x00A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(RobberController_C_MapsToInventory) == 0x000008, "Wrong alignment on RobberController_C_MapsToInventory");
+static_assert(sizeof(RobberController_C_MapsToInventory) == 0x0000A8, "Wrong size on RobberController_C_MapsToInventory");
+static_assert(offsetof(RobberController_C_MapsToInventory, UserMaps) == 0x000000, "Member 'RobberController_C_MapsToInventory::UserMaps' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, Temp_int_Loop_Counter_Variable) == 0x000010, "Member 'RobberController_C_MapsToInventory::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Add_IntInt_ReturnValue) == 0x000014, "Member 'RobberController_C_MapsToInventory::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, Temp_int_Array_Index_Variable) == 0x000018, "Member 'RobberController_C_MapsToInventory::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, Temp_int_Array_Index_Variable_1) == 0x00001C, "Member 'RobberController_C_MapsToInventory::Temp_int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, Temp_int_Loop_Counter_Variable_1) == 0x000020, "Member 'RobberController_C_MapsToInventory::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Array_Get_Item) == 0x000028, "Member 'RobberController_C_MapsToInventory::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Add_IntInt_ReturnValue_1) == 0x000048, "Member 'RobberController_C_MapsToInventory::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_GetItemDefinitionProperty_Value) == 0x000050, "Member 'RobberController_C_MapsToInventory::CallFunc_GetItemDefinitionProperty_Value' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_GetItemDefinitionProperty_ReturnValue) == 0x000060, "Member 'RobberController_C_MapsToInventory::CallFunc_GetItemDefinitionProperty_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000061, "Member 'RobberController_C_MapsToInventory::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Array_Length_ReturnValue) == 0x000064, "Member 'RobberController_C_MapsToInventory::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Less_IntInt_ReturnValue) == 0x000068, "Member 'RobberController_C_MapsToInventory::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Array_Get_Item_1) == 0x000070, "Member 'RobberController_C_MapsToInventory::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Array_Length_ReturnValue_1) == 0x000078, "Member 'RobberController_C_MapsToInventory::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Less_IntInt_ReturnValue_1) == 0x00007C, "Member 'RobberController_C_MapsToInventory::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, K2Node_MakeStruct_SteamItemDef) == 0x000080, "Member 'RobberController_C_MapsToInventory::K2Node_MakeStruct_SteamItemDef' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_AddPromoItem_Result) == 0x000084, "Member 'RobberController_C_MapsToInventory::CallFunc_AddPromoItem_Result' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_AddPromoItem_ReturnValue) == 0x000088, "Member 'RobberController_C_MapsToInventory::CallFunc_AddPromoItem_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_Concat_StrStr_ReturnValue) == 0x000090, "Member 'RobberController_C_MapsToInventory::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_DoesItemExistInSteamInventory__Exists_) == 0x0000A0, "Member 'RobberController_C_MapsToInventory::CallFunc_DoesItemExistInSteamInventory__Exists_' has a wrong offset!");
+static_assert(offsetof(RobberController_C_MapsToInventory, CallFunc_DoesItemExistInSteamInventory__Index) == 0x0000A4, "Member 'RobberController_C_MapsToInventory::CallFunc_DoesItemExistInSteamInventory__Index' has a wrong offset!");
+
+// Function RobberController.RobberController_C.DoesItemExistInSteamInventory?
+// 0x0040 (0x0040 - 0x0000)
+struct RobberController_C_DoesItemExistInSteamInventory_ final
+{
+public:
+	int32                                         SteamDefID;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UClass*>                         Items;                                             // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	bool                                          Exists_;                                           // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Param_Index;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 CallFunc_Array_Get_Item;                           // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(RobberController_C_DoesItemExistInSteamInventory_) == 0x000008, "Wrong alignment on RobberController_C_DoesItemExistInSteamInventory_");
+static_assert(sizeof(RobberController_C_DoesItemExistInSteamInventory_) == 0x000040, "Wrong size on RobberController_C_DoesItemExistInSteamInventory_");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, SteamDefID) == 0x000000, "Member 'RobberController_C_DoesItemExistInSteamInventory_::SteamDefID' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, Items) == 0x000008, "Member 'RobberController_C_DoesItemExistInSteamInventory_::Items' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, Exists_) == 0x000018, "Member 'RobberController_C_DoesItemExistInSteamInventory_::Exists_' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, Param_Index) == 0x00001C, "Member 'RobberController_C_DoesItemExistInSteamInventory_::Param_Index' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, CallFunc_Array_Length_ReturnValue) == 0x000020, "Member 'RobberController_C_DoesItemExistInSteamInventory_::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, Temp_int_Array_Index_Variable) == 0x000024, "Member 'RobberController_C_DoesItemExistInSteamInventory_::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, Temp_int_Loop_Counter_Variable) == 0x000028, "Member 'RobberController_C_DoesItemExistInSteamInventory_::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, CallFunc_Array_Get_Item) == 0x000030, "Member 'RobberController_C_DoesItemExistInSteamInventory_::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, CallFunc_Less_IntInt_ReturnValue) == 0x000038, "Member 'RobberController_C_DoesItemExistInSteamInventory_::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x000039, "Member 'RobberController_C_DoesItemExistInSteamInventory_::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_DoesItemExistInSteamInventory_, CallFunc_Add_IntInt_ReturnValue) == 0x00003C, "Member 'RobberController_C_DoesItemExistInSteamInventory_::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+
+// Function RobberController.RobberController_C.GetSteamItemsInCategory
+// 0x00A0 (0x00A0 - 0x0000)
+struct RobberController_C_GetSteamItemsInCategory final
+{
+public:
+	class FString                                 Category;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FSteamInventoryResult                  Inventory;                                         // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 Items;                                             // 0x0018(0x0010)(Parm, OutParm)
+	TArray<int32>                                 ItemsDefs;                                         // 0x0028(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FSteamItemDetails>              CallFunc_GetResultItems_Items;                     // 0x0038(0x0010)(ReferenceParm)
+	bool                                          CallFunc_GetResultItems_ReturnValue;               // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSteamItemDetails                      CallFunc_Array_Get_Item;                           // 0x0058(0x0020)()
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x007C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7D[0x3];                                       // 0x007D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetItemDefinitionProperty_Value;          // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetItemDefinitionProperty_ReturnValue;    // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9A[0x2];                                       // 0x009A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(RobberController_C_GetSteamItemsInCategory) == 0x000008, "Wrong alignment on RobberController_C_GetSteamItemsInCategory");
+static_assert(sizeof(RobberController_C_GetSteamItemsInCategory) == 0x0000A0, "Wrong size on RobberController_C_GetSteamItemsInCategory");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, Category) == 0x000000, "Member 'RobberController_C_GetSteamItemsInCategory::Category' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, Inventory) == 0x000010, "Member 'RobberController_C_GetSteamItemsInCategory::Inventory' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, Items) == 0x000018, "Member 'RobberController_C_GetSteamItemsInCategory::Items' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, ItemsDefs) == 0x000028, "Member 'RobberController_C_GetSteamItemsInCategory::ItemsDefs' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_GetResultItems_Items) == 0x000038, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_GetResultItems_Items' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_GetResultItems_ReturnValue) == 0x000048, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_GetResultItems_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, Temp_int_Array_Index_Variable) == 0x00004C, "Member 'RobberController_C_GetSteamItemsInCategory::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_Array_Length_ReturnValue) == 0x000050, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_Array_Get_Item) == 0x000058, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, Temp_int_Loop_Counter_Variable) == 0x000078, "Member 'RobberController_C_GetSteamItemsInCategory::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_Less_IntInt_ReturnValue) == 0x00007C, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_Add_IntInt_ReturnValue) == 0x000080, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_GetItemDefinitionProperty_Value) == 0x000088, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_GetItemDefinitionProperty_Value' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_GetItemDefinitionProperty_ReturnValue) == 0x000098, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_GetItemDefinitionProperty_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000099, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(RobberController_C_GetSteamItemsInCategory, CallFunc_Array_Add_ReturnValue) == 0x00009C, "Member 'RobberController_C_GetSteamItemsInCategory::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+
+// Function RobberController.RobberController_C.OnGetSteamInventoryItems
+// 0x0010 (0x0010 - 0x0000)
+struct RobberController_C_OnGetSteamInventoryItems final
+{
+public:
+	TArray<struct FSteamItemDetails>              Items;                                             // 0x0000(0x0010)(Parm, OutParm)
+};
+static_assert(alignof(RobberController_C_OnGetSteamInventoryItems) == 0x000008, "Wrong alignment on RobberController_C_OnGetSteamInventoryItems");
+static_assert(sizeof(RobberController_C_OnGetSteamInventoryItems) == 0x000010, "Wrong size on RobberController_C_OnGetSteamInventoryItems");
+static_assert(offsetof(RobberController_C_OnGetSteamInventoryItems, Items) == 0x000000, "Member 'RobberController_C_OnGetSteamInventoryItems::Items' has a wrong offset!");
 
 }
 

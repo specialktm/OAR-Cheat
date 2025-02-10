@@ -377,6 +377,20 @@ void ANPC_Police_base_C::BndEvt__NPC_Police_PawnSensing_K2Node_ComponentBoundEve
 }
 
 
+// Function NPC_Police_base.NPC_Police_base_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ANPC_Police_base_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NPC_Police_base_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function NPC_Police_base.NPC_Police_base_C.OnSuccess_D72A09BB4846C507EDCEE78EF2293331
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -612,20 +626,6 @@ void ANPC_Police_base_C::FindActivePowerbox()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("NPC_Police_base_C", "findActivePowerbox");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function NPC_Police_base.NPC_Police_base_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ANPC_Police_base_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NPC_Police_base_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

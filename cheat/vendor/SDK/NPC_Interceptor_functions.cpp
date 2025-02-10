@@ -57,6 +57,20 @@ void ANPC_Interceptor_C::OnDeathStats(class AActor* Player)
 }
 
 
+// Function NPC_Interceptor.NPC_Interceptor_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ANPC_Interceptor_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NPC_Interceptor_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function NPC_Interceptor.NPC_Interceptor_C.MoveHome
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 
@@ -217,20 +231,6 @@ void ANPC_Interceptor_C::CheckCanPlaceTrap(bool* CanPlace_)
 
 	if (CanPlace_ != nullptr)
 		*CanPlace_ = Parms.CanPlace_;
-}
-
-
-// Function NPC_Interceptor.NPC_Interceptor_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ANPC_Interceptor_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NPC_Interceptor_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

@@ -24,7 +24,7 @@ class ARobberGameState_C final : public AGameStateBase
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0270(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0278(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	int32                                         Total_power;                                       // 0x0280(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Total_Power;                                       // 0x0280(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         MinimumPower;                                      // 0x0284(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	FMulticastInlineDelegateProperty_             PowerSet;                                          // 0x0288(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	float                                         PowerMultiplier;                                   // 0x0298(0x0004)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -35,7 +35,7 @@ public:
 	void SetFirepower();
 	void ReceiveBeginPlay();
 	void SpawnToolsWhenConnected();
-	void GetTotalPlayerPower(int32* Param_Total_power, int32* Param_MinimumPower);
+	void GetTotalPlayerPower(int32* Param_Total_Power, int32* Param_MinimumPower);
 	void CheckPlayersLoaded(bool* Loaded_);
 
 public:
@@ -52,7 +52,7 @@ static_assert(alignof(ARobberGameState_C) == 0x000008, "Wrong alignment on ARobb
 static_assert(sizeof(ARobberGameState_C) == 0x0002A0, "Wrong size on ARobberGameState_C");
 static_assert(offsetof(ARobberGameState_C, UberGraphFrame) == 0x000270, "Member 'ARobberGameState_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ARobberGameState_C, DefaultSceneRoot) == 0x000278, "Member 'ARobberGameState_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ARobberGameState_C, Total_power) == 0x000280, "Member 'ARobberGameState_C::Total_power' has a wrong offset!");
+static_assert(offsetof(ARobberGameState_C, Total_Power) == 0x000280, "Member 'ARobberGameState_C::Total_Power' has a wrong offset!");
 static_assert(offsetof(ARobberGameState_C, MinimumPower) == 0x000284, "Member 'ARobberGameState_C::MinimumPower' has a wrong offset!");
 static_assert(offsetof(ARobberGameState_C, PowerSet) == 0x000288, "Member 'ARobberGameState_C::PowerSet' has a wrong offset!");
 static_assert(offsetof(ARobberGameState_C, PowerMultiplier) == 0x000298, "Member 'ARobberGameState_C::PowerMultiplier' has a wrong offset!");

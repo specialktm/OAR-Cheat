@@ -23,67 +23,67 @@ struct BulletCasing_C_ExecuteUbergraph_BulletCasing final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetWorldDeltaSeconds_ReturnValue;         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_2;        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_3;        // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x001C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetActorRightVector_ReturnValue;          // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_RandomUnitVector_ReturnValue;             // 0x0034(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue;         // 0x0040(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_1;       // 0x004C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Add_VectorVector_ReturnValue;             // 0x0058(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPrimitiveComponent*                    K2Node_Event_MyComp;                               // 0x0068(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_Event_Other;                                // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_Event_OtherComp;                            // 0x0078(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bSelfMoved;                           // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_81[0x3];                                       // 0x0081(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                K2Node_Event_HitLocation;                          // 0x0084(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_Event_HitNormal;                            // 0x0090(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_Event_NormalImpulse;                        // 0x009C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             K2Node_Event_Hit;                                  // 0x00A8(0x0088)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_131[0x3];                                      // 0x0131(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_RandomFloatInRange_ReturnValue;           // 0x0134(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  CallFunc_GetInstigator_ReturnValue;                // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_149[0x3];                                      // 0x0149(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_GetVelocity_ReturnValue;                  // 0x014C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetActorRightVector_ReturnValue;          // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_RandomUnitVector_ReturnValue;             // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPrimitiveComponent*                    K2Node_Event_MyComp;                               // 0x0020(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_Event_Other;                                // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_Event_OtherComp;                            // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bSelfMoved;                           // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                K2Node_Event_HitLocation;                          // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                K2Node_Event_HitNormal;                            // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                K2Node_Event_NormalImpulse;                        // 0x0054(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             K2Node_Event_Hit;                                  // 0x0060(0x0088)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_E9[0x3];                                       // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_RandomFloatInRange_ReturnValue;           // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_GetInstigator_ReturnValue;                // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_101[0x3];                                      // 0x0101(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_GetVelocity_ReturnValue;                  // 0x0104(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetWorldDeltaSeconds_ReturnValue;         // 0x0110(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0114(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_2;        // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue;         // 0x0124(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_1;       // 0x0130(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_3;        // 0x013C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x0140(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Add_VectorVector_ReturnValue;             // 0x014C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BulletCasing_C_ExecuteUbergraph_BulletCasing) == 0x000008, "Wrong alignment on BulletCasing_C_ExecuteUbergraph_BulletCasing");
 static_assert(sizeof(BulletCasing_C_ExecuteUbergraph_BulletCasing) == 0x000158, "Wrong size on BulletCasing_C_ExecuteUbergraph_BulletCasing");
 static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, EntryPoint) == 0x000000, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_GetWorldDeltaSeconds_ReturnValue) == 0x000004, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_GetWorldDeltaSeconds_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000008, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x00000C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x000010, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_FloatFloat_ReturnValue_2) == 0x000014, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_FloatFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_FloatFloat_ReturnValue_3) == 0x000018, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_FloatFloat_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_MakeVector_ReturnValue) == 0x00001C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_MakeVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_GetActorRightVector_ReturnValue) == 0x000028, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_GetActorRightVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_RandomUnitVector_ReturnValue) == 0x000034, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_RandomUnitVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_VectorFloat_ReturnValue) == 0x000040, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_VectorFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_VectorFloat_ReturnValue_1) == 0x00004C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Add_VectorVector_ReturnValue) == 0x000058, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Add_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_MyComp) == 0x000068, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_MyComp' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_Other) == 0x000070, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_Other' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_OtherComp) == 0x000078, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_OtherComp' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_bSelfMoved) == 0x000080, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_bSelfMoved' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_HitLocation) == 0x000084, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_HitLocation' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_HitNormal) == 0x000090, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_HitNormal' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_NormalImpulse) == 0x00009C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_NormalImpulse' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_Hit) == 0x0000A8, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_Hit' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, Temp_bool_IsClosed_Variable) == 0x000130, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_RandomFloatInRange_ReturnValue) == 0x000134, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_RandomFloatInRange_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, Temp_bool_Has_Been_Initd_Variable) == 0x000138, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_GetInstigator_ReturnValue) == 0x000140, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_GetInstigator_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_IsValid_ReturnValue) == 0x000148, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_GetVelocity_ReturnValue) == 0x00014C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_GetVelocity_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_GetActorRightVector_ReturnValue) == 0x000004, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_GetActorRightVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_RandomUnitVector_ReturnValue) == 0x000010, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_RandomUnitVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_MyComp) == 0x000020, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_MyComp' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_Other) == 0x000028, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_Other' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_OtherComp) == 0x000030, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_OtherComp' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_bSelfMoved) == 0x000038, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_bSelfMoved' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_HitLocation) == 0x00003C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_HitLocation' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_HitNormal) == 0x000048, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_HitNormal' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_NormalImpulse) == 0x000054, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_NormalImpulse' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, K2Node_Event_Hit) == 0x000060, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::K2Node_Event_Hit' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, Temp_bool_IsClosed_Variable) == 0x0000E8, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_RandomFloatInRange_ReturnValue) == 0x0000EC, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_RandomFloatInRange_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, Temp_bool_Has_Been_Initd_Variable) == 0x0000F0, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_GetInstigator_ReturnValue) == 0x0000F8, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_GetInstigator_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_IsValid_ReturnValue) == 0x000100, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_GetVelocity_ReturnValue) == 0x000104, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_GetVelocity_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_GetWorldDeltaSeconds_ReturnValue) == 0x000110, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_GetWorldDeltaSeconds_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000114, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000118, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x00011C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_FloatFloat_ReturnValue_2) == 0x000120, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_VectorFloat_ReturnValue) == 0x000124, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_VectorFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_VectorFloat_ReturnValue_1) == 0x000130, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Multiply_FloatFloat_ReturnValue_3) == 0x00013C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Multiply_FloatFloat_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_MakeVector_ReturnValue) == 0x000140, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_MakeVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletCasing_C_ExecuteUbergraph_BulletCasing, CallFunc_Add_VectorVector_ReturnValue) == 0x00014C, "Member 'BulletCasing_C_ExecuteUbergraph_BulletCasing::CallFunc_Add_VectorVector_ReturnValue' has a wrong offset!");
 
 // Function BulletCasing.BulletCasing_C.ReceiveHit
 // 0x00C8 (0x00C8 - 0x0000)

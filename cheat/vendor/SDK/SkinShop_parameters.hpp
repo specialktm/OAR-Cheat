@@ -10,224 +10,216 @@
 
 #include "Basic.hpp"
 
-#include "ShopItemCategory_structs.hpp"
 #include "UMG_structs.hpp"
 #include "SkinRotationStructure_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShopItemCategory_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function SkinShop.SkinShop_C.ExecuteUbergraph_SkinShop
-// 0x0220 (0x0220 - 0x0000)
+// 0x0200 (0x0200 - 0x0000)
 struct SkinShop_C_ExecuteUbergraph_SkinShop final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Temp_float_Variable;                               // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Temp_float_Variable_1;                             // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UShopItemUI_C*                          CallFunc_Create_ReturnValue;                       // 0x0010(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UInventoryCategoryTitle_C*              CallFunc_Create_ReturnValue_1;                     // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Variable;                                // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UShopBuyUI_C*                           CallFunc_Create_ReturnValue_2;                     // 0x0048(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_4;                   // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EShopItemCategory                             K2Node_Event_Category_1;                           // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_1;              // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_2;              // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_3;              // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_FindTimeLeft_SkinRot;                     // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UClass*                                 K2Node_Event_ItemInfo;                             // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Event_SalePrice;                            // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ARobberController_C*                    K2Node_DynamicCast_AsRobber_Controller;            // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x00B2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B3[0x1];                                       // 0x00B3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UShopBuyUI_C*                           CallFunc_Create_ReturnValue_3;                     // 0x00B8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue_1;        // 0x00C4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_LastIndex_ReturnValue;              // 0x00C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors;      // 0x00D0(0x0010)(ReferenceParm)
-	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets;  // 0x00E0(0x0010)(ReferenceParm, ContainsInstancedReference)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUserWidget*                            CallFunc_Array_Get_Item;                           // 0x00F8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface;            // 0x0108(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0118(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0119(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11A[0x2];                                      // 0x011A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_4;                  // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCoinShopUI_C*                          CallFunc_Create_ReturnValue_4;                     // 0x0128(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValidClass_ReturnValue;                 // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_131[0x3];                                      // 0x0131(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Clamp_ReturnValue;                        // 0x0134(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FSkinRotationStructure                 CallFunc_Array_Get_Item_1;                         // 0x0148(0x0010)(HasGetValueTypeHash)
-	class UClass*                                 CallFunc_Array_Get_Item_2;                         // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 CallFunc_Array_Get_Item_3;                         // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0168(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x016C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x016D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_16E[0x2];                                      // 0x016E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Array_Index_Variable_5;                   // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_174[0x4];                                      // 0x0174(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 CallFunc_Array_Get_Item_4;                         // 0x0178(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_1;          // 0x0180(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0191(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EShopItemCategory                             K2Node_Event_Category;                             // 0x0192(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_193[0x1];                                      // 0x0193(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Select_Default;                             // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EShopItemCategory                             K2Node_CustomEvent_Category;                       // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EShopItemCategory                             CallFunc_Array_Get_Item_5;                         // 0x0199(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_19A[0x2];                                      // 0x019A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x019C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1A1[0x7];                                      // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x01A8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UShopItemUI_C*                          CallFunc_Create_ReturnValue_5;                     // 0x01B0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 CallFunc_Array_Get_Item_6;                         // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Array_Contains_ReturnValue_1;             // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x01C1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1C2[0x6];                                      // 0x01C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_1;                   // 0x01C8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x01D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_5;                  // 0x01D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x01D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1DA[0x2];                                      // 0x01DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x01DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_2;                   // 0x01E0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UWidget*>                        CallFunc_GetAllChildren_ReturnValue;               // 0x01E8(0x0010)(ReferenceParm, ContainsInstancedReference)
-	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x01F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1FC[0x4];                                      // 0x01FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                CallFunc_Array_Get_Item_7;                         // 0x0200(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_5;                // 0x0208(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInventoryCategoryTitle_C*              K2Node_DynamicCast_AsInventory_Category_Title;     // 0x0210(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0219(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UClass*>                         CallFunc_GetCurrentSkinsInRotation_Array;          // 0x0008(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Temp_float_Variable;                               // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Temp_float_Variable_1;                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UShopItemUI_C*                          CallFunc_Create_ReturnValue;                       // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UInventoryCategoryTitle_C*              CallFunc_Create_ReturnValue_1;                     // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 CallFunc_Array_Get_Item;                           // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 CallFunc_Array_Get_Item_1;                         // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Variable;                                // 0x005D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5E[0x2];                                       // 0x005E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UShopBuyUI_C*                           CallFunc_Create_ReturnValue_2;                     // 0x0070(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_4;                   // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EShopItemCategory                             K2Node_Event_Category_1;                           // 0x0084(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_1;              // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_2;              // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_3;              // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_FindTimeLeft_SkinRot;                     // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 K2Node_Event_ItemInfo;                             // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Event_SalePrice;                            // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ARobberController_C*                    K2Node_DynamicCast_AsRobber_Controller;            // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_DA[0x6];                                       // 0x00DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UShopBuyUI_C*                           CallFunc_Create_ReturnValue_3;                     // 0x00E0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         CallFunc_GetAllActorsWithInterface_OutActors;      // 0x00F0(0x0010)(ReferenceParm)
+	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_101[0x3];                                      // 0x0101(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCoinShopUI_C*                          CallFunc_Create_ReturnValue_4;                     // 0x0108(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UUserWidget*>                    CallFunc_GetAllWidgetsWithInterface_FoundWidgets;  // 0x0110(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class UUserWidget*                            CallFunc_Array_Get_Item_2;                         // 0x0120(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface;            // 0x0130(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0141(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_142[0x2];                                      // 0x0142(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_4;                  // 0x0144(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_149[0x3];                                      // 0x0149(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x014C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValidClass_ReturnValue;                 // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_151[0x3];                                      // 0x0151(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable_5;                   // 0x0154(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_Array_Get_Item_3;                         // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IMenuUIInteraface_C>   K2Node_DynamicCast_AsMenu_UIInteraface_1;          // 0x0160(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0171(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EShopItemCategory                             K2Node_Event_Category;                             // 0x0172(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_173[0x1];                                      // 0x0173(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Select_Default;                             // 0x0174(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EShopItemCategory                             K2Node_CustomEvent_Category;                       // 0x0178(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EShopItemCategory                             CallFunc_Array_Get_Item_4;                         // 0x0179(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_17A[0x2];                                      // 0x017A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x017C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_181[0x7];                                      // 0x0181(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0188(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_5;                  // 0x0190(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_194[0x4];                                      // 0x0194(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 CallFunc_Array_Get_Item_5;                         // 0x0198(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_Contains_ReturnValue_1;             // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x01A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x01A2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A3[0x1];                                      // 0x01A3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x01A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x01AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_1;                   // 0x01B0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UShopItemUI_C*                          CallFunc_Create_ReturnValue_5;                     // 0x01B8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UWidget*>                        CallFunc_GetAllChildren_ReturnValue;               // 0x01C0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class UWidget*                                CallFunc_Array_Get_Item_6;                         // 0x01D0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x01D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1DC[0x4];                                      // 0x01DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInventoryCategoryTitle_C*              K2Node_DynamicCast_AsInventory_Category_Title;     // 0x01E0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_5;                // 0x01E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x01EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1EB[0x5];                                      // 0x01EB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_2;                   // 0x01F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue_1;        // 0x01F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(SkinShop_C_ExecuteUbergraph_SkinShop) == 0x000008, "Wrong alignment on SkinShop_C_ExecuteUbergraph_SkinShop");
-static_assert(sizeof(SkinShop_C_ExecuteUbergraph_SkinShop) == 0x000220, "Wrong size on SkinShop_C_ExecuteUbergraph_SkinShop");
+static_assert(sizeof(SkinShop_C_ExecuteUbergraph_SkinShop) == 0x000200, "Wrong size on SkinShop_C_ExecuteUbergraph_SkinShop");
 static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, EntryPoint) == 0x000000, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::EntryPoint' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_float_Variable) == 0x000004, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_float_Variable' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_float_Variable_1) == 0x000008, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_float_Variable_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue) == 0x000010, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_1) == 0x000018, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_bool_Has_Been_Initd_Variable) == 0x000020, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable) == 0x000024, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue) == 0x000028, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable) == 0x00002C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_1) == 0x000030, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_bool_IsClosed_Variable) == 0x000034, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_bool_Variable) == 0x000035, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_bool_Variable' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_1) == 0x000038, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_1) == 0x00003C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_2) == 0x000040, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_2) == 0x000048, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_3) == 0x000050, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_2) == 0x000054, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_2) == 0x000058, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_4) == 0x00005C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_4' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Event_Category_1) == 0x000060, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Event_Category_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_PlayAnimation_ReturnValue) == 0x000068, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_PlayAnimation_ReturnValue_1) == 0x000070, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_PlayAnimation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_PlayAnimation_ReturnValue_2) == 0x000078, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_PlayAnimation_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_PlayAnimation_ReturnValue_3) == 0x000080, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_PlayAnimation_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_FindTimeLeft_SkinRot) == 0x000088, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_FindTimeLeft_SkinRot' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Event_ItemInfo) == 0x000090, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Event_ItemInfo' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Event_SalePrice) == 0x000098, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Event_SalePrice' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetPlayerController_ReturnValue) == 0x0000A0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_AsRobber_Controller) == 0x0000A8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_AsRobber_Controller' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_bSuccess) == 0x0000B0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_IsValid_ReturnValue) == 0x0000B1, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x0000B2, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_3) == 0x0000B4, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_3) == 0x0000B8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_3) == 0x0000C0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GreaterEqual_IntInt_ReturnValue_1) == 0x0000C4, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GreaterEqual_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_LastIndex_ReturnValue) == 0x0000C8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_LastIndex_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetAllActorsWithInterface_OutActors) == 0x0000D0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetAllActorsWithInterface_OutActors' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetAllWidgetsWithInterface_FoundWidgets) == 0x0000E0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetAllWidgetsWithInterface_FoundWidgets' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue) == 0x0000F0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item) == 0x0000F8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_1) == 0x000100, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_AsMenu_UIInteraface) == 0x000108, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_AsMenu_UIInteraface' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_bSuccess_1) == 0x000118, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue) == 0x000119, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_4) == 0x00011C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_4' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_4) == 0x000120, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_4) == 0x000128, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_IsValidClass_ReturnValue) == 0x000130, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_IsValidClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Clamp_ReturnValue) == 0x000134, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Clamp_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Conv_IntToString_ReturnValue) == 0x000138, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_1) == 0x000148, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_2) == 0x000158, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_3) == 0x000160, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_2) == 0x000168, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Contains_ReturnValue) == 0x00016C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Contains_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_1) == 0x00016D, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_5) == 0x000170, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_5' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_4) == 0x000178, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_4' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_AsMenu_UIInteraface_1) == 0x000180, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_AsMenu_UIInteraface_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_bSuccess_2) == 0x000190, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Greater_IntInt_ReturnValue) == 0x000191, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Event_Category) == 0x000192, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Event_Category' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Select_Default) == 0x000194, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Select_Default' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_CustomEvent_Category) == 0x000198, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_CustomEvent_Category' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_5) == 0x000199, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_5' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_3) == 0x00019C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_2) == 0x0001A0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_AddChild_ReturnValue) == 0x0001A8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_AddChild_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_5) == 0x0001B0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_6) == 0x0001B8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_6' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Contains_ReturnValue_1) == 0x0001C0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Contains_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x0001C1, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_AddChild_ReturnValue_1) == 0x0001C8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_AddChild_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_4) == 0x0001D0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_5) == 0x0001D4, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_5' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_3) == 0x0001D8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_4) == 0x0001D9, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_5) == 0x0001DC, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_AddChild_ReturnValue_2) == 0x0001E0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_AddChild_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetAllChildren_ReturnValue) == 0x0001E8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetAllChildren_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_5) == 0x0001F8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_7) == 0x000200, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_7' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_5) == 0x000208, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_AsInventory_Category_Title) == 0x000210, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_AsInventory_Category_Title' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_bSuccess_3) == 0x000218, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
-static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x000219, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetCurrentSkinsInRotation_Array) == 0x000008, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetCurrentSkinsInRotation_Array' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue) == 0x000018, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_float_Variable) == 0x00001C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_float_Variable' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_float_Variable_1) == 0x000020, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_float_Variable_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue) == 0x000028, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_1) == 0x000030, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_bool_Has_Been_Initd_Variable) == 0x000038, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable) == 0x00003C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item) == 0x000040, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_1) == 0x000048, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable) == 0x000050, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue) == 0x000054, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_1) == 0x000058, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_bool_IsClosed_Variable) == 0x00005C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_bool_Variable) == 0x00005D, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_1) == 0x000060, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_1) == 0x000064, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_2) == 0x000068, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_3) == 0x00006C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_2) == 0x000070, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_2) == 0x000078, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_2) == 0x00007C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_4) == 0x000080, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_4' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Event_Category_1) == 0x000084, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Event_Category_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_PlayAnimation_ReturnValue) == 0x000088, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_PlayAnimation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_PlayAnimation_ReturnValue_1) == 0x000090, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_PlayAnimation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_3) == 0x000098, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_3) == 0x00009C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_PlayAnimation_ReturnValue_2) == 0x0000A0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_PlayAnimation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_PlayAnimation_ReturnValue_3) == 0x0000A8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_PlayAnimation_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_FindTimeLeft_SkinRot) == 0x0000B0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_FindTimeLeft_SkinRot' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Event_ItemInfo) == 0x0000B8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Event_ItemInfo' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Event_SalePrice) == 0x0000C0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Event_SalePrice' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetPlayerController_ReturnValue) == 0x0000C8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetPlayerController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_AsRobber_Controller) == 0x0000D0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_AsRobber_Controller' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_bSuccess) == 0x0000D8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_IsValid_ReturnValue) == 0x0000D9, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_3) == 0x0000E0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x0000E8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetAllActorsWithInterface_OutActors) == 0x0000F0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetAllActorsWithInterface_OutActors' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Contains_ReturnValue) == 0x000100, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Contains_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_1) == 0x000104, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_4) == 0x000108, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetAllWidgetsWithInterface_FoundWidgets) == 0x000110, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetAllWidgetsWithInterface_FoundWidgets' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_2) == 0x000120, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_2) == 0x000128, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_AsMenu_UIInteraface) == 0x000130, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_AsMenu_UIInteraface' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_bSuccess_1) == 0x000140, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue) == 0x000141, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_4) == 0x000144, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_4' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_1) == 0x000148, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_4) == 0x00014C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_IsValidClass_ReturnValue) == 0x000150, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_IsValidClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Array_Index_Variable_5) == 0x000154, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Array_Index_Variable_5' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_3) == 0x000158, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_AsMenu_UIInteraface_1) == 0x000160, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_AsMenu_UIInteraface_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_bSuccess_2) == 0x000170, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Greater_IntInt_ReturnValue) == 0x000171, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Event_Category) == 0x000172, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Event_Category' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_Select_Default) == 0x000174, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_CustomEvent_Category) == 0x000178, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_CustomEvent_Category' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_4) == 0x000179, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_4' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_3) == 0x00017C, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_2) == 0x000180, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_AddChild_ReturnValue) == 0x000188, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_AddChild_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, Temp_int_Loop_Counter_Variable_5) == 0x000190, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::Temp_int_Loop_Counter_Variable_5' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_5) == 0x000198, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_5' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Contains_ReturnValue_1) == 0x0001A0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Contains_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x0001A1, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_3) == 0x0001A2, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Add_IntInt_ReturnValue_5) == 0x0001A4, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_4) == 0x0001A8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_4) == 0x0001AC, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_AddChild_ReturnValue_1) == 0x0001B0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_AddChild_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Create_ReturnValue_5) == 0x0001B8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Create_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GetAllChildren_ReturnValue) == 0x0001C0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GetAllChildren_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Get_Item_6) == 0x0001D0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Get_Item_6' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Array_Length_ReturnValue_5) == 0x0001D8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Array_Length_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_AsInventory_Category_Title) == 0x0001E0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_AsInventory_Category_Title' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, K2Node_DynamicCast_bSuccess_3) == 0x0001E8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_Less_IntInt_ReturnValue_5) == 0x0001E9, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_Less_IntInt_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x0001EA, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_AddChild_ReturnValue_2) == 0x0001F0, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_AddChild_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_ExecuteUbergraph_SkinShop, CallFunc_GreaterEqual_IntInt_ReturnValue_1) == 0x0001F8, "Member 'SkinShop_C_ExecuteUbergraph_SkinShop::CallFunc_GreaterEqual_IntInt_ReturnValue_1' has a wrong offset!");
 
 // Function SkinShop.SkinShop_C.AddItemsFromCategory
 // 0x0001 (0x0001 - 0x0000)
@@ -553,6 +545,53 @@ static_assert(offsetof(SkinShop_C_AddPreviousRotationItemsToFeatured, CallFunc_A
 static_assert(offsetof(SkinShop_C_AddPreviousRotationItemsToFeatured, CallFunc_Array_Add_ReturnValue) == 0x000044, "Member 'SkinShop_C_AddPreviousRotationItemsToFeatured::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
 static_assert(offsetof(SkinShop_C_AddPreviousRotationItemsToFeatured, CallFunc_Array_Length_ReturnValue_1) == 0x000048, "Member 'SkinShop_C_AddPreviousRotationItemsToFeatured::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(SkinShop_C_AddPreviousRotationItemsToFeatured, CallFunc_Less_IntInt_ReturnValue_2) == 0x00004C, "Member 'SkinShop_C_AddPreviousRotationItemsToFeatured::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+
+// Function SkinShop.SkinShop_C.GetCurrentSkinsInRotation
+// 0x0090 (0x0090 - 0x0000)
+struct SkinShop_C_GetCurrentSkinsInRotation final
+{
+public:
+	TArray<class UClass*>                         Array;                                             // 0x0000(0x0010)(Parm, OutParm)
+	TArray<class UClass*>                         AllRotationSkins;                                  // 0x0010(0x0010)(Edit, BlueprintVisible)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_LastIndex_ReturnValue;              // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_FindTimeLeft_SkinRot;                     // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSkinRotationStructure                 CallFunc_Array_Get_Item;                           // 0x0038(0x0010)(HasGetValueTypeHash)
+	int32                                         CallFunc_Multiply_IntInt_ReturnValue;              // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRandomStream                          CallFunc_MakeRandomStream_ReturnValue;             // 0x004C(0x0008)(ZeroConstructor, NoDestructor)
+	int32                                         CallFunc_RandomIntegerInRangeFromStream_ReturnValue; // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRandomStream                          CallFunc_MakeRandomStream_ReturnValue_1;           // 0x0058(0x0008)(ZeroConstructor, NoDestructor)
+	class UClass*                                 CallFunc_Array_Get_Item_1;                         // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_RandomIntegerInRangeFromStream_ReturnValue_1; // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 CallFunc_Array_Get_Item_2;                         // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UClass*>                         K2Node_MakeArray_Array;                            // 0x0080(0x0010)(ReferenceParm)
+};
+static_assert(alignof(SkinShop_C_GetCurrentSkinsInRotation) == 0x000008, "Wrong alignment on SkinShop_C_GetCurrentSkinsInRotation");
+static_assert(sizeof(SkinShop_C_GetCurrentSkinsInRotation) == 0x000090, "Wrong size on SkinShop_C_GetCurrentSkinsInRotation");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, Array) == 0x000000, "Member 'SkinShop_C_GetCurrentSkinsInRotation::Array' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, AllRotationSkins) == 0x000010, "Member 'SkinShop_C_GetCurrentSkinsInRotation::AllRotationSkins' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, Temp_int_Array_Index_Variable) == 0x000020, "Member 'SkinShop_C_GetCurrentSkinsInRotation::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, Temp_int_Loop_Counter_Variable) == 0x000024, "Member 'SkinShop_C_GetCurrentSkinsInRotation::Temp_int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_Add_IntInt_ReturnValue) == 0x000028, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_Array_LastIndex_ReturnValue) == 0x00002C, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_Array_LastIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_FindTimeLeft_SkinRot) == 0x000030, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_FindTimeLeft_SkinRot' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_Array_Get_Item) == 0x000038, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_Multiply_IntInt_ReturnValue) == 0x000048, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_Multiply_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_MakeRandomStream_ReturnValue) == 0x00004C, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_MakeRandomStream_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_RandomIntegerInRangeFromStream_ReturnValue) == 0x000054, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_RandomIntegerInRangeFromStream_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_MakeRandomStream_ReturnValue_1) == 0x000058, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_MakeRandomStream_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_Array_Get_Item_1) == 0x000060, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_RandomIntegerInRangeFromStream_ReturnValue_1) == 0x000068, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_RandomIntegerInRangeFromStream_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_Array_Length_ReturnValue) == 0x00006C, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_Array_Get_Item_2) == 0x000070, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, CallFunc_Less_IntInt_ReturnValue) == 0x000078, "Member 'SkinShop_C_GetCurrentSkinsInRotation::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SkinShop_C_GetCurrentSkinsInRotation, K2Node_MakeArray_Array) == 0x000080, "Member 'SkinShop_C_GetCurrentSkinsInRotation::K2Node_MakeArray_Array' has a wrong offset!");
 
 }
 

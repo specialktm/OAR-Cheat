@@ -17,9 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Pistol_GT17.Pistol_GT17_C
-// 0x0000 (0x0310 - 0x0310)
+// 0x0008 (0x0338 - 0x0330)
 class APistol_GT17_C final : public AGunBase_C
 {
+public:
+	class UBoxComponent*                          CollisionBox1;                                     // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+
 public:
 	void UserConstructionScript();
 
@@ -34,7 +37,8 @@ public:
 	}
 };
 static_assert(alignof(APistol_GT17_C) == 0x000008, "Wrong alignment on APistol_GT17_C");
-static_assert(sizeof(APistol_GT17_C) == 0x000310, "Wrong size on APistol_GT17_C");
+static_assert(sizeof(APistol_GT17_C) == 0x000338, "Wrong size on APistol_GT17_C");
+static_assert(offsetof(APistol_GT17_C, CollisionBox1) == 0x000330, "Member 'APistol_GT17_C::CollisionBox1' has a wrong offset!");
 
 }
 

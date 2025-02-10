@@ -15,7 +15,7 @@ namespace SDK::Params
 {
 
 // Function NPC_Police_Swat.NPC_Police_Swat_C.ExecuteUbergraph_NPC_Police_Swat
-// 0x0020 (0x0020 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat final
 {
 public:
@@ -24,13 +24,15 @@ public:
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	int32                                         CallFunc_FTrunc_ReturnValue;                       // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Multiply_IntInt_ReturnValue;              // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Clamp_ReturnValue;                        // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat) == 0x000008, "Wrong alignment on NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat");
-static_assert(sizeof(NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat) == 0x000020, "Wrong size on NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat");
+static_assert(sizeof(NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat) == 0x000028, "Wrong size on NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat");
 static_assert(offsetof(NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat, EntryPoint) == 0x000000, "Member 'NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat::EntryPoint' has a wrong offset!");
 static_assert(offsetof(NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat, CallFunc_Conv_IntToString_ReturnValue) == 0x000008, "Member 'NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
 static_assert(offsetof(NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat, CallFunc_FTrunc_ReturnValue) == 0x000018, "Member 'NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat::CallFunc_FTrunc_ReturnValue' has a wrong offset!");
 static_assert(offsetof(NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat, CallFunc_Multiply_IntInt_ReturnValue) == 0x00001C, "Member 'NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat::CallFunc_Multiply_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat, CallFunc_Clamp_ReturnValue) == 0x000020, "Member 'NPC_Police_Swat_C_ExecuteUbergraph_NPC_Police_Swat::CallFunc_Clamp_ReturnValue' has a wrong offset!");
 
 }
 

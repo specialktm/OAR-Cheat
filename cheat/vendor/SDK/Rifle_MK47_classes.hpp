@@ -17,17 +17,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Rifle_MK47.Rifle_MK47_C
-// 0x0038 (0x0348 - 0x0310)
+// 0x0040 (0x0370 - 0x0330)
 class ARifle_MK47_C final : public AGunBase_C
 {
 public:
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Handguard_02;                         // 0x0310(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Scope_front;                                       // 0x0318(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Trigger;                                           // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_handle;                               // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Stock;                                // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Barrel;                               // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Wep_Mod_A_Handguard_01;                         // 0x0340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          CollisionBox1;                                     // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Handguard_02;                         // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Scope_front;                                       // 0x0340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Trigger;                                           // 0x0348(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_handle;                               // 0x0350(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Stock;                                // 0x0358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Barrel;                               // 0x0360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Wep_Mod_A_Handguard_01;                         // 0x0368(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -40,14 +41,15 @@ public:
 	}
 };
 static_assert(alignof(ARifle_MK47_C) == 0x000008, "Wrong alignment on ARifle_MK47_C");
-static_assert(sizeof(ARifle_MK47_C) == 0x000348, "Wrong size on ARifle_MK47_C");
-static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_Handguard_02) == 0x000310, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_Handguard_02' has a wrong offset!");
-static_assert(offsetof(ARifle_MK47_C, Scope_front) == 0x000318, "Member 'ARifle_MK47_C::Scope_front' has a wrong offset!");
-static_assert(offsetof(ARifle_MK47_C, Trigger) == 0x000320, "Member 'ARifle_MK47_C::Trigger' has a wrong offset!");
-static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_handle) == 0x000328, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_handle' has a wrong offset!");
-static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_Stock) == 0x000330, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_Stock' has a wrong offset!");
-static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_Barrel) == 0x000338, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_Barrel' has a wrong offset!");
-static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_Handguard_01) == 0x000340, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_Handguard_01' has a wrong offset!");
+static_assert(sizeof(ARifle_MK47_C) == 0x000370, "Wrong size on ARifle_MK47_C");
+static_assert(offsetof(ARifle_MK47_C, CollisionBox1) == 0x000330, "Member 'ARifle_MK47_C::CollisionBox1' has a wrong offset!");
+static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_Handguard_02) == 0x000338, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_Handguard_02' has a wrong offset!");
+static_assert(offsetof(ARifle_MK47_C, Scope_front) == 0x000340, "Member 'ARifle_MK47_C::Scope_front' has a wrong offset!");
+static_assert(offsetof(ARifle_MK47_C, Trigger) == 0x000348, "Member 'ARifle_MK47_C::Trigger' has a wrong offset!");
+static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_handle) == 0x000350, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_handle' has a wrong offset!");
+static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_Stock) == 0x000358, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_Stock' has a wrong offset!");
+static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_Barrel) == 0x000360, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_Barrel' has a wrong offset!");
+static_assert(offsetof(ARifle_MK47_C, SM_Wep_Mod_A_Handguard_01) == 0x000368, "Member 'ARifle_MK47_C::SM_Wep_Mod_A_Handguard_01' has a wrong offset!");
 
 }
 

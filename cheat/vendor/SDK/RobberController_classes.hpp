@@ -10,22 +10,22 @@
 
 #include "Basic.hpp"
 
+#include "SkillProgressStruct_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "InputSettingStruct_structs.hpp"
 #include "ShopItemCategory_structs.hpp"
+#include "InputSettingStruct_structs.hpp"
 #include "AttachmentArrayStructure_structs.hpp"
-#include "SkillSaveStruct_structs.hpp"
 #include "SteamCore_structs.hpp"
 #include "SettingsStruct_structs.hpp"
-#include "SkillProgressStruct_structs.hpp"
+#include "SkillSaveStruct_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass RobberController.RobberController_C
-// 0x02C8 (0x0838 - 0x0570)
+// 0x02D0 (0x0840 - 0x0570)
 class ARobberController_C final : public APlayerController
 {
 public:
@@ -69,28 +69,29 @@ public:
 	int32                                         Coins;                                             // 0x0738(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_73C[0x4];                                      // 0x073C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 LocalCurrency;                                     // 0x0740(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	TArray<struct FSteamItemDetails>              SteamInventoryResultItems;                         // 0x0750(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class UClass*>                         UnlockedMaps;                                      // 0x0760(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         Loadout_Equipped;                                  // 0x0770(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_774[0x4];                                      // 0x0774(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	int64                                         RandomMultiplier;                                  // 0x0778(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int64                                         MultipliedValue;                                   // 0x0780(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ShowSkinPopup;                                     // 0x0788(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_789[0x3];                                      // 0x0789(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CivCasualty;                                       // 0x078C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UClass*>                         UnlockedSetups;                                    // 0x0790(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class UClass*>                         CompletedSetups;                                   // 0x07A0(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnInstance)
-	TArray<struct FInputSettingStruct>            Input_Settings;                                    // 0x07B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	FMulticastInlineDelegateProperty_             CoinsChanged;                                      // 0x07C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TArray<struct FSkillSaveStruct>               UnlockedSkills;                                    // 0x07D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FSkillProgressStruct>           ResearchingSkills;                                 // 0x07E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	FMulticastInlineDelegateProperty_             LevelLoaded;                                       // 0x07F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TArray<class UClass*>                         PlaySetups;                                        // 0x0800(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	FMulticastInlineDelegateProperty_             SetupsLoaded;                                      // 0x0810(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	int32                                         PlayerLoggedVersion;                               // 0x0820(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsLogged_;                                         // 0x0824(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_825[0x3];                                      // 0x0825(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	FMulticastInlineDelegateProperty_             LoadedAllFromCloud;                                // 0x0828(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TArray<class UClass*>                         UnlockedMaps;                                      // 0x0750(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         Loadout_Equipped;                                  // 0x0760(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_764[0x4];                                      // 0x0764(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         RandomMultiplier;                                  // 0x0768(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int64                                         MultipliedValue;                                   // 0x0770(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ShowSkinPopup;                                     // 0x0778(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_779[0x3];                                      // 0x0779(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CivCasualty;                                       // 0x077C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UClass*>                         UnlockedSetups;                                    // 0x0780(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class UClass*>                         CompletedSetups;                                   // 0x0790(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnInstance)
+	TArray<struct FInputSettingStruct>            Input_Settings;                                    // 0x07A0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	FMulticastInlineDelegateProperty_             CoinsChanged;                                      // 0x07B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TArray<struct FSkillSaveStruct>               UnlockedSkills;                                    // 0x07C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FSkillProgressStruct>           ResearchingSkills;                                 // 0x07D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	FMulticastInlineDelegateProperty_             LevelLoaded;                                       // 0x07E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TArray<class UClass*>                         PlaySetups;                                        // 0x07F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	FMulticastInlineDelegateProperty_             SetupsLoaded;                                      // 0x0800(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	int32                                         PlayerLoggedVersion;                               // 0x0810(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsLogged_;                                         // 0x0814(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_815[0x3];                                      // 0x0815(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	FMulticastInlineDelegateProperty_             LoadedAllFromCloud;                                // 0x0818(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TArray<struct FSteamItemDetails>              InventoryResultItems;                              // 0x0828(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          HasFullyUpdated_;                                  // 0x0838(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void LoadedAll__DelegateSignature();
@@ -109,6 +110,12 @@ public:
 	void SetupsLoaded__DelegateSignature();
 	void LoadedAllFromCloud__DelegateSignature();
 	void ExecuteUbergraph_RobberController(int32 EntryPoint);
+	void OnFullUpdate(const struct FSteamInventoryFullUpdate& Data);
+	void UpdateWhenResultIsFinished(const struct FSteamInventoryResult& Result);
+	void GrantCoinPacks();
+	void CheckCoinPacks();
+	void UpdateSteamItemsEvent(const struct FSteamInventoryResult& Param_InventoryHandle);
+	void OnUpdateAllSteamInventory();
 	void OnBackupFileUploaded(const struct FRemoteStorageFileWriteAsyncComplete& Data, bool bWasSuccessful);
 	void OnCloudFilesSaves(const struct FRemoteStorageFileWriteAsyncComplete& Data, bool bWasSuccessful);
 	void LogPlayer();
@@ -127,11 +134,10 @@ public:
 	void LoadEquippedLoadoutSlot();
 	void LoadMaps();
 	void SaveMaps();
-	void InventoryFullUpdate(const struct FSteamInventoryFullUpdate& Data);
 	void ReceiveTick(float DeltaSeconds);
 	void DefineCoinItem();
 	void LoadSavefromCloud(const class FString& Save_name);
-	void UploadToCloud(const class FString& Savename);
+	void UploadToCloud(const class FString& SaveName);
 	void LoadSettings();
 	void ApplySettings();
 	void SaveSettings();
@@ -156,6 +162,7 @@ public:
 	void LoadInventoryItems();
 	void SaveInventoryItems();
 	void ReceiveBeginPlay();
+	void OnSteamInventoryUpdated(const TArray<struct FSteamItemDetails>& Items);
 	void OnCallback_AD45EEAC44D55B89E3CC16A1A002AE23(const class FString& Data, bool bWasSuccessful);
 	void OnCallback_0D5D0EC4428E0E8C7A5C85ACACEA797E(const struct FSteamInventoryRequestPricesResult& Data, bool bWasSuccessful);
 	void Find_Equipped_Item_from_Category_Function(EShopItemCategory Category, int32 Param_Index, class UClass** Item);
@@ -164,7 +171,7 @@ public:
 	void AddInventoryItem(class UClass* Item, int32* Param_Index);
 	void GetInventoryItemsInCategory(EShopItemCategory Category, bool Include_equipped_, TArray<class UClass*>* Inventory);
 	void UpdateNewWeapon(int32 Param_Index);
-	void Update_Attachment(class UClass* Item_info, int32 Weaponindex, struct FAttachmentArrayStructure* New_attachments_structure);
+	void Update_Attachment(class UClass* Item_Info, int32 Weaponindex, struct FAttachmentArrayStructure* New_attachments_structure);
 	void FindEquppedAttachmentFunc(EShopItemCategory Category, int32 Param_Index, class UClass** Attachment);
 	bool IsItemInInventory_(class UClass* Item);
 	void Savecategory(EShopItemCategory Category);
@@ -186,17 +193,21 @@ public:
 	void Check_Multiplied_Value(int32 Check, bool* Can_purchase_);
 	void FindEquippedArrayFromCategoryFunction(EShopItemCategory Category, TArray<class UClass*>* Array);
 	struct FTimespan FindSkinTimeLeft(int32* RotationNumber);
-	void CheckSteamID(class UOAR_Savegame_C* SaveGame, const class FString& Savename, TArray<uint8>& LoadedBytes);
+	void CheckSteamID(class UOAR_Savegame_C* SaveGame, const class FString& SaveName, TArray<uint8>& LoadedBytes);
 	void LockUserSteamID();
-	void SaveFileByName(const class FString& Savename);
+	void SaveFileByName(const class FString& SaveName);
 	void AddSetup(class UClass* Setup);
 	void ApplySavedInputSettings();
 	void GetSkillTier(class UClass* Skill, int32* Tier);
 	void FindResearchingSkill(class UClass* Skill, bool* Is_researching_, struct FSkillProgressStruct* Array_Element);
 	void ProgressSkills(float XP);
 	void GetCompletedSetupsForMap(class UClass* Map, int32* SetupsCompleted, bool* Completed_min_);
-	void LoadFileFromBackup(const class FString& Savename, TArray<uint8>& LoadedBytes, bool* Success_);
+	void LoadFileFromBackup(const class FString& SaveName, TArray<uint8>& LoadedBytes, bool* Success_);
 	void Convert_Save_Info_To_Bytes(int32 IntIn, TArray<uint8>* Bytes);
+	void MapsToInventory();
+	void DoesItemExistInSteamInventory_(int32 SteamDefID, TArray<class UClass*>& Items, bool* Exists_, int32* Param_Index);
+	void GetSteamItemsInCategory(const class FString& Category, const struct FSteamInventoryResult& Inventory, TArray<int32>* Items);
+	void OnGetSteamInventoryItems(TArray<struct FSteamItemDetails>* Items);
 
 public:
 	static class UClass* StaticClass()
@@ -209,7 +220,7 @@ public:
 	}
 };
 static_assert(alignof(ARobberController_C) == 0x000008, "Wrong alignment on ARobberController_C");
-static_assert(sizeof(ARobberController_C) == 0x000838, "Wrong size on ARobberController_C");
+static_assert(sizeof(ARobberController_C) == 0x000840, "Wrong size on ARobberController_C");
 static_assert(offsetof(ARobberController_C, UberGraphFrame) == 0x000570, "Member 'ARobberController_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ARobberController_C, ItemInventory) == 0x000578, "Member 'ARobberController_C::ItemInventory' has a wrong offset!");
 static_assert(offsetof(ARobberController_C, Tools_Equipped) == 0x000588, "Member 'ARobberController_C::Tools_Equipped' has a wrong offset!");
@@ -244,25 +255,26 @@ static_assert(offsetof(ARobberController_C, RedeemedRecently_) == 0x000730, "Mem
 static_assert(offsetof(ARobberController_C, InventoryHandle) == 0x000734, "Member 'ARobberController_C::InventoryHandle' has a wrong offset!");
 static_assert(offsetof(ARobberController_C, Coins) == 0x000738, "Member 'ARobberController_C::Coins' has a wrong offset!");
 static_assert(offsetof(ARobberController_C, LocalCurrency) == 0x000740, "Member 'ARobberController_C::LocalCurrency' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, SteamInventoryResultItems) == 0x000750, "Member 'ARobberController_C::SteamInventoryResultItems' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, UnlockedMaps) == 0x000760, "Member 'ARobberController_C::UnlockedMaps' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, Loadout_Equipped) == 0x000770, "Member 'ARobberController_C::Loadout_Equipped' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, RandomMultiplier) == 0x000778, "Member 'ARobberController_C::RandomMultiplier' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, MultipliedValue) == 0x000780, "Member 'ARobberController_C::MultipliedValue' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, ShowSkinPopup) == 0x000788, "Member 'ARobberController_C::ShowSkinPopup' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, CivCasualty) == 0x00078C, "Member 'ARobberController_C::CivCasualty' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, UnlockedSetups) == 0x000790, "Member 'ARobberController_C::UnlockedSetups' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, CompletedSetups) == 0x0007A0, "Member 'ARobberController_C::CompletedSetups' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, Input_Settings) == 0x0007B0, "Member 'ARobberController_C::Input_Settings' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, CoinsChanged) == 0x0007C0, "Member 'ARobberController_C::CoinsChanged' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, UnlockedSkills) == 0x0007D0, "Member 'ARobberController_C::UnlockedSkills' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, ResearchingSkills) == 0x0007E0, "Member 'ARobberController_C::ResearchingSkills' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, LevelLoaded) == 0x0007F0, "Member 'ARobberController_C::LevelLoaded' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, PlaySetups) == 0x000800, "Member 'ARobberController_C::PlaySetups' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, SetupsLoaded) == 0x000810, "Member 'ARobberController_C::SetupsLoaded' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, PlayerLoggedVersion) == 0x000820, "Member 'ARobberController_C::PlayerLoggedVersion' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, IsLogged_) == 0x000824, "Member 'ARobberController_C::IsLogged_' has a wrong offset!");
-static_assert(offsetof(ARobberController_C, LoadedAllFromCloud) == 0x000828, "Member 'ARobberController_C::LoadedAllFromCloud' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, UnlockedMaps) == 0x000750, "Member 'ARobberController_C::UnlockedMaps' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, Loadout_Equipped) == 0x000760, "Member 'ARobberController_C::Loadout_Equipped' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, RandomMultiplier) == 0x000768, "Member 'ARobberController_C::RandomMultiplier' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, MultipliedValue) == 0x000770, "Member 'ARobberController_C::MultipliedValue' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, ShowSkinPopup) == 0x000778, "Member 'ARobberController_C::ShowSkinPopup' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, CivCasualty) == 0x00077C, "Member 'ARobberController_C::CivCasualty' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, UnlockedSetups) == 0x000780, "Member 'ARobberController_C::UnlockedSetups' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, CompletedSetups) == 0x000790, "Member 'ARobberController_C::CompletedSetups' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, Input_Settings) == 0x0007A0, "Member 'ARobberController_C::Input_Settings' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, CoinsChanged) == 0x0007B0, "Member 'ARobberController_C::CoinsChanged' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, UnlockedSkills) == 0x0007C0, "Member 'ARobberController_C::UnlockedSkills' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, ResearchingSkills) == 0x0007D0, "Member 'ARobberController_C::ResearchingSkills' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, LevelLoaded) == 0x0007E0, "Member 'ARobberController_C::LevelLoaded' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, PlaySetups) == 0x0007F0, "Member 'ARobberController_C::PlaySetups' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, SetupsLoaded) == 0x000800, "Member 'ARobberController_C::SetupsLoaded' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, PlayerLoggedVersion) == 0x000810, "Member 'ARobberController_C::PlayerLoggedVersion' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, IsLogged_) == 0x000814, "Member 'ARobberController_C::IsLogged_' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, LoadedAllFromCloud) == 0x000818, "Member 'ARobberController_C::LoadedAllFromCloud' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, InventoryResultItems) == 0x000828, "Member 'ARobberController_C::InventoryResultItems' has a wrong offset!");
+static_assert(offsetof(ARobberController_C, HasFullyUpdated_) == 0x000838, "Member 'ARobberController_C::HasFullyUpdated_' has a wrong offset!");
 
 }
 

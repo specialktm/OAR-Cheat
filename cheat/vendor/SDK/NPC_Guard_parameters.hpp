@@ -19,7 +19,7 @@ namespace SDK::Params
 {
 
 // Function NPC_Guard.NPC_Guard_C.ExecuteUbergraph_NPC_Guard
-// 0x0970 (0x0970 - 0x0000)
+// 0x0980 (0x0980 - 0x0000)
 struct NPC_Guard_C_ExecuteUbergraph_NPC_Guard final
 {
 public:
@@ -61,335 +61,334 @@ public:
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x00BE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_BF[0x1];                                       // 0x00BF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Temp_int_Variable_1;                               // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_8;               // 0x00C4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(class AActor* Player, const struct FVector& Pickuplocation, const struct FRotator& PickupRotation, const struct FVector& HitLocation)> K2Node_CreateDelegate_OutputDelegate_9;            // 0x00C8(0x0010)(ZeroConstructor, NoDestructor)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x00DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_8;               // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Whether_the_gate_is_currently_open_or_close_Variable; // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_E2[0x2];                                       // 0x00E2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_10;           // 0x00E4(0x0010)(ZeroConstructor, NoDestructor)
-	bool                                          Temp_bool_Whether_the_gate_is_currently_open_or_close_Variable; // 0x00F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_F5[0x3];                                       // 0x00F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_11;           // 0x00F8(0x0010)(ZeroConstructor, NoDestructor)
-	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x010C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable_2;                              // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_111[0x3];                                      // 0x0111(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0114(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class AActor* Player)>         K2Node_CreateDelegate_OutputDelegate_12;           // 0x0120(0x0010)(ZeroConstructor, NoDestructor)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0131(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EPathFollowingResult                          Temp_byte_Variable_5;                              // 0x0132(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_133[0x1];                                      // 0x0133(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x0134(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0138(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13C[0x4];                                      // 0x013C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 K2Node_Event_GuardActor;                           // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_Distance;                             // 0x0148(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14C[0x4];                                      // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  K2Node_CustomEvent_Pawn;                           // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_2;                              // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F9[0x3];                                       // 0x00F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable_2;                   // 0x00FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_3;                   // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_11;           // 0x010C(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void(class AActor* Player)>         K2Node_CreateDelegate_OutputDelegate_12;           // 0x011C(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x012C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x012D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EPathFollowingResult                          Temp_byte_Variable_5;                              // 0x012E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_12F[0x1];                                      // 0x012F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_2;                  // 0x0130(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0134(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_Event_GuardActor;                           // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_Distance;                             // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_144[0x4];                                      // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  K2Node_CustomEvent_Pawn;                           // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATowableCar_C*                          K2Node_DynamicCast_AsTowable_Car;                  // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_159[0x7];                                      // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ASensingActor_C*                        K2Node_DynamicCast_AsSensing_Actor;                // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ANPCBase_C*                             K2Node_DynamicCast_AsNPCBase;                      // 0x0170(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0178(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_179[0x3];                                      // 0x0179(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_GetDistanceTo_ReturnValue;                // 0x017C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_169[0x3];                                      // 0x0169(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x016C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ANPCBase_C*                             K2Node_DynamicCast_AsNPCBase;                      // 0x0178(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_181[0x3];                                      // 0x0181(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0184(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character;             // 0x0190(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x0184(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_191[0x3];                                      // 0x0191(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetDistanceTo_ReturnValue;                // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_199[0x7];                                      // 0x0199(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  K2Node_ComponentBoundEvent_Player;                 // 0x01A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character_1;           // 0x01A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1B1[0x3];                                      // 0x01B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x01B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1BA[0x2];                                      // 0x01BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x01BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_CustomEvent_Location_2;                     // 0x01C0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_ProjectPointToNavigation_ProjectedLocation; // 0x01CC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_K2_ProjectPointToNavigation_ReturnValue;  // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1D9[0x3];                                      // 0x01D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x01DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_CustomEvent_Location_1;                     // 0x01E0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1EC[0x4];                                      // 0x01EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_CustomEvent_InvestigateReason;              // 0x01F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_ProjectPointToNavigation_ProjectedLocation_1; // 0x0200(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_K2_ProjectPointToNavigation_ReturnValue_1; // 0x020C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_20D[0x3];                                      // 0x020D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue;      // 0x0210(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_219[0x7];                                      // 0x0219(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 K2Node_CustomEvent_Player_4;                       // 0x0220(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IPlayerInterface_C>    K2Node_DynamicCast_AsPlayer_Interface;             // 0x0228(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_239[0x7];                                      // 0x0239(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ASensingActor_C*                        K2Node_DynamicCast_AsSensing_Actor_1;              // 0x0240(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_5;                     // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_12;              // 0x0249(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_24A[0x2];                                      // 0x024A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x024C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x0250(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_2;        // 0x0254(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_RandomFloatInRange_ReturnValue;           // 0x0258(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_RandomFloatInRange_ReturnValue_1;         // 0x025C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0260(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_RandomBoolWithWeight_ReturnValue;         // 0x0261(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_262[0x6];                                      // 0x0262(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class APoliceGunBase_C*                       K2Node_DynamicCast_AsPolice_Gun_Base;              // 0x0268(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_6;                     // 0x0270(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_271[0x3];                                      // 0x0271(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Select_Default;                             // 0x0274(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerCharacter_C*                     K2Node_CustomEvent_Player_3;                       // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_1;    // 0x0280(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0288(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_289[0x7];                                      // 0x0289(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_GetTransform_ReturnValue;                 // 0x0290(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
-	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_13;           // 0x02C0(0x0010)(ZeroConstructor, NoDestructor)
-	struct FVector                                CallFunc_BreakTransform_Location;                  // 0x02D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_BreakTransform_Rotation;                  // 0x02DC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_BreakTransform_Scale;                     // 0x02E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_2;    // 0x02F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0300(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_301[0x7];                                      // 0x0301(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AGuardPatrolPoint_C*>            CallFunc_GetAllActorsOfClass_OutActors;            // 0x0308(0x0010)(ReferenceParm)
-	class AGuardPatrolPoint_C*                    CallFunc_Array_Get_Item;                           // 0x0318(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0320(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0324(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0325(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x0326(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_327[0x1];                                      // 0x0327(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0328(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x032C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32D[0x3];                                      // 0x032D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0330(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x0334(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_335[0x3];                                      // 0x0335(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGuardPatrolPoint_C*                    CallFunc_FindCurrentPatrolPoint_Point;             // 0x0338(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_FindCurrentPatrolPoint_Last_point_;       // 0x0340(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x0341(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_342[0x6];                                      // 0x0342(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class AAIController*                          CallFunc_GetAIController_ReturnValue;              // 0x0348(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_3;    // 0x0350(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x0358(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_359[0x3];                                      // 0x0359(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               CallFunc_K2_GetActorRotation_ReturnValue;          // 0x035C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FRotator                               K2Node_CustomEvent_Rotation;                       // 0x0368(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_13;              // 0x0374(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_375[0x3];                                      // 0x0375(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               CallFunc_RLerp_ReturnValue;                        // 0x0378(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_BreakRotator_Roll;                        // 0x0384(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakRotator_Pitch;                       // 0x0388(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakRotator_Yaw;                         // 0x038C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AGuardPatrolPoint_C*                    CallFunc_FindCurrentPatrolPoint_Point_1;           // 0x0390(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_FindCurrentPatrolPoint_Last_point__1;     // 0x0398(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_399[0x3];                                      // 0x0399(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               CallFunc_MakeRotator_ReturnValue;                  // 0x039C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_K2_SetActorRotation_ReturnValue;          // 0x03A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3A9[0x3];                                      // 0x03A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x03AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Select_Default_1;                           // 0x03B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_9;               // 0x03B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue_3;                  // 0x03B5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3B6[0x2];                                      // 0x03B6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class AAIController*                          CallFunc_GetAIController_ReturnValue_1;            // 0x03B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue_4;                  // 0x03C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_6;                    // 0x03C1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3C2[0x6];                                      // 0x03C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerCharacter_C*                     CallFunc_FindNon_DownedPlayer_Player;              // 0x03C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_FindNon_DownedPlayer_Found_;              // 0x03D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_7;                    // 0x03D1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3D2[0x2];                                      // 0x03D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_14;           // 0x03D4(0x0010)(ZeroConstructor, NoDestructor)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_1;        // 0x03E4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation; // 0x03F0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue; // 0x03FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3FD[0x3];                                      // 0x03FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_4;    // 0x0400(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_8;                    // 0x0408(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_9;                    // 0x0409(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_1;    // 0x040A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x040B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_10;                   // 0x040C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x040D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_40E[0x2];                                      // 0x040E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class AAIController*                          CallFunc_GetAIController_ReturnValue_2;            // 0x0410(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetDistanceTo_ReturnValue_1;              // 0x0418(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_FloatFloat_ReturnValue_1;            // 0x041C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character;             // 0x01A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x01B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1B2[0x6];                                      // 0x01B2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  K2Node_ComponentBoundEvent_Player;                 // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character_1;           // 0x01C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x01C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1C9[0x3];                                      // 0x01C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                K2Node_CustomEvent_Location_2;                     // 0x01CC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_ProjectPointToNavigation_ProjectedLocation; // 0x01D8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_K2_ProjectPointToNavigation_ReturnValue;  // 0x01E4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1E5[0x3];                                      // 0x01E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                K2Node_CustomEvent_Location_1;                     // 0x01E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1F4[0x4];                                      // 0x01F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_CustomEvent_InvestigateReason;              // 0x01F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_ProjectPointToNavigation_ProjectedLocation_1; // 0x0208(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_K2_ProjectPointToNavigation_ReturnValue_1; // 0x0214(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_215[0x3];                                      // 0x0215(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue;      // 0x0218(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_221[0x7];                                      // 0x0221(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 K2Node_CustomEvent_Player_4;                       // 0x0228(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IPlayerInterface_C>    K2Node_DynamicCast_AsPlayer_Interface;             // 0x0230(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_5;                     // 0x0240(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_241[0x3];                                      // 0x0241(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_3;                  // 0x0244(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ASensingActor_C*                        K2Node_DynamicCast_AsSensing_Actor_1;              // 0x0248(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_6;                     // 0x0250(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_251[0x3];                                      // 0x0251(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x0254(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_12;              // 0x0258(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0259(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_25A[0x6];                                      // 0x025A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class APoliceGunBase_C*                       K2Node_DynamicCast_AsPolice_Gun_Base;              // 0x0260(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_7;                     // 0x0268(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_269[0x3];                                      // 0x0269(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x026C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x0270(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_RandomFloatInRange_ReturnValue;           // 0x0274(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_2;        // 0x0278(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_RandomFloatInRange_ReturnValue_1;         // 0x027C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_RandomBoolWithWeight_ReturnValue;         // 0x0280(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_281[0x3];                                      // 0x0281(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Select_Default;                             // 0x0284(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerCharacter_C*                     K2Node_CustomEvent_Player_3;                       // 0x0288(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_1;    // 0x0290(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0298(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_299[0x7];                                      // 0x0299(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_GetTransform_ReturnValue;                 // 0x02A0(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
+	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_13;           // 0x02D0(0x0010)(ZeroConstructor, NoDestructor)
+	struct FVector                                CallFunc_BreakTransform_Location;                  // 0x02E0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_BreakTransform_Rotation;                  // 0x02EC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_BreakTransform_Scale;                     // 0x02F8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_304[0x4];                                      // 0x0304(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_2;    // 0x0308(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0310(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_311[0x7];                                      // 0x0311(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AGuardPatrolPoint_C*>            CallFunc_GetAllActorsOfClass_OutActors;            // 0x0318(0x0010)(ReferenceParm)
+	class AGuardPatrolPoint_C*                    CallFunc_Array_Get_Item;                           // 0x0328(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0330(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0334(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0335(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x0336(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_337[0x1];                                      // 0x0337(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0338(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x033C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_33D[0x3];                                      // 0x033D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0340(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x0344(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_345[0x3];                                      // 0x0345(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGuardPatrolPoint_C*                    CallFunc_FindCurrentPatrolPoint_Point;             // 0x0348(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_FindCurrentPatrolPoint_Last_point_;       // 0x0350(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x0351(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_352[0x6];                                      // 0x0352(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AAIController*                          CallFunc_GetAIController_ReturnValue;              // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_3;    // 0x0360(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x0368(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_369[0x3];                                      // 0x0369(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               CallFunc_K2_GetActorRotation_ReturnValue;          // 0x036C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FRotator                               K2Node_CustomEvent_Rotation;                       // 0x0378(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_384[0x4];                                      // 0x0384(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGuardPatrolPoint_C*                    CallFunc_FindCurrentPatrolPoint_Point_1;           // 0x0388(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_FindCurrentPatrolPoint_Last_point__1;     // 0x0390(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_391[0x3];                                      // 0x0391(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               CallFunc_RLerp_ReturnValue;                        // 0x0394(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_BreakRotator_Roll;                        // 0x03A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakRotator_Pitch;                       // 0x03A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakRotator_Yaw;                         // 0x03A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_MakeRotator_ReturnValue;                  // 0x03AC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_K2_SetActorRotation_ReturnValue;          // 0x03B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3B9[0x3];                                      // 0x03B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x03BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Select_Default_1;                           // 0x03C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_13;              // 0x03C4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue_3;                  // 0x03C5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3C6[0x2];                                      // 0x03C6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class AAIController*                          CallFunc_GetAIController_ReturnValue_1;            // 0x03C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue_4;                  // 0x03D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_6;                    // 0x03D1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3D2[0x6];                                      // 0x03D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerCharacter_C*                     CallFunc_FindNon_DownedPlayer_Player;              // 0x03D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_FindNon_DownedPlayer_Found_;              // 0x03E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_7;                    // 0x03E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3E2[0x2];                                      // 0x03E2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_14;           // 0x03E4(0x0010)(ZeroConstructor, NoDestructor)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_2;        // 0x03F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation; // 0x0400(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue; // 0x040C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_40D[0x3];                                      // 0x040D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_4;    // 0x0410(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_8;                    // 0x0418(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_9;                    // 0x0419(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_1;    // 0x041A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x041B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_10;                   // 0x041C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_41D[0x3];                                      // 0x041D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         K2Node_ComponentBoundEvent_Amount;                 // 0x0420(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   K2Node_ComponentBoundEvent_Bone;                   // 0x0424(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_ComponentBoundEvent_HitLocation;            // 0x042C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_ComponentBoundEvent_StartLocation;          // 0x0438(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_444[0x4];                                      // 0x0444(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 K2Node_ComponentBoundEvent_Instigator_1;           // 0x0448(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_CustomEvent_Instigator;                     // 0x0450(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AAIController*                          CallFunc_GetAIController_ReturnValue_3;            // 0x0458(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_ComponentBoundEvent_Location_1;             // 0x0460(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue_5;                  // 0x046C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_46D[0x3];                                      // 0x046D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_2;        // 0x0470(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_15;           // 0x047C(0x0010)(ZeroConstructor, NoDestructor)
-	struct FRotator                               CallFunc_FindLookAtRotation_ReturnValue;           // 0x048C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_6;                  // 0x0498(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_7;                  // 0x0499(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_8;                  // 0x049A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_49B[0x5];                                      // 0x049B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  K2Node_ComponentBoundEvent_Instigator;             // 0x04A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_ComponentBoundEvent_Location;               // 0x04A8(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_ComponentBoundEvent_Volume;                 // 0x04B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x04B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4B9[0x7];                                      // 0x04B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ACameraBP_C*>                    CallFunc_GetAllActorsOfClass_OutActors_1;          // 0x04C0(0x0010)(ReferenceParm)
-	struct FVector                                K2Node_CustomEvent_Location;                       // 0x04D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4DC[0x4];                                      // 0x04DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACameraBP_C*                            K2Node_CustomEvent_Camera;                         // 0x04E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ACameraBP_C*                            CallFunc_Array_Get_Item_1;                         // 0x04E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ANPC_Guard_C*                           CallFunc_FindClosestGuardOnPath_ClosestGuard;      // 0x04F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_FindClosestGuardOnPath_Distance;          // 0x04F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_11;                   // 0x04FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4FD[0x3];                                      // 0x04FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0500(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0504(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_9;                  // 0x0505(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_10;                 // 0x0506(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_507[0x1];                                      // 0x0507(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	class AAIController*                          CallFunc_GetAIController_ReturnValue_4;            // 0x0508(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent_3;  // 0x0510(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor_3;           // 0x0518(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp_3;            // 0x0520(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex_3;       // 0x0528(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ComponentBoundEvent_bFromSweep_2;           // 0x052C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_52D[0x3];                                      // 0x052D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             K2Node_ComponentBoundEvent_SweepResult_2;          // 0x0530(0x0088)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character_2;           // 0x05B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_7;                     // 0x05C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5C1[0x3];                                      // 0x05C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_3;        // 0x05C4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_4;        // 0x05D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x05DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5DD[0x3];                                      // 0x05DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               CallFunc_FindLookAtRotation_ReturnValue_1;         // 0x05E0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EPathFollowingResult                          Temp_byte_Variable_6;                              // 0x05EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5ED[0x3];                                      // 0x05ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ACameraBP_C*>                    CallFunc_GetAllActorsOfClass_OutActors_2;          // 0x05F0(0x0010)(ReferenceParm)
-	class ACameraBP_C*                            CallFunc_Array_Get_Item_2;                         // 0x0600(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0608(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x060C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_60D[0x3];                                      // 0x060D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class APawn* Pawn)>            K2Node_CreateDelegate_OutputDelegate_16;           // 0x0610(0x0010)(ZeroConstructor, NoDestructor)
+	class AAIController*                          CallFunc_GetAIController_ReturnValue_2;            // 0x0420(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetDistanceTo_ReturnValue_1;              // 0x0428(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_ComponentBoundEvent_Amount;                 // 0x042C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   K2Node_ComponentBoundEvent_Bone;                   // 0x0430(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                K2Node_ComponentBoundEvent_HitLocation;            // 0x0438(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                K2Node_ComponentBoundEvent_StartLocation;          // 0x0444(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_ComponentBoundEvent_Instigator_1;           // 0x0450(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue_1;            // 0x0458(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_459[0x7];                                      // 0x0459(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 K2Node_CustomEvent_Instigator;                     // 0x0460(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x0468(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_469[0x7];                                      // 0x0469(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AAIController*                          CallFunc_GetAIController_ReturnValue_3;            // 0x0470(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                K2Node_ComponentBoundEvent_Location_1;             // 0x0478(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_9;               // 0x0484(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue_5;                  // 0x0485(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_486[0x2];                                      // 0x0486(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_3;        // 0x0488(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_FindLookAtRotation_ReturnValue;           // 0x0494(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_6;                  // 0x04A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_7;                  // 0x04A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4A2[0x2];                                      // 0x04A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_15;           // 0x04A4(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_8;                  // 0x04B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4B5[0x3];                                      // 0x04B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  K2Node_ComponentBoundEvent_Instigator;             // 0x04B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                K2Node_ComponentBoundEvent_Location;               // 0x04C0(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_ComponentBoundEvent_Volume;                 // 0x04CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x04D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4D1[0x7];                                      // 0x04D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ACameraBP_C*>                    CallFunc_GetAllActorsOfClass_OutActors_1;          // 0x04D8(0x0010)(ReferenceParm)
+	struct FVector                                K2Node_CustomEvent_Location;                       // 0x04E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4F4[0x4];                                      // 0x04F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACameraBP_C*                            K2Node_CustomEvent_Camera;                         // 0x04F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACameraBP_C*                            CallFunc_Array_Get_Item_1;                         // 0x0500(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ANPC_Guard_C*                           CallFunc_FindClosestGuardOnPath_ClosestGuard;      // 0x0508(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FindClosestGuardOnPath_Distance;          // 0x0510(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_11;                   // 0x0514(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_515[0x3];                                      // 0x0515(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0518(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x051C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_9;                  // 0x051D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_10;                 // 0x051E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_51F[0x1];                                      // 0x051F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class AAIController*                          CallFunc_GetAIController_ReturnValue_4;            // 0x0520(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent_3;  // 0x0528(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor_3;           // 0x0530(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp_3;            // 0x0538(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex_3;       // 0x0540(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ComponentBoundEvent_bFromSweep_2;           // 0x0544(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_545[0x3];                                      // 0x0545(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             K2Node_ComponentBoundEvent_SweepResult_2;          // 0x0548(0x0088)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character_2;           // 0x05D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_8;                     // 0x05D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5D9[0x3];                                      // 0x05D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_4;        // 0x05DC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_5;        // 0x05E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_FindLookAtRotation_ReturnValue_1;         // 0x05F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TArray<class ACameraBP_C*>                    CallFunc_GetAllActorsOfClass_OutActors_2;          // 0x0600(0x0010)(ReferenceParm)
+	class ACameraBP_C*                            CallFunc_Array_Get_Item_2;                         // 0x0610(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0618(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x061C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x061D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_61E[0x2];                                      // 0x061E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 K2Node_CustomEvent_Player_2;                       // 0x0620(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class APlayerCharacter_C*                     K2Node_DynamicCast_AsPlayer_Character_3;           // 0x0628(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_8;                     // 0x0630(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_9;                     // 0x0630(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_631[0x3];                                      // 0x0631(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x0634(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0640(0x0030)(IsPlainOldData, NoDestructor)
-	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x0670(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Select_Default_2;                           // 0x0678(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_67C[0x4];                                      // 0x067C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AGuardPhone_C*                          CallFunc_FinishSpawningActor_ReturnValue;          // 0x0680(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x0688(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_68C[0x4];                                      // 0x068C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerCharacter_C*                     K2Node_CustomEvent_Player_1;                       // 0x0690(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_5;        // 0x0698(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6A4[0x4];                                      // 0x06A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_5;    // 0x06A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsOverlappingActor_ReturnValue;           // 0x06B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_12;                   // 0x06B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_6B2[0x6];                                      // 0x06B2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AGuardEscortPoint_C*>            CallFunc_GetAllActorsOfClass_OutActors_3;          // 0x06B8(0x0010)(ReferenceParm)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_6;        // 0x06C8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_FindNearestActor_Distance;                // 0x06D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_FindNearestActor_ReturnValue;             // 0x06D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent_2;  // 0x06E0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor_2;           // 0x06E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp_2;            // 0x06F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex_2;       // 0x06F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_7;        // 0x06FC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent_1;  // 0x0708(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor_1;           // 0x0710(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp_1;            // 0x0718(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex_1;       // 0x0720(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ComponentBoundEvent_bFromSweep_1;           // 0x0724(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_725[0x3];                                      // 0x0725(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             K2Node_ComponentBoundEvent_SweepResult_1;          // 0x0728(0x0088)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_6;    // 0x07B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_2;    // 0x07B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_13;                   // 0x07B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_11;                 // 0x07BA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_10;              // 0x07BB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_3;    // 0x07BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_Visible_;                       // 0x07BD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsOverlappingActor_ReturnValue_1;         // 0x07BE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_14;                   // 0x07BF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocallyControlled_ReturnValue;          // 0x07C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7C1[0x7];                                      // 0x07C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AAIController*                          CallFunc_GetAIController_ReturnValue_5;            // 0x07C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_8;        // 0x07D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetPathLength_PathLength;                 // 0x07DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENavigationQueryResult                        CallFunc_GetPathLength_ReturnValue;                // 0x07E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x07E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7E2[0x2];                                      // 0x07E2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_17;           // 0x07E4(0x0010)(ZeroConstructor, NoDestructor)
-	uint8                                         Pad_7F4[0x4];                                      // 0x07F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UActorComponent*>                CallFunc_GetComponentsByTag_ReturnValue;           // 0x07F8(0x0010)(ReferenceParm, ContainsInstancedReference)
-	class AAIController*                          CallFunc_GetAIController_ReturnValue_6;            // 0x0808(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UActorComponent*                        CallFunc_Array_Get_Item_3;                         // 0x0810(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IInstructionInterface_C> K2Node_DynamicCast_AsInstruction_Interface;        // 0x0818(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_9;                     // 0x0828(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TDelegate<void(class APawn* Pawn)>            K2Node_CreateDelegate_OutputDelegate_16;           // 0x0634(0x0010)(ZeroConstructor, NoDestructor)
+	int32                                         K2Node_Select_Default_2;                           // 0x0644(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x0648(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetComponentLocation_ReturnValue;      // 0x064C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_658[0x8];                                      // 0x0658(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0660(0x0030)(IsPlainOldData, NoDestructor)
+	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x0690(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AGuardPhone_C*                          CallFunc_FinishSpawningActor_ReturnValue;          // 0x0698(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerCharacter_C*                     K2Node_CustomEvent_Player_1;                       // 0x06A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EPathFollowingResult                          Temp_byte_Variable_6;                              // 0x06A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6A9[0x3];                                      // 0x06A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_6;        // 0x06AC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_5;    // 0x06B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsOverlappingActor_ReturnValue;           // 0x06C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_12;                   // 0x06C1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6C2[0x6];                                      // 0x06C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AGuardEscortPoint_C*>            CallFunc_GetAllActorsOfClass_OutActors_3;          // 0x06C8(0x0010)(ReferenceParm)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_7;        // 0x06D8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FindNearestActor_Distance;                // 0x06E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_FindNearestActor_ReturnValue;             // 0x06E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent_2;  // 0x06F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor_2;           // 0x06F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp_2;            // 0x0700(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex_2;       // 0x0708(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_8;        // 0x070C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent_1;  // 0x0718(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor_1;           // 0x0720(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp_1;            // 0x0728(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex_1;       // 0x0730(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ComponentBoundEvent_bFromSweep_1;           // 0x0734(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_735[0x3];                                      // 0x0735(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             K2Node_ComponentBoundEvent_SweepResult_1;          // 0x0738(0x0088)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	class UAIAsyncTaskBlueprintProxy*             CallFunc_CreateMoveToProxyObject_ReturnValue_6;    // 0x07C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_2;    // 0x07C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_13;                   // 0x07C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_11;                 // 0x07CA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_3;    // 0x07CB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_Visible_;                       // 0x07CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsOverlappingActor_ReturnValue_1;         // 0x07CD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_14;                   // 0x07CE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsLocallyControlled_ReturnValue;          // 0x07CF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class AAIController*                          CallFunc_GetAIController_ReturnValue_5;            // 0x07D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue_9;        // 0x07D8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetPathLength_PathLength;                 // 0x07E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENavigationQueryResult                        CallFunc_GetPathLength_ReturnValue;                // 0x07E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x07E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_10;              // 0x07EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7EB[0x5];                                      // 0x07EB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UActorComponent*>                CallFunc_GetComponentsByTag_ReturnValue;           // 0x07F0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class AAIController*                          CallFunc_GetAIController_ReturnValue_6;            // 0x0800(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UActorComponent*                        CallFunc_Array_Get_Item_3;                         // 0x0808(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IInstructionInterface_C> K2Node_DynamicCast_AsInstruction_Interface;        // 0x0810(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_10;                    // 0x0820(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_821[0x3];                                      // 0x0821(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x0824(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x0828(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_829[0x3];                                      // 0x0829(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x082C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x0830(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_831[0x3];                                      // 0x0831(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x0834(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue_1;             // 0x0838(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Has_Been_Initd_Variable_2;               // 0x0839(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_83A[0x6];                                      // 0x083A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent;    // 0x0840(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor;             // 0x0848(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp;              // 0x0850(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex;         // 0x0858(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ComponentBoundEvent_bFromSweep;             // 0x085C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_85D[0x3];                                      // 0x085D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             K2Node_ComponentBoundEvent_SweepResult;            // 0x0860(0x0088)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue;             // 0x08E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8EC[0x4];                                      // 0x08EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  K2Node_DynamicCast_AsPawn;                         // 0x08F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_10;                    // 0x08F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_8F9[0x3];                                      // 0x08F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_3;        // 0x08FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0900(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_1;           // 0x0904(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x082C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue_1;             // 0x0830(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_2;               // 0x0831(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_832[0x6];                                      // 0x0832(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OverlappedComponent;    // 0x0838(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor;             // 0x0840(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    K2Node_ComponentBoundEvent_OtherComp;              // 0x0848(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_ComponentBoundEvent_OtherBodyIndex;         // 0x0850(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ComponentBoundEvent_bFromSweep;             // 0x0854(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_855[0x3];                                      // 0x0855(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             K2Node_ComponentBoundEvent_SweepResult;            // 0x0858(0x0088)(ConstParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	class APawn*                                  K2Node_DynamicCast_AsPawn;                         // 0x08E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_11;                    // 0x08E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8E9[0x3];                                      // 0x08E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(EPathFollowingResult MovementResult)> K2Node_CreateDelegate_OutputDelegate_17;           // 0x08EC(0x0010)(ZeroConstructor, NoDestructor)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue;             // 0x08FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_1;           // 0x0900(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_3;        // 0x0904(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_4;        // 0x0908(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue_1;             // 0x090C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        CallFunc_K2_GetRootComponent_ReturnValue;          // 0x0910(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_15;                   // 0x0918(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_919[0x7];                                      // 0x0919(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMeshComponent*                         K2Node_DynamicCast_AsMesh_Component;               // 0x0920(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_11;                    // 0x0928(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_929[0x7];                                      // 0x0929(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class APickupItem_base_C*                     K2Node_DynamicCast_AsPickup_Item_Base;             // 0x0930(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_12;                    // 0x0938(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_11;              // 0x0939(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_93A[0x6];                                      // 0x093A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 K2Node_CustomEvent_Player;                         // 0x0940(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                K2Node_CustomEvent_Pickuplocation;                 // 0x0948(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               K2Node_CustomEvent_PickupRotation;                 // 0x0954(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                K2Node_CustomEvent_HitLocation;                    // 0x0960(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_16;                   // 0x096C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_IsClosed_Variable_2;                     // 0x096D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x090C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue_1;             // 0x0910(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_914[0x4];                                      // 0x0914(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        CallFunc_K2_GetRootComponent_ReturnValue;          // 0x0918(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_15;                   // 0x0920(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_921[0x7];                                      // 0x0921(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMeshComponent*                         K2Node_DynamicCast_AsMesh_Component;               // 0x0928(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_12;                    // 0x0930(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_931[0x7];                                      // 0x0931(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APickupItem_base_C*                     K2Node_DynamicCast_AsPickup_Item_Base;             // 0x0938(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_13;                    // 0x0940(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_941[0x7];                                      // 0x0941(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 K2Node_CustomEvent_Player;                         // 0x0948(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                K2Node_CustomEvent_Pickuplocation;                 // 0x0950(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               K2Node_CustomEvent_PickupRotation;                 // 0x095C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                K2Node_CustomEvent_HitLocation;                    // 0x0968(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_16;                   // 0x0974(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_IsClosed_Variable_2;                     // 0x0975(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EPathFollowingResult                          K2Node_CustomEvent_MovementResult_11;              // 0x0976(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard) == 0x000010, "Wrong alignment on NPC_Guard_C_ExecuteUbergraph_NPC_Guard");
-static_assert(sizeof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard) == 0x000970, "Wrong size on NPC_Guard_C_ExecuteUbergraph_NPC_Guard");
+static_assert(sizeof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard) == 0x000980, "Wrong size on NPC_Guard_C_ExecuteUbergraph_NPC_Guard");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, EntryPoint) == 0x000000, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::EntryPoint' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_byte_Variable) == 0x000004, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_byte_Variable' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_7) == 0x000005, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_7' has a wrong offset!");
@@ -418,264 +417,267 @@ static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_byte_Variabl
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Variable_1) == 0x0000BD, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Variable_1' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x0000BE, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Variable_1) == 0x0000C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Variable_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_8) == 0x0000C4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_8' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Loop_Counter_Variable) == 0x0000C4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Loop_Counter_Variable' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_9) == 0x0000C8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_9' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Loop_Counter_Variable) == 0x0000D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue) == 0x0000DC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Array_Index_Variable) == 0x0000E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue) == 0x0000D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Array_Index_Variable) == 0x0000DC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_8) == 0x0000E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_8' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Whether_the_gate_is_currently_open_or_close_Variable) == 0x0000E1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Whether_the_gate_is_currently_open_or_close_Variable' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_10) == 0x0000E4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_10' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Whether_the_gate_is_currently_open_or_close_Variable) == 0x0000F4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Whether_the_gate_is_currently_open_or_close_Variable' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_11) == 0x0000F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_11' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Array_Index_Variable_1) == 0x000108, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Array_Index_Variable_2) == 0x00010C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Variable_2) == 0x000110, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Variable_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Loop_Counter_Variable_1) == 0x000114, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_1) == 0x000118, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Array_Index_Variable_3) == 0x00011C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Array_Index_Variable_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_12) == 0x000120, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_12' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_IsClosed_Variable) == 0x000130, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Has_Been_Initd_Variable) == 0x000131, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_byte_Variable_5) == 0x000132, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_byte_Variable_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Loop_Counter_Variable_2) == 0x000134, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_2) == 0x000138, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Event_GuardActor) == 0x000140, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Event_GuardActor' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Event_Distance) == 0x000148, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Event_Distance' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Pawn) == 0x000150, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Pawn' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue) == 0x000158, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Array_Index_Variable_1) == 0x0000F4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Variable_2) == 0x0000F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Variable_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Array_Index_Variable_2) == 0x0000FC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Loop_Counter_Variable_1) == 0x000100, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_1) == 0x000104, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Array_Index_Variable_3) == 0x000108, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Array_Index_Variable_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_11) == 0x00010C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_11' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_12) == 0x00011C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_12' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_IsClosed_Variable) == 0x00012C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Has_Been_Initd_Variable) == 0x00012D, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_byte_Variable_5) == 0x00012E, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_byte_Variable_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Loop_Counter_Variable_2) == 0x000130, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_2) == 0x000134, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Event_GuardActor) == 0x000138, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Event_GuardActor' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Event_Distance) == 0x000140, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Event_Distance' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Pawn) == 0x000148, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Pawn' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsTowable_Car) == 0x000150, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsTowable_Car' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess) == 0x000158, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsSensing_Actor) == 0x000160, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsSensing_Actor' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess) == 0x000168, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsNPCBase) == 0x000170, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsNPCBase' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_1) == 0x000178, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetDistanceTo_ReturnValue) == 0x00017C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetDistanceTo_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_FloatFloat_ReturnValue) == 0x000180, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000184, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Character) == 0x000190, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Character' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_2) == 0x000198, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Player) == 0x0001A0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Player' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Character_1) == 0x0001A8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Character_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_3) == 0x0001B0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Divide_FloatFloat_ReturnValue) == 0x0001B4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Not_PreBool_ReturnValue) == 0x0001B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanAND_ReturnValue) == 0x0001B9, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Loop_Counter_Variable_3) == 0x0001BC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Location_2) == 0x0001C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Location_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_ProjectPointToNavigation_ProjectedLocation) == 0x0001CC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_ProjectPointToNavigation_ProjectedLocation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_ProjectPointToNavigation_ReturnValue) == 0x0001D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_ProjectPointToNavigation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_3) == 0x0001DC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Location_1) == 0x0001E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Location_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_InvestigateReason) == 0x0001F0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_InvestigateReason' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_ProjectPointToNavigation_ProjectedLocation_1) == 0x000200, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_ProjectPointToNavigation_ProjectedLocation_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_ProjectPointToNavigation_ReturnValue_1) == 0x00020C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_ProjectPointToNavigation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue) == 0x000210, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_1) == 0x000218, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player_4) == 0x000220, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Interface) == 0x000228, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Interface' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_4) == 0x000238, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsSensing_Actor_1) == 0x000240, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsSensing_Actor_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_5) == 0x000248, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_12) == 0x000249, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_12' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x00024C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x000250, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue_2) == 0x000254, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_RandomFloatInRange_ReturnValue) == 0x000258, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_RandomFloatInRange_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_RandomFloatInRange_ReturnValue_1) == 0x00025C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_RandomFloatInRange_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue) == 0x000260, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_RandomBoolWithWeight_ReturnValue) == 0x000261, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_RandomBoolWithWeight_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPolice_Gun_Base) == 0x000268, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPolice_Gun_Base' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_6) == 0x000270, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_6' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Select_Default) == 0x000274, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Select_Default' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player_3) == 0x000278, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_1) == 0x000280, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_2) == 0x000288, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetTransform_ReturnValue) == 0x000290, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetTransform_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_13) == 0x0002C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_13' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakTransform_Location) == 0x0002D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakTransform_Location' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakTransform_Rotation) == 0x0002DC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakTransform_Rotation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakTransform_Scale) == 0x0002E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakTransform_Scale' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_2) == 0x0002F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_3) == 0x000300, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAllActorsOfClass_OutActors) == 0x000308, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Get_Item) == 0x000318, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue) == 0x000320, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_IntInt_ReturnValue) == 0x000324, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_4) == 0x000325, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ObjectObject_ReturnValue) == 0x000326, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ObjectObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_1) == 0x000328, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Greater_IntInt_ReturnValue) == 0x00032C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Add_ReturnValue) == 0x000330, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_1) == 0x000334, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindCurrentPatrolPoint_Point) == 0x000338, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindCurrentPatrolPoint_Point' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindCurrentPatrolPoint_Last_point_) == 0x000340, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindCurrentPatrolPoint_Last_point_' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_2) == 0x000341, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue) == 0x000348, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_3) == 0x000350, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_5) == 0x000358, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorRotation_ReturnValue) == 0x00035C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Rotation) == 0x000368, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Rotation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_13) == 0x000374, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_13' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_RLerp_ReturnValue) == 0x000378, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_RLerp_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakRotator_Roll) == 0x000384, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakRotator_Roll' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakRotator_Pitch) == 0x000388, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakRotator_Pitch' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakRotator_Yaw) == 0x00038C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakRotator_Yaw' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindCurrentPatrolPoint_Point_1) == 0x000390, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindCurrentPatrolPoint_Point_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindCurrentPatrolPoint_Last_point__1) == 0x000398, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindCurrentPatrolPoint_Last_point__1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_MakeRotator_ReturnValue) == 0x00039C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_MakeRotator_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_SetActorRotation_ReturnValue) == 0x0003A8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_SetActorRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_4) == 0x0003AC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Select_Default_1) == 0x0003B0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Select_Default_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_9) == 0x0003B4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_9' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_3) == 0x0003B5, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_1) == 0x0003B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_4) == 0x0003C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_6) == 0x0003C1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindNon_DownedPlayer_Player) == 0x0003C8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindNon_DownedPlayer_Player' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindNon_DownedPlayer_Found_) == 0x0003D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindNon_DownedPlayer_Found_' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_7) == 0x0003D1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_14) == 0x0003D4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_14' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x0003E4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation) == 0x0003F0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue) == 0x0003FC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_4) == 0x000400, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_8) == 0x000408, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_9) == 0x000409, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ObjectObject_ReturnValue_1) == 0x00040A, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ObjectObject_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_HasAuthority_ReturnValue) == 0x00040B, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_HasAuthority_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_10) == 0x00040C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Has_Been_Initd_Variable_1) == 0x00040D, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Has_Been_Initd_Variable_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_2) == 0x000410, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetDistanceTo_ReturnValue_1) == 0x000418, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetDistanceTo_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_FloatFloat_ReturnValue_1) == 0x00041C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Amount) == 0x000420, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Amount' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Bone) == 0x000424, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Bone' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_HitLocation) == 0x00042C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_HitLocation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_StartLocation) == 0x000438, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_StartLocation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Instigator_1) == 0x000448, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Instigator_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Instigator) == 0x000450, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Instigator' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_3) == 0x000458, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Location_1) == 0x000460, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Location_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_5) == 0x00046C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_2) == 0x000470, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_15) == 0x00047C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_15' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindLookAtRotation_ReturnValue) == 0x00048C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindLookAtRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_6) == 0x000498, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_7) == 0x000499, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_8) == 0x00049A, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Instigator) == 0x0004A0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Instigator' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Location) == 0x0004A8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Location' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Volume) == 0x0004B4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Volume' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GreaterEqual_FloatFloat_ReturnValue) == 0x0004B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GreaterEqual_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAllActorsOfClass_OutActors_1) == 0x0004C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAllActorsOfClass_OutActors_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Location) == 0x0004D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Location' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Camera) == 0x0004E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Camera' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Get_Item_1) == 0x0004E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindClosestGuardOnPath_ClosestGuard) == 0x0004F0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindClosestGuardOnPath_ClosestGuard' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindClosestGuardOnPath_Distance) == 0x0004F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindClosestGuardOnPath_Distance' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_11) == 0x0004FC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_2) == 0x000500, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_IntInt_ReturnValue_1) == 0x000504, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_9) == 0x000505, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_10) == 0x000506, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_4) == 0x000508, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OverlappedComponent_3) == 0x000510, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OverlappedComponent_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherActor_3) == 0x000518, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherActor_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherComp_3) == 0x000520, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherComp_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherBodyIndex_3) == 0x000528, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherBodyIndex_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_bFromSweep_2) == 0x00052C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_bFromSweep_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_SweepResult_2) == 0x000530, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_SweepResult_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Character_2) == 0x0005B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Character_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_7) == 0x0005C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_7' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_3) == 0x0005C4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_4) == 0x0005D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_IsClosed_Variable_1) == 0x0005DC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_IsClosed_Variable_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindLookAtRotation_ReturnValue_1) == 0x0005E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindLookAtRotation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_byte_Variable_6) == 0x0005EC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_byte_Variable_6' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAllActorsOfClass_OutActors_2) == 0x0005F0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAllActorsOfClass_OutActors_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Get_Item_2) == 0x000600, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_3) == 0x000608, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_IntInt_ReturnValue_2) == 0x00060C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_16) == 0x000610, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_16' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_1) == 0x000168, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue) == 0x00016C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsNPCBase) == 0x000178, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsNPCBase' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_2) == 0x000180, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_1) == 0x000184, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue) == 0x000190, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetDistanceTo_ReturnValue) == 0x000194, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetDistanceTo_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_FloatFloat_ReturnValue) == 0x000198, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Character) == 0x0001A0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Character' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_3) == 0x0001A8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Divide_FloatFloat_ReturnValue) == 0x0001AC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Not_PreBool_ReturnValue) == 0x0001B0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanAND_ReturnValue) == 0x0001B1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Player) == 0x0001B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Player' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Character_1) == 0x0001C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Character_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_4) == 0x0001C8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Location_2) == 0x0001CC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Location_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_ProjectPointToNavigation_ProjectedLocation) == 0x0001D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_ProjectPointToNavigation_ProjectedLocation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_ProjectPointToNavigation_ReturnValue) == 0x0001E4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_ProjectPointToNavigation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Location_1) == 0x0001E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Location_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_InvestigateReason) == 0x0001F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_InvestigateReason' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_ProjectPointToNavigation_ProjectedLocation_1) == 0x000208, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_ProjectPointToNavigation_ProjectedLocation_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_ProjectPointToNavigation_ReturnValue_1) == 0x000214, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_ProjectPointToNavigation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue) == 0x000218, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_1) == 0x000220, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player_4) == 0x000228, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Interface) == 0x000230, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Interface' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_5) == 0x000240, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_int_Loop_Counter_Variable_3) == 0x000244, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_int_Loop_Counter_Variable_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsSensing_Actor_1) == 0x000248, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsSensing_Actor_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_6) == 0x000250, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_6' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_3) == 0x000254, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_12) == 0x000258, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_12' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue) == 0x000259, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPolice_Gun_Base) == 0x000260, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPolice_Gun_Base' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_7) == 0x000268, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_7' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x00026C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x000270, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_RandomFloatInRange_ReturnValue) == 0x000274, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_RandomFloatInRange_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue_2) == 0x000278, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_RandomFloatInRange_ReturnValue_1) == 0x00027C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_RandomFloatInRange_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_RandomBoolWithWeight_ReturnValue) == 0x000280, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_RandomBoolWithWeight_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Select_Default) == 0x000284, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player_3) == 0x000288, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_1) == 0x000290, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_2) == 0x000298, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetTransform_ReturnValue) == 0x0002A0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetTransform_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_13) == 0x0002D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_13' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakTransform_Location) == 0x0002E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakTransform_Location' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakTransform_Rotation) == 0x0002EC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakTransform_Rotation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakTransform_Scale) == 0x0002F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakTransform_Scale' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_2) == 0x000308, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_3) == 0x000310, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAllActorsOfClass_OutActors) == 0x000318, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Get_Item) == 0x000328, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue) == 0x000330, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_IntInt_ReturnValue) == 0x000334, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_4) == 0x000335, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ObjectObject_ReturnValue) == 0x000336, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ObjectObject_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_1) == 0x000338, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Greater_IntInt_ReturnValue) == 0x00033C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Add_ReturnValue) == 0x000340, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_1) == 0x000344, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindCurrentPatrolPoint_Point) == 0x000348, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindCurrentPatrolPoint_Point' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindCurrentPatrolPoint_Last_point_) == 0x000350, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindCurrentPatrolPoint_Last_point_' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_2) == 0x000351, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue) == 0x000358, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_3) == 0x000360, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_5) == 0x000368, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorRotation_ReturnValue) == 0x00036C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorRotation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Rotation) == 0x000378, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Rotation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindCurrentPatrolPoint_Point_1) == 0x000388, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindCurrentPatrolPoint_Point_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindCurrentPatrolPoint_Last_point__1) == 0x000390, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindCurrentPatrolPoint_Last_point__1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_RLerp_ReturnValue) == 0x000394, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_RLerp_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakRotator_Roll) == 0x0003A0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakRotator_Roll' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakRotator_Pitch) == 0x0003A4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakRotator_Pitch' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BreakRotator_Yaw) == 0x0003A8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BreakRotator_Yaw' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_MakeRotator_ReturnValue) == 0x0003AC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_MakeRotator_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_SetActorRotation_ReturnValue) == 0x0003B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_SetActorRotation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_4) == 0x0003BC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Select_Default_1) == 0x0003C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Select_Default_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_13) == 0x0003C4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_13' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_3) == 0x0003C5, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_1) == 0x0003C8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_4) == 0x0003D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_6) == 0x0003D1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindNon_DownedPlayer_Player) == 0x0003D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindNon_DownedPlayer_Player' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindNon_DownedPlayer_Found_) == 0x0003E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindNon_DownedPlayer_Found_' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_7) == 0x0003E1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_14) == 0x0003E4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_14' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_2) == 0x0003F4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation) == 0x000400, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetRandomReachablePointInRadius_RandomLocation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue) == 0x00040C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetRandomReachablePointInRadius_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_4) == 0x000410, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_8) == 0x000418, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_9) == 0x000419, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ObjectObject_ReturnValue_1) == 0x00041A, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ObjectObject_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_HasAuthority_ReturnValue) == 0x00041B, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_HasAuthority_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_10) == 0x00041C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_2) == 0x000420, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetDistanceTo_ReturnValue_1) == 0x000428, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetDistanceTo_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Amount) == 0x00042C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Amount' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Bone) == 0x000430, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Bone' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_HitLocation) == 0x000438, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_HitLocation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_StartLocation) == 0x000444, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_StartLocation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Instigator_1) == 0x000450, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Instigator_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_FloatFloat_ReturnValue_1) == 0x000458, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Instigator) == 0x000460, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Instigator' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Has_Been_Initd_Variable_1) == 0x000468, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Has_Been_Initd_Variable_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_3) == 0x000470, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Location_1) == 0x000478, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Location_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_9) == 0x000484, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_9' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_5) == 0x000485, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_3) == 0x000488, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindLookAtRotation_ReturnValue) == 0x000494, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindLookAtRotation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_6) == 0x0004A0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_7) == 0x0004A1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_15) == 0x0004A4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_15' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_8) == 0x0004B4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Instigator) == 0x0004B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Instigator' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Location) == 0x0004C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Location' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_Volume) == 0x0004CC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_Volume' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GreaterEqual_FloatFloat_ReturnValue) == 0x0004D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GreaterEqual_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAllActorsOfClass_OutActors_1) == 0x0004D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAllActorsOfClass_OutActors_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Location) == 0x0004E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Location' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Camera) == 0x0004F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Camera' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Get_Item_1) == 0x000500, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindClosestGuardOnPath_ClosestGuard) == 0x000508, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindClosestGuardOnPath_ClosestGuard' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindClosestGuardOnPath_Distance) == 0x000510, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindClosestGuardOnPath_Distance' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_11) == 0x000514, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_2) == 0x000518, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_IntInt_ReturnValue_1) == 0x00051C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_9) == 0x00051D, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_10) == 0x00051E, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_4) == 0x000520, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OverlappedComponent_3) == 0x000528, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OverlappedComponent_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherActor_3) == 0x000530, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherActor_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherComp_3) == 0x000538, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherComp_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherBodyIndex_3) == 0x000540, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherBodyIndex_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_bFromSweep_2) == 0x000544, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_bFromSweep_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_SweepResult_2) == 0x000548, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_SweepResult_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Character_2) == 0x0005D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Character_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_8) == 0x0005D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_8' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_4) == 0x0005DC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_5) == 0x0005E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindLookAtRotation_ReturnValue_1) == 0x0005F4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindLookAtRotation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAllActorsOfClass_OutActors_2) == 0x000600, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAllActorsOfClass_OutActors_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Get_Item_2) == 0x000610, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_3) == 0x000618, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_IntInt_ReturnValue_2) == 0x00061C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_IsClosed_Variable_1) == 0x00061D, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_IsClosed_Variable_1' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player_2) == 0x000620, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player_2' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPlayer_Character_3) == 0x000628, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPlayer_Character_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_8) == 0x000630, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_8' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetComponentLocation_ReturnValue) == 0x000634, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_MakeTransform_ReturnValue) == 0x000640, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_MakeTransform_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue) == 0x000670, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Select_Default_2) == 0x000678, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Select_Default_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FinishSpawningActor_ReturnValue) == 0x000680, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FinishSpawningActor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_5) == 0x000688, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player_1) == 0x000690, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_5) == 0x000698, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_5) == 0x0006A8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsOverlappingActor_ReturnValue) == 0x0006B0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsOverlappingActor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_12) == 0x0006B1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_12' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAllActorsOfClass_OutActors_3) == 0x0006B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAllActorsOfClass_OutActors_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_6) == 0x0006C8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindNearestActor_Distance) == 0x0006D4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindNearestActor_Distance' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindNearestActor_ReturnValue) == 0x0006D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindNearestActor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OverlappedComponent_2) == 0x0006E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OverlappedComponent_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherActor_2) == 0x0006E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherActor_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherComp_2) == 0x0006F0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherComp_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherBodyIndex_2) == 0x0006F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherBodyIndex_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_7) == 0x0006FC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OverlappedComponent_1) == 0x000708, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OverlappedComponent_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherActor_1) == 0x000710, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherActor_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherComp_1) == 0x000718, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherComp_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherBodyIndex_1) == 0x000720, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherBodyIndex_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_bFromSweep_1) == 0x000724, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_bFromSweep_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_SweepResult_1) == 0x000728, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_SweepResult_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_6) == 0x0007B0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ObjectObject_ReturnValue_2) == 0x0007B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ObjectObject_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_13) == 0x0007B9, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_13' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_11) == 0x0007BA, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_10) == 0x0007BB, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_10' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ObjectObject_ReturnValue_3) == 0x0007BC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ObjectObject_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Visible_) == 0x0007BD, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Visible_' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsOverlappingActor_ReturnValue_1) == 0x0007BE, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsOverlappingActor_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_14) == 0x0007BF, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_14' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsLocallyControlled_ReturnValue) == 0x0007C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsLocallyControlled_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_5) == 0x0007C8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_8) == 0x0007D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetPathLength_PathLength) == 0x0007DC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetPathLength_PathLength' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetPathLength_ReturnValue) == 0x0007E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetPathLength_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_NotEqual_ByteByte_ReturnValue) == 0x0007E1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_NotEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_17) == 0x0007E4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_17' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetComponentsByTag_ReturnValue) == 0x0007F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetComponentsByTag_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_6) == 0x000808, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Get_Item_3) == 0x000810, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Get_Item_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsInstruction_Interface) == 0x000818, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsInstruction_Interface' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_9) == 0x000828, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_9' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_4) == 0x00082C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_IntInt_ReturnValue_3) == 0x000830, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_5) == 0x000834, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Greater_IntInt_ReturnValue_1) == 0x000838, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Greater_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Has_Been_Initd_Variable_2) == 0x000839, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Has_Been_Initd_Variable_2' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OverlappedComponent) == 0x000840, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OverlappedComponent' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherActor) == 0x000848, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherActor' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherComp) == 0x000850, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherComp' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherBodyIndex) == 0x000858, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherBodyIndex' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_bFromSweep) == 0x00085C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_bFromSweep' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_SweepResult) == 0x000860, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_SweepResult' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_MakeLiteralFloat_ReturnValue) == 0x0008E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_MakeLiteralFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPawn) == 0x0008F0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPawn' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_10) == 0x0008F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_10' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue_3) == 0x0008FC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_FloatFloat_ReturnValue) == 0x000900, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_MakeLiteralFloat_ReturnValue_1) == 0x000904, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_MakeLiteralFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_9) == 0x000630, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_9' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_16) == 0x000634, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_16' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_Select_Default_2) == 0x000644, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_Select_Default_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_IntInt_ReturnValue_5) == 0x000648, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetComponentLocation_ReturnValue) == 0x00064C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_MakeTransform_ReturnValue) == 0x000660, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_MakeTransform_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue) == 0x000690, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FinishSpawningActor_ReturnValue) == 0x000698, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FinishSpawningActor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player_1) == 0x0006A0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_byte_Variable_6) == 0x0006A8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_byte_Variable_6' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_6) == 0x0006AC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_5) == 0x0006B8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsOverlappingActor_ReturnValue) == 0x0006C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsOverlappingActor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_12) == 0x0006C1, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAllActorsOfClass_OutActors_3) == 0x0006C8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAllActorsOfClass_OutActors_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_7) == 0x0006D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindNearestActor_Distance) == 0x0006E4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindNearestActor_Distance' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_FindNearestActor_ReturnValue) == 0x0006E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_FindNearestActor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OverlappedComponent_2) == 0x0006F0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OverlappedComponent_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherActor_2) == 0x0006F8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherActor_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherComp_2) == 0x000700, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherComp_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherBodyIndex_2) == 0x000708, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherBodyIndex_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_8) == 0x00070C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OverlappedComponent_1) == 0x000718, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OverlappedComponent_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherActor_1) == 0x000720, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherActor_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherComp_1) == 0x000728, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherComp_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherBodyIndex_1) == 0x000730, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherBodyIndex_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_bFromSweep_1) == 0x000734, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_bFromSweep_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_SweepResult_1) == 0x000738, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_SweepResult_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_CreateMoveToProxyObject_ReturnValue_6) == 0x0007C0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_CreateMoveToProxyObject_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ObjectObject_ReturnValue_2) == 0x0007C8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ObjectObject_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_13) == 0x0007C9, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_13' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_BooleanOR_ReturnValue_11) == 0x0007CA, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_BooleanOR_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_EqualEqual_ObjectObject_ReturnValue_3) == 0x0007CB, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_EqualEqual_ObjectObject_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Visible_) == 0x0007CC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Visible_' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsOverlappingActor_ReturnValue_1) == 0x0007CD, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsOverlappingActor_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_14) == 0x0007CE, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_14' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsLocallyControlled_ReturnValue) == 0x0007CF, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsLocallyControlled_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_5) == 0x0007D0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetActorLocation_ReturnValue_9) == 0x0007D8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetActorLocation_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetPathLength_PathLength) == 0x0007E4, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetPathLength_PathLength' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetPathLength_ReturnValue) == 0x0007E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetPathLength_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_NotEqual_ByteByte_ReturnValue) == 0x0007E9, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_NotEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_10) == 0x0007EA, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_10' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetComponentsByTag_ReturnValue) == 0x0007F0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetComponentsByTag_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_GetAIController_ReturnValue_6) == 0x000800, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_GetAIController_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Get_Item_3) == 0x000808, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsInstruction_Interface) == 0x000810, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsInstruction_Interface' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_10) == 0x000820, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_10' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_4) == 0x000824, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Less_IntInt_ReturnValue_3) == 0x000828, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Array_Length_ReturnValue_5) == 0x00082C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Array_Length_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Greater_IntInt_ReturnValue_1) == 0x000830, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Greater_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_Has_Been_Initd_Variable_2) == 0x000831, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_Has_Been_Initd_Variable_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OverlappedComponent) == 0x000838, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OverlappedComponent' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherActor) == 0x000840, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherActor' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherComp) == 0x000848, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherComp' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_OtherBodyIndex) == 0x000850, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_OtherBodyIndex' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_bFromSweep) == 0x000854, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_bFromSweep' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_ComponentBoundEvent_SweepResult) == 0x000858, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_ComponentBoundEvent_SweepResult' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPawn) == 0x0008E0, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPawn' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_11) == 0x0008E8, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_11' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CreateDelegate_OutputDelegate_17) == 0x0008EC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CreateDelegate_OutputDelegate_17' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_MakeLiteralFloat_ReturnValue) == 0x0008FC, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_MakeLiteralFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_MakeLiteralFloat_ReturnValue_1) == 0x000900, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_MakeLiteralFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue_3) == 0x000904, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue_3' has a wrong offset!");
 static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Multiply_FloatFloat_ReturnValue_4) == 0x000908, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Multiply_FloatFloat_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_FloatFloat_ReturnValue_1) == 0x00090C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetRootComponent_ReturnValue) == 0x000910, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetRootComponent_ReturnValue' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_15) == 0x000918, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_15' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsMesh_Component) == 0x000920, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsMesh_Component' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_11) == 0x000928, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_11' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPickup_Item_Base) == 0x000930, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPickup_Item_Base' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_12) == 0x000938, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_12' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_11) == 0x000939, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_11' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player) == 0x000940, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Pickuplocation) == 0x000948, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Pickuplocation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_PickupRotation) == 0x000954, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_PickupRotation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_HitLocation) == 0x000960, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_HitLocation' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_16) == 0x00096C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_16' has a wrong offset!");
-static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_IsClosed_Variable_2) == 0x00096D, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_IsClosed_Variable_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_FloatFloat_ReturnValue) == 0x00090C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_Add_FloatFloat_ReturnValue_1) == 0x000910, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_K2_GetRootComponent_ReturnValue) == 0x000918, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_K2_GetRootComponent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_15) == 0x000920, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_15' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsMesh_Component) == 0x000928, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsMesh_Component' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_12) == 0x000930, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_12' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_AsPickup_Item_Base) == 0x000938, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_AsPickup_Item_Base' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_DynamicCast_bSuccess_13) == 0x000940, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_DynamicCast_bSuccess_13' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Player) == 0x000948, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Player' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_Pickuplocation) == 0x000950, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_Pickuplocation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_PickupRotation) == 0x00095C, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_PickupRotation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_HitLocation) == 0x000968, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_HitLocation' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, CallFunc_IsValid_ReturnValue_16) == 0x000974, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::CallFunc_IsValid_ReturnValue_16' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, Temp_bool_IsClosed_Variable_2) == 0x000975, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::Temp_bool_IsClosed_Variable_2' has a wrong offset!");
+static_assert(offsetof(NPC_Guard_C_ExecuteUbergraph_NPC_Guard, K2Node_CustomEvent_MovementResult_11) == 0x000976, "Member 'NPC_Guard_C_ExecuteUbergraph_NPC_Guard::K2Node_CustomEvent_MovementResult_11' has a wrong offset!");
 
 // Function NPC_Guard.NPC_Guard_C.BreakKeycardConstraint
 // 0x0030 (0x0030 - 0x0000)

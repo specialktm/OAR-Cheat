@@ -106,10 +106,10 @@ void ARobberGameState_C::SpawnToolsWhenConnected()
 // Function RobberGameState.RobberGameState_C.GetTotalPlayerPower
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Total_power                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Param_Total_Power                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   Param_MinimumPower                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ARobberGameState_C::GetTotalPlayerPower(int32* Param_Total_power, int32* Param_MinimumPower)
+void ARobberGameState_C::GetTotalPlayerPower(int32* Param_Total_Power, int32* Param_MinimumPower)
 {
 	static class UFunction* Func = nullptr;
 
@@ -120,8 +120,8 @@ void ARobberGameState_C::GetTotalPlayerPower(int32* Param_Total_power, int32* Pa
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Total_power != nullptr)
-		*Param_Total_power = Parms.Param_Total_power;
+	if (Param_Total_Power != nullptr)
+		*Param_Total_Power = Parms.Param_Total_Power;
 
 	if (Param_MinimumPower != nullptr)
 		*Param_MinimumPower = Parms.Param_MinimumPower;

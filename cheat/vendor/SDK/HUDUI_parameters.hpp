@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
 #include "InstructionStruct_structs.hpp"
+#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
@@ -549,6 +549,44 @@ static_assert(sizeof(HUDUI_C_Get_ImmunityVignette_Visibility_0) == 0x000003, "Wr
 static_assert(offsetof(HUDUI_C_Get_ImmunityVignette_Visibility_0, ReturnValue) == 0x000000, "Member 'HUDUI_C_Get_ImmunityVignette_Visibility_0::ReturnValue' has a wrong offset!");
 static_assert(offsetof(HUDUI_C_Get_ImmunityVignette_Visibility_0, CallFunc_IsValid_ReturnValue) == 0x000001, "Member 'HUDUI_C_Get_ImmunityVignette_Visibility_0::CallFunc_IsValid_ReturnValue' has a wrong offset!");
 static_assert(offsetof(HUDUI_C_Get_ImmunityVignette_Visibility_0, CallFunc_Greater_IntInt_ReturnValue) == 0x000002, "Member 'HUDUI_C_Get_ImmunityVignette_Visibility_0::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
+
+// Function HUDUI.HUDUI_C.Get_Timertest_Text_0
+// 0x00B8 (0x00B8 - 0x0000)
+struct HUDUI_C_Get_Timertest_Text_0 final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm)
+	int32                                         CallFunc_BreakTimespan_Days;                       // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_BreakTimespan_Hours;                      // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_BreakTimespan_Minutes;                    // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_BreakTimespan_Seconds;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_BreakTimespan_Milliseconds;               // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_1;           // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0050(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_2;           // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0080(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0090(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x00A0(0x0018)()
+};
+static_assert(alignof(HUDUI_C_Get_Timertest_Text_0) == 0x000008, "Wrong alignment on HUDUI_C_Get_Timertest_Text_0");
+static_assert(sizeof(HUDUI_C_Get_Timertest_Text_0) == 0x0000B8, "Wrong size on HUDUI_C_Get_Timertest_Text_0");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, ReturnValue) == 0x000000, "Member 'HUDUI_C_Get_Timertest_Text_0::ReturnValue' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_BreakTimespan_Days) == 0x000018, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_BreakTimespan_Days' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_BreakTimespan_Hours) == 0x00001C, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_BreakTimespan_Hours' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_BreakTimespan_Minutes) == 0x000020, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_BreakTimespan_Minutes' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_BreakTimespan_Seconds) == 0x000024, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_BreakTimespan_Seconds' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_BreakTimespan_Milliseconds) == 0x000028, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_BreakTimespan_Milliseconds' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_Conv_IntToString_ReturnValue) == 0x000030, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_Conv_IntToString_ReturnValue_1) == 0x000040, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_Conv_IntToString_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_Concat_StrStr_ReturnValue) == 0x000050, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_Conv_IntToString_ReturnValue_2) == 0x000060, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_Conv_IntToString_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000070, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_Concat_StrStr_ReturnValue_2) == 0x000080, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_Concat_StrStr_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_Concat_StrStr_ReturnValue_3) == 0x000090, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_Concat_StrStr_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(HUDUI_C_Get_Timertest_Text_0, CallFunc_Conv_StringToText_ReturnValue) == 0x0000A0, "Member 'HUDUI_C_Get_Timertest_Text_0::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
 
 // Function HUDUI.HUDUI_C.GetCurrentInstruction
 // 0x0030 (0x0030 - 0x0000)

@@ -44,6 +44,7 @@ public:
 
 public:
 	void ExecuteUbergraph_C4(int32 EntryPoint);
+	void AddForceMulti(class UPrimitiveComponent* Target, const struct FVector& Force, const struct FVector& Location);
 	void ExplodeServer();
 	void ActivateC4Server();
 	void ActivateC4();

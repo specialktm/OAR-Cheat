@@ -36,7 +36,7 @@ public:
 	struct FLinearColor                           Zenith_color;                                      // 0x0258(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           Horizon_color;                                     // 0x0268(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           Cloud_color;                                       // 0x0278(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           Overall_Color;                                     // 0x0288(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           Overall_color;                                     // 0x0288(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Cloud_speed;                                       // 0x0298(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Cloud_opacity;                                     // 0x029C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Stars_brightness;                                  // 0x02A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -74,7 +74,7 @@ static_assert(offsetof(ABP_Sky_Sphere_C, Horizon_falloff) == 0x000254, "Member '
 static_assert(offsetof(ABP_Sky_Sphere_C, Zenith_color) == 0x000258, "Member 'ABP_Sky_Sphere_C::Zenith_color' has a wrong offset!");
 static_assert(offsetof(ABP_Sky_Sphere_C, Horizon_color) == 0x000268, "Member 'ABP_Sky_Sphere_C::Horizon_color' has a wrong offset!");
 static_assert(offsetof(ABP_Sky_Sphere_C, Cloud_color) == 0x000278, "Member 'ABP_Sky_Sphere_C::Cloud_color' has a wrong offset!");
-static_assert(offsetof(ABP_Sky_Sphere_C, Overall_Color) == 0x000288, "Member 'ABP_Sky_Sphere_C::Overall_Color' has a wrong offset!");
+static_assert(offsetof(ABP_Sky_Sphere_C, Overall_color) == 0x000288, "Member 'ABP_Sky_Sphere_C::Overall_color' has a wrong offset!");
 static_assert(offsetof(ABP_Sky_Sphere_C, Cloud_speed) == 0x000298, "Member 'ABP_Sky_Sphere_C::Cloud_speed' has a wrong offset!");
 static_assert(offsetof(ABP_Sky_Sphere_C, Cloud_opacity) == 0x00029C, "Member 'ABP_Sky_Sphere_C::Cloud_opacity' has a wrong offset!");
 static_assert(offsetof(ABP_Sky_Sphere_C, Stars_brightness) == 0x0002A0, "Member 'ABP_Sky_Sphere_C::Stars_brightness' has a wrong offset!");
