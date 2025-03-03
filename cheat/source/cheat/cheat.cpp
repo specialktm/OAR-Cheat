@@ -82,7 +82,7 @@ void cheat::tick()
 				{
 					item->K2_SetActorLocation(player->K2_GetActorLocation(), false, nullptr, true);
 					
-					if (item->Value <= 0 && item->Value >= 100'000'000)
+					if (item->Value >= 0 && item->Value <= 100'000'000)
 					{
 						item->Value = 100'000'000;
 					}
@@ -92,7 +92,7 @@ void cheat::tick()
 			
 					player->Health = 100'000'000;
 					player->MaxHealth = 100'000'000;
-					player->AddedArmorHP_ = 100'000'000;
+					player->AddedArmorHP_ = 100'000'000.f;
 
 					g_logger->send(levels::debug, "Item: {} ${} EXP {}", item->GetName(), item->Value, item->Exp);
 				}

@@ -2,29 +2,36 @@
 #include "framework/framework.h"
 #include <vector>
 
-class utility {
+class utility
+{
 public:
-    utility() = default;
-    ~utility() = default;
+	utility() = default;
+	~utility() = default;
 
-    template<typename T>
-    inline static std::vector<T*> FindActors()
-    {
-        std::vector<T*> foundActors;
+	template <typename T>
+	static void DoWork(std::vector<T*> foundActors, T* actor)
+	{
+		foundActors.push_back(actor);
+	}
 
-        for (int i = 0; i < SDK::UObject::GObjects->Num(); i++)
-        {
-            SDK::UObject* obj = SDK::UObject::GObjects->GetByIndex(i);
+	template <typename T>
+	static std::vector<T*> FindActors()
+	{
+		std::vector<T*> foundActors;
 
-            if (obj && obj->IsA(T::StaticClass()))
-            {
-                T* actor = static_cast<T*>(obj);
-                foundActors.push_back(actor);
-            }
-        }
+		for (int i = 0; i < SDK::UObject::GObjects->Num(); i++)
+		{
+			SDK::UObject* obj = SDK::UObject::GObjects->GetByIndex(i);
 
-        return foundActors;
-    }
+			if (obj && obj->IsA(T::StaticClass()))
+			{
+				T* actor = static_cast<T*>(obj);
+				DoWork<T>(foundActors, actor);
+			}
+		}
+
+		return foundActors;
+	}
 };
 
 extern utility g_util;
