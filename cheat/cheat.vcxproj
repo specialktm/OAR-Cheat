@@ -182,7 +182,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AssemblerOutput>All</AssemblerOutput>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
@@ -198,14 +198,12 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapExports>true</MapExports>
       <AssemblyDebug>true</AssemblyDebug>
-      <AdditionalDependencies>Auth\library_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <UpdateFileHashes>true</UpdateFileHashes>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="source\auth\auth.h" />
     <ClInclude Include="source\cheat\base\Baseclass.hpp" />
     <ClInclude Include="source\cheat\base\Initialize.hpp" />
     <ClInclude Include="source\cheat\cheat.h" />
@@ -233,7 +231,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entry_point.cpp" />
-    <ClCompile Include="source\auth\auth.cpp" />
     <ClCompile Include="source\cheat\cheat.cpp" />
     <ClCompile Include="source\logger\logger.cpp" />
     <ClCompile Include="source\pch\pch.cpp" />

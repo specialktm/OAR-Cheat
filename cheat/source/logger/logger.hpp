@@ -1,7 +1,5 @@
 #pragma once
 #include "pch/pch.h"
-#define APP_NAME "OS Cheats | OAR | "
-#define APP_VERSION "1.1"
 
 enum class levels
 {
@@ -19,7 +17,7 @@ class logger
 public:
     logger()
     {
-        this->initialize(APP_NAME APP_VERSION);
+        this->initialize("OS Cheats | On Top! | v1.0");
     }
     ~logger()
     {

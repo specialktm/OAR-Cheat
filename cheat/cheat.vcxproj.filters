@@ -87,9 +87,6 @@
     <ClInclude Include="vendor\SDK\PickupItem_base_classes.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\auth\auth.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entry_point.cpp">
@@ -138,9 +135,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vendor\SDK\DoorBP_functions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="source\auth\auth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
