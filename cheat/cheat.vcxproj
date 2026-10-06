@@ -1,20 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
+    <ProjectConfiguration Include="Developer|x64">
+      <Configuration>Developer</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Developer|Win32">
-      <Configuration>Developer</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Developer|x64">
-      <Configuration>Developer</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -26,20 +18,6 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -52,7 +30,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
@@ -60,12 +38,6 @@
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="Shared">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -75,63 +47,17 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)source;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)vendor</IncludePath>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)source;$(IncludePath)</ExternalIncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)vendor</LibraryPath>
-    <EmbedManifest>false</EmbedManifest>
-    <GenerateManifest>false</GenerateManifest>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
+    <IncludePath>$(ProjectDir)source;$(ProjectDir)vendor;$(ProjectDir)vendor\imgui;$(ProjectDir)vendor\minhook\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)bin\$(Configuration)\intermediate</IntDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Developer|x64'">
-    <IncludePath>$(ProjectDir)source;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)vendor</IncludePath>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)source;$(IncludePath)</ExternalIncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(ProjectDir)vendor</LibraryPath>
-    <LinkIncremental>true</LinkIncremental>
-    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
+    <IncludePath>$(ProjectDir)source;$(ProjectDir)vendor;$(ProjectDir)vendor\imgui;$(ProjectDir)vendor\minhook\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)bin\$(Configuration)\intermediate</IntDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\intermediate\</IntDir>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;CHEAT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;CHEAT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
-    </Link>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -140,10 +66,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;CHEAT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>$(ProjectDir)source\pch\pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch/pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <StringPooling>true</StringPooling>
+      <AdditionalIncludeDirectories>$(ProjectDir)source;$(ProjectDir)vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -151,42 +85,26 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <ForceFileOutput>
-      </ForceFileOutput>
-      <ProgramDatabaseFile />
-      <AllowIsolation>
-      </AllowIsolation>
-      <AssemblyDebug>false</AssemblyDebug>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;windowscodecs.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <Manifest>
-      <UpdateFileHashes>true</UpdateFileHashes>
-      <VerboseOutput>false</VerboseOutput>
-    </Manifest>
-    <Xdcmake>
-      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
-    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Developer|x64'">
     <ClCompile>
-      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;CHEAT_EXPORTS;_WINDOWS;_USRDLL;Developer;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CHEAT_EXPORTS;_WINDOWS;_USRDLL;Developer;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>$(ProjectDir)source\pch\pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch/pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AssemblerOutput>All</AssemblerOutput>
-      <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <OmitFramePointers>true</OmitFramePointers>
-      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalIncludeDirectories>$(ProjectDir)source;$(ProjectDir)vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -194,61 +112,135 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <ShowProgress>LinkVerbose</ShowProgress>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;windowscodecs.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateMapFile>true</GenerateMapFile>
-      <MapExports>true</MapExports>
-      <AssemblyDebug>true</AssemblyDebug>
     </Link>
-    <Manifest>
-      <UpdateFileHashes>true</UpdateFileHashes>
-    </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="source\cheat\base\Baseclass.hpp" />
     <ClInclude Include="source\cheat\base\Initialize.hpp" />
     <ClInclude Include="source\cheat\cheat.h" />
     <ClInclude Include="source\cheat\utils\utility.h" />
+    <ClInclude Include="source\core\actor_iter.hpp" />
+    <ClInclude Include="source\core\config.hpp" />
+    <ClInclude Include="source\core\config_io.hpp" />
+    <ClInclude Include="source\core\diagnostics.hpp" />
+    <ClInclude Include="source\core\veh.hpp" />
+    <ClInclude Include="source\core\hook.hpp" />
+    <ClInclude Include="source\core\memory.hpp" />
+    <ClInclude Include="source\core\offsets.hpp" />
+    <ClInclude Include="source\core\pattern.hpp" />
+    <ClInclude Include="source\features\esp.hpp" />
+    <ClInclude Include="source\features\exploits.hpp" />
+    <ClInclude Include="source\features\manager.hpp" />
+    <ClInclude Include="source\features\shop.hpp" />
     <ClInclude Include="source\framework\framework.h" />
     <ClInclude Include="source\logger\logger.hpp" />
     <ClInclude Include="source\pch\pch.h" />
-    <ClInclude Include="vendor\PropertyFixup.hpp" />
-    <ClInclude Include="vendor\SDK.hpp" />
-    <ClInclude Include="vendor\SDK\Basic.hpp" />
-    <ClInclude Include="vendor\SDK\CoreUObject_classes.hpp" />
-    <ClInclude Include="vendor\SDK\CoreUObject_structs.hpp" />
-    <ClInclude Include="vendor\SDK\Engine_classes.hpp" />
-    <ClInclude Include="vendor\SDK\Engine_structs.hpp" />
-    <ClInclude Include="vendor\SDK\HunterBP_classes.hpp" />
-    <ClInclude Include="vendor\SDK\PickupItem_base_classes.hpp" />
-    <ClInclude Include="vendor\SDK\RobberController_classes.hpp" />
-    <ClInclude Include="vendor\SDK\ServerBrowser_Mapselect_classes.hpp" />
-    <ClInclude Include="vendor\SDK\ShopItem_Base_classes.hpp" />
-    <ClInclude Include="vendor\SDK\ShopItem_Map_BlackDiamondCasino_classes.hpp" />
-    <ClInclude Include="vendor\SDK\ShopItem_Map_FIA_classes.hpp" />
-    <ClInclude Include="vendor\SDK\ShopItem_Map_OrbitalBank_classes.hpp" />
-    <ClInclude Include="vendor\SDK\ShopUI_classes.hpp" />
-    <ClInclude Include="vendor\UnrealContainers.hpp" />
+    <ClInclude Include="source\render\dx11_hook.hpp" />
+    <ClInclude Include="source\render\blur.hpp" />
+    <ClInclude Include="source\ui\menu.hpp" />
+    <ClInclude Include="source\ui\tabs.hpp" />
+    <ClInclude Include="source\ui\theme.hpp" />
+    <ClInclude Include="source\ui\widgets.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entry_point.cpp" />
     <ClCompile Include="source\cheat\cheat.cpp" />
+    <ClCompile Include="source\core\config_io.cpp" />
+    <ClCompile Include="source\core\actor_iter.cpp" />
+    <ClCompile Include="source\features\esp.cpp" />
+    <ClCompile Include="source\features\exploits.cpp" />
+    <ClCompile Include="source\features\manager.cpp" />
+    <ClCompile Include="source\features\crates.cpp" />
+    <ClCompile Include="source\features\capture.cpp" />
+    <ClCompile Include="source\features\shop.cpp" />
+    <ClCompile Include="source\core\diagnostics.cpp" />
+    <ClCompile Include="source\core\veh.cpp" />
+    <ClCompile Include="source\render\blur.cpp" />
+    <ClCompile Include="source\ui\widgets.cpp" />
+    <ClCompile Include="source\ui\theme.cpp" />
+    <ClCompile Include="source\ui\tabs.cpp" />
+    <ClCompile Include="source\ui\tabs\esp_tab.cpp" />
+    <ClCompile Include="source\ui\tabs\home_tab.cpp" />
+    <ClCompile Include="source\ui\tabs\shop_tab.cpp" />
+    <ClCompile Include="source\ui\tabs\world_tab.cpp" />
+    <ClCompile Include="source\ui\tabs\player_tab.cpp" />
+    <ClCompile Include="source\ui\popouts.cpp" />
+    <ClCompile Include="source\features\modelview.cpp" />
+    <ClCompile Include="source\ui\listmenu.cpp" />
+    <ClCompile Include="source\ui\tabs\settings_tab.cpp" />
     <ClCompile Include="source\logger\logger.cpp" />
-    <ClCompile Include="source\pch\pch.cpp" />
-    <ClCompile Include="vendor\SDK\Basic.cpp" />
-    <ClCompile Include="vendor\SDK\CameraBP_functions.cpp" />
-    <ClCompile Include="vendor\SDK\CoreUObject_functions.cpp" />
-    <ClCompile Include="vendor\SDK\DoorBP_functions.cpp" />
-    <ClCompile Include="vendor\SDK\Engine_functions.cpp" />
-    <ClCompile Include="vendor\SDK\PickupItem_base_functions.cpp" />
-    <ClCompile Include="vendor\SDK\RobberController_functions.cpp" />
-    <ClCompile Include="vendor\SDK\RobberTruck_functions.cpp" />
-    <ClCompile Include="vendor\SDK\ServerBrowser_Mapselect_functions.cpp" />
-    <ClCompile Include="vendor\SDK\ShopBuyUI_functions.cpp" />
-    <ClCompile Include="vendor\SDK\ShopUI_functions.cpp" />
-    <ClCompile Include="vendor\SDK\Tool_Camerahack_functions.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="vendor\NameCollisions.inl" />
+    <ClCompile Include="source\render\dx11_hook.cpp" />
+    <ClCompile Include="source\ui\menu.cpp" />
+    <ClCompile Include="source\pch\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Developer|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <!-- Only the SDK TUs we actually call into. Do NOT glob the whole SDK (1000+ files). -->
+    <!-- Vendor/SDK/third-party must NOT use PCH (they don't include pch/pch.h). -->
+    <ClCompile Include="vendor\SDK\Basic.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\CoreUObject_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\Engine_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\RobberController_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\CameraBP_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\DoorBP_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\BP_CrateManager_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\SteamCore_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\PickupItem_base_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\SteamInventoryLibrary_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <!-- Dear ImGui (no demo) -->
+    <ClCompile Include="vendor\imgui\imgui.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_tables.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_win32.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_dx11.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <!-- MinHook (x64) -->
+    <ClCompile Include="vendor\minhook\src\buffer.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\minhook\src\hook.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\minhook\src\trampoline.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\minhook\src\hde\hde64.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

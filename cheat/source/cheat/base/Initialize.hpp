@@ -1,5 +1,7 @@
 #pragma once
 #include "pch/pch.h"
+#include "cheat/base/Baseclass.hpp"
+#include "logger/logger.hpp"
 
 class Initializer
 {
@@ -69,7 +71,7 @@ private:
         std::string className = class_interface->ClassName();
         maxClassNameLength = std::max(maxClassNameLength, class_interface->ClassName().length());
 
-        std::string paddedClassName = className + std::string(maxClassNameLength - className.length(), ' ');
+        std::string paddedClassName = className + std::string(maxClassNameLength - className.length(), (char)32);
         g_logger->send(levels::info, "Created Class -> {} [{:#X}]\n", paddedClassName, uintptr_t(class_interface));
     }
 
@@ -77,3 +79,4 @@ private:
 };
 
 inline Initializer* g_Initializer;
+

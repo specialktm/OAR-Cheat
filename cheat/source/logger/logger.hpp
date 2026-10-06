@@ -44,6 +44,7 @@ private:
     FILE* m_file = nullptr;
     HANDLE h_console_out = nullptr;
     DWORD m_console_mode = 0;
+    bool m_owned = false; // true only if we AllocConsole'd (skip FreeConsole on reuse)
 };
 
 inline logger* g_logger;

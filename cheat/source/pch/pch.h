@@ -1,15 +1,31 @@
+#pragma once
+// Light PCH - keep this minimal for fast builds. Do NOT include SDK uber-headers here.
 #ifndef PCH_H
 #define PCH_H
+
+#define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
 #include <windows.h>
 #include <cstdint>
-#include "framework/framework.h"
+#include <string>
+#include <vector>
+#include <mutex>
+#include <atomic>
+#include <chrono>
+#include <thread>
+#include <algorithm>
+#include <format>
+#include <iostream>
+#include <functional>
 
-#define IS_VALID_PTR(ptr) ((ptr) != nullptr && (reinterpret_cast<uintptr_t>(ptr) > 0x1000))
 using namespace std::chrono;
 using namespace std::chrono_literals;
 
-#define _CRT_SECURE_NO_WARNINGS
-#pragma warning(disable: 4996)
-
+#define IS_VALID_PTR(ptr) ((ptr) != nullptr && (reinterpret_cast<uintptr_t>(ptr) > 0x1000))
 #define _s(x) #x
-#endif // PCH_H
+
+static HANDLE g_MainThread = nullptr;
+static HMODULE g_Module = nullptr;
+inline std::atomic<bool> programRunning{ true };
+
+#endif

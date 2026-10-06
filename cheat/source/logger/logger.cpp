@@ -1,11 +1,15 @@
-#include "logger.hpp"
+#include "pch/pch.h"
+#include "logger/logger.hpp"
 
 void logger::initialize(const char* title)
 {
-    if (!AllocConsole())
-    {
-        MessageBoxA(nullptr, "The console window was not created", "Uh Oh", MB_ICONEXCLAMATION);
-    }
+    // Reload-safe: reuse the console from a previous life instead of failing
+    // (AllocConsole returns FALSE when one is already attached) or popping
+    // message boxes mid-game.
+    if (GetConsoleWindow())
+        m_owned = false;
+    else
+        m_owned = AllocConsole() != 0;
 
     freopen_s(&m_file, "CONOUT$", "w", stdout);
     freopen_s(&m_file, "CONOUT$", "w", stderr);
@@ -17,23 +21,13 @@ void logger::initialize(const char* title)
 
     h_console_out = GetStdHandle(STD_OUTPUT_HANDLE);
     if (h_console_out == INVALID_HANDLE_VALUE)
-    {
-        MessageBox(NULL, L"Invalid handle value for output", NULL, MB_ICONEXCLAMATION);
         return;
-    }
 
     if (!GetConsoleMode(h_console_out, &m_console_mode))
-    {
-        MessageBox(NULL, L"Failed to get console mode for output", NULL, MB_ICONEXCLAMATION);
         return;
-    }
 
     m_console_mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
-    if (!SetConsoleMode(h_console_out, m_console_mode))
-    {
-        MessageBox(NULL, L"Failed to set console mode for output", NULL, MB_ICONEXCLAMATION);
-        return;
-    }
+    SetConsoleMode(h_console_out, m_console_mode); // best effort, ignore failure
 
     SetStdHandle(STD_OUTPUT_HANDLE, h_console_out);
     SetStdHandle(STD_ERROR_HANDLE, h_console_out);
@@ -59,15 +53,11 @@ void logger::uninitialize()
 {
     this->send(levels::info, "Goodbye, You may now close this window.");
 
-    if (fclose(m_file) != 0)
-    {
-        MessageBox(NULL, L"Failed to close the file!", NULL, MB_ICONEXCLAMATION);
-    }
-
-    if (!FreeConsole())
-    {
-        MessageBox(NULL, L"Failed to free the console window!", NULL, MB_ICONEXCLAMATION);
-    }
+    if (m_file) fclose(m_file);
+    m_file = nullptr;
+    // Only detach what we created: a reloaded DLL reuses the same console.
+    if (m_owned) FreeConsole();
+    m_owned = false;
 }
 
 void logger::old_send(levels level, const std::string& msg)

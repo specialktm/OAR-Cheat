@@ -1,181 +1,72 @@
-#include <pch/pch.h>
+#include "pch/pch.h"
 #include "cheat.h"
 #include "base/Initialize.hpp"
-#include <random>
-#include <SDK/ShopItem_Map_FIA_classes.hpp>
-#include <SDK/ShopItem_Mask_base_classes.hpp>
-#include <SDK/PlayerCharacter_classes.hpp>
-#include <SDK/ShopBuyUI_classes.hpp>
-#include <SDK/ShopUI_classes.hpp>
-#include <SDK/Money_base_classes.hpp>
-
-#include <SDK/RobberTruck_classes.hpp>
-#include <SDK/Item_Keycard_classes.hpp>
-#include <SDK/GuardPhone_classes.hpp>
-#include <SDK/CameraBP_classes.hpp>
-#include <SDK/Tool_Camerahack_classes.hpp>
-#include <SDK/DoorBP_classes.hpp>
-#include <SDK/GunBase_classes.hpp>
-#include <SDK/Shop_SkillBase_classes.hpp>
+#include "core/config.hpp"
+#include "core/diagnostics.hpp"
+#include "core/veh.hpp"
+#include "render/dx11_hook.hpp"
+#include "features/manager.hpp"
+#include "features/shop.hpp"
+#include "features/crates.hpp"
+#include "features/capture.hpp"
+#include "features/exploits.hpp"
+#include "logger/logger.hpp"
 
 using namespace SDK;
+
+static bool edge(int vk) { return (GetAsyncKeyState(vk) & 1) != 0; }
+
 void cheat::Initialize()
 {
-
+    feat::register_builtin();
+    veh::ensure();
+    // DX11 overlay first: ESP + menu live in Present, hotkeys keep working headless.
+    if (!didInitDx.exchange(true)) {
+        bool ok = dx11::init();
+        if (g_logger) {
+            if (ok) g_logger->send(levels::success, "DX11 Present hook on (INSERT = menu)");
+            else g_logger->send(levels::error, "DX11 hook failed - hotkeys only");
+        }
+        diag::report();
+    }
 }
 
 void cheat::tick()
 {
-	if (GetAsyncKeyState(VK_F8) & 1)
-	{
-		for (auto player : g_util.FindActors<ARobberController_C>())
-		{
-			if (player != nullptr)
-			{
-				for (const auto& map : g_util.FindActors<AShopItem_Map_base_C>())
-				{
-					if (map != nullptr)
-					{
-						player->AddMap(map->Class);
-						g_logger->send(levels::debug, "Unlocked: [{}]", map->GetName());
-					}
+    if (dx11::is_unloading()) return;
+    // Edge-triggered, non-blocking. All VKs editable in Settings > KEYBINDS.
+    auto hit = [](std::atomic<int>& k) {
+        int vk = k.load();
+        return vk != 0 && edge(vk);
+    };
+    if (hit(g_cfg.keyMaps)) shop::free_all_maps();
+    if (hit(g_cfg.keyVacuum)) exploits::money_vacuum();
+    if (hit(g_cfg.keyPhones)) exploits::disable_phones();
+    if (hit(g_cfg.keyCameras)) exploits::disable_cameras();
+    if (hit(g_cfg.keyDoors)) exploits::unlock_doors();
+    if (hit(g_cfg.keyGuns)) exploits::buff_weapons();
+    if (hit(g_cfg.keySkills)) shop::free_all_skills();
+    if (hit(g_cfg.keyCrates)) crates::open_all();
+    if (hit(g_cfg.keyCoins)) shop::coins_legit();
+    if (hit(g_cfg.keyShop)) shop::free_all_shop();
 
-					g_logger->send(levels::error, "Map item is null, skipping.");
-					continue;
-				}
-			}
-			g_logger->send(levels::error, "Robber is null, skipping.");
-			continue; 
-		}
-		g_logger->send(levels::success, "Unlocked All Maps!");
+    if (g_cfg.godMode.load()) exploits::god_tick();
 
-		for (const auto& StoreItem : g_util.FindActors<AShopItem_Base_C>())
-		{
-			StoreItem->UnlockLevel = 0;
-			StoreItem->CashCost = 1;
-			StoreItem->CoinCost = 1;
-			StoreItem->Rarity = ERarityNum::RarityNum_MAX;
-		}
+    capture::set_active(g_cfg.showModelViewer.load());
+    capture::tick();
 
-		std::this_thread::sleep_for(400ms);
-	}
+    feat::run_queued();
+    feat::tick_autos();
 
-	if (GetAsyncKeyState(VK_F9) & 1)
-	{
-		for (const auto& item : g_util.FindActors<AMoney_base_C>())
-		{
-			for (const auto& player : g_util.FindActors<APlayerCharacter_C>())
-			{
-				if (item != nullptr && player != nullptr)
-				{
-					item->K2_SetActorLocation(player->K2_GetActorLocation(), false, nullptr, true);
-					
-					if (item->Value >= 0 && item->Value <= 100'000'000)
-					{
-						item->Value = 100'000'000;
-					}
-
-					item->Value += item->Value * 20;
-					item->Exp += item->Exp * 10.f;
-			
-					player->Health = 100'000'000;
-					player->MaxHealth = 100'000'000;
-					player->AddedArmorHP_ = 100'000'000.f;
-
-					g_logger->send(levels::debug, "Item: {} ${} EXP {}", item->GetName(), item->Value, item->Exp);
-				}
-			}
-
-			std::this_thread::sleep_for(30ms);
-		}
-		g_logger->send(levels::debug, "Item Count: {}", g_util.FindActors<AMoney_base_C>().size());
-	}
-
-	if (GetAsyncKeyState(VK_F10) & 1)
-	{
-		for (const auto& item2 : g_util.FindActors<AGuardPhone_C>())
-		{
-			if (item2 != nullptr)
-			{
-				item2->Active_ = false;
-			}
-
-			std::this_thread::sleep_for(30ms);
-		}
-	}
-
-	if (GetAsyncKeyState(VK_NUMPAD0) & 1)
-	{
-		for (const auto& cam : g_util.FindActors<ACameraBP_C>())
-		{
-			if (cam != nullptr)
-			{
-				if (!cam->Ignored_)
-				{
-					cam->IgnoreCamera();
-					g_logger->send(levels::debug, "Camera: {} disabled.", cam->GetName());
-				}
-			}
-
-			std::this_thread::sleep_for(30ms);
-		}
-	}
-
-	if (GetAsyncKeyState(VK_NUMPAD1) & 1)
-	{
-		for (const auto& door : g_util.FindActors<ADoorBP_C>())
-		{
-			if (door != nullptr)
-			{
-				if (door->Locked_ || door->PowerLocked_)
-				{
-					door->UnlockDoor();
-					door->PowerLocked_ = false;
-					g_logger->send(levels::debug, "Door: {} unlocked.", door->GetName());
-				}
-			}
-			std::this_thread::sleep_for(30ms);
-		}
-	}
-
-	if (GetAsyncKeyState(VK_NUMPAD2) & 1)
-	{
-		for (const auto& weapon : g_util.FindActors<AGunBase_C>())
-		{
-			if (weapon != nullptr)
-			{
-				weapon->Damage = 1000.f;
-				weapon->MagSize = 1000;
-				weapon->BulletsLeft += 10 * weapon->BulletsLeft;
-				weapon->RecoilStrength = 0.f;
-				weapon->GunKickMultiplier = 0.f;
-				weapon->Reload_time = 0.f;
-				weapon->Auto_ = true;
-				weapon->CanShoot_ = true;
-
-				weapon->CalculatedReloadTime = 0.f;
-				weapon->Accuracy = 100.f;
-			}
-			std::this_thread::sleep_for(30ms);
-		}
-	}	
-
-	if (GetAsyncKeyState(VK_NUMPAD3) & 1)
-	{
-		for (const auto& skill : g_util.FindActors<AShop_SkillBase_C>())
-		{
-			if (skill != nullptr)
-			{
-				skill->Rarity = ERarityNum::NewEnumerator0;
-				skill->CashCost = 1;
-				skill->RequiredProgress = 1.f;
-			}
-			std::this_thread::sleep_for(30ms);
-		}
-	}
+    if (g_cfg.autoFreeShop.load()) {
+        static DWORD last = 0;
+        DWORD now = GetTickCount();
+        if (now - last > 30000) { last = now; shop::free_all_shop(); }
+    }
 }
 
 void cheat::Uninitialize()
 {
-
+    capture::shutdown();
+    dx11::shutdown();
 }

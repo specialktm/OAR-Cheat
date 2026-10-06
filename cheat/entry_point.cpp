@@ -1,56 +1,51 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
+// dllmain: minimal, safe init/unload. Render work happens in Present hook,
+// hotkey pump on a worker thread with 50ms cadence (was 400ms + per-actor sleeps).
 #include "pch/pch.h"
 #include "cheat/cheat.h"
 #include "cheat/base/Initialize.hpp"
+#include "core/config.hpp"
+#include "logger/logger.hpp"
 
+static void safe_tick() {
+    __try { if (g_cheat) g_cheat->tick(); }
+    __except (EXCEPTION_EXECUTE_HANDLER) {}
+}
 
-BOOL APIENTRY DllMain(HMODULE hModule, unsigned long callreason, void* lpReserved)
+BOOL APIENTRY DllMain(HMODULE hModule, unsigned long reason, void* lpReserved)
 {
-    g_Module = hModule;
     UNREFERENCED_PARAMETER(lpReserved);
-
-    if (callreason == DLL_PROCESS_ATTACH)
-    {
+    if (reason == DLL_PROCESS_ATTACH) {
+        g_Module = hModule;
         DisableThreadLibraryCalls(g_Module);
-        g_MainThread = CreateThread(nullptr, NULL, [](void* ) -> DWORD
-        {
+        g_MainThread = CreateThread(nullptr, 0, [](void*) -> DWORD {
             g_logger = new logger();
             g_Initializer = new Initializer();
-
             g_logger->send(levels::debug, "Adding class interface...");
             g_Initializer->AddClassInterface(&g_cheat);
-
             g_logger->send(levels::debug, "Calling Initializer...");
             g_Initializer->Initialize();
+            g_logger->send(levels::debug, "Main loop. INSERT=menu, END=unload.");
 
-            g_logger->send(levels::debug, "Running main loop. Press 'END' to exit.");
-
-            while (programRunning)
-            {
-                g_cheat->tick();
-
-                if (GetAsyncKeyState(VK_END) && 1)
-                {
-                    g_logger->send(levels::debug, "'END' key pressed. Exiting loop.");
-                    programRunning = false;
-                    std::this_thread::yield();
+            while (programRunning.load()) {
+                safe_tick();
+                int uvk = g_cfg.keyUnload.load();
+                if (uvk != 0 && (GetAsyncKeyState(uvk) & 1)) {
+                    g_logger->send(levels::debug, "unload key, unloading.");
+                    programRunning.store(false);
+                    break;
                 }
-
-                std::this_thread::sleep_for(400ms);
+                std::this_thread::sleep_for(50ms);
             }
 
-            g_logger->send(levels::debug, "Uninitializing Classes...");
+            g_logger->send(levels::debug, "Uninitializing...");
             g_Initializer->Uninitialize();
+            delete g_Initializer; g_Initializer = nullptr;
+            g_logger->send(levels::debug, "Bye.");
+            delete g_logger; g_logger = nullptr;
 
-            g_logger->send(levels::debug, "Cleaning up resources...");
-            delete g_Initializer;
-
-            g_logger->send(levels::debug, "Exiting program.");
-            delete g_logger; 
-
-            CloseHandle(g_MainThread);
+            CloseHandle(g_MainThread); g_MainThread = nullptr;
             FreeLibraryAndExitThread(g_Module, 0);
-        }, nullptr, NULL, nullptr);
+        }, nullptr, 0, nullptr);
     }
-    return true;
+    return TRUE;
 }
