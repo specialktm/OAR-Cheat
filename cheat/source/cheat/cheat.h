@@ -13,4 +13,3 @@ private:
     std::atomic<bool> didInitDx = false;
 };
 inline cheat* g_cheat = nullptr;
-

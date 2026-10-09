@@ -79,4 +79,3 @@ private:
 };
 
 inline Initializer* g_Initializer;
-

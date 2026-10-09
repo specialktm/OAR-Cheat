@@ -1,8 +1,6 @@
 #pragma once
 #include "pch/pch.h"
 
-// Thin RAII wrapper over vendored MinHook (cheat/vendor/minhook).
-// MinHook sources are compiled directly into the DLL (see vcxproj), no .lib needed.
 #include "../../vendor/minhook/include/MinHook.h"
 
 namespace hook {
@@ -47,7 +45,6 @@ private:
     void* orig_ = nullptr;
 };
 
-// Simple VMT swap (used for DXGI Present/ResizeBuffers - no trampoline needed).
 class Vmt {
 public:
     static bool swap(void** vtable, int idx, void* detour, void** origOut) {
@@ -65,4 +62,4 @@ public:
     }
 };
 
-} // namespace hook
+}

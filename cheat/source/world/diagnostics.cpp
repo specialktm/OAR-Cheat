@@ -1,9 +1,9 @@
 #include "pch/pch.h"
-#include "core/diagnostics.hpp"
+#include "world/diagnostics.hpp"
 #include "core/memory.hpp"
 #include "core/offsets.hpp"
 #include "core/pattern.hpp"
-#include "core/actor_iter.hpp"
+#include "world/actor_iter.hpp"
 #include "render/dx11_hook.hpp"
 #include "SDK/Basic.hpp"
 #include "SDK/CoreUObject_classes.hpp"
@@ -15,7 +15,6 @@ static Report g_rep{};
 static bool g_done = false;
 static std::mutex g_repMtx;
 
-// ---- SEH leaves (no string/vector locals) ----
 static uintptr_t seh_scan(const char* s) {
     __try { return sig::scan_module(s); }
     __except (EXCEPTION_EXECUTE_HANDLER) { return 0; }
@@ -98,4 +97,4 @@ Report last() {
     return g_rep;
 }
 
-} // namespace diag
+}

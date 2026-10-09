@@ -3,9 +3,7 @@
 
 void logger::initialize(const char* title)
 {
-    // Reload-safe: reuse the console from a previous life instead of failing
-    // (AllocConsole returns FALSE when one is already attached) or popping
-    // message boxes mid-game.
+
     if (GetConsoleWindow())
         m_owned = false;
     else
@@ -27,7 +25,7 @@ void logger::initialize(const char* title)
         return;
 
     m_console_mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
-    SetConsoleMode(h_console_out, m_console_mode); // best effort, ignore failure
+    SetConsoleMode(h_console_out, m_console_mode);
 
     SetStdHandle(STD_OUTPUT_HANDLE, h_console_out);
     SetStdHandle(STD_ERROR_HANDLE, h_console_out);
@@ -55,7 +53,7 @@ void logger::uninitialize()
 
     if (m_file) fclose(m_file);
     m_file = nullptr;
-    // Only detach what we created: a reloaded DLL reuses the same console.
+
     if (m_owned) FreeConsole();
     m_owned = false;
 }

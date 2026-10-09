@@ -1,17 +1,18 @@
 #include "pch/pch.h"
 #include "ui/listmenu.hpp"
-#include "core/config.hpp"
+#include "config/config.hpp"
 #include "features/manager.hpp"
 #include "features/shop.hpp"
 #include "features/exploits.hpp"
 #include "features/esp.hpp"
-#include "core/actor_iter.hpp"
+#include "world/actor_iter.hpp"
 #include "ui/theme.hpp"
 #include "SDK/Basic.hpp"
 #include "SDK/Engine_classes.hpp"
 #include "SDK/PlayerCharacter_classes.hpp"
 #include "SDK/RobberController_classes.hpp"
 
+#include <cmath>
 #include "../../vendor/imgui/imgui.h"
 
 namespace listui {
@@ -58,6 +59,8 @@ static std::vector<Menu>& menus() {
         Menu v; v.title = "Visuals";
         auto T = [](const char* l, std::atomic<bool>& f) {
             Row r; r.label = l; r.kind = K_TOGGLE; r.flag = &f; return r; };
+        auto C = [](const char* l, const char** o, int n, std::atomic<int>& s) {
+            Row r; r.label = l; r.kind = K_CYCLE; r.opts = o; r.nopts = n; r.opt = &s; return r; };
         v.rows = {
             T("Master ESP", g_cfg.espEnabled), T("Item ESP", g_cfg.itemEsp),
             T("Money bags", g_cfg.moneyEsp), T("Pickups", g_cfg.pickupEsp),
@@ -67,10 +70,8 @@ static std::vector<Menu>& menus() {
             T("Skeleton", g_cfg.playerSkel), T("Guards", g_cfg.guardEsp),
             T("G boxes", g_cfg.guardBox), T("G state", g_cfg.guardState),
             T("G distance", g_cfg.guardDistance), T("G skeleton", g_cfg.guardSkel),
-            T("Box fill", g_cfg.boxFill), T("Gradient", g_cfg.healthGradient),
+            T("Box fill", g_cfg.boxFill), C("HP bar", kHpT, 3, g_cfg.healthStyle),
         };
-        auto C = [](const char* l, const char** o, int n, std::atomic<int>& s) {
-            Row r; r.label = l; r.kind = K_CYCLE; r.opts = o; r.nopts = n; r.opt = &s; return r; };
         v.rows.push_back(C("Box type", kBoxT, 3, g_cfg.espBoxStyle));
         v.rows.push_back(C("Anchor", kAnch, 8, g_cfg.espLabelAnchor));
         v.rows.push_back(C("Name", kNameT, 2, g_cfg.nameMode));
@@ -105,11 +106,10 @@ static std::vector<Menu>& menus() {
         c.rows.push_back(T("Blur", g_cfg.blurBackdrop));
         ms.push_back(std::move(c));
     }
-    // dynamic rows (theme list may vary; stats refresh each frame is cheap)
+
     return ms;
 }
 
-// nav state (render thread only: handle_keys + render both run on Present)
 static std::vector<int> g_stack{ 0 };
 static std::vector<int> g_sel{ 0 };
 
@@ -189,43 +189,124 @@ void handle_keys() {
     }
 }
 
-void render() {
+void render(float vis) {
+    if (vis <= 0.004f) return;
     Menu& m = menus()[cur_menu()];
     int& sel = cur_sel();
     if (sel < 0 || sel >= (int)m.rows.size()) sel = 0;
 
     ImVec2 vp = ImGui::GetIO().DisplaySize;
+    float dt = ImGui::GetIO().DeltaTime;
     float w = 300, rh = 26;
-    // config theme row is dynamic (theme count known at runtime)
-    int extraStats = (cur_menu() == 4) ? 1 : 0;
-    int shopNote = (cur_menu() == 2) ? 1 : 0;
-    int n = (int)m.rows.size() + extraStats + shopNote;
-    float h = 64 + n * rh + 64;
-    ImVec2 pos(24, (vp.y - h) * 0.5f);
-    if (pos.y < 12) pos.y = 12;
+
+    int extras = (cur_menu() == 4 ? 1 : 0) + (cur_menu() == 2 ? 1 : 0);
+    int n = (int)m.rows.size() + extras;
+    float headH = 38, footH = 46;
+    float contentH = n * rh;
+    float panelH = headH + contentH + footH;
+    float maxH = vp.y - 24;
+    bool scroll = panelH > maxH;
+    if (scroll) panelH = maxH;
+    float viewH = panelH - headH - footH;
+
+    static float g_scroll = 0.0f;
+    float target = 0.0f;
+    if (scroll && contentH > viewH) {
+        float top = g_scroll, bottom = g_scroll + viewH;
+        float sy = (float)sel * rh;
+        if (sy < top + rh) target = sy - rh;
+        else if (sy + 2.0f * rh > bottom) target = sy + 2.0f * rh - viewH;
+        float lo = 0.0f, hi = contentH - viewH;
+        if (target < lo) target = lo;
+        if (target > hi) target = hi;
+    }
+    g_scroll += (target - g_scroll) * (1.0f - expf(-dt * 14.0f));
+    if (fabsf(target - g_scroll) < 0.25f) g_scroll = target;
+
+    static float g_hiY = 0.0f;
+    float hiTarget = (float)sel * rh - g_scroll;
+    g_hiY += (hiTarget - g_hiY) * (1.0f - expf(-dt * 18.0f));
+    if (fabsf(hiTarget - g_hiY) < 0.25f) g_hiY = hiTarget;
+
+    float slide = 1.0f - powf(1.0f - vis, 3.0f);
+    float x = 24.0f - (1.0f - slide) * (w + 48.0f);
+    float y = (vp.y - panelH) * 0.5f;
+    if (y < 12) y = 12;
+
     ImDrawList* dl = ImGui::GetBackgroundDrawList();
-    dl->AddRectFilled(pos, ImVec2(pos.x + w, pos.y + h), IM_COL32(8, 10, 16, 235), 2.0f);
-    dl->AddRect(pos, ImVec2(pos.x + w, pos.y + h), IM_COL32(60, 70, 100, 255), 2.0f, 0, 1.0f);
+    auto A = [&](int r, int g, int b, int a) {
+        return IM_COL32(r, g, b, (int)(a * vis));
+    };
+    ImVec4 acc = theme::accentA();
+    ImU32 accHi = A((int)(acc.x * 255), (int)(acc.y * 255), (int)(acc.z * 255), 255);
+
+    dl->AddRectFilled(ImVec2(x, y), ImVec2(x + w, y + panelH),
+        A(16, 16, 16, 238), 5.0f);
+    dl->AddRect(ImVec2(x, y), ImVec2(x + w, y + panelH),
+        A(80, 40, 130, 255), 5.0f, 0, 1.0f);
 
     char crumb[64];
     if (g_stack.size() > 1)
         snprintf(crumb, sizeof(crumb), "Main > %s", m.title);
     else
         snprintf(crumb, sizeof(crumb), "Main");
-    dl->AddText(ImVec2(pos.x + 12, pos.y + 10), IM_COL32(235, 238, 248, 255), crumb);
+    dl->AddText(ImVec2(x + 12, y + 10), A(235, 238, 248, 255), crumb);
     char cnt[16];
-    snprintf(cnt, sizeof(cnt), "%d / %d", m.rows.empty() ? 0 : sel + 1, (int)m.rows.size());
+    snprintf(cnt, sizeof(cnt), "%d / %d", m.rows.empty() ? 0 : sel + 1,
+        (int)m.rows.size());
     ImVec2 csz = ImGui::CalcTextSize(cnt);
-    dl->AddText(ImVec2(pos.x + w - csz.x - 12, pos.y + 10), IM_COL32(235, 238, 248, 255), cnt);
-    float y = pos.y + 38;
+    dl->AddText(ImVec2(x + w - csz.x - 12, y + 10), A(235, 238, 248, 255), cnt);
+    dl->AddLine(ImVec2(x + 8, y + headH - 6), ImVec2(x + w - 8, y + headH - 6),
+        A(80, 40, 130, 140), 1.0f);
+
+    float clipTop = y + headH, clipBot = y + headH + viewH;
+    {
+        ImVec2 mp = ImGui::GetIO().MousePos;
+        bool mIn = (mp.x >= x && mp.x <= x + w && mp.y >= clipTop && mp.y <= clipBot);
+        static ImVec2 lastMp(-1, -1);
+        if (mIn) {
+            int hr = (int)((mp.y - clipTop + g_scroll) / rh);
+            if (hr >= 0 && hr < (int)m.rows.size()) {
+                if (mp.x != lastMp.x || mp.y != lastMp.y) sel = hr;
+                if (ImGui::IsMouseClicked(0)) {
+                    sel = hr;
+                    if (m.rows[hr].kind == K_SLIDER)
+                        adjust(m.rows[hr], +1);
+                    else
+                        activate(m.rows[hr]);
+                }
+                ImGui::SetMouseCursor(ImGuiMouseCursor_Hand);
+            }
+        }
+        lastMp = mp;
+    }
+
+    dl->PushClipRect(ImVec2(x, clipTop), ImVec2(x + w, clipBot), true);
+    auto rowY = [&](int i) { return clipTop + i * rh - g_scroll; };
+
+    int cover = -1;
+    for (int i = 0; i < (int)m.rows.size(); ++i) {
+        float ry = i * rh - g_scroll;
+        if (g_hiY + rh * 0.5f >= ry && g_hiY + rh * 0.5f < ry + rh) {
+            cover = i; break;
+        }
+    }
+
+    {
+        float hy = clipTop + g_hiY;
+        dl->AddRectFilled(ImVec2(x + 4, hy),
+            ImVec2(x + w - 4, hy + rh - 2),
+            A((int)(acc.x * 110), (int)(acc.y * 110), (int)(acc.z * 160), 235), 5.0f);
+        dl->AddRect(ImVec2(x + 4, hy),
+            ImVec2(x + w - 4, hy + rh - 2),
+            accHi, 5.0f, 0, 1.0f);
+    }
 
     for (int i = 0; i < (int)m.rows.size(); ++i) {
         Row& r = m.rows[i];
-        bool hov = (i == sel);
-        if (hov)
-            dl->AddRectFilled(ImVec2(pos.x + 4, y), ImVec2(pos.x + w - 4, y + rh - 2),
-                IM_COL32(235, 238, 248, 255));
-        ImU32 tx = hov ? IM_COL32(10, 12, 18, 255) : IM_COL32(200, 205, 220, 255);
+        float ry = rowY(i);
+        if (ry + rh < clipTop || ry > clipBot) continue;
+        ImU32 tx = (i == cover) ? A(255, 255, 255, 255) : A(200, 205, 220, 255);
         char right[64] = { 0 };
         if (r.kind == K_TOGGLE && r.flag)
             snprintf(right, sizeof(right), "[%c]", r.flag->load() ? 'x' : ' ');
@@ -238,16 +319,16 @@ void render() {
         } else if (r.kind == K_SLIDER && r.fval) {
             snprintf(right, sizeof(right), "%.0f", r.fval->load());
         }
-        dl->AddText(ImVec2(pos.x + 14, y + 5), tx, r.label);
+        dl->AddText(ImVec2(x + 14, ry + 5), tx, r.label);
         if (right[0]) {
             ImVec2 rsz = ImGui::CalcTextSize(right);
-            dl->AddText(ImVec2(pos.x + w - rsz.x - 12, y + 5), tx, right);
+            dl->AddText(ImVec2(x + w - rsz.x - 12, ry + 5), tx, right);
         }
-        y += rh;
     }
-    // dynamic extras
+
+    int idx = (int)m.rows.size();
     if (cur_menu() == 5) {
-        // theme row above stores the index; apply it here on the render thread
+
         static int lastTheme = -1;
         int ti = g_cfg.themeIdx.load();
         if (ti != lastTheme) {
@@ -258,21 +339,44 @@ void render() {
     }
     if (cur_menu() == 4) {
         esp::Counts c = esp::counts();
-        char b[64]; snprintf(b, sizeof(b), "seen P%d G%d I%d", c.players, c.guards, c.items);
-        dl->AddText(ImVec2(pos.x + 14, y + 5), IM_COL32(140, 200, 150, 255), b);
-        y += rh;
+        char b[64]; snprintf(b, sizeof(b), "seen P%d G%d I%d",
+            c.players, c.guards, c.items);
+        float ry = rowY(idx);
+        if (ry + rh >= clipTop && ry <= clipBot)
+            dl->AddText(ImVec2(x + 14, ry + 5), A(140, 200, 150, 255), b);
+        ++idx;
     }
     if (cur_menu() == 2) {
         shop::Status st = shop::last_status();
         const char* s = st.note.empty() ? "no run yet" : st.note.c_str();
         char b[96]; snprintf(b, sizeof(b), "%.60s", s);
-        dl->AddText(ImVec2(pos.x + 14, y + 5), IM_COL32(150, 160, 185, 255), b);
-        y += rh;
+        float ry = rowY(idx);
+        if (ry + rh >= clipTop && ry <= clipBot)
+            dl->AddText(ImVec2(x + 14, ry + 5), A(150, 160, 185, 255), b);
+        ++idx;
     }
-    dl->AddText(ImVec2(pos.x + 12, pos.y + h - 40), IM_COL32(130, 138, 160, 255),
+
+    if (scroll && contentH > viewH) {
+        float sbX = x + w - 4;
+        dl->AddRectFilled(ImVec2(sbX, clipTop), ImVec2(sbX + 2, clipBot),
+            A(30, 34, 50, 200), 0.0f);
+        float th = viewH * (viewH / contentH);
+        if (th < 18.0f) th = 18.0f;
+        float range = viewH - th;
+        float frac = g_scroll / (contentH - viewH);
+        float ty = clipTop + frac * range;
+        dl->AddRectFilled(ImVec2(sbX, ty), ImVec2(sbX + 2, ty + th),
+            accHi, 0.0f);
+    }
+    dl->PopClipRect();
+
+    float fy = y + panelH - footH;
+    dl->AddLine(ImVec2(x + 8, fy), ImVec2(x + w - 8, fy),
+        A(80, 40, 130, 140), 1.0f);
+    dl->AddText(ImVec2(x + 12, fy + 8), A(130, 138, 160, 255),
         "NUM8/2 move  NUM5 select");
-    dl->AddText(ImVec2(pos.x + 12, pos.y + h - 22), IM_COL32(130, 138, 160, 255),
+    dl->AddText(ImVec2(x + 12, fy + 26), A(130, 138, 160, 255),
         "NUM4/6 adjust  NUM0 back (NUMLOCK ON)");
 }
 
-} // namespace listui
+}

@@ -1,15 +1,13 @@
-﻿#include "pch/pch.h"
-#include "core/actor_iter.hpp"
+#include "pch/pch.h"
+#include "world/actor_iter.hpp"
 #include "core/memory.hpp"
 
-// Only heavy SDK header in this TU. Do NOT include SDK.hpp (1000+ headers).
 #include "SDK/Basic.hpp"
 #include "SDK/Engine_classes.hpp"
 #include "SDK/CoreUObject_classes.hpp"
 
 namespace actors {
 
-// SEH leaf helpers: no vector/string locals, so /EHsc accepts __try.
 static SDK::UWorld* seh_get_world_sdk() {
     __try { return SDK::UWorld::GetWorld(); }
     __except (EXCEPTION_EXECUTE_HANDLER) { return nullptr; }
@@ -63,6 +61,19 @@ void* game_world() {
     return seh_get_world_sdk();
 }
 
+bool world_stable(uint64_t quietMs) {
+    void* w = game_world();
+    uint64_t now = GetTickCount64();
+    static void* lastW = nullptr;
+    static uint64_t changeMs = 0;
+    if (w != lastW) {
+        lastW = w;
+        changeMs = now;
+        return false;
+    }
+    return (now - changeMs) >= quietMs;
+}
+
 Snapshot copy_level_actors() {
     Snapshot s;
     auto* world = reinterpret_cast<SDK::UWorld*>(game_world());
@@ -106,4 +117,4 @@ void* local_pawn() {
     return seh_ack_pawn(pc);
 }
 
-} // namespace actors
+}

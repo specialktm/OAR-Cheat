@@ -1,6 +1,7 @@
-﻿#include "pch/pch.h"
+#include "pch/pch.h"
 #include "features/shop.hpp"
-#include "core/actor_iter.hpp"
+#include "features/crates.hpp"
+#include "world/actor_iter.hpp"
 #include "SDK/Basic.hpp"
 #include "SDK/Engine_classes.hpp"
 #include "SDK/ShopItem_Base_classes.hpp"
@@ -10,7 +11,7 @@
 #include "SDK/RarityNum_structs.hpp"
 #include "SDK/SteamCore_classes.hpp"
 #include "SDK/SteamCore_structs.hpp"
-#include "core/veh.hpp"
+#include "util/veh.hpp"
 #include "logger/logger.hpp"
 
 namespace shop {
@@ -27,7 +28,6 @@ Status last_status() {
     return g_last;
 }
 
-// ---- SEH leaves (no vector/string locals -> /EHsc compatible) ----
 static int seh_gnum() {
     __try { return SDK::UObject::GObjects->Num(); }
     __except (EXCEPTION_EXECUTE_HANDLER) { return 0; }
@@ -65,7 +65,7 @@ static SDK::ARobberController_C* seh_local_rc() {
         auto* pc = reinterpret_cast<SDK::ARobberController_C*>(actors::local_player_controller());
         if (!IS_VALID_PTR(pc)) return nullptr;
         SDK::UClass* rc = SDK::ARobberController_C::StaticClass();
-        if (!IS_VALID_PTR(rc)) return pc; // GObjects shaky: trust the cast
+        if (!IS_VALID_PTR(rc)) return pc;
         return pc->IsA(rc) ? pc : nullptr;
     } __except (EXCEPTION_EXECUTE_HANDLER) { return nullptr; }
 }
@@ -90,9 +90,7 @@ static bool seh_save_cash(SDK::ARobberController_C* pc) {
     __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
 }
 static bool seh_grant_cash(SDK::ARobberController_C* pc) {
-    // Cash is soft currency (savegame data): direct write + SaveCash works.
-    // Coins are paid Steam currency: memory writes do NOT replicate to the
-    // Steam backend, so Coins are never touched here (see coins_legit).
+
     __try { pc->Cash = 999999999; return true; }
     __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
 }
@@ -120,10 +118,9 @@ static bool seh_patch_skill(SDK::AShop_SkillBase_C* s) {
     __try { s->CashCost = 1; s->RequiredProgress = 1.0f; return true; }
     __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
 }
-// Read-only array snapshot helpers (raw buffer copy, no TArray mutation).
+
 static std::string safe_name(SDK::UObject* o) {
-    // VEH-guarded: the GObjects walk can race GC teardown, and std::string
-    // locals forbid SEH __try here (C2712).
+
     return veh::get_name(o);
 }
 static bool seh_arr_contains_uclass(const SDK::TArray<SDK::UClass*>& arr, SDK::UClass* cls, bool& out) {
@@ -139,18 +136,6 @@ static bool seh_arr_contains_uclass(const SDK::TArray<SDK::UClass*>& arr, SDK::U
     } __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
 }
 
-// ---- Steam-inventory sync -----------------------------------------------
-// Why this exists: AddMap/AddInventoryItem only touch the controller's local
-// arrays. The shop UI + Steam backend read the Steam mirror
-// (InventoryResultItems / FSteamInventoryResult). The pre-patch game bridged
-// the two via MapsToInventory + Steam refresh events; we replay that bridge:
-//   1. GenerateItems (one batch for all collected SteamItemDefIDs)
-//   2. UpdateSteamInventory(handle) -> blueprint consumes the result
-//   3. GetResultItems -> UpdateItemsInInventory -> OnSteamInventoryUpdated
-//   4. MapsToInventory (maps -> inventory) + OnUpdateAllSteamInventory
-//   5. DestroyResult (no handle leak)
-// If Steam refuses generation, controller grants still stand and the status
-// says so explicitly.
 struct RawArr { void* d; int num; int mx; };
 template<typename T>
 static SDK::TArray<T> wrap_buf(T* buf, int n) {
@@ -158,7 +143,7 @@ static SDK::TArray<T> wrap_buf(T* buf, int n) {
     SDK::TArray<T> a{};
     RawArr* r = reinterpret_cast<RawArr*>(&a);
     r->d = buf; r->num = n; r->mx = n;
-    return a; // shallow copy of Data/Num/Max
+    return a;
 }
 static int seh_defid(SDK::UClass* cls) {
     __try {
@@ -212,7 +197,6 @@ static DetailsSnap seh_details_snap(const SDK::TArray<SDK::FSteamItemDetails>& d
     } __except (EXCEPTION_EXECUTE_HANDLER) { return DetailsSnap{ nullptr, 0, 0, false }; }
 }
 
-// Grants every collected class into the Steam mirror. Returns granted detail count.
 static int sync_steam(SDK::ARobberController_C* pc, const std::vector<SDK::UClass*>& classes,
         bool mapsToInv, bool& outOk, int& outDefs, std::string& outNote) {
     outOk = false; outDefs = 0;
@@ -247,9 +231,7 @@ static int sync_steam(SDK::ARobberController_C* pc, const std::vector<SDK::UClas
         DetailsSnap s = seh_details_snap(details);
         if (s.ok) {
             granted = s.n;
-            // Hand the blueprint a buffer WE own with slack: game-side code
-            // may append in place, and Steam-sized buffers have no room.
-            // Deliberately leaked: the controller may retain the pointer.
+
             SDK::FSteamItemDetails* buf = new SDK::FSteamItemDetails[(size_t)s.n + 64];
             memcpy(buf, s.d, sizeof(*buf) * (size_t)s.n);
             SDK::TArray<SDK::FSteamItemDetails> owned = wrap_buf(buf, s.n);
@@ -268,7 +250,6 @@ static int sync_steam(SDK::ARobberController_C* pc, const std::vector<SDK::UClas
     return granted;
 }
 
-// ---- UClass collection (no IsDefaultObject filter: classes are the target) ----
 static std::vector<SDK::UClass*> collect_subclasses(SDK::UClass* base, const char* prefix) {
     std::vector<SDK::UClass*> out;
     int n = seh_gnum();
@@ -282,12 +263,12 @@ static std::vector<SDK::UClass*> collect_subclasses(SDK::UClass* base, const cha
             bool isa = false;
             if (!seh_is_uclass(o, uclass, isa) || !isa) continue;
         }
-        // Name check works even if StaticClass()/IsA path is degraded.
+
         std::string nm = safe_name(o);
         if (nm.empty()) continue;
         if (nm.rfind(prefix, 0) != 0) continue;
         if (nm.find("_base") != std::string::npos || nm.find("Base_") != std::string::npos) {
-            // keep ShopItem_Base itself out, but allow real items
+
             if (nm == "ShopItem_Base_C" || nm == "ShopItem_Map_base_C") continue;
         }
         auto* cls = static_cast<SDK::UClass*>(o);
@@ -301,7 +282,7 @@ static std::vector<SDK::UClass*> collect_subclasses(SDK::UClass* base, const cha
 }
 
 static SDK::UClass* base_of(const char* shortName) {
-    // Prefer SDK StaticClass; fall back to name walk.
+
     if (strcmp(shortName, "map") == 0) {
         SDK::UClass* b = nullptr;
         __try { b = SDK::AShopItem_Map_base_C::StaticClass(); }
@@ -318,7 +299,7 @@ static SDK::UClass* base_of(const char* shortName) {
         __except (EXCEPTION_EXECUTE_HANDLER) { b = nullptr; }
         if (IS_VALID_PTR(b)) return b;
     }
-    return nullptr; // name-prefix filter still applies
+    return nullptr;
 }
 
 void free_all_maps() {
@@ -341,7 +322,7 @@ void free_all_maps() {
         if (seh_addmap(pc, cls)) ++st.mapsGranted;
     }
     seh_save_maps(pc);
-    // Bridge to the Steam mirror (this is what the old method hit implicitly).
+
     {
         bool ok = false; int defs = 0; std::string note;
         st.steamGranted = sync_steam(pc, classes, true, ok, defs, note);
@@ -350,15 +331,14 @@ void free_all_maps() {
         if (g_logger) g_logger->send(levels::debug, "[steam] maps sync: {} ({})",
             st.steamGranted, note);
     }
-    // Ground truth: re-read UnlockedMaps (Steam result handles are async and
-    // may report 0 while the grant still lands).
+
     for (auto* cls : classes) {
         if (!IS_VALID_PTR(cls)) continue;
         bool has = false;
         if (seh_arr_contains_uclass(pc->UnlockedMaps, cls, has) && has)
             ++st.mapsVerified;
     }
-    // Cheap-shop pass so unlocked maps are purchasable for $1.
+
     auto items = collect_subclasses(base_of("item"), "ShopItem_");
     st.itemClasses = (int)items.size();
     for (auto* cls : items) {
@@ -466,7 +446,6 @@ void free_all_skills() {
         "Skills: {} classes, {} CDOs patched, {} granted", (int)skills.size(), patched, granted);
 }
 
-// ---- Player-tab helpers: full catalog + current inventory + drag-grant ----
 static bool seh_cdo_shop_vals(SDK::UObject* cdo, int& cash, int& coin, int& lvl, int& defid, int& cat) {
     __try {
         auto* b = static_cast<SDK::AShopItem_Base_C*>(cdo);
@@ -533,11 +512,13 @@ std::vector<std::string> inventory_names() {
 static std::atomic<int> g_grants{ 0 };
 int grant_count() { return g_grants.load(); }
 
-const std::vector<ItemInfo>& catalog(bool force) {
+std::vector<ItemInfo> catalog(bool force) {
     static std::vector<ItemInfo> cat;
     static uint64_t ts = 0;
+    static std::mutex mtx;
+    std::lock_guard<std::mutex> lk(mtx);
     uint64_t now = GetTickCount64();
-    if (force || cat.empty() || now - ts > 8000) {
+    if ((force || cat.empty() || now - ts > 8000) && actors::world_stable(5000)) {
         cat = all_items();
         ts = now;
     }
@@ -577,13 +558,13 @@ void coins_legit() {
     seh_grant_coins(pc);
     seh_check_coins(pc);
     seh_promo(pc);
+    crates::promo_coins();
     seh_refresh_all(pc);
     st.coinsAfter = seh_coins(pc, ok);
-    st.note = "coin packs via Steam grant flow (GrantCoinPacks)";
+    st.note = "coin packs via Steam grant flow (GrantCoinPacks + bundle claim)";
     set_last(st);
     if (g_logger) g_logger->send(levels::success,
         "Coins: {} -> {} (Steam packs; direct writes don't replicate)", st.coinsBefore, st.coinsAfter);
 }
 
-
-} // namespace shop
+}

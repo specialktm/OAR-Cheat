@@ -2,9 +2,6 @@
 #include "pch/pch.h"
 #include <psapi.h>
 
-// IDA-style signature scanner: "48 8B 05 ? ? ? ? 48 8B" where ? or ?? = wildcard.
-// Used to resolve GWorld / GObjects / ProcessEvent dynamically so hardcoded
-// offsets from dump (Basic.hpp) are a fallback, not a hard dependency.
 namespace sig {
 
 inline uintptr_t base_of(const char* mod = nullptr) {
@@ -30,7 +27,7 @@ inline bool get_text_section(uintptr_t base, uintptr_t& outStart, size_t& outSiz
 
 struct Pattern {
     std::vector<uint8_t> bytes;
-    std::vector<bool> mask; // true = must match
+    std::vector<bool> mask;
 };
 
 inline Pattern parse(const char* sig) {
@@ -75,16 +72,15 @@ inline uintptr_t scan_module(const char* signature, const char* mod = nullptr) {
     if (!base) return 0;
     uintptr_t start = 0; size_t size = 0;
     if (!get_text_section(base, start, size)) {
-        // fallback: scan first 120MB
+
         start = base + 0x1000; size = 120 * 1024 * 1024;
     }
     return scan(start, size, signature);
 }
 
-// Resolve RIP-relative address: instruction at `at` with disp at (at+off), size `insnLen`.
 inline uintptr_t rip(uintptr_t at, uint32_t dispOff, uint32_t insnLen) {
     int32_t disp = *reinterpret_cast<int32_t*>(at + dispOff);
     return at + insnLen + disp;
 }
 
-} // namespace sig
+}

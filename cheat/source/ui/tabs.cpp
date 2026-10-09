@@ -15,4 +15,4 @@ int& current() {
     return idx;
 }
 
-} // namespace tabs
+}

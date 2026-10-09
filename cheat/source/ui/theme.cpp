@@ -1,10 +1,12 @@
 #include "pch/pch.h"
 #include "ui/theme.hpp"
-#include "core/config.hpp"
+#include "config/config.hpp"
 
 namespace theme {
 
 static const Theme kThemes[] = {
+    { "Mono Purple",  ImVec4(0.64f, 0.00f, 1.00f, 1.0f), ImVec4(0.38f, 0.00f, 0.75f, 1.0f), ImVec4(0.64f, 0.10f, 1.00f, 1.0f) },
+    { "Gold",         ImVec4(0.91f, 0.72f, 0.14f, 1.0f), ImVec4(0.85f, 0.45f, 0.10f, 1.0f), ImVec4(0.95f, 0.78f, 0.25f, 1.0f) },
     { "OS Blue",      ImVec4(0.21f, 0.66f, 0.96f, 1.0f), ImVec4(0.12f, 0.42f, 0.85f, 1.0f), ImVec4(0.25f, 0.70f, 1.0f, 1.0f) },
     { "OAR Violet",   ImVec4(0.55f, 0.42f, 1.0f, 1.0f), ImVec4(0.25f, 0.85f, 1.0f, 1.0f), ImVec4(0.55f, 0.45f, 1.0f, 1.0f) },
     { "Cyan Ops",     ImVec4(0.20f, 0.75f, 1.0f, 1.0f), ImVec4(0.35f, 1.0f, 0.85f, 1.0f), ImVec4(0.30f, 0.80f, 1.0f, 1.0f) },
@@ -50,45 +52,48 @@ ImVec4 accentB(float a) { return with_a(get(current()).b, a); }
 void apply_current() {
     const Theme& t = get(current());
     auto& s = ImGui::GetStyle();
-    s.WindowRounding = 6.0f;
-    s.ChildRounding = 5.0f;
-    s.FrameRounding = 4.0f;
-    s.GrabRounding = 4.0f;
-    s.ScrollbarRounding = 5.0f;
-    s.TabRounding = 0.0f;
-    s.WindowBorderSize = 1.0f;
-    s.ChildBorderSize = 1.0f;
-    s.FrameBorderSize = 0.0f;
-    s.WindowPadding = ImVec2(0, 0);
-    s.FramePadding = ImVec2(12, 8);
-    s.ItemSpacing = ImVec2(10, 8);
-    s.ItemInnerSpacing = ImVec2(8, 6);
-    s.ScrollbarSize = 10.0f;
 
-    ImVec4* c = s.Colors;
-    c[ImGuiCol_Text] = ImVec4(0.93f, 0.94f, 0.97f, 1.0f);
-    c[ImGuiCol_TextDisabled] = ImVec4(0.58f, 0.62f, 0.72f, 1.0f);
-    c[ImGuiCol_WindowBg] = ImVec4(0.055f, 0.06f, 0.085f, 0.0f); // transparent: blur image IS the bg
-    c[ImGuiCol_ChildBg] = ImVec4(0, 0, 0, 0);
-    c[ImGuiCol_PopupBg] = ImVec4(0.09f, 0.10f, 0.14f, 1.0f);
-    c[ImGuiCol_Border] = ImVec4(t.a.x * 0.6f, t.a.y * 0.6f, t.a.z * 0.6f, 0.45f);
-    c[ImGuiCol_FrameBg] = ImVec4(0.13f, 0.14f, 0.20f, 1.0f);
-    c[ImGuiCol_FrameBgHovered] = ImVec4(0.17f, 0.18f, 0.27f, 1.0f);
-    c[ImGuiCol_FrameBgActive] = ImVec4(0.20f, 0.21f, 0.32f, 1.0f);
-    c[ImGuiCol_CheckMark] = t.b;
-    c[ImGuiCol_SliderGrab] = t.a;
-    c[ImGuiCol_SliderGrabActive] = t.b;
-    c[ImGuiCol_Button] = ImVec4(t.a.x * 0.45f, t.a.y * 0.45f, t.a.z * 0.7f, 1.0f);
-    c[ImGuiCol_ButtonHovered] = ImVec4(t.a.x * 0.7f, t.a.y * 0.7f, t.a.z * 0.95f, 1.0f);
-    c[ImGuiCol_ButtonActive] = t.b;
-    c[ImGuiCol_Header] = ImVec4(t.a.x * 0.5f, t.a.y * 0.5f, t.a.z * 0.8f, 0.9f);
-    c[ImGuiCol_HeaderHovered] = ImVec4(t.a.x * 0.7f, t.a.y * 0.7f, t.a.z, 1.0f);
-    c[ImGuiCol_HeaderActive] = t.b;
-    c[ImGuiCol_Separator] = ImVec4(t.a.x * 0.6f, t.a.y * 0.6f, t.a.z * 0.6f, 0.35f);
-    c[ImGuiCol_ScrollbarBg] = ImVec4(0, 0, 0, 0);
-    c[ImGuiCol_ScrollbarGrab] = ImVec4(t.a.x * 0.6f, t.a.y * 0.6f, t.a.z * 0.8f, 0.8f);
-    c[ImGuiCol_ScrollbarGrabHovered] = t.a;
-    c[ImGuiCol_ScrollbarGrabActive] = t.b;
+    s.Colors[ImGuiCol_WindowBg] = ImColor(60, 65, 80, 60);
+    s.Colors[ImGuiCol_ChildBg] = ImColor(20, 20, 20, 255);
+    s.Colors[ImGuiCol_PopupBg] = ImColor(26, 26, 26, 255);
+    s.Colors[ImGuiCol_Text] = ImColor(120, 120, 120, 255);
+    s.Colors[ImGuiCol_TextDisabled] = ImColor(100, 100, 100, 255);
+    s.Colors[ImGuiCol_Border] = ImColor(28, 28, 28, 255);
+    s.Colors[ImGuiCol_TextSelectedBg] = ImColor(25, 22, 33, 100);
+
+    s.Colors[ImGuiCol_ScrollbarGrab] = ImColor(80, 80, 90, 255);
+    s.Colors[ImGuiCol_ScrollbarGrabHovered] = ImColor(120, 120, 135, 255);
+    s.Colors[ImGuiCol_ScrollbarGrabActive] = ImColor(140, 140, 155, 255);
+    s.Colors[ImGuiCol_FrameBg] = ImColor(16, 16, 16, 255);
+    s.Colors[ImGuiCol_FrameBgHovered] = ImColor(18, 18, 18, 255);
+    s.Colors[ImGuiCol_FrameBgActive] = ImColor(18, 18, 18, 255);
+    s.Colors[ImGuiCol_Button] = ImColor(26, 26, 26, 255);
+    s.Colors[ImGuiCol_ButtonHovered] = ImColor(30, 30, 30, 255);
+    s.Colors[ImGuiCol_ButtonActive] = ImColor(33, 33, 33, 255);
+    s.Colors[ImGuiCol_Header] = ImColor(26, 26, 26, 255);
+    s.Colors[ImGuiCol_HeaderHovered] = ImColor(38, 38, 38, 255);
+    s.Colors[ImGuiCol_HeaderActive] = ImColor(48, 48, 48, 255);
+    s.Colors[ImGuiCol_Separator] = ImColor(28, 28, 28, 255);
+    s.Colors[ImGuiCol_CheckMark] = ImColor(255, 255, 255, 255);
+
+    s.WindowBorderSize = 0;
+    s.WindowPadding = ImVec2(0, 0);
+    s.WindowRounding = 5.f;
+    s.PopupBorderSize = 0.f;
+    s.PopupRounding = 5.f;
+    s.ChildRounding = 7;
+    s.ChildBorderSize = 1.f;
+    s.FrameBorderSize = 1.0f;
+    s.ScrollbarSize = 3.0f;
+    s.FrameRounding = 5.f;
+    s.ItemSpacing = ImVec2(0, 12);
+    s.ItemInnerSpacing = ImVec2(10, 0);
+
+    ImVec4 a = get(current()).a;
+    ImVec4 b = get(current()).b;
+    (void)a;
+    (void)b;
+    (void)t;
 }
 
-} // namespace theme
+}

@@ -6,6 +6,7 @@
 #pragma comment(lib, "d3dcompiler.lib")
 
 #include "../../vendor/imgui/imgui.h"
+#include "ui/menu.hpp"
 
 namespace blur {
 
@@ -26,6 +27,10 @@ static ID3D11RenderTargetView* g_tmpRtv = nullptr;
 static ID3D11ShaderResourceView* g_tmpSrv = nullptr;
 static UINT g_w = 0, g_h = 0;
 static bool g_ok = false;
+
+static float g_alpha = 1.0f;
+
+static float g_radius = 0.5f;
 
 struct CB { float texel[2]; float dir[2]; };
 
@@ -186,7 +191,6 @@ static bool compute(void* swapchain) {
     g_dev->GetImmediateContext(&ctx);
     if (!ctx) return false;
 
-    // save state we touch
     ID3D11RenderTargetView* oldRtv = nullptr;
     ID3D11DepthStencilView* oldDsv = nullptr;
     ctx->OMGetRenderTargets(1, &oldRtv, &oldDsv);
@@ -228,35 +232,31 @@ static bool compute(void* swapchain) {
         vp.MaxDepth = 1.0f;
         ctx->RSSetViewports(1, &vp);
 
-        // downsample full -> half
         ctx->OMSetRenderTargets(1, &g_halfRtv, nullptr);
         ctx->PSSetShader(g_down, nullptr, 0);
         ctx->PSSetShaderResources(0, 1, &g_srcSrv);
         ctx->Draw(3, 0);
 
-        // blur H + V, two iterations
         ID3D11ShaderResourceView* nullSrv = nullptr;
         ctx->PSSetShader(g_blur, nullptr, 0);
         ctx->PSSetConstantBuffers(0, 1, &g_cb);
-        float tx = 1.0f / (g_w / 4.0f), ty = 1.0f / (g_h / 4.0f);
-        for (int it = 0; it < 2; ++it) {
-            set_cb(ctx, tx, ty, 1.0f, 0.0f);
-            ctx->OMSetRenderTargets(1, &g_tmpRtv, nullptr);
-            ID3D11ShaderResourceView* s0 = g_halfSrv;
-            ctx->PSSetShaderResources(0, 1, &s0);
-            ctx->Draw(3, 0);
-            ctx->PSSetShaderResources(0, 1, &nullSrv);
-            set_cb(ctx, tx, ty, 0.0f, 1.0f);
-            ctx->OMSetRenderTargets(1, &g_halfRtv, nullptr);
-            ID3D11ShaderResourceView* s1 = g_tmpSrv;
-            ctx->PSSetShaderResources(0, 1, &s1);
-            ctx->Draw(3, 0);
-            ctx->PSSetShaderResources(0, 1, &nullSrv);
-        }
+        float tx = (1.0f / (g_w / 4.0f)) * g_radius;
+        float ty = (1.0f / (g_h / 4.0f)) * g_radius;
+        set_cb(ctx, tx, ty, 1.0f, 0.0f);
+        ctx->OMSetRenderTargets(1, &g_tmpRtv, nullptr);
+        ID3D11ShaderResourceView* s0 = g_halfSrv;
+        ctx->PSSetShaderResources(0, 1, &s0);
+        ctx->Draw(3, 0);
+        ctx->PSSetShaderResources(0, 1, &nullSrv);
+        set_cb(ctx, tx, ty, 0.0f, 1.0f);
+        ctx->OMSetRenderTargets(1, &g_halfRtv, nullptr);
+        ID3D11ShaderResourceView* s1 = g_tmpSrv;
+        ctx->PSSetShaderResources(0, 1, &s1);
+        ctx->Draw(3, 0);
+        ctx->PSSetShaderResources(0, 1, &nullSrv);
         ok = true;
     } while (0);
 
-    // restore
     ctx->OMSetRenderTargets(1, &oldRtv, oldDsv);
     if (nvp) ctx->RSSetViewports(nvp, &oldVp);
     ctx->VSSetShader(oldVs, nullptr, 0);
@@ -284,7 +284,8 @@ bool backdrop(void* swapchain) {
     if (!compute(swapchain) || !g_halfSrv) return false;
     ImVec2 vp2 = ImGui::GetIO().DisplaySize;
     ImGui::GetBackgroundDrawList()->AddImage(
-        (ImTextureID)g_halfSrv, ImVec2(0, 0), vp2);
+        (ImTextureID)g_halfSrv, ImVec2(0, 0), vp2, ImVec2(0, 0), ImVec2(1, 1),
+        IM_COL32(255, 255, 255, (int)(255 * g_alpha)));
     return true;
 }
 
@@ -294,11 +295,17 @@ bool backdrop_region(void* swapchain, float x, float y, float w, float h) {
     ImVec2 uv0(x / (float)g_w, y / (float)g_h);
     ImVec2 uv1((x + w) / (float)g_w, (y + h) / (float)g_h);
     ImGui::GetBackgroundDrawList()->AddImage((ImTextureID)g_halfSrv,
-        ImVec2(x, y), ImVec2(x + w, y + h), uv0, uv1);
+        ImVec2(x, y), ImVec2(x + w, y + h), uv0, uv1,
+        IM_COL32(255, 255, 255, (int)(255 * g_alpha)));
     return true;
 }
 
 bool ready() { return g_ok && g_halfSrv; }
+void set_radius(float r) { g_radius = r < 0.05f ? 0.05f : (r > 1.5f ? 1.5f : r); }
+float radius() { return g_radius; }
+
+void set_alpha(float a) { g_alpha = a < 0.0f ? 0.0f : (a > 1.0f ? 1.0f : a); }
+float alpha() { return g_alpha; }
 
 void on_resize() { release_sized(); }
 
@@ -313,4 +320,4 @@ void shutdown() {
     g_ok = false;
 }
 
-} // namespace blur
+}

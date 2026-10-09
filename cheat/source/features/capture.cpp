@@ -1,7 +1,8 @@
 #include "pch/pch.h"
 #include "features/capture.hpp"
-#include "core/actor_iter.hpp"
+#include "world/actor_iter.hpp"
 #include "render/dx11_hook.hpp"
+#include "util/files.hpp"
 #include "SDK/Basic.hpp"
 #include "SDK/Engine_classes.hpp"
 #include "SDK/Engine_structs.hpp"
@@ -17,13 +18,12 @@ static std::mutex g_tgtMtx;
 static float g_tx = 0, g_ty = 0, g_tz = 0;
 static bool g_hasTarget = false;
 
-static void* g_cap = nullptr;   // ASceneCapture2D*
-static void* g_rt = nullptr;    // UTextureRenderTarget2D*
+static void* g_cap = nullptr;
+static void* g_rt = nullptr;
 static uint64_t g_lastMs = 0;
 static float g_yawDeg = 0.0f;
-static bool g_evenPhase = false; // alternate capture / export (1-frame lag)
+static bool g_evenPhase = false;
 
-// upload side (render thread owns texture, worker fills pixels)
 static ID3D11Texture2D* g_tex = nullptr;
 static ID3D11ShaderResourceView* g_srv = nullptr;
 static std::mutex g_pxMtx;
@@ -31,7 +31,6 @@ static std::vector<uint8_t> g_px;
 static int g_pxW = 0, g_pxH = 0;
 static bool g_dirty = false;
 
-// ---- SEH leaves (no string/vector locals) ----
 static SDK::UWorld* seh_world() {
     __try { return static_cast<SDK::UWorld*>(actors::game_world()); }
     __except (EXCEPTION_EXECUTE_HANDLER) { return nullptr; }
@@ -125,7 +124,6 @@ static bool ensure_all() {
     return true;
 }
 
-// WIC PNG decode (worker thread). Returns RGBA pixels or empty.
 static std::vector<uint8_t> decode_png(const wchar_t* file, int& w, int& h) {
     std::vector<uint8_t> out;
     w = h = 0;
@@ -165,7 +163,7 @@ static std::vector<uint8_t> decode_png(const wchar_t* file, int& w, int& h) {
                     if (src) {
                         out.resize((size_t)sw * sh * 4);
                         if (SUCCEEDED(src->CopyPixels(nullptr, sw * 4, (UINT)out.size(), out.data()))) {
-                            // BGRA -> RGBA
+
                             for (size_t i = 0; i < out.size(); i += 4) {
                                 uint8_t t = out[i];
                                 out[i] = out[i + 2];
@@ -214,13 +212,15 @@ void tick() {
     auto* comp = seh_comp(static_cast<SDK::ASceneCapture2D*>(cap));
     if (!IS_VALID_PTR(comp)) { g_cap = nullptr; return; }
     if (g_evenPhase) {
-        // export the previous capture (1-frame lag so the GPU is done)
+        std::wstring dir = fileManager::baseDirW();
+        if (dir.empty()) return;
+        std::wstring wdir = dir + L"\\";
+
         if (seh_export(world, static_cast<SDK::UTextureRenderTarget2D*>(g_rt),
-                L"C:\\Users\\computer\\AppData\\Local\\Temp\\opencode\\", L"oar_cap")) {
-            const wchar_t* cands[2] = {
-                L"C:\\Users\\computer\\AppData\\Local\\Temp\\opencode\\oar_cap.png",
-                L"C:\\Users\\computer\\AppData\\Local\\Temp\\opencode\\oar_cap.bmp",
-            };
+                wdir.c_str(), L"oar_cap")) {
+            std::wstring png = wdir + L"oar_cap.png";
+            std::wstring bmp = wdir + L"oar_cap.bmp";
+            const wchar_t* cands[2] = { png.c_str(), bmp.c_str() };
             for (auto* f : cands) {
                 if (GetFileAttributesW(f) == INVALID_FILE_ATTRIBUTES) continue;
                 int w = 0, h = 0;
@@ -297,4 +297,4 @@ void shutdown() {
     if (g_tex) { g_tex->Release(); g_tex = nullptr; }
 }
 
-} // namespace capture
+}

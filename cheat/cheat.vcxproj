@@ -121,11 +121,14 @@
     <ClInclude Include="source\cheat\base\Initialize.hpp" />
     <ClInclude Include="source\cheat\cheat.h" />
     <ClInclude Include="source\cheat\utils\utility.h" />
-    <ClInclude Include="source\core\actor_iter.hpp" />
-    <ClInclude Include="source\core\config.hpp" />
-    <ClInclude Include="source\core\config_io.hpp" />
-    <ClInclude Include="source\core\diagnostics.hpp" />
-    <ClInclude Include="source\core\veh.hpp" />
+    <ClInclude Include="source\world\actor_iter.hpp" />
+    <ClInclude Include="source\config\config.hpp" />
+    <ClInclude Include="source\config\config_io.hpp" />
+    <ClInclude Include="source\util\files.hpp" />
+    <ClInclude Include="source\core\loading.hpp" />
+    <ClInclude Include="source\steam\steam_user.hpp" />
+    <ClInclude Include="source\world\diagnostics.hpp" />
+    <ClInclude Include="source\util\veh.hpp" />
     <ClInclude Include="source\core\hook.hpp" />
     <ClInclude Include="source\core\memory.hpp" />
     <ClInclude Include="source\core\offsets.hpp" />
@@ -147,16 +150,20 @@
   <ItemGroup>
     <ClCompile Include="entry_point.cpp" />
     <ClCompile Include="source\cheat\cheat.cpp" />
-    <ClCompile Include="source\core\config_io.cpp" />
-    <ClCompile Include="source\core\actor_iter.cpp" />
+    <ClCompile Include="source\config\config_io.cpp" />
+    <ClCompile Include="source\util\files.cpp" />
+    <ClCompile Include="source\core\loading.cpp" />
+    <ClCompile Include="source\steam\steam_user.cpp" />
+    <ClCompile Include="source\world\actor_iter.cpp" />
     <ClCompile Include="source\features\esp.cpp" />
     <ClCompile Include="source\features\exploits.cpp" />
     <ClCompile Include="source\features\manager.cpp" />
     <ClCompile Include="source\features\crates.cpp" />
     <ClCompile Include="source\features\capture.cpp" />
     <ClCompile Include="source\features\shop.cpp" />
-    <ClCompile Include="source\core\diagnostics.cpp" />
-    <ClCompile Include="source\core\veh.cpp" />
+    <ClCompile Include="source\features\skins.cpp" />
+    <ClCompile Include="source\world\diagnostics.cpp" />
+    <ClCompile Include="source\util\veh.cpp" />
     <ClCompile Include="source\render\blur.cpp" />
     <ClCompile Include="source\ui\widgets.cpp" />
     <ClCompile Include="source\ui\theme.cpp" />
@@ -166,6 +173,8 @@
     <ClCompile Include="source\ui\tabs\shop_tab.cpp" />
     <ClCompile Include="source\ui\tabs\world_tab.cpp" />
     <ClCompile Include="source\ui\tabs\player_tab.cpp" />
+    <ClCompile Include="source\ui\tabs\lobby_tab.cpp" />
+    <ClCompile Include="source\ui\tabs\loadout_tab.cpp" />
     <ClCompile Include="source\ui\popouts.cpp" />
     <ClCompile Include="source\features\modelview.cpp" />
     <ClCompile Include="source\ui\listmenu.cpp" />
@@ -207,6 +216,21 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="vendor\SDK\SteamInventoryLibrary_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\GunBase_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\WeaponSkinLibrary_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\RobberTruck_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\LeaveButton_functions.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\SDK\EquippedWeaponSlot_functions.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <!-- Dear ImGui (no demo) -->

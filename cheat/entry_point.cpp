@@ -3,7 +3,8 @@
 #include "pch/pch.h"
 #include "cheat/cheat.h"
 #include "cheat/base/Initialize.hpp"
-#include "core/config.hpp"
+#include "config/config.hpp"
+#include "core/loading.hpp"
 #include "logger/logger.hpp"
 
 static void safe_tick() {
@@ -18,6 +19,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, unsigned long reason, void* lpReserved)
         g_Module = hModule;
         DisableThreadLibraryCalls(g_Module);
         g_MainThread = CreateThread(nullptr, 0, [](void*) -> DWORD {
+            loading::begin(); // injection loading screen (drawn by Present)
             g_logger = new logger();
             g_Initializer = new Initializer();
             g_logger->send(levels::debug, "Adding class interface...");

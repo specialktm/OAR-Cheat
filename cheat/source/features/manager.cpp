@@ -1,12 +1,16 @@
 #include "pch/pch.h"
 #include "features/manager.hpp"
-#include "core/config.hpp"
+#include "config/config.hpp"
 #include "features/shop.hpp"
 #include "features/crates.hpp"
 #include "features/exploits.hpp"
+#include "core/hook.hpp"
+#include "core/offsets.hpp"
+#include "core/memory.hpp"
 
 #include <cstring>
 #include <unordered_map>
+#include <unordered_set>
 
 namespace feat {
 
@@ -45,13 +49,15 @@ void register_builtin() {
         [] { exploits::unlock_doors(); }, &g_cfg.autoDoors });
     add({ "guns", "BUFF GUNS", "dmg / mag / no recoil", "NUM2", "world",
         [] { exploits::buff_weapons(); }, nullptr });
+    add({ "complete", "INSTANT COMPLETE HEIST", "crew + loot to truck", "", "world",
+        [] { exploits::complete_heist(); }, nullptr });
 }
 
 static std::vector<const Entry*> g_empty;
 
 const std::vector<const Entry*>& by_tab(const char* tab) {
     static std::unordered_map<std::string, std::vector<const Entry*>> cache;
-    // Rebuilt on demand; registry is frozen after init.
+
     static bool built = false;
     if (!built) {
         built = true;
@@ -90,7 +96,7 @@ bool run(const char* id) {
     if (!id) return false;
     for (auto& p : reg()) {
         if (strcmp(p->id, id) == 0) {
-            // SEH-leaf discipline: run() implementations guard themselves.
+
             p->run();
             return true;
         }
@@ -103,23 +109,45 @@ static void seh_run(void (*fn)()) {
     __except (EXCEPTION_EXECUTE_HANDLER) {}
 }
 
-// Deferred action queue: filled from the render thread (menu buttons,
-// drag-drop, list UI), drained on the worker tick. Feature bodies fault on
-// stale game objects; faulting inside an ImGui window corrupts the Begin/End
-// stack, so they must never run on the render thread.
 static std::mutex g_qmtx;
 static std::vector<std::function<void()>> g_q;
+static std::unordered_map<std::string, uint64_t> g_qlast;
+static std::unordered_set<std::string> g_qpending;
 
 void queue_fn(std::function<void()> fn) {
     std::lock_guard<std::mutex> lk(g_qmtx);
-    if (g_q.size() >= 16) g_q.erase(g_q.begin()); // drop oldest on spam-click
+    if (g_q.size() >= 16) g_q.erase(g_q.begin());
+    g_q.push_back(std::move(fn));
+}
+
+void queue_keyed(const char* key, std::function<void()> fn) {
+    if (!key || !key[0]) {
+        queue_fn(std::move(fn));
+        return;
+    }
+    uint64_t now = GetTickCount64();
+    std::lock_guard<std::mutex> lk(g_qmtx);
+    auto it = g_qlast.find(key);
+    if (it != g_qlast.end() && now - it->second < 750) return;
+    if (g_qpending.find(key) != g_qpending.end()) return;
+    g_qlast[key] = now;
+    g_qpending.insert(key);
+    if (g_q.size() >= 16) { g_q.erase(g_q.begin()); }
     g_q.push_back(std::move(fn));
 }
 
 void queue_run(const char* id) {
     if (!id || !id[0]) return;
+    uint64_t now = GetTickCount64();
+    std::lock_guard<std::mutex> lk(g_qmtx);
+    auto it = g_qlast.find(id);
+    if (it != g_qlast.end() && now - it->second < 750) return;
+    if (g_qpending.find(id) != g_qpending.end()) return;
+    g_qlast[id] = now;
+    g_qpending.insert(id);
     std::string key = id;
-    queue_fn([key] { run(key.c_str()); });
+    if (g_q.size() >= 16) { g_q.erase(g_q.begin()); }
+    g_q.push_back([key] { run(key.c_str()); });
 }
 
 static void seh_call(const std::function<void()>& fn) {
@@ -127,14 +155,65 @@ static void seh_call(const std::function<void()>& fn) {
     __except (EXCEPTION_EXECUTE_HANDLER) {}
 }
 
+static std::mutex g_gameMtx;
+static std::vector<std::function<void()>> g_gameQ;
+static hook::Detour g_peHook;
+static std::atomic<bool> s_draining{ false };
+
+static void hkProcessEvent(void* obj, void* func, void* parms) {
+    auto orig = g_peHook.orig<void(*)(void*, void*, void*)>();
+    bool expected = false;
+    if (s_draining.compare_exchange_strong(expected, true)) {
+        std::vector<std::function<void()>> local;
+        {
+            std::lock_guard<std::mutex> lk(g_gameMtx);
+            local.swap(g_gameQ);
+        }
+        for (auto& fn : local) seh_call(fn);
+        s_draining.store(false);
+    }
+    orig(obj, func, parms);
+}
+
+void queue_game(std::function<void()> fn) {
+    std::lock_guard<std::mutex> lk(g_gameMtx);
+    if (g_gameQ.size() >= 8) g_gameQ.erase(g_gameQ.begin());
+    g_gameQ.push_back(std::move(fn));
+}
+
+bool ensure_gamehook(void* obj) {
+    if (g_peHook.valid()) return true;
+    void** vt = nullptr;
+    __try { vt = *reinterpret_cast<void***>(obj); }
+    __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
+    if (!IS_VALID_PTR(vt)) return false;
+    void* target = nullptr;
+    __try { target = vt[offsets::ProcessEventIdx]; }
+    __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
+    if (!IS_VALID_PTR(target)) return false;
+    uintptr_t base = mem::image_base();
+    uintptr_t t = reinterpret_cast<uintptr_t>(target);
+    uintptr_t viaOff = base + (uintptr_t)offsets::ProcessEvent;
+    if (t != viaOff && (t < base || t > base + 0x40000000u)) return false;
+    if (!g_peHook.create(target, (void*)hkProcessEvent)) return false;
+    return g_peHook.enable();
+}
+
+void shutdown_gamehook() { g_peHook.remove(); }
+
 void run_queued() {
+    static std::atomic<bool> s_busy{ false };
+    bool expected = false;
+    if (!s_busy.compare_exchange_strong(expected, true)) return;
     std::vector<std::function<void()>> local;
     {
         std::lock_guard<std::mutex> lk(g_qmtx);
-        if (g_q.empty()) return;
+        if (g_q.empty()) { s_busy.store(false); return; }
         local.swap(g_q);
+        g_qpending.clear();
     }
     for (auto& fn : local) seh_call(fn);
+    s_busy.store(false);
 }
 
 void tick_autos() {
@@ -154,4 +233,4 @@ void tick_autos() {
     }
 }
 
-} // namespace feat
+}

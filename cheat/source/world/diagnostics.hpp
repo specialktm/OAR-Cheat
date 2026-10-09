@@ -1,7 +1,6 @@
 #pragma once
 #include "pch/pch.h"
-// Startup diagnostics: sig-scan hits, resolved addresses, pointer validity.
-// Logged once at init and mirrored into the Settings tab.
+
 namespace diag {
 
 struct Report {
@@ -21,7 +20,7 @@ struct Report {
     bool resizeValid = false;
 };
 
-void report();          // run once, logs everything
-Report last();   // cached result for UI
+void report();
+Report last();
 
-} // namespace diag
+}

@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 #include "pch/pch.h"
 
 class Baseclass {

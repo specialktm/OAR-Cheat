@@ -1,6 +1,7 @@
 #include "pch/pch.h"
-#include "core/config_io.hpp"
-#include "core/config.hpp"
+#include "config/config_io.hpp"
+#include "config/config.hpp"
+#include "util/files.hpp"
 
 #include <fstream>
 #include <sstream>
@@ -9,17 +10,7 @@
 namespace cfgio {
 
 std::string path_for(const std::string& name) {
-    std::string safe = name.empty() ? "default" : name;
-    for (auto& ch : safe) {
-        if (ch == '\\' || ch == '/' || ch == ':' || ch == '*' || ch == '?' ||
-            ch == '"' || ch == '<' || ch == '>' || ch == '|')
-            ch = '_';
-    }
-    char tmp[MAX_PATH] = { 0 };
-    DWORD n = GetTempPathA((DWORD)sizeof(tmp), tmp);
-    std::string dir = (n > 0 && n < sizeof(tmp)) ? tmp : ".\\";
-    // reuse the approved temp dir used by other tooling when present
-    return dir + "opencode\\oar_" + safe + ".ini";
+    return fileManager::configPath(name);
 }
 
 static void put(std::ostringstream& o, const char* k, bool v) {
@@ -51,9 +42,12 @@ bool save(const std::string& name, std::string& err) {
     put(o, "guardState", g_cfg.guardState.load());
     put(o, "guardDistance", g_cfg.guardDistance.load());
     put(o, "guardSkel", g_cfg.guardSkel.load());
+    put(o, "playerHolding", g_cfg.playerHolding.load());
+    put(o, "guardHealth", g_cfg.guardHealth.load());
+    put(o, "visCheck", g_cfg.visCheck.load());
+    put(o, "hideDead", g_cfg.hideDead.load());
     put(o, "itemBox", g_cfg.itemBox.load());
     put(o, "boxFill", g_cfg.boxFill.load());
-    put(o, "healthGradient", g_cfg.healthGradient.load());
     put(o, "hpLeft", g_cfg.hpLeft.load());
     put(o, "espEnabled", g_cfg.espEnabled.load());
     put(o, "autoFreeShop", g_cfg.autoFreeShop.load());
@@ -62,7 +56,9 @@ bool save(const std::string& name, std::string& err) {
     put(o, "autoDoors", g_cfg.autoDoors.load());
     put(o, "watermark", g_cfg.watermark.load());
     put(o, "clock24h", g_cfg.clock24h.load());
+    put(o, "particles", g_cfg.particles.load());
     put(o, "blurBackdrop", g_cfg.blurBackdrop.load());
+    put(o, "blurAmount", g_cfg.blurAmount.load());
     put(o, "godMode", g_cfg.godMode.load());
     put(o, "itemMaxDist", g_cfg.itemMaxDist.load());
     put(o, "playerMaxDist", g_cfg.playerMaxDist.load());
@@ -92,10 +88,23 @@ bool save(const std::string& name, std::string& err) {
     put(o, "keyCameras", g_cfg.keyCameras.load());
     put(o, "keyDoors", g_cfg.keyDoors.load());
     put(o, "keyGuns", g_cfg.keyGuns.load());
+    put(o, "keyModeMenu", g_cfg.keyModeMenu.load());
+    put(o, "keyModeMaps", g_cfg.keyModeMaps.load());
+    put(o, "keyModeShop", g_cfg.keyModeShop.load());
+    put(o, "keyModeSkills", g_cfg.keyModeSkills.load());
+    put(o, "keyModeCoins", g_cfg.keyModeCoins.load());
+    put(o, "keyModeCrates", g_cfg.keyModeCrates.load());
+    put(o, "keyModeVacuum", g_cfg.keyModeVacuum.load());
+    put(o, "keyModePhones", g_cfg.keyModePhones.load());
+    put(o, "keyModeCameras", g_cfg.keyModeCameras.load());
+    put(o, "keyModeDoors", g_cfg.keyModeDoors.load());
+    put(o, "keyModeGuns", g_cfg.keyModeGuns.load());
     put4(o, "playerCol", g_cfg.playerCol);
     put4(o, "guardCol", g_cfg.guardCol);
     put4(o, "itemCol", g_cfg.itemCol);
     put4(o, "moneyCol", g_cfg.moneyCol);
+    put4(o, "npcCol", g_cfg.npcCol);
+    put4(o, "deadCol", g_cfg.deadCol);
     put4(o, "healthCol", g_cfg.healthCol);
     put4(o, "customA", g_cfg.customA);
     put4(o, "customB", g_cfg.customB);
@@ -157,9 +166,12 @@ bool load(const std::string& name, std::string& err) {
         else if (k == "guardState") sb(g_cfg.guardState);
         else if (k == "guardDistance") sb(g_cfg.guardDistance);
         else if (k == "guardSkel") sb(g_cfg.guardSkel);
+        else if (k == "playerHolding") sb(g_cfg.playerHolding);
+        else if (k == "guardHealth") sb(g_cfg.guardHealth);
+        else if (k == "visCheck") sb(g_cfg.visCheck);
+        else if (k == "hideDead") sb(g_cfg.hideDead);
         else if (k == "itemBox") sb(g_cfg.itemBox);
         else if (k == "boxFill") sb(g_cfg.boxFill);
-        else if (k == "healthGradient") sb(g_cfg.healthGradient);
         else if (k == "hpLeft") sb(g_cfg.hpLeft);
         else if (k == "espEnabled") sb(g_cfg.espEnabled);
         else if (k == "autoFreeShop") sb(g_cfg.autoFreeShop);
@@ -168,7 +180,9 @@ bool load(const std::string& name, std::string& err) {
         else if (k == "autoDoors") sb(g_cfg.autoDoors);
         else if (k == "watermark") sb(g_cfg.watermark);
         else if (k == "clock24h") sb(g_cfg.clock24h);
+        else if (k == "particles") sb(g_cfg.particles);
         else if (k == "blurBackdrop") sb(g_cfg.blurBackdrop);
+        else if (k == "blurAmount") sf(g_cfg.blurAmount);
         else if (k == "godMode") sb(g_cfg.godMode);
         else if (k == "itemMaxDist") sf(g_cfg.itemMaxDist);
         else if (k == "playerMaxDist") sf(g_cfg.playerMaxDist);
@@ -198,10 +212,23 @@ bool load(const std::string& name, std::string& err) {
         else if (k == "keyCameras") si(g_cfg.keyCameras);
         else if (k == "keyDoors") si(g_cfg.keyDoors);
         else if (k == "keyGuns") si(g_cfg.keyGuns);
+        else if (k == "keyModeMenu") si(g_cfg.keyModeMenu);
+        else if (k == "keyModeMaps") si(g_cfg.keyModeMaps);
+        else if (k == "keyModeShop") si(g_cfg.keyModeShop);
+        else if (k == "keyModeSkills") si(g_cfg.keyModeSkills);
+        else if (k == "keyModeCoins") si(g_cfg.keyModeCoins);
+        else if (k == "keyModeCrates") si(g_cfg.keyModeCrates);
+        else if (k == "keyModeVacuum") si(g_cfg.keyModeVacuum);
+        else if (k == "keyModePhones") si(g_cfg.keyModePhones);
+        else if (k == "keyModeCameras") si(g_cfg.keyModeCameras);
+        else if (k == "keyModeDoors") si(g_cfg.keyModeDoors);
+        else if (k == "keyModeGuns") si(g_cfg.keyModeGuns);
         else if (k == "playerCol") s4(g_cfg.playerCol);
         else if (k == "guardCol") s4(g_cfg.guardCol);
         else if (k == "itemCol") s4(g_cfg.itemCol);
         else if (k == "moneyCol") s4(g_cfg.moneyCol);
+        else if (k == "npcCol") s4(g_cfg.npcCol);
+        else if (k == "deadCol") s4(g_cfg.deadCol);
         else if (k == "healthCol") s4(g_cfg.healthCol);
         else if (k == "customA") s4(g_cfg.customA);
         else if (k == "customB") s4(g_cfg.customB);
@@ -211,4 +238,8 @@ bool load(const std::string& name, std::string& err) {
     return true;
 }
 
-} // namespace cfgio
+std::vector<std::string> list() {
+    return fileManager::listConfigs();
+}
+
+}

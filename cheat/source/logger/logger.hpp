@@ -17,7 +17,7 @@ class logger
 public:
     logger()
     {
-        this->initialize("OS Cheats | On Top! | v1.0");
+        this->initialize("OS Cheats | On Top! | v1.1");
     }
     ~logger()
     {
@@ -28,7 +28,6 @@ public:
 
     void set_level(levels level);
     std::string level_to_string(levels level);
-
 
     template <typename... args>
     void send(levels level, const std::string& format, args... msg)
@@ -44,7 +43,7 @@ private:
     FILE* m_file = nullptr;
     HANDLE h_console_out = nullptr;
     DWORD m_console_mode = 0;
-    bool m_owned = false; // true only if we AllocConsole'd (skip FreeConsole on reuse)
+    bool m_owned = false;
 };
 
 inline logger* g_logger;

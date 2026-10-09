@@ -1,5 +1,5 @@
 #pragma once
-// Light PCH - keep this minimal for fast builds. Do NOT include SDK uber-headers here.
+
 #ifndef PCH_H
 #define PCH_H
 
