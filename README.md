@@ -22,15 +22,65 @@ Every button reports a status line. If a status says `refused` or `FAILED`, that
 
 ## Steam: maps
 
-Maps go through the controller, not Steam inventory. Unlock all maps:
+Maps go through the controller, not Steam inventory. Every engine touch sits behind SEH and every pointer is validated first:
 
 ```cpp
-auto* pc = seh_local_rc();              // local ARobberController_C, validated
-for (auto* cls : mapClasses) pc->AddMap(cls);
-pc->SaveMaps();
+static SDK::UObject* seh_cdo(SDK::UClass* cls) {
+    __try { return cls->DefaultObject; }
+    __except (EXCEPTION_EXECUTE_HANDLER) { return nullptr; }
+}
+static bool seh_addmap(SDK::ARobberController_C* pc, SDK::UClass* cls) {
+    __try { pc->AddMap(cls); return true; }
+    __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
+}
+static bool seh_additem(SDK::ARobberController_C* pc, SDK::UClass* cls) {
+    __try { int idx = 0; pc->AddInventoryItem(cls, &idx); return true; }
+    __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
+}
+static bool seh_save_maps(SDK::ARobberController_C* pc) {
+    __try { pc->SaveMaps(); return true; }
+    __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
+}
+static bool seh_save_inv(SDK::ARobberController_C* pc) {
+    __try { pc->SaveInventoryItems(); return true; }
+    __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
+}
+static bool seh_patch_cdo(SDK::AShopItem_Base_C* it) {
+    __try { it->UnlockLevel = 0; it->CashCost = 1; it->CoinCost = 1; return true; }
+    __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
+}
 ```
 
-That is `shop::free_all_maps()`. Status reports granted vs verified counts. Nothing Steam-side to poll here, the save persists it.
+Unlock all maps (`shop::free_all_maps()`). Enumerate `ShopItem_Map_*` subclasses, skip what's already in `UnlockedMaps[]`, grant the rest, save, then re-read the array to verify:
+
+```cpp
+auto classes = collect_subclasses(base_of("map"), "ShopItem_Map_");
+for (auto* cls : classes) {
+    bool has = false;
+    bool readOk = seh_arr_contains_uclass(pc->UnlockedMaps, cls, has);
+    if (readOk && has) continue;
+    if (seh_addmap(pc, cls)) ++st.mapsGranted;
+}
+seh_save_maps(pc);
+```
+
+Same shape for shop items (`shop::free_all_shop()`), over `ShopItem_*` subclasses of `AShopItem_Base_C`, plus a CDO patch per class so everything costs $1, cash top-up, and verify against `ItemInventory[]`:
+
+```cpp
+auto items = collect_subclasses(base_of("item"), "ShopItem_");
+for (auto* cls : items) {
+    SDK::UObject* cdo = seh_cdo(cls);
+    auto* base = static_cast<SDK::AShopItem_Base_C*>(cdo);
+    if (seh_patch_cdo(base)) ++st.itemsPatched;
+    bool has = false;
+    bool readOk = seh_arr_contains_uclass(pc->ItemInventory, cls, has);
+    if (readOk && has) continue;
+    if (seh_additem(pc, cls)) ++st.itemsGranted;
+}
+seh_save_inv(pc);
+```
+
+One item is `shop::grant_class(cls)`, same `seh_additem` path. Status reports granted vs verified counts, nothing Steam-side to poll here, the save persists it.
 
 Coins only come from the game's own grant flow. `shop::coins_legit()` runs `GrantCoinPacks()` -> `CheckCoinPacks()` -> `AddCurrentPromoItem()` and reports the balance before/after. Coin bundles (defs 1501/3151/8501/20001, type `bundle`) are claimed through promo eligibility in `crates::promo_coins()`:
 
