@@ -94,12 +94,25 @@ static bool s_pending = false;
 static ID3D11Texture2D* s_tex = nullptr;
 static ID3D11ShaderResourceView* s_srv = nullptr;
 
+static void sanitize_ascii(char* dst, size_t cap) {
+    size_t w = 0;
+    for (size_t r = 0; dst[r] && w + 1 < cap; ++r) {
+        unsigned char c = (unsigned char)dst[r];
+        if (c >= 32 && c < 127)
+            dst[w++] = (char)c;
+    }
+    dst[w] = 0;
+    if (!w)
+        strcpy_s(dst, cap, "player");
+}
+
 static void fallback_name() {
     DWORD n = (DWORD)sizeof(s_name);
     if (!GetUserNameA(s_name, &n) || n == 0)
         strcpy_s(s_name, "player");
     else if (n < sizeof(s_name))
         s_name[n] = 0;
+    sanitize_ascii(s_name, sizeof(s_name));
     s_nameReady.store(true);
 }
 
@@ -140,6 +153,7 @@ void steamServiceHelper::fetch() {
     const char* pn = s_getName(s_friends);
     if (pn && pn[0]) {
         strncpy_s(s_name, pn, _TRUNCATE);
+        sanitize_ascii(s_name, sizeof(s_name));
         s_nameReady.store(true);
     } else {
         fallback_name();

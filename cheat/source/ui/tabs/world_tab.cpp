@@ -2,45 +2,42 @@
 #include "ui/tabs.hpp"
 #include "ui/widgets.hpp"
 #include "ui/menu.hpp"
+#include "ui/take_shell.hpp"
 #include "config/config.hpp"
 #include "features/manager.hpp"
+#include "features/takebind.hpp"
 #include "features/exploits.hpp"
 
 namespace {
 void draw_world() {
-    widgets::header_card("World", "Phones, cameras and doors");
-    widgets::os_section("Actions", ImVec2(800, 440));
-    {
+    ImGuiStyle& style = ImGui::GetStyle();
+    float gw = ImTrunc((ImGui::GetContentRegionAvail().x - style.ItemSpacing.x) / 2.0f);
+    if (widgets::os_section("Actions", ImVec2(gw, 0))) {
         ImGui::SetWindowFontScale(dpi_scale);
+        takeui::CenterSeparator("Level actions");
         for (const feat::Entry* e : feat::by_tab("world")) {
-            char btn[128];
-            auto* k = feat::key_for(e->id);
-            int vk = k ? k->load() : 0;
-            if (vk)
-                snprintf(btn, sizeof(btn), "%s  [%s]", e->name, widgets::key_name(vk));
-            else
-                snprintf(btn, sizeof(btn), "%s", e->name);
-            ImGui::PushID(e->id);
-            float bw = ImGui::GetContentRegionAvail().x;
-            if (e->autoFlag) {
-                if (ImGui::Button(btn, ImVec2(bw - 138.0f, 32)))
-                    feat::queue_run(e->id);
-                if (ImGui::IsItemHovered()) ImGui::SetTooltip("%s", e->desc);
-                ImGui::SameLine(0, 8);
-                ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 3.0f);
-                widgets::check_bridge("Auto", *e->autoFlag);
-                if (ImGui::IsItemHovered()) ImGui::SetTooltip("auto-repeat this action");
-            } else {
-                if (ImGui::Button(btn, ImVec2(-1, 32)))
-                    feat::queue_run(e->id);
-                if (ImGui::IsItemHovered()) ImGui::SetTooltip("%s", e->desc);
-            }
-            ImGui::PopID();
+            widgets::action_button(e->id, e->name, e->desc, ImVec2(-1, 32));
         }
-        widgets::sliderf_bridge("Interval (sec)", g_cfg.autoIntervalSec, 1.0f, 30.0f);
         ImGui::TextDisabled("last: %s", exploits::last_result());
+        widgets::os_section_end();
     }
-    widgets::os_section_end();
+    ImGui::SameLine();
+    if (widgets::os_section("Cheats", ImVec2(gw, 0))) {
+        ImGui::SetWindowFontScale(dpi_scale);
+        takeui::CenterSeparator("Engine tweaks");
+        if (widgets::sliderf_bridge("Slomo", g_cfg.timeDilation, 0.1f, 3.0f, "%.2f"))
+            exploits::set_slomo(g_cfg.timeDilation.load());
+        if (widgets::sliderf_bridge("FOV", g_cfg.fov, 40.0f, 150.0f, "%.0f"))
+            exploits::set_fov(g_cfg.fov.load());
+        static char summonBuf[64] = { 0 };
+        ImGui::TextDisabled("Summon class");
+        ImGui::InputText("##summon", summonBuf, sizeof(summonBuf));
+        if (ImAdd::Button("SUMMON", ImVec2(-1, 32)))
+            exploits::summon_item(summonBuf);
+        if (ImGui::IsItemHovered()) ImGui::SetTooltip("short class name, e.g. Money_base_C");
+        ImGui::TextDisabled("cheats on first, ghost noclip needs rejoin to undo");
+        widgets::os_section_end();
+    }
 }
 struct Reg { Reg() { tabs::add({ "world", "World", draw_world }); } };
 static Reg g_reg;

@@ -2,6 +2,7 @@
 #include "ui/tabs.hpp"
 #include "ui/widgets.hpp"
 #include "ui/menu.hpp"
+#include "ui/take_shell.hpp"
 #include "config/config.hpp"
 #include "features/esp.hpp"
 
@@ -23,12 +24,12 @@ static void embedded_preview(bool npc) {
     ImDrawList* dl = ImGui::GetWindowDrawList();
 
     dl->AddRectFilled(cur, ImVec2(cur.x + size.x, cur.y + size.y),
-        ui::fade(IM_COL32(10, 12, 22, 255)), 6.0f);
+        (IM_COL32(10, 12, 22, 255)), 6.0f);
     dl->AddRect(cur, ImVec2(cur.x + size.x, cur.y + size.y),
-        ui::fade(IM_COL32(60, 70, 100, 255)), 6.0f, 0, 1.0f);
+        (IM_COL32(60, 70, 100, 255)), 6.0f, 0, 1.0f);
 
     ImVec4 base = npc ? g_cfg.guardCol : g_cfg.playerCol;
-    ImU32 col = ui::fade(IM_COL32((int)(base.x * 255), (int)(base.y * 255), (int)(base.z * 255), 255));
+    ImU32 col = (IM_COL32((int)(base.x * 255), (int)(base.y * 255), (int)(base.z * 255), 255));
     int style = g_cfg.espBoxStyle.load();
     int anchor = g_cfg.espLabelAnchor.load() & 7;
     int subAnchor = g_cfg.espSubAnchor.load() & 7;
@@ -53,12 +54,12 @@ static void embedded_preview(bool npc) {
 
     if (showBox) {
         if (g_cfg.boxFill.load())
-            dl->AddRectFilled(ImVec2(x0, y0), ImVec2(x1, y1), ui::fade((col & 0x00FFFFFFu) | (30u << 24)));
+            dl->AddRectFilled(ImVec2(x0, y0), ImVec2(x1, y1), ((col & 0x00FFFFFFu) | (30u << 24)));
         esp::draw_box_style(dl, style, x0, y0, x1, y1, col);
     } else {
-        dl->AddRect(ImVec2(x0, y0), ImVec2(x1, y1), ui::fade(IM_COL32(90, 100, 130, 120)), 0.0f, 0, 1.0f);
+        dl->AddRect(ImVec2(x0, y0), ImVec2(x1, y1), (IM_COL32(90, 100, 130, 120)), 0.0f, 0, 1.0f);
         ImVec2 tsz = ImGui::CalcTextSize("box off");
-        dl->AddText(ImVec2(cx - tsz.x / 2, cy - tsz.y / 2), ui::fade(IM_COL32(140, 148, 170, 255)), "box off");
+        dl->AddText(ImVec2(cx - tsz.x / 2, cy - tsz.y / 2), (IM_COL32(140, 148, 170, 255)), "box off");
     }
 
     float hx0 = 0, hx1 = 0;
@@ -66,13 +67,13 @@ static void embedded_preview(bool npc) {
         hx0 = hpLeft ? x0 - 7 : x1 + 3;
         hx1 = hpLeft ? x0 - 3 : x1 + 7;
         float frac = 0.72f;
-        dl->AddRectFilled(ImVec2(hx0, y0), ImVec2(hx1, y1), ui::fade(IM_COL32(0, 0, 0, 170)));
-        ImU32 hc = ui::fade(IM_COL32(90, 255, 120, 255));
+        dl->AddRectFilled(ImVec2(hx0, y0), ImVec2(hx1, y1), (IM_COL32(0, 0, 0, 170)));
+        ImU32 hc = (IM_COL32(90, 255, 120, 255));
         dl->AddRectFilled(ImVec2(hx0, y1 - bh * frac), ImVec2(hx1, y1), hc);
     }
     if (showHp && hs != 1) {
         ImVec2 tsz = ImGui::CalcTextSize("72");
-        dl->AddText(ImVec2(cx - tsz.x / 2, y1 + 4), ui::fade(IM_COL32(255, 255, 255, 220)), "72");
+        dl->AddText(ImVec2(cx - tsz.x / 2, y1 + 4), (IM_COL32(255, 255, 255, 220)), "72");
     }
 
     float lx = 0, ly = 0, sx = 0, sy = 0;
@@ -80,19 +81,19 @@ static void embedded_preview(bool npc) {
     if (showName) {
         esp::anchor_pos(anchor, x0, y0, x1, y1, 13.0f * s, 0, lx, ly);
         nsz = ImGui::CalcTextSize(nm);
-        dl->AddText(ImVec2(lx - nsz.x / 2, ly + nudge), ui::fade(IM_COL32(235, 238, 248, 255)), nm);
+        dl->AddText(ImVec2(lx - nsz.x / 2, ly + nudge), (IM_COL32(235, 238, 248, 255)), nm);
     }
     if (showSub) {
         int line = showName ? 1 : 0;
         esp::anchor_pos(subAnchor, x0, y0, x1, y1, 13.0f * s, line, sx, sy);
         ssz = ImGui::CalcTextSize(sub);
-        dl->AddText(ImVec2(sx - ssz.x / 2, sy + nudge), ui::fade(IM_COL32(200, 204, 214, 255)), sub);
+        dl->AddText(ImVec2(sx - ssz.x / 2, sy + nudge), (IM_COL32(200, 204, 214, 255)), sub);
     }
 
     bool sk = npc ? g_cfg.guardSkel.load() : g_cfg.playerSkel.load();
     if (sk) {
         ImVec2 tsz = ImGui::CalcTextSize("skeleton: live bones in-game");
-        dl->AddText(ImVec2(cx - tsz.x / 2, y1 + 22), ui::fade(IM_COL32(140, 220, 255, 200)),
+        dl->AddText(ImVec2(cx - tsz.x / 2, y1 + 22), (IM_COL32(140, 220, 255, 200)),
             "skeleton: live bones in-game");
     }
 
@@ -173,44 +174,33 @@ static void embedded_preview(bool npc) {
 }
 
 static int visMode = 0;
-static const ImGuiColorEditFlags kPicker =
-    ImGuiColorEditFlags_AlphaPreview | ImGuiColorEditFlags_NoSidePreview |
-    ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_NoInputs;
-
-static void check_picker(const char* label, std::atomic<bool>& v, ImVec4& col) {
-    widgets::check_bridge(label, v);
-    ImGui::SameLine();
-    ImGui::SetCursorPosX(ImGui::GetCursorPosX() + ImGui::GetContentRegionAvail().x - 46.0f);
-    char pid[64]; snprintf(pid, sizeof(pid), "##pick_%s", label);
-    ImGui::ColorEdit4(pid, (float*)&col, kPicker);
-}
 
 void draw_esp() {
-    widgets::header_card("Visuals", "Player, world and overlay");
-
-    if (widgets::os_subtab("PLAYERS", visMode == 0, 406.0f)) visMode = 0;
+    ImGuiStyle& style = ImGui::GetStyle();
+    float gw = ImTrunc((ImGui::GetContentRegionAvail().x - style.ItemSpacing.x) / 2.0f);
+    if (widgets::os_subtab("PLAYERS", visMode == 0, gw)) visMode = 0;
     ImGui::SameLine(0, 8);
-    if (widgets::os_subtab("GUARDS", visMode == 1, 406.0f)) visMode = 1;
+    if (widgets::os_subtab("GUARDS", visMode == 1, gw)) visMode = 1;
 
     if (visMode == 0) {
-        ImGui::SetCursorPos(ImVec2(0, 180));
-        widgets::os_section("Players", ImVec2(400, 320));
-        {
+        if (widgets::os_section("Players", ImVec2(gw, 0))) {
             ImGui::SetWindowFontScale(dpi_scale);
-            check_picker("Enable players", g_cfg.playerEsp, g_cfg.playerCol);
+            widgets::check_picker("Enable players", g_cfg.playerEsp, g_cfg.playerCol, "esp_p");
             static const char* elems[6] = { "Box", "Name", "Health", "Distance", "Skeleton", "Holding" };
             static std::atomic<bool>* pf[6] = { &g_cfg.playerBox, &g_cfg.playerName,
                 &g_cfg.playerHealth, &g_cfg.playerDistance, &g_cfg.playerSkel,
                 &g_cfg.playerHolding };
-            widgets::multi_bridge("ELEMENTS", elems, pf, 6);
+            widgets::multi_bridge("Elements", elems, pf, 6);
             widgets::check_bridge("Visibility check", g_cfg.visCheck);
             widgets::check_bridge("Hide dead", g_cfg.hideDead);
             widgets::check_bridge("Box fill", g_cfg.boxFill);
+            widgets::check_bridge("Chams", g_cfg.playerChams);
+            widgets::check_bridge("Glow", g_cfg.playerGlow);
+            widgets::check_picker("Model chams", g_cfg.silChams, g_cfg.silHiddenP, "esp_sil");
+            widgets::os_section_end();
         }
-        widgets::os_section_end();
-        ImGui::SetCursorPos(ImVec2(420, 180));
-        widgets::os_section("Style", ImVec2(400, 560));
-        {
+        ImGui::SameLine();
+        if (widgets::os_section("Style", ImVec2(gw, 0))) {
             ImGui::SetWindowFontScale(dpi_scale);
             widgets::combo_bridge("Box type", kBoxTypes, 3, g_cfg.espBoxStyle);
             widgets::combo_bridge("Name anchor", kAnchors, 8, g_cfg.espLabelAnchor);
@@ -220,44 +210,47 @@ void draw_esp() {
             widgets::sliderf_bridge("Box width", g_cfg.espBoxW, 0.25f, 0.8f, "%.2f");
             widgets::sliderf_bridge("Text scale", g_cfg.espTextScale, 0.7f, 1.8f, "%.2f");
             widgets::sliderf_bridge("Label height", g_cfg.espNameDy, -40.0f, 20.0f, "%.0f");
+            widgets::check_bridge("Health left side", g_cfg.hpLeft);
+            takeui::CenterSeparator("Preview");
+            embedded_preview(false);
+            widgets::os_section_end();
         }
-        widgets::os_section_end();
-        ImGui::SetCursorPos(ImVec2(0, 760));
     } else {
-        ImGui::SetCursorPos(ImVec2(0, 180));
-        widgets::os_section("Guards", ImVec2(400, 260));
-        {
+        if (widgets::os_section("Guards", ImVec2(gw, 0))) {
             ImGui::SetWindowFontScale(dpi_scale);
-            check_picker("Enable guards", g_cfg.guardEsp, g_cfg.guardCol);
+            widgets::check_picker("Enable guards", g_cfg.guardEsp, g_cfg.guardCol, "esp_g");
             static const char* gelems[5] = { "Box", "State", "Health", "Distance", "Skeleton" };
             static std::atomic<bool>* gf[5] = { &g_cfg.guardBox, &g_cfg.guardState,
                 &g_cfg.guardHealth, &g_cfg.guardDistance, &g_cfg.guardSkel };
-            widgets::multi_bridge("ELEMENTS", gelems, gf, 5);
+            widgets::multi_bridge("Elements", gelems, gf, 5);
+            widgets::check_bridge("Chams", g_cfg.guardChams);
+            widgets::check_bridge("Glow", g_cfg.guardGlow);
+            widgets::check_picker("Model chams", g_cfg.silChamsG, g_cfg.silHiddenG, "esp_silg");
+            widgets::os_section_end();
         }
-        widgets::os_section_end();
-        ImGui::SetCursorPos(ImVec2(420, 180));
-        widgets::os_section("Colors", ImVec2(400, 340));
-        {
+        ImGui::SameLine();
+        if (widgets::os_section("Colors", ImVec2(gw, 0))) {
             ImGui::SetWindowFontScale(dpi_scale);
-            ImGui::ColorEdit4("NPC", (float*)&g_cfg.npcCol, kPicker);
-            ImGui::ColorEdit4("Dead", (float*)&g_cfg.deadCol, kPicker);
-            ImGui::ColorEdit4("Health", (float*)&g_cfg.healthCol, kPicker);
-            ImGui::ColorEdit4("Items", (float*)&g_cfg.itemCol, kPicker);
-            ImGui::ColorEdit4("Money", (float*)&g_cfg.moneyCol, kPicker);
+            takeui::CenterSeparator("World colors");
+            ImGui::TextDisabled("NPC");
+            widgets::color_tail("Colour##esp_npc", g_cfg.npcCol);
+            ImGui::TextDisabled("Dead");
+            widgets::color_tail("Colour##esp_dead", g_cfg.deadCol);
+            ImGui::TextDisabled("Health");
+            widgets::color_tail("Colour##esp_hp", g_cfg.healthCol);
+            ImGui::TextDisabled("Items");
+            widgets::color_tail("Colour##esp_item", g_cfg.itemCol);
+            ImGui::TextDisabled("Money");
+            widgets::color_tail("Colour##esp_money", g_cfg.moneyCol);
             esp::SkelDbg d = esp::skel_debug();
             char b[96];
             snprintf(b, sizeof(b), "skeleton %d/%d drawn", d.drawn, d.checked);
             ImGui::TextDisabled("%s", b);
+            takeui::CenterSeparator("Preview");
+            embedded_preview(true);
+            widgets::os_section_end();
         }
-        widgets::os_section_end();
-        ImGui::SetCursorPos(ImVec2(0, 540));
     }
-    widgets::os_section("Preview", ImVec2(800, 400));
-    {
-        ImGui::SetWindowFontScale(dpi_scale);
-        embedded_preview(visMode == 1);
-    }
-    widgets::os_section_end();
 }
 struct Reg { Reg() { tabs::add({ "esp", "Visuals", draw_esp }); } };
 static Reg g_reg;

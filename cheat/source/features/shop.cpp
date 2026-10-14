@@ -543,6 +543,57 @@ bool grant_class(void* uclass) {
     return ok;
 }
 
+static std::string short_skill(const std::string& n) {
+    std::string d = n;
+    const char* pre = "Default__";
+    if (d.rfind(pre, 0) == 0) d = d.substr(9);
+    if (d.size() > 2 && d.substr(d.size() - 2) == "_C")
+        d = d.substr(0, d.size() - 2);
+    const char* sp = "Shop_Skill_";
+    if (d.rfind(sp, 0) == 0) d = d.substr(11);
+    const char* sp2 = "ShopSkill_";
+    if (d.rfind(sp2, 0) == 0) d = d.substr(10);
+    while (!d.empty() && d.front() == '_') d.erase(d.begin());
+    if (d.empty()) d = n;
+    return d;
+}
+
+std::vector<SkillInfo> skill_list() {
+    std::vector<SkillInfo> out;
+    auto skills = collect_subclasses(base_of("skill"), "Shop_Skill");
+    if (skills.empty())
+        skills = collect_subclasses(base_of("skill"), "ShopItem_");
+    for (auto* cls : skills) {
+        if (!IS_VALID_PTR(cls)) continue;
+        SkillInfo s;
+        s.cls = cls;
+        std::string nm;
+        if (veh::try_call([&] { nm = veh::get_name(cls); }) && !nm.empty())
+            s.name = short_skill(nm);
+        else
+            s.name = "Skill";
+        out.push_back(std::move(s));
+    }
+    return out;
+}
+
+bool grant_skill(void* uclass) {
+    auto* pc = seh_local_rc();
+    auto* cls = static_cast<SDK::UClass*>(uclass);
+    if (!IS_VALID_PTR(pc) || !IS_VALID_PTR(cls)) return false;
+    SDK::UObject* cdo = seh_cdo(cls);
+    if (IS_VALID_PTR(cdo))
+        seh_patch_skill(static_cast<SDK::AShop_SkillBase_C*>(cdo));
+    bool has = false;
+    bool readOk = seh_arr_contains_uclass(pc->ItemInventory, cls, has);
+    if (!(readOk && has)) {
+        if (!seh_additem(pc, cls)) return false;
+    }
+    seh_save_inv(pc);
+    g_grants.fetch_add(1);
+    return true;
+}
+
 void coins_legit() {
     Status st{};
     auto* pc = seh_local_rc();

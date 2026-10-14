@@ -2,6 +2,7 @@
 #include "ui/tabs.hpp"
 #include "ui/widgets.hpp"
 #include "ui/menu.hpp"
+#include "ui/take_shell.hpp"
 #include "config/config.hpp"
 #include "world/actor_iter.hpp"
 #include "util/veh.hpp"
@@ -292,11 +293,7 @@ static std::string norm_tok(const std::string& s) {
 
 static int selWep = 0;
 static int availSel = 0;
-static int skinSel = 0;
-static int charmSel = 0;
 static std::vector<WepEntry> s_weps;
-static std::vector<skins::OwnedSkin> s_owned;
-static std::vector<skins::CharmEntry> s_charms;
 static uint64_t s_dataTs = 0;
 static char s_wstatus[128] = "idle";
 static bool s_verifyActive = false;
@@ -313,10 +310,6 @@ static void* s_verifyCls = nullptr;
 static char s_verifyName[64] = { 0 };
 static SDK::UClass* s_origCls = nullptr;
 static int s_origLoadout = 0;
-static char s_sstatus[128] = "idle";
-static char s_cstatus[128] = "idle";
-static std::string s_curSkin = "not scanned";
-static std::string s_curCharm = "not scanned";
 
 static void refresh_data(bool force) {
     uint64_t now = GetTickCount64();
@@ -345,70 +338,6 @@ static void refresh_data(bool force) {
         s_weps.push_back(std::move(e));
     }
     if (selWep < 0 || selWep >= (int)s_weps.size()) selWep = 0;
-    s_owned = skins::unlocked_skins();
-    if (skinSel < 0 || skinSel >= (int)s_owned.size()) skinSel = 0;
-    s_charms = skins::charm_shop_items();
-    {
-        std::vector<skins::CharmEntry> owned;
-        std::vector<crates::SteamItem> items;
-        if (crates::snapshot(items)) {
-            for (auto& c : s_charms) {
-                for (auto& s : items) {
-                    if (s.def == c.def && s.qty > 0) { owned.push_back(c); break; }
-                }
-            }
-        }
-        if (!owned.empty()) s_charms.swap(owned);
-    }
-    if (charmSel < 0 || charmSel >= (int)s_charms.size()) charmSel = 0;
-}
-
-static void scan_current() {
-    auto* pc = seh_rc();
-    if (!IS_VALID_PTR(pc)) {
-        s_curSkin = "join a lobby first";
-        s_curCharm = "join a lobby first";
-        return;
-    }
-    if (selWep < 0 || selWep >= (int)s_weps.size() || !IS_VALID_PTR(s_weps[selWep].cls)) {
-        s_curSkin = "pick a weapon first";
-        s_curCharm = "pick a weapon first";
-        return;
-    }
-    void* gun = s_weps[selWep].cls;
-    PtrSnap e = seh_eskins(pc);
-    bool hit = false;
-    if (e.ok && e.n > 0) {
-        std::vector<SDK::FEquippedSkinStruct> buf((size_t)e.n);
-        veh::try_call([&] {
-            auto* d = reinterpret_cast<SDK::FEquippedSkinStruct const*>(e.arr);
-            memcpy(buf.data(), d, sizeof(buf[0]) * (size_t)e.n);
-        });
-        for (int i = 0; i < e.n; ++i) {
-            SDK::UClass* w = buf[(size_t)i].Weapon_6_9CBF531647150BA4D5CE9997A2C4AF18;
-            int row = buf[(size_t)i].SkinID_5_DA96374A47E0224BD1785591CB5E713D;
-            if (!IS_VALID_PTR(w) || w != gun) continue;
-            std::string nm, ch;
-            int cat = 0, def = 0;
-            if (skins::row_info(row, nm, cat, ch, def)) {
-                char b[128];
-                snprintf(b, sizeof(b), "%.80s (cat %d)", nm.empty() ? "?" : nm.c_str(), cat);
-                s_curSkin = b;
-                s_curCharm = ch.empty() ? "(no charm on skin)" : ch;
-            } else {
-                char b[64];
-                snprintf(b, sizeof(b), "row %d (not in table)", row);
-                s_curSkin = b;
-                s_curCharm = "?";
-            }
-            hit = true;
-            break;
-        }
-    }
-    if (!hit) {
-        s_curSkin = "no skin equipped";
-        s_curCharm = "no skin equipped";
-    }
 }
 
 static void request_replace() {
@@ -540,7 +469,8 @@ static void request_replace() {
 }
 
 void draw_loadout() {
-    widgets::header_card("Loadout", "guns, skins and charms");
+    ImGuiStyle& style = ImGui::GetStyle();
+    float gw = ImTrunc((ImGui::GetContentRegionAvail().x - style.ItemSpacing.x) / 2.0f);
     auto* pc = seh_rc();
     if (!IS_VALID_PTR(pc)) {
         ImGui::TextColored(ImVec4(1.0f, 0.72f, 0.30f, 1.0f), "No local controller - join a lobby first.");
@@ -662,8 +592,7 @@ void draw_loadout() {
         }
     }
 
-    widgets::os_section("Weapons", ImVec2(800, 400));
-    {
+    if (widgets::os_section("Weapons", ImVec2(gw, 0))) {
         ImGui::SetWindowFontScale(dpi_scale);
         {
             PtrSnap dg = seh_guns(pc);
@@ -680,6 +609,7 @@ void draw_loadout() {
             snprintf(d, sizeof(d), "pc ok | equipped %s | mods %s | skins %s | classes %d",
                 eb, mb, kb, (int)s_allGuns.size());
             ImGui::TextDisabled("%s", d);
+            ImGui::TextDisabled("%s", feat::pespy_status());
         }
         if (!s_scanDone) {
             char p[128];
@@ -690,7 +620,7 @@ void draw_loadout() {
         {
             bool lokS = false;
             int loS = seh_loadout(pc, lokS);
-            if (ImGui::Button("<", ImVec2(40, 28))) {
+            if (ImAdd::Button("<", ImVec2(40, 28))) {
                 feat::queue_game([] {
                     auto* p2 = seh_rc();
                     if (IS_VALID_PTR(p2)) seh_switch_loadout(p2, -1);
@@ -702,7 +632,7 @@ void draw_loadout() {
             else snprintf(lb, sizeof(lb), "Loadout ?");
             ImGui::Text("%s", lb);
             ImGui::SameLine(0, 8);
-            if (ImGui::Button(">", ImVec2(40, 28))) {
+            if (ImAdd::Button(">", ImVec2(40, 28))) {
                 feat::queue_game([] {
                     auto* p2 = seh_rc();
                     if (IS_VALID_PTR(p2)) seh_switch_loadout(p2, 1);
@@ -719,8 +649,8 @@ void draw_loadout() {
                 if (i > 0) ImGui::SameLine(0, 8);
                 char b[96];
                 snprintf(b, sizeof(b), "%s%d: %s", selWep == i ? "> " : "",
-                    i, s_weps[i].name.c_str());
-                if (ImGui::Button(b, ImVec2(bw, 28))) selWep = i;
+                    i, widgets::shorten(s_weps[i].name, 18).c_str());
+                if (ImAdd::Button(b, ImVec2(bw, 28))) selWep = i;
             }
             if (ImGui::IsItemHovered()) ImGui::SetTooltip("pick target slot");
         } else {
@@ -732,28 +662,28 @@ void draw_loadout() {
                 s_weps[selWep].name.c_str(), s_allGuns[availSel].name.c_str());
         else
             ImGui::TextDisabled("pick a gun in Armory below");
-        if (ImGui::Button("REPLACE WEAPON", ImVec2(-1, 32))) {
+        if (ImAdd::Button("REPLACE WEAPON", ImVec2(-1, 32))) {
             request_replace();
         }
         if (ImGui::IsItemHovered()) ImGui::SetTooltip("swap one gun, verify, rollback on refuse");
-        if (ImGui::Button("SCAN GUN CLASSES", ImVec2(-1, 28)))
+        if (ImAdd::Button("SCAN GUN CLASSES", ImVec2(-1, 28)))
             rescan_guns();
         if (ImGui::IsItemHovered()) ImGui::SetTooltip("re-enumerate gun classes");
         ImGui::TextDisabled("%s", s_wstatus);
+        widgets::os_section_end();
     }
-    widgets::os_section_end();
-
-    ImGui::SetCursorPos(ImVec2(0, 530));
-    widgets::os_section("Armory", ImVec2(800, 470));
-    {
+    ImGui::SameLine();
+    if (widgets::os_section("Armory", ImVec2(gw, 0))) {
         ImGui::SetWindowFontScale(dpi_scale);
-        if (widgets::os_subtab("Weapons", s_armCat == 0, 185.0f)) { s_armCat = 0; s_armSel = -1; }
+        float sub4 = (gw - 24.0f) * 0.25f;
+        if (sub4 < 60.0f) sub4 = 60.0f;
+        if (widgets::os_subtab("Weapons", s_armCat == 0, sub4)) { s_armCat = 0; s_armSel = -1; }
         ImGui::SameLine(0, 8);
-        if (widgets::os_subtab("Tools", s_armCat == 1, 185.0f)) { s_armCat = 1; s_armSel = -1; }
+        if (widgets::os_subtab("Tools", s_armCat == 1, sub4)) { s_armCat = 1; s_armSel = -1; }
         ImGui::SameLine(0, 8);
-        if (widgets::os_subtab("Appearance", s_armCat == 2, 185.0f)) { s_armCat = 2; s_armSel = -1; }
+        if (widgets::os_subtab("Style", s_armCat == 2, sub4)) { s_armCat = 2; s_armSel = -1; }
         ImGui::SameLine(0, 8);
-        if (widgets::os_subtab("Skills", s_armCat == 3, 185.0f)) { s_armCat = 3; s_armSel = -1; }
+        if (widgets::os_subtab("Skills", s_armCat == 3, sub4)) { s_armCat = 3; s_armSel = -1; }
         struct ArmItem { std::string label; int gun; void* cls; };
         std::vector<ArmItem> items;
         if (s_armCat == 0) {
@@ -769,6 +699,16 @@ void draw_loadout() {
                 if (eq) a.label += " [E]";
                 items.push_back(std::move(a));
             }
+        } else if (s_armCat == 3) {
+            std::vector<shop::SkillInfo> sk = shop::skill_list();
+            for (auto& it : sk) {
+                if (!IS_VALID_PTR(it.cls)) continue;
+                ArmItem a;
+                a.label = it.name;
+                a.gun = -1;
+                a.cls = it.cls;
+                items.push_back(std::move(a));
+            }
         } else {
             std::vector<shop::ItemInfo> cat = shop::catalog(false);
             for (auto& it : cat) {
@@ -777,7 +717,6 @@ void draw_loadout() {
                 else if (s_armCat == 2) hit = it.name.find("Mask") != std::string::npos ||
                     it.name.find("Outfit") != std::string::npos ||
                     it.name.find("Armor") != std::string::npos;
-                else if (s_armCat == 3) hit = it.name.find("Skill") != std::string::npos;
                 if (!hit || !IS_VALID_PTR(it.cls)) continue;
                 ArmItem a;
                 a.label = strip_item(it.name);
@@ -786,17 +725,24 @@ void draw_loadout() {
                 items.push_back(std::move(a));
             }
         }
+        if (items.empty()) {
+            if (!actors::world_stable(5000))
+                ImGui::TextDisabled("join a lobby - scanning when ready");
+            else if (s_armCat == 0 && !s_scanDone)
+                ImGui::TextDisabled("scanning gun classes...");
+            else
+                ImGui::TextDisabled("nothing found here");
+        } else {
         ImGui::BeginChild("ArmoryGrid", ImVec2(0, 268), true);
         {
             float avail = ImGui::GetContentRegionAvail().x;
             float bw = (avail - 8.0f) * 0.5f;
             if (bw < 60.0f) bw = avail;
-            if (items.empty()) ImGui::TextDisabled("nothing here - run Shop scans");
             for (int i = 0; i < (int)items.size(); ++i) {
                 ImGui::PushID(i);
                 bool sel = (s_armSel == i);
                 if (sel) ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.35f, 0.0f, 0.55f, 1.0f));
-                if (ImGui::Button(items[i].label.c_str(), ImVec2(bw, 26))) {
+                if (ImAdd::Button(widgets::shorten(items[i].label, 26).c_str(), ImVec2(bw, 26))) {
                     s_armSel = i;
                     if (s_armCat == 0 && items[i].gun >= 0) availSel = items[i].gun;
                 }
@@ -806,8 +752,9 @@ void draw_loadout() {
             }
         }
         ImGui::EndChild();
+        }
         if (s_armCat == 0) {
-            if (ImGui::Button("EQUIP TO SLOT", ImVec2(-1, 32))) {
+            if (ImAdd::Button("EQUIP TO SLOT", ImVec2(-1, 32))) {
                 if (s_armSel >= 0 && s_armSel < (int)items.size() && items[s_armSel].gun >= 0) {
                     availSel = items[s_armSel].gun;
                     request_replace();
@@ -816,10 +763,20 @@ void draw_loadout() {
                 }
             }
             if (ImGui::IsItemHovered()) ImGui::SetTooltip("replace target slot");
+        } else if (s_armCat == 3) {
+            if (ImAdd::Button("GRANT SKILL", ImVec2(-1, 32))) {
+                if (s_armSel >= 0 && s_armSel < (int)items.size() && IS_VALID_PTR(items[s_armSel].cls)) {
+                    void* cls = items[s_armSel].cls;
+                    feat::queue_keyed("grant_skill", [cls] { shop::grant_skill(cls); });
+                    snprintf(s_armStatus, sizeof(s_armStatus), "grant queued");
+                } else {
+                    snprintf(s_armStatus, sizeof(s_armStatus), "pick a skill first");
+                }
+            }
+            if (ImGui::IsItemHovered()) ImGui::SetTooltip("patch + add skill");
         } else {
-            const char* act = s_armCat == 1 ? "GRANT TOOL" :
-                s_armCat == 2 ? "UNLOCK ITEM" : "GRANT SKILL";
-            if (ImGui::Button(act, ImVec2(-1, 32))) {
+            const char* act = s_armCat == 1 ? "GRANT TOOL" : "UNLOCK ITEM";
+            if (ImAdd::Button(act, ImVec2(-1, 32))) {
                 if (s_armSel >= 0 && s_armSel < (int)items.size() && IS_VALID_PTR(items[s_armSel].cls)) {
                     void* cls = items[s_armSel].cls;
                     feat::queue_keyed("grant_class", [cls] { shop::grant_class(cls); });
@@ -830,119 +787,9 @@ void draw_loadout() {
             }
             if (ImGui::IsItemHovered()) ImGui::SetTooltip("add to inventory");
         }
-        ImGui::TextDisabled("%s", s_armStatus);
-    }
+        ImGui::TextWrapped("%s", s_armStatus);
     widgets::os_section_end();
-
-    ImGui::SetCursorPos(ImVec2(0, 1020));
-    widgets::os_section("Skin", ImVec2(800, 330));
-    {
-        ImGui::SetWindowFontScale(dpi_scale);
-        if (selWep >= 0 && selWep < (int)s_weps.size())
-            ImGui::TextDisabled("target: %s", s_weps[selWep].name.c_str());
-        else
-            ImGui::TextDisabled("target: none");
-        if (ImGui::Button("SCAN CURRENT", ImVec2(-1, 30))) {
-            refresh_data(true);
-            scan_current();
-            snprintf(s_sstatus, sizeof(s_sstatus), "scanned");
-        }
-        if (ImGui::IsItemHovered()) ImGui::SetTooltip("read equipped skin + charm");
-        ImGui::TextDisabled("skin: %s", s_curSkin.c_str());
-        ImGui::TextDisabled("charm: %s", s_curCharm.c_str());
-        ImGui::TextDisabled("owned skins: %d", (int)s_owned.size());
-        static std::vector<std::string> snames;
-        static std::vector<const char*> sptrs;
-        snames.clear();
-        for (auto& o : s_owned) snames.push_back(o.name.empty() ? "?" : o.name);
-        sptrs.clear();
-        for (auto& s : snames) sptrs.push_back(s.c_str());
-        if (!sptrs.empty()) {
-            if (skinSel < 0 || skinSel >= (int)sptrs.size()) skinSel = 0;
-            ImGui::Combo("Owned skins", &skinSel, sptrs.data(), (int)sptrs.size(), 9);
-            if (ImGui::Button("EQUIP SKIN", ImVec2(-1, 30))) {
-                feat::queue_keyed("equip_skin", [] {
-                    if (skinSel < 0 || skinSel >= (int)s_owned.size() ||
-                            selWep < 0 || selWep >= (int)s_weps.size() ||
-                            !IS_VALID_PTR(s_weps[selWep].cls)) {
-                        snprintf(s_sstatus, sizeof(s_sstatus), "pick skin + weapon");
-                        return;
-                    }
-                    if (s_owned[skinSel].rowId < 0) {
-                        snprintf(s_sstatus, sizeof(s_sstatus), "no table row");
-                        return;
-                    }
-                    if (skins::equip_single(s_owned[skinSel].rowId, s_weps[selWep].cls))
-                        snprintf(s_sstatus, sizeof(s_sstatus), "equipped %s",
-                            s_owned[skinSel].name.c_str());
-                    else
-                        snprintf(s_sstatus, sizeof(s_sstatus), "equip refused");
-                    scan_current();
-                });
-            }
-            if (ImGui::IsItemHovered()) ImGui::SetTooltip("equip on target gun");
-        } else {
-            ImGui::TextDisabled("no owned skins - unlock in Shop tab");
-        }
-        ImGui::TextDisabled("%s", s_sstatus);
     }
-    widgets::os_section_end();
-
-    ImGui::SetCursorPos(ImVec2(0, 1360));
-    widgets::os_section("Charm", ImVec2(800, 340));
-    {
-        ImGui::SetWindowFontScale(dpi_scale);
-        ImGui::TextDisabled("charm: %s", s_curCharm.c_str());
-        ImGui::TextDisabled("owned charms: %d", (int)s_charms.size());
-        static std::vector<std::string> cnames;
-        static std::vector<const char*> cptrs;
-        cnames.clear();
-        for (auto& c : s_charms) {
-            char b[96];
-            snprintf(b, sizeof(b), "%s", c.name.c_str());
-            cnames.push_back(b);
-        }
-        cptrs.clear();
-        for (auto& c : cnames) cptrs.push_back(c.c_str());
-        if (!cptrs.empty()) {
-            if (charmSel < 0 || charmSel >= (int)cptrs.size()) charmSel = 0;
-            ImGui::Combo("Owned charms", &charmSel, cptrs.data(), (int)cptrs.size(), 9);
-            if (ImGui::Button("EQUIP VIA SKIN", ImVec2(-1, 30))) {
-                feat::queue_keyed("equip_charm", [] {
-                    if (charmSel < 0 || charmSel >= (int)s_charms.size() ||
-                            selWep < 0 || selWep >= (int)s_weps.size() ||
-                            !IS_VALID_PTR(s_weps[selWep].cls)) {
-                        snprintf(s_cstatus, sizeof(s_cstatus), "pick charm + weapon");
-                        return;
-                    }
-                    std::string want = norm_tok(s_charms[charmSel].name);
-                    const skins::SkinEntry* found = nullptr;
-                    for (auto& e : skins::list()) {
-                        if (e.charmName.empty()) continue;
-                        if (norm_tok(e.charmName).find(want) != std::string::npos ||
-                                want.find(norm_tok(e.charmName)) != std::string::npos) {
-                            found = &e;
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        snprintf(s_cstatus, sizeof(s_cstatus), "no skin carries it");
-                        return;
-                    }
-                    if (skins::equip_single(found->id, s_weps[selWep].cls))
-                        snprintf(s_cstatus, sizeof(s_cstatus), "via %.60s", found->name.c_str());
-                    else
-                        snprintf(s_cstatus, sizeof(s_cstatus), "equip refused");
-                    scan_current();
-                });
-            }
-            if (ImGui::IsItemHovered()) ImGui::SetTooltip("equip a skin carrying it");
-        } else {
-            ImGui::TextDisabled("no owned charms - unlock in Shop tab");
-        }
-        ImGui::TextDisabled("%s", s_cstatus);
-    }
-    widgets::os_section_end();
 }
 struct Reg { Reg() { tabs::add({ "loadout", "Loadout", draw_loadout }); } };
 static Reg g_reg;

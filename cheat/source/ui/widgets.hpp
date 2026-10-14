@@ -5,8 +5,6 @@
 namespace widgets {
 
 const char* key_name(int vk);
-const char* key_mode_name(int mode);
-bool keybind_row(const char* label, std::atomic<int>& vk, std::atomic<int>* mode = nullptr);
 
 bool check_bridge(const char* label, std::atomic<bool>& v);
 bool combo_bridge(const char* label, const char** items, int count, std::atomic<int>& sel);
@@ -16,11 +14,14 @@ bool os_slider(const char* label, float* v, float lo, float hi, const char* fmt 
 void os_multi(const char* label, bool variable[], const char* labels[], int count);
 bool os_section(const char* name, ImVec2 size);
 void os_section_end();
+bool action_button(const char* id, const char* name, const char* desc, ImVec2 size);
 bool os_subtab(const char* label, bool selected, float width);
-bool os_tab(bool selected, const char* icon, const char* label, const char* hint, ImVec2 size, float openT);
-bool os_circle_toggle(const char* id, ImVec2 size);
 bool multi_bridge(const char* label, const char** items, std::atomic<bool>** flags, int count);
-void header_card(const char* title, const char* sub);
+void color_tail(const char* id, ImVec4& col);
+void check_picker(const char* label, std::atomic<bool>& v, ImVec4& col, const char* cid = nullptr);
+void key_row(const char* text, const char* uid, std::atomic<int>& key, std::atomic<int>& mode);
+void key_pill(const char* uid, std::atomic<int>& key, std::atomic<int>& mode);
+std::string shorten(const std::string& s, size_t n = 30);
 
 void avatar_tile(ImVec2 p0, ImVec2 size);
 

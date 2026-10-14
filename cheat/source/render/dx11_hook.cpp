@@ -7,7 +7,7 @@
 #include "core/loading.hpp"
 #include "features/esp.hpp"
 #include "ui/menu.hpp"
-#include "ui/listmenu.hpp"
+#include "ui/tabs.hpp"
 #include "features/capture.hpp"
 
 #include <d3d11.h>
@@ -19,6 +19,8 @@
 #include "../../vendor/imgui/backends/imgui_impl_win32.h"
 #include "../../vendor/imgui/backends/imgui_impl_dx11.h"
 #include "../../vendor/fonts/inter.h"
+#include "../../vendor/fonts/font_exo2_medium.h"
+#include "../../vendor/fonts/mdi_icons.h"
 
 float dpi_scale = 1.0f;
 ImFont* tab_text2 = nullptr;
@@ -74,9 +76,20 @@ static void setup_imgui() {
     create_rtv();
 
     ImGuiIO& io = ImGui::GetIO();
+    io.IniFilename = nullptr;
     io.Fonts->Clear();
-    ImFont* main = io.Fonts->AddFontFromMemoryTTF(
-        (void*)inter, (int)sizeof(inter), 16.0f);
+    ImFontConfig exo_cfg;
+    exo_cfg.GlyphOffset = ImVec2(0, -1);
+    exo_cfg.SizePixels = 15.0f;
+    exo_cfg.FontDataOwnedByAtlas = false;
+    ImFont* main = io.Fonts->AddFontFromMemoryCompressedTTF(
+        (void*)font_exo2_medium_compressed_data, (int)font_exo2_medium_compressed_size,
+        exo_cfg.SizePixels, &exo_cfg, io.Fonts->GetGlyphRangesDefault());
+    ImFontConfig static_cfg;
+    static_cfg.FontDataOwnedByAtlas = false;
+    if (!main)
+        main = io.Fonts->AddFontFromMemoryTTF(
+            (void*)inter, (int)sizeof(inter), 16.0f, &static_cfg);
     if (!main)
         main = io.Fonts->AddFontFromFileTTF(
             "C:\\Windows\\Fonts\\segoeui.ttf", 16.0f);
@@ -105,13 +118,22 @@ static void setup_imgui() {
         io.Fonts->AddFontFromFileTTF(
             "C:\\Windows\\Fonts\\seguiemj.ttf", 20.0f, &emoji_cfg, emoji_ranges);
     }
+    {
+        static const ImWchar mdi_ranges[] = { 0xF0026, 0xF0D6E, 0 };
+        ImFontConfig mdi_cfg;
+        mdi_cfg.MergeMode = true;
+        mdi_cfg.PixelSnapH = true;
+        mdi_cfg.FontDataOwnedByAtlas = false;
+        io.Fonts->AddFontFromMemoryTTF(
+            (void*)mdi_icons, (int)mdi_icons_size, 16.0f, &mdi_cfg, mdi_ranges);
+    }
     g_titleFont = io.Fonts->AddFontFromMemoryTTF(
-        (void*)inter, (int)sizeof(inter), 22.0f);
+        (void*)inter, (int)sizeof(inter), 22.0f, &static_cfg);
     g_icoFont = main ? main : (ImFont*)io.FontDefault;
     tab_text2 = io.Fonts->AddFontFromMemoryTTF(
-        (void*)inter, (int)sizeof(inter), 24.0f);
+        (void*)inter, (int)sizeof(inter), 24.0f, &static_cfg);
     tab_text3 = io.Fonts->AddFontFromMemoryTTF(
-        (void*)inter, (int)sizeof(inter), 40.0f);
+        (void*)inter, (int)sizeof(inter), 40.0f, &static_cfg);
     g_initImgui = true;
     g_ready = true;
 }
@@ -137,8 +159,6 @@ static LRESULT __stdcall WndProc(HWND h, UINT m, WPARAM w, LPARAM l) {
 
         ImGui_ImplWin32_WndProcHandler(h, m, w, l);
 
-        if (g_cfg.uiStyle.load() == 1)
-            return CallWindowProcA(g_origWndProc, h, m, w, l);
         ImGuiIO& io = ImGui::GetIO();
 
         switch (m) {
@@ -191,9 +211,8 @@ static HRESULT __stdcall present_impl(IDXGISwapChain* sc, UINT sync, UINT flags)
     esp::begin_present();
 
     __try {
-        if (ui::visibility() > 0.004f && g_cfg.uiStyle.load() == 0)
+        if (g_cfg.menuOpen.load())
             ui::render_backdrop();
-        if (g_cfg.uiStyle.load() == 1 && g_cfg.menuOpen.load()) listui::handle_keys();
         capture::present_upload();
         steamServiceHelper::render_upload();
         esp::render_items();
@@ -257,23 +276,14 @@ bool init() {
     if (g_ready) return true;
     if (!hook::init()) return false;
 
-    WNDCLASSA wc{ CS_CLASSDC, DefWindowProcA, 0, 0, GetModuleHandleA(nullptr),
-        nullptr, nullptr, nullptr, nullptr, "OAR_DUMMY" };
-
-    bool registered = RegisterClassA(&wc) != 0;
-    if (!registered && GetLastError() != ERROR_CLASS_ALREADY_EXISTS) return false;
-    HWND dummy = CreateWindowA(wc.lpszClassName, "tmp", WS_OVERLAPPEDWINDOW,
-        0, 0, 100, 100, nullptr, nullptr, wc.hInstance, nullptr);
-    if (!dummy) {
-        if (registered) UnregisterClassA(wc.lpszClassName, wc.hInstance);
-        return false;
-    }
+    HWND target = GetForegroundWindow();
+    if (!target || !IsWindow(target)) return false;
 
     DXGI_SWAP_CHAIN_DESC d{};
     d.BufferCount = 1;
     d.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
     d.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-    d.OutputWindow = dummy;
+    d.OutputWindow = target;
     d.SampleDesc.Count = 1;
     d.Windowed = TRUE;
     d.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
@@ -298,8 +308,6 @@ bool init() {
     }
     if (dev) dev->Release();
     if (ctx) ctx->Release();
-    DestroyWindow(dummy);
-    if (registered) UnregisterClassA(wc.lpszClassName, wc.hInstance);
     return ok;
 }
 
@@ -332,5 +340,11 @@ void shutdown() {
 }
 
 bool is_unloading() { return g_unloading.load(); }
+void begin_unload() {
+    g_unloading.store(true);
+    for (int i = 0; i < 1000 && g_inflight.load() > 0; ++i) Sleep(10);
+}
+
+void* window() { return g_hwnd; }
 
 }

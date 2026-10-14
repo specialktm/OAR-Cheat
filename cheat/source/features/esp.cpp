@@ -7,6 +7,7 @@
 #include "SDK/Engine_classes.hpp"
 #include "SDK/CoreUObject_classes.hpp"
 #include "SDK/PlayerCharacter_classes.hpp"
+#include "SDK/RobberController_classes.hpp"
 #include "SDK/PickupItem_base_classes.hpp"
 #include "SDK/Money_base_classes.hpp"
 #include "SDK/Item_Keycard_classes.hpp"
@@ -80,6 +81,16 @@ static std::string clean_label(std::string n) {
 }
 static void box_fill(ImDrawList* d, float x0, float y0, float x1, float y1, ImU32 c) {
     d->AddRectFilled(ImVec2(x0, y0), ImVec2(x1, y1), (c & 0x00FFFFFFu) | (38u << 24));
+}
+static void chams_fill(ImDrawList* d, float x0, float y0, float x1, float y1, ImU32 c) {
+    d->AddRectFilled(ImVec2(x0, y0), ImVec2(x1, y1), (c & 0x00FFFFFFu) | (150u << 24));
+    d->AddRect(ImVec2(x0, y0), ImVec2(x1, y1), (c & 0x00FFFFFFu) | (235u << 24), 0.0f, 0, 2.0f);
+}
+static void glow_box(ImDrawList* d, float x0, float y0, float x1, float y1, ImU32 c) {
+    ImU32 rgb = c & 0x00FFFFFFu;
+    d->AddRect(ImVec2(x0 - 7, y0 - 7), ImVec2(x1 + 7, y1 + 7), rgb | (28u << 24), 0.0f, 0, 5.0f);
+    d->AddRect(ImVec2(x0 - 4, y0 - 4), ImVec2(x1 + 4, y1 + 4), rgb | (60u << 24), 0.0f, 0, 3.0f);
+    d->AddRect(ImVec2(x0 - 1, y0 - 1), ImVec2(x1 + 1, y1 + 1), rgb | (220u << 24), 0.0f, 0, 1.5f);
 }
 
 static bool seh_visible(SDK::AActor* a) {
@@ -230,6 +241,49 @@ static bool seh_name(SDK::AActor* a, std::string& out) {
     if (!IS_VALID_PTR(a)) return false;
     out = veh::get_name(a);
     return !out.empty();
+}
+
+static bool seh_persona_ptrs(SDK::APlayerCharacter_C* pawn, SDK::APlayerState*& psOut, int32_t& numOut) {
+    __try {
+        if (!IS_VALID_PTR(pawn)) return false;
+        SDK::ARobberController_C* rc = pawn->PCController;
+        if (!IS_VALID_PTR(rc)) return false;
+        SDK::APlayerState* ps = rc->PlayerState;
+        if (!IS_VALID_PTR(ps)) return false;
+        int32_t num = ps->PlayerNamePrivate.Num();
+        if (num <= 1 || num > 64) return false;
+        psOut = ps;
+        numOut = num;
+        return true;
+    } __except (EXCEPTION_EXECUTE_HANDLER) { return false; }
+}
+
+static bool seh_persona(SDK::APlayerCharacter_C* pawn, std::string& out) {
+    SDK::APlayerState* ps = nullptr;
+    int32_t num = 0;
+    if (!seh_persona_ptrs(pawn, ps, num)) return false;
+    wchar_t buf[64] = {};
+    bool ok = veh::try_call([&] {
+        const wchar_t* data = ps->PlayerNamePrivate.GetDataPtr();
+        if (!IS_VALID_PTR(data)) return;
+        int n = num - 1;
+        if (n > 63) n = 63;
+        for (int i = 0; i < n; ++i) buf[i] = data[i];
+        ok = true;
+    });
+    if (!ok) return false;
+    char mb[128] = {};
+    int wlen = 0;
+    while (buf[wlen] && wlen < 63) ++wlen;
+    if (!wlen) return false;
+    int mlen = WideCharToMultiByte(CP_UTF8, 0, buf, wlen, mb, (int)sizeof(mb) - 1, nullptr, nullptr);
+    if (mlen <= 0) return false;
+    mb[mlen] = 0;
+    std::string nm = mb;
+    while (!nm.empty() && (nm.back() == ' ' || nm.back() == '\r' || nm.back() == '\n')) nm.pop_back();
+    if (nm.empty() || nm.size() > 48) return false;
+    out = nm;
+    return true;
 }
 
 static std::string item_label(SDK::AActor* a, bool isMoney, int moneyVal) {
@@ -390,7 +444,9 @@ void playerManager::rebuild(const std::vector<void*>& actors, void* selfPawn) {
             seh_hp(pc, hp, mx, down);
             e.hp = hp; e.maxHp = mx; e.downed = down;
             std::string nm;
-            if (seh_name(actor, nm) && !nm.empty()) {
+            if (!seh_persona(pc, nm) || nm.empty())
+                seh_name(actor, nm);
+            if (!nm.empty()) {
                 auto p = nm.find("##");
                 if (p != std::string::npos) nm.erase(p);
                 while (!nm.empty() && nm.back() == ' ') nm.pop_back();
@@ -421,9 +477,12 @@ void playerManager::rebuild(const std::vector<void*>& actors, void* selfPawn) {
         bool isg = false;
         if (seh_isa<SDK::ANPC_Guard_C>(actor, isg) && isg) {
             g.guard = true;
+            g.label = "Guard";
             bool alerted = false, armed = false;
             seh_guard_state(reinterpret_cast<SDK::ANPC_Guard_C*>(actor), alerted, armed);
             g.alerted = alerted; g.armed = armed;
+        } else {
+            g.label = "NPC";
         }
         g.visible = seh_visible(actor);
         npcs_mut().push_back(std::move(g));
@@ -577,6 +636,8 @@ void render_players() {
             if (g_cfg.boxFill.load()) box_fill(draw, x0, y0, x1, y1, col);
             draw_box_style(draw, g_cfg.espBoxStyle.load(), x0, y0, x1, y1, col);
         }
+        if (g_cfg.playerChams.load()) chams_fill(draw, x0, y0, x1, y1, col);
+        if (g_cfg.playerGlow.load()) glow_box(draw, x0, y0, x1, y1, col);
         if (g_cfg.playerSkel.load())
             draw_skeleton(actor, draw, IM_COL32(235, 245, 255, 255));
         float s = g_cfg.espTextScale.load();
@@ -682,6 +743,8 @@ void render_guards() {
             if (g_cfg.boxFill.load()) box_fill(draw, x0, y0, x1, y1, col);
             draw_box_style(draw, g_cfg.espBoxStyle.load(), x0, y0, x1, y1, col);
         }
+        if (g_cfg.guardChams.load()) chams_fill(draw, x0, y0, x1, y1, col);
+        if (g_cfg.guardGlow.load()) glow_box(draw, x0, y0, x1, y1, col);
         if (g_cfg.guardSkel.load())
             draw_skeleton(actor, draw, col);
         if (g_cfg.guardState.load()) {
@@ -774,6 +837,8 @@ void render_npcs() {
             if (g_cfg.boxFill.load()) box_fill(draw, x0, y0, x1, y1, col);
             draw_box_style(draw, g_cfg.espBoxStyle.load(), x0, y0, x1, y1, col);
         }
+        if (g_cfg.guardChams.load()) chams_fill(draw, x0, y0, x1, y1, col);
+        if (g_cfg.guardGlow.load()) glow_box(draw, x0, y0, x1, y1, col);
         if (g_cfg.guardSkel.load())
             draw_skeleton(actor, draw, col);
         if (g_cfg.guardState.load()) {

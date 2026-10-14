@@ -11,6 +11,7 @@ struct Entry {
     const char* tab;
     void (*run)();
     std::atomic<bool>* autoFlag;
+    std::atomic<bool>* armFlag;
 };
 
 void register_builtin();
@@ -19,8 +20,7 @@ const std::vector<const Entry*>& by_tab(const char* tab);
 const std::vector<const Entry*>& all();
 
 std::atomic<int>* key_for(const char* id);
-bool run(const char* id);
-void tick_autos();
+std::atomic<int>* mode_for(const char* id);
 
 void queue_run(const char* id);
 void queue_fn(std::function<void()> fn);
@@ -30,5 +30,6 @@ void run_queued();
 void queue_game(std::function<void()> fn);
 bool ensure_gamehook(void* obj);
 void shutdown_gamehook();
+const char* pespy_status();
 
 }

@@ -27,14 +27,24 @@ static LONG WINAPI handler(EXCEPTION_POINTERS* p) {
 }
 
 static bool g_installed = false;
+static void* g_handler = nullptr;
 static std::mutex g_mtx;
 
 void ensure() {
     std::lock_guard<std::mutex> lk(g_mtx);
     if (!g_installed) {
-        AddVectoredExceptionHandler(1, handler);
-        g_installed = true;
+        g_handler = AddVectoredExceptionHandler(1, handler);
+        g_installed = (g_handler != nullptr);
     }
+}
+
+void remove() {
+    std::lock_guard<std::mutex> lk(g_mtx);
+    if (g_installed && g_handler) {
+        RemoveVectoredExceptionHandler(g_handler);
+        g_handler = nullptr;
+    }
+    g_installed = false;
 }
 
 static void do_call() {

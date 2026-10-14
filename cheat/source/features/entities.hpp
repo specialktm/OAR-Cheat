@@ -16,6 +16,7 @@ struct PlayerInfo {
 
 struct GuardInfo {
     void* actor = nullptr;
+    std::string label;
     bool guard = false;
     int hp = 0;
     float distM = 0.0f;

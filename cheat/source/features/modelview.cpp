@@ -63,7 +63,7 @@ static void* pick_target() {
 void draw_live_model(ImVec2 origin, ImVec2 size) {
     ImDrawList* dl = ImGui::GetWindowDrawList();
     dl->AddRectFilled(origin, ImVec2(origin.x + size.x, origin.y + size.y),
-        ui::fade(IM_COL32(8, 10, 18, 255)), 0.0f);
+        (IM_COL32(8, 10, 18, 255)), 0.0f);
 
     void* a = pick_target();
     if (IS_VALID_PTR(a)) {
@@ -76,24 +76,24 @@ void draw_live_model(ImVec2 origin, ImVec2 size) {
     if (capture::has_image() && capture::srv()) {
         dl->AddImage((ImTextureID)capture::srv(), origin,
             ImVec2(origin.x + size.x, origin.y + size.y), ImVec2(0, 0),
-            ImVec2(1, 1), ui::fade(IM_COL32(255, 255, 255, 255)));
+            ImVec2(1, 1), (IM_COL32(255, 255, 255, 255)));
         if (g_name[0]) {
             ImVec2 nsz = ImGui::CalcTextSize(g_name);
             dl->AddText(ImVec2(origin.x + (size.x - nsz.x) / 2, origin.y + 8),
-                ui::fade(IM_COL32(235, 238, 248, 255)), g_name);
+                (IM_COL32(235, 238, 248, 255)), g_name);
         }
         ImVec2 lsz = ImGui::CalcTextSize("LIVE");
         dl->AddText(ImVec2(origin.x + size.x - lsz.x - 8, origin.y + 8),
-            ui::fade(IM_COL32(140, 230, 170, 255)), "LIVE");
+            (IM_COL32(140, 230, 170, 255)), "LIVE");
         return;
     }
     const char* msg = IS_VALID_PTR(a) ? "rendering from game..."
                                       : "no player/NPC in level";
     ImVec2 tsz = ImGui::CalcTextSize(msg);
     dl->AddText(ImVec2(origin.x + (size.x - tsz.x) / 2, origin.y + size.y / 2),
-        ui::fade(IM_COL32(150, 156, 175, 255)), msg);
+        (IM_COL32(150, 156, 175, 255)), msg);
     dl->AddRect(origin, ImVec2(origin.x + size.x, origin.y + size.y),
-        ui::fade(IM_COL32(60, 70, 100, 255)), 0.0f, 0, 1.0f);
+        (IM_COL32(60, 70, 100, 255)), 0.0f, 0, 1.0f);
 }
 
 }

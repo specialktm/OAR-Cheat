@@ -1,11 +1,13 @@
 #include "pch/pch.h"
 #define IMGUI_DEFINE_MATH_OPERATORS
 #include "ui/menu.hpp"
-#include "ui/listmenu.hpp"
-#include "ui/popouts.hpp"
+#include "ui/takerender.hpp"
 #include "ui/tabs.hpp"
-#include "ui/theme.hpp"
 #include "ui/widgets.hpp"
+#include "ui/take_shell.hpp"
+#include "features/esp.hpp"
+#include "features/entities.hpp"
+#include "imgui/addons/imgui_notification.h"
 #include "config/config.hpp"
 #include "config/config_io.hpp"
 #include "core/loading.hpp"
@@ -17,24 +19,71 @@
 #include <cmath>
 #include <cctype>
 #include <cstring>
+#include <ctime>
 
 #include "../../vendor/imgui/imgui.h"
 #include "../../vendor/imgui/imgui_internal.h"
 
 namespace ui {
 
-void apply_modern_style() { theme::apply_current(); }
+void apply_modern_style() {
+    ImGuiStyle& style = ImGui::GetStyle();
+    ImGui::StyleColorsDark();
+    style.WindowRounding = 10;
+    style.ChildRounding = 8;
+    style.FrameRounding = 6;
+    style.GrabRounding = 6;
+    style.PopupRounding = 8;
+    style.ScrollbarSize = 8.0f;
+    style.GrabMinSize = 8.0f;
+    style.WindowBorderSize = 1;
+    style.FrameBorderSize = 0;
+    style.PopupBorderSize = 1;
+    style.WindowPadding = ImVec2(14, 14);
+    style.ItemSpacing = ImVec2(8, 8);
+    style.ItemInnerSpacing = ImVec2(6, 6);
+    style.FramePadding = ImVec2(8, 6);
+    style.CellPadding = ImVec2(0.0f, 0.0f);
+    style.Colors[ImGuiCol_WindowBg] = ImAdd::HexToColorVec4(PAL_BG_MAIN, 0.94f);
+    style.Colors[ImGuiCol_ChildBg] = ImAdd::HexToColorVec4(PAL_BG_MAIN, 0.88f);
+    style.Colors[ImGuiCol_Header] = ImAdd::HexToColorVec4(PAL_FRAME_HOV);
+    style.Colors[ImGuiCol_HeaderHovered] = ImAdd::HexToColorVec4(PAL_FRAME_HOV);
+    style.Colors[ImGuiCol_HeaderActive] = ImAdd::HexToColorVec4(PAL_FRAME_ACT);
+    style.Colors[ImGuiCol_PopupBg] = ImAdd::HexToColorVec4(PAL_BG_CHILD);
+    style.Colors[ImGuiCol_CheckMark] = ImAdd::HexToColorVec4(PAL_TEXT);
+    style.Colors[ImGuiCol_Text] = ImAdd::HexToColorVec4(PAL_TEXT);
+    style.Colors[ImGuiCol_TextDisabled] = ImAdd::HexToColorVec4(PAL_TEXT_DIM);
+    style.Colors[ImGuiCol_SliderGrab] = ImAdd::HexToColorVec4(PAL_ACCENT);
+    style.Colors[ImGuiCol_SliderGrabActive] = ImAdd::HexToColorVec4(PAL_ACCENT_ACT);
+    style.Colors[ImGuiCol_SeparatorHovered] = style.Colors[ImGuiCol_SliderGrab];
+    style.Colors[ImGuiCol_SeparatorActive] = style.Colors[ImGuiCol_SliderGrabActive];
+    style.Colors[ImGuiCol_BorderShadow] = ImAdd::HexToColorVec4(0x000000, 0.00f);
+    style.Colors[ImGuiCol_Border] = ImAdd::HexToColorVec4(PAL_BORDER);
+    style.Colors[ImGuiCol_Separator] = style.Colors[ImGuiCol_Border];
+    style.Colors[ImGuiCol_Button] = ImAdd::HexToColorVec4(PAL_FRAME);
+    style.Colors[ImGuiCol_ButtonHovered] = ImAdd::HexToColorVec4(PAL_FRAME_HOV);
+    style.Colors[ImGuiCol_ButtonActive] = ImAdd::HexToColorVec4(PAL_FRAME_ACT);
+    style.Colors[ImGuiCol_FrameBg] = style.Colors[ImGuiCol_Button];
+    style.Colors[ImGuiCol_FrameBgHovered] = style.Colors[ImGuiCol_ButtonHovered];
+    style.Colors[ImGuiCol_FrameBgActive] = style.Colors[ImGuiCol_ButtonActive];
+    style.Colors[ImGuiCol_ScrollbarBg] = ImAdd::HexToColorVec4(0x000000, 0.0f);
+    style.Colors[ImGuiCol_ScrollbarGrab] = ImAdd::HexToColorVec4(PAL_BORDER_HI);
+    style.Colors[ImGuiCol_ScrollbarGrabHovered] = ImAdd::HexToColorVec4(PAL_FRAME_ACT);
+    style.Colors[ImGuiCol_ScrollbarGrabActive] = style.Colors[ImGuiCol_SliderGrab];
+    style.Colors[ImGuiCol_ResizeGrip] = ImVec4();
+    style.Colors[ImGuiCol_ResizeGripHovered] = ImVec4();
+    style.Colors[ImGuiCol_ResizeGripActive] = ImVec4();
+    style.Colors[ImGuiCol_SeparatorActive] = ImVec4();
+    style.Colors[ImGuiCol_SeparatorHovered] = ImVec4();
+}
 
 static ImVec2 g_lastPos(0, 0), g_lastSize(880, 580);
 static bool g_hasRect = false;
 
-static float g_vis = 0.0f;
-float visibility() { return g_vis; }
-
-static void fallback_panel(ImVec2 pos, ImVec2 size, float vis) {
+static void fallback_panel(ImVec2 pos, ImVec2 size) {
     ImDrawList* dl = ImGui::GetBackgroundDrawList();
     dl->AddRectFilled(pos, ImVec2(pos.x + size.x, pos.y + size.y),
-        IM_COL32(16, 16, 16, (int)(244 * vis)), 0.0f);
+        IM_COL32(16, 16, 16, 244), 0.0f);
 }
 
 void render_backdrop() {
@@ -42,114 +91,26 @@ void render_backdrop() {
         : ImVec2((ImGui::GetIO().DisplaySize.x - g_lastSize.x) * 0.5f,
                  (ImGui::GetIO().DisplaySize.y - g_lastSize.y) * 0.5f);
     ImVec2 size = g_lastSize;
-    float vis = g_vis;
     blur::set_radius(g_cfg.blurAmount.load());
-    blur::set_alpha(vis);
+    blur::set_alpha(1.0f);
     bool ok = false;
     if (g_cfg.blurBackdrop.load())
         ok = blur::backdrop_region(dx11::swapchain(), pos.x, pos.y, size.x, size.y);
     if (!ok) {
-        fallback_panel(pos, size, vis);
+        fallback_panel(pos, size);
     } else {
         ImDrawList* dl = ImGui::GetBackgroundDrawList();
         dl->AddRectFilled(pos, ImVec2(pos.x + size.x, pos.y + size.y),
-            IM_COL32(8, 10, 18, (int)(120 * vis)), 0.0f);
+            IM_COL32(8, 10, 18, 120), 0.0f);
     }
-}
-
-static void draw_shadow(ImVec2 pos, ImVec2 size, float rounding) {
-    ImDrawList* dl = ImGui::GetBackgroundDrawList();
-    for (int i = 5; i >= 1; --i) {
-        float o = (float)i * 7.0f;
-        int a = 26 - i * 4;
-        dl->AddRectFilled(ImVec2(pos.x - o, pos.y - o),
-            ImVec2(pos.x + size.x + o, pos.y + size.y + o),
-            fade(IM_COL32(0, 0, 0, a)), rounding + o, ImDrawFlags_RoundCornersAll);
-    }
-}
-
-static const char* cached_user() {
-    return steamServiceHelper::name();
-}
-
-static void watermark() {
-    if (!g_cfg.watermark.load()) return;
-    if (g_cfg.uiStyle.load() == 1) return;
-    SYSTEMTIME st{};
-    GetLocalTime(&st);
-    char clock[32];
-    if (g_cfg.clock24h.load())
-        snprintf(clock, sizeof(clock), "%02d:%02d", st.wHour, st.wMinute);
-    else {
-        int h = st.wHour % 12;
-        if (h == 0) h = 12;
-        snprintf(clock, sizeof(clock), "%d:%02d %s", h, st.wMinute,
-            st.wHour >= 12 ? "PM" : "AM");
-    }
-    char text[160];
-    std::string wun = cached_user();
-    {
-        auto p = wun.find("##");
-        if (p != std::string::npos) wun.erase(p);
-    }
-    snprintf(text, sizeof(text), "OAR  |  %s  |  %s", wun.c_str(), clock);
-    ImVec2 tsz = ImGui::CalcTextSize(text);
-    ImVec2 pad(12, 7);
-    ImVec2 winsz(tsz.x + pad.x * 2, tsz.y + pad.y * 2);
-    float wx = g_cfg.wmX.load(), wy = g_cfg.wmY.load();
-    ImVec2 vp = ImGui::GetIO().DisplaySize;
-    if (wx < 0) wx = 0; if (wy < 0) wy = 0;
-    if (wx + winsz.x > vp.x) wx = vp.x - winsz.x;
-    if (wy + winsz.y > vp.y) wy = vp.y - winsz.y;
-
-    ImGui::SetNextWindowPos(ImVec2(wx, wy), ImGuiCond_Always);
-    ImGui::SetNextWindowSize(winsz);
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
-    ImGui::Begin("##oar_wm", nullptr,
-        ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
-        ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse |
-        ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoSavedSettings |
-        ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav);
-    ImGui::SetCursorScreenPos(ImGui::GetWindowPos());
-    ImGui::InvisibleButton("##wmdrag", winsz);
-    if (ImGui::IsItemActive() && ImGui::IsMouseDragging(ImGuiMouseButton_Left)) {
-        ImVec2 d = ImGui::GetMouseDragDelta(ImGuiMouseButton_Left, 0.0f);
-        g_cfg.wmX.store(wx + d.x);
-        g_cfg.wmY.store(wy + d.y);
-        ImGui::ResetMouseDragDelta(ImGuiMouseButton_Left);
-    }
-    bool hovered = ImGui::IsItemHovered();
-    ImDrawList* dl = ImGui::GetWindowDrawList();
-    ImVec2 wpos = ImGui::GetWindowPos();
-
-    dl->AddRectFilled(wpos, ImVec2(wpos.x + winsz.x, wpos.y + winsz.y),
-        fade(IM_COL32(16, 16, 16, 210)), 5.0f);
-    dl->AddText(ImVec2(wpos.x + pad.x, wpos.y + pad.y),
-        fade(IM_COL32(235, 238, 248, 255)), text);
-    if (hovered) ImGui::SetMouseCursor(ImGuiMouseCursor_ResizeAll);
-    ImGui::End();
-    ImGui::PopStyleVar();
 }
 
 static int ordered_index(const std::vector<tabs::Tab>& all, int slot) {
-    static const char* want[8] = { "home", "esp", "shop", "world", "player", "lobby", "settings", "loadout" };
-    if (slot < 0 || slot >= 8) return -1;
+    static const char* want[10] = { "home", "esp", "shop", "world", "player", "lobby", "lua", "misc", "settings", "loadout" };
+    if (slot < 0 || slot >= 10) return -1;
     for (int i = 0; i < (int)all.size(); ++i)
         if (all[i].id && !strcmp(all[i].id, want[slot])) return i;
     return -1;
-}
-
-static const char* tab_glyph(const char* id) {
-    if (!id) return "?";
-    if (!strcmp(id, "home")) return "\xf0\x9f\x91\x93";
-    if (!strcmp(id, "esp")) return "\xf0\x9f\x8e\xaf";
-    if (!strcmp(id, "shop")) return "\xf0\x9f\x9a\xb6";
-    if (!strcmp(id, "world")) return "\xf0\x9f\xaa\x84";
-    if (!strcmp(id, "player")) return "\xf0\x9f\x93\x81";
-    if (!strcmp(id, "lobby")) return "\xf0\x9f\x91\xa5";
-    if (!strcmp(id, "settings")) return "\xf0\x9f\x94\x8d";
-    if (!strcmp(id, "loadout")) return "\xe2\x9a\x99\xef\xb8\x8f";
-    return "?";
 }
 
 static const char* tab_hint(const char* id) {
@@ -162,6 +123,8 @@ static const char* tab_hint(const char* id) {
     if (!strcmp(id, "lobby")) return "Players + loot";
     if (!strcmp(id, "settings")) return "Configs + keys";
     if (!strcmp(id, "loadout")) return "guns + looks";
+    if (!strcmp(id, "lua")) return "Scripts + executor";
+    if (!strcmp(id, "misc")) return "Music + objects";
     return "";
 }
 
@@ -175,61 +138,54 @@ static const char* tab_title(const char* id) {
     if (!strcmp(id, "lobby")) return "Lobby";
     if (!strcmp(id, "settings")) return "Settings";
     if (!strcmp(id, "loadout")) return "Loadout";
+    if (!strcmp(id, "lua")) return "Lua";
+    if (!strcmp(id, "misc")) return "Misc";
     return "?";
 }
 
 static float g_tabSize = 160.0f;
 static float g_arrowRoll = 1.0f;
 static bool g_tabOpening = true;
-static float g_tabAlpha = 1.0f;
 static int g_activeTab = 0;
 static ImGuiWindow* s_mainWin = nullptr;
 static ImGuiWindow* s_railWin = nullptr;
 static ImGuiWindow* s_genWin = nullptr;
 
-static void particles(ImVec2 wpos, ImVec2 wsz) {
-    static ImVec2 ppos[100];
-    static ImVec2 ptgt[100];
-    static float pspd[100];
-    static float prad[100];
-    ImDrawList* dl = ImGui::GetWindowDrawList();
-    dl->PushClipRect(wpos, ImVec2(wpos.x + wsz.x, wpos.y + wsz.y), true);
-    for (int i = 1; i < 50; i++) {
-        if (ppos[i].x == 0 || ppos[i].y == 0) {
-            ppos[i].x = wpos.x + (float)(rand() % (int)wsz.x);
-            ppos[i].y = wpos.y + 15.f;
-            pspd[i] = 1 + rand() % 25;
-            prad[i] = (float)(rand() % 4);
-            ptgt[i].x = wpos.x + (float)(rand() % (int)wsz.x);
-            ptgt[i].y = wpos.y + wsz.y * 2;
-        }
-        float k = ImGui::GetIO().DeltaTime * (pspd[i] / 60);
-        ppos[i].x += (ptgt[i].x - ppos[i].x) * k;
-        ppos[i].y += (ptgt[i].y - ppos[i].y) * k;
-        if (ppos[i].y > wpos.y + wsz.y) {
-            ppos[i].x = 0;
-            ppos[i].y = 0;
-        }
-        dl->AddCircleFilled(ppos[i], prad[i], fade(IM_COL32(255, 255, 255, 255)));
-    }
-    dl->PopClipRect();
+static float g_menuAnim = 0.0f;
+static ImVec2 g_menuCenter;
+static bool g_menuCenterInit = false;
+
+static std::string header_name() {
+    std::string wun = steamServiceHelper::name();
+    auto p = wun.find("##");
+    if (p != std::string::npos) wun.erase(p);
+    std::string clean;
+    clean.reserve(wun.size());
+    for (unsigned char c : wun)
+        if (c >= 32 && c < 127) clean.push_back((char)c);
+    if (!clean.empty()) wun.swap(clean);
+    else wun = "player";
+    if (wun.empty()) wun = "Local";
+    if (wun.size() > 24) wun.resize(24);
+    return wun;
 }
 
 void render() {
     loading::render();
     if (!loading::done()) return;
-    watermark();
-    popouts::render_all();
+    takerender::visuals();
+    ImNotify::Update();
+    ImNotify::Render();
 
-    float open = g_cfg.menuOpen.load() ? 1.0f : 0.0f;
-    float dt = ImGui::GetIO().DeltaTime;
-    float rate = open > g_vis ? 16.0f : 12.0f;
-    g_vis += (open - g_vis) * (1.0f - expf(-dt * rate));
-    if (g_vis <= 0.004f) return;
-
-    if (g_cfg.uiStyle.load() == 1) {
-        listui::render(g_vis);
-        return;
+    ImGuiIO& io = ImGui::GetIO();
+    float dt = io.DeltaTime;
+    {
+        float d = (dt > 0.0f && dt < 0.25f) ? dt : 0.016f;
+        float target = g_cfg.menuOpen.load() ? 1.0f : 0.0f;
+        float step = d * 5.0f;
+        if (g_menuAnim < target) g_menuAnim = (std::min)(target, g_menuAnim + step);
+        else if (g_menuAnim > target) g_menuAnim = (std::max)(target, g_menuAnim - step);
+        if (!g_cfg.menuOpen.load() && g_menuAnim <= 0.0f) return;
     }
 
     const std::vector<tabs::Tab>& all = tabs::list();
@@ -237,157 +193,172 @@ void render() {
     if (cur < 0 || cur >= (int)all.size()) cur = 0;
     if (g_activeTab < 0 || g_activeTab >= (int)all.size()) g_activeTab = cur;
 
-    g_tabSize = ImLerp(g_tabSize, g_tabOpening ? 160.0f : 0.0f, dt * 12.0f);
+    g_tabSize = ImLerp(g_tabSize, g_tabOpening ? 162.0f : 0.0f, dt * 12.0f);
     g_arrowRoll = ImLerp(g_arrowRoll, (g_tabOpening && g_tabSize >= 159.0f) ? 1.0f : -1.0f, dt * 12.0f);
-    float openT = ImClamp(g_tabSize / 160.0f, 0.0f, 1.0f);
 
-    const float totalW = 900.0f + g_tabSize, totalH = 580.0f;
-    const float sidebarW = 60.0f + g_tabSize;
-    ImGuiIO& io = ImGui::GetIO();
-    ImGui::SetNextWindowSize(ImVec2(totalW, totalH), ImGuiCond_Always);
-    ImVec2 pos((io.DisplaySize.x - totalW) * 0.5f, (io.DisplaySize.y - totalH) * 0.5f);
-    ImGui::SetNextWindowPos(pos, ImGuiCond_FirstUseEver);
+    const float windowW = 900.0f;
+    const float windowH = 580.0f;
+    const float headerH = 60.0f;
+    const float sidebarW = 62.0f + g_tabSize;
+    float animScale = 0.92f + 0.08f * g_menuAnim;
+    if (!g_menuCenterInit) { g_menuCenter = io.DisplaySize * 0.5f; g_menuCenterInit = true; }
+
+    ImGui::SetNextWindowSize(ImVec2(windowW * animScale, windowH * animScale), ImGuiCond_Always);
+    ImGui::SetNextWindowPos(g_menuCenter, ImGuiCond_Always, ImVec2(0.5f, 0.5f));
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
-    ImGui::PushStyleVar(ImGuiStyleVar_Alpha, g_vis);
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 6.0f);
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0);
     ImGui::Begin("##oar", nullptr,
         ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse |
         ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar |
         ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoSavedSettings);
+    ImGui::PopStyleVar(2);
     s_mainWin = ImGui::GetCurrentWindow();
 
     ImVec2 wpos = ImGui::GetWindowPos(), wsz = ImGui::GetWindowSize();
+    g_menuCenter = ImVec2(wpos.x + wsz.x * 0.5f, wpos.y + wsz.y * 0.5f);
     g_lastPos = wpos; g_lastSize = wsz; g_hasRect = true;
-    draw_shadow(wpos, wsz, 6.0f);
 
     ImDrawList* dl = ImGui::GetWindowDrawList();
-    dl->AddRectFilled(wpos, ImVec2(wpos.x + totalW, wpos.y + totalH),
-        fade(IM_COL32(13, 13, 13, 242)), 6.0f);
-    dl->AddRect(wpos, ImVec2(wpos.x + totalW, wpos.y + totalH),
-        fade(IM_COL32(77, 77, 77, 255)), 6.0f);
-    dl->AddRectFilled(wpos, ImVec2(wpos.x + sidebarW, wpos.y + totalH),
-        fade(IM_COL32(20, 20, 20, 255)), 6.0f, ImDrawFlags_RoundCornersLeft);
-    dl->AddRectFilled(wpos, ImVec2(wpos.x + totalW, wpos.y + 60.0f),
-        fade(IM_COL32(26, 26, 26, 255)), 6.0f, ImDrawFlags_RoundCornersTop);
+    const float rounding = 10.0f;
+    dl->AddRectFilled(wpos + ImVec2(0, 4), wpos + wsz + ImVec2(0, 4), (IM_COL32(0, 0, 0, 110)), rounding);
+    dl->AddRectFilled(wpos, wpos + wsz, (ImGui::GetColorU32(ImGuiCol_WindowBg)), rounding);
+    dl->AddRect(wpos, wpos + wsz, (ImGui::GetColorU32(ImGuiCol_Border)), rounding, 0, 1.0f);
     {
-        ImVec4 acc = theme::accentA(1.0f);
-        dl->AddLine(ImVec2(wpos.x, wpos.y + 60.0f), ImVec2(wpos.x + totalW, wpos.y + 60.0f),
-            fade(IM_COL32((int)(acc.x * 255.0f), (int)(acc.y * 255.0f), (int)(acc.z * 255.0f), 255)));
-        dl->AddLine(ImVec2(wpos.x + sidebarW, wpos.y), ImVec2(wpos.x + sidebarW, wpos.y + totalH),
-            fade(IM_COL32((int)(acc.x * 255.0f), (int)(acc.y * 255.0f), (int)(acc.z * 255.0f), 255)));
+        ImVec4 acc = takeui::accentA(1.0f);
+        ImU32 ac = (ImGui::GetColorU32(ImVec4(acc.x, acc.y, acc.z, 1.0f)));
+        dl->AddRectFilled(ImVec2(wpos.x + 10.0f, wpos.y), ImVec2(wpos.x + wsz.x - 10.0f, wpos.y + 2.0f), ac, 1.0f);
+        dl->AddRectFilled(ImVec2(wpos.x + 22.0f, wpos.y + 2.0f), ImVec2(wpos.x + wsz.x - 22.0f, wpos.y + 3.0f),
+            (ImGui::GetColorU32(ImVec4(acc.x, acc.y, acc.z, 55.0f / 255.0f))), 1.0f);
     }
+    ImRect headerBb(wpos, wpos + ImVec2(wsz.x, headerH));
+    dl->AddRectFilled(headerBb.Min, headerBb.Max, (IM_COL32(24, 28, 34, 255)), rounding, ImDrawFlags_RoundCornersTop);
+    dl->AddLine(ImVec2(headerBb.Min.x, headerBb.Max.y - 0.5f), ImVec2(headerBb.Max.x, headerBb.Max.y - 0.5f),
+        (ImGui::GetColorU32(ImGuiCol_Border)), 1.0f);
     {
-        const char* title = g_tabSize > 100.0f ? "OAR" : "OAR Cheat";
-        ImFont* tf = tab_text2 ? tab_text2 : NULL;
-        ImVec2 tsz = tf ? tf->CalcTextSizeA(24.0f, 10000.0f, 0.0f, title) : ImGui::CalcTextSize(title);
-        ImVec2 tp;
-        if (g_tabSize > 100.0f)
-            tp = ImVec2(wpos.x + (sidebarW - tsz.x) * 0.5f, wpos.y + (60.0f - tsz.y) * 0.5f - 2.0f);
-        else
-            tp = ImVec2(wpos.x + (totalW - tsz.x) * 0.5f, wpos.y + (60.0f - tsz.y) * 0.5f - 2.0f);
-        if (tf)
-            dl->AddText(tf, 24.0f, tp, fade(IM_COL32(255, 255, 255, 255)), title);
-        else
-            dl->AddText(tp, fade(IM_COL32(255, 255, 255, 255)), title);
-    }
-    dl->AddRectFilled(ImVec2(wpos.x, wpos.y + 550.0f), ImVec2(wpos.x + totalW, wpos.y + totalH),
-        fade(IM_COL32(20, 20, 20, 255)), 0.0f);
-    {
-        char uid[64];
-        snprintf(uid, sizeof(uid), "Uid:%s", steamServiceHelper::id_text());
-        if (tab_text3)
-            dl->AddText(tab_text3, 16, ImVec2(10 + wpos.x, 553 + wpos.y), fade(IM_COL32(255, 255, 255, 255)), uid);
-        else
-            dl->AddText(ImVec2(10 + wpos.x, 553 + wpos.y), fade(IM_COL32(255, 255, 255, 255)), uid);
-#ifdef NDEBUG
-        const char* rel = "Release";
-#else
-        const char* rel = "Developer";
-#endif
-        ImVec2 rsz = ImGui::CalcTextSize(rel);
-        if (tab_text3)
-            dl->AddText(tab_text3, 16, ImVec2(wpos.x + totalW - rsz.x - 12.0f, 553 + wpos.y), fade(IM_COL32(255, 255, 255, 255)), rel);
-        else
-            dl->AddText(ImVec2(wpos.x + totalW - rsz.x - 12.0f, 553 + wpos.y), fade(IM_COL32(255, 255, 255, 255)), rel);
+        ImVec4 acc = takeui::accentA(1.0f);
+        ImU32 ac = (ImGui::GetColorU32(ImVec4(acc.x, acc.y, acc.z, 1.0f)));
+        dl->AddRectFilled(ImVec2(headerBb.Min.x + 10.0f, headerBb.Max.y - 0.5f),
+            ImVec2(headerBb.Max.x - 10.0f, headerBb.Max.y + 1.0f), ac, 1.0f);
     }
 
-    ImGui::PushClipRect(ImVec2(wpos.x, wpos.y), ImVec2(wpos.x + sidebarW, wpos.y + totalH), true);
-    ImGui::SetCursorPos(ImVec2(10, 10));
+    ImRect sidebarBb(wpos + ImVec2(0, headerH), wpos + ImVec2(sidebarW, wsz.y));
+    dl->AddRectFilled(sidebarBb.Min, sidebarBb.Max, (ImGui::GetColorU32(ImVec4(0.063f, 0.071f, 0.086f, 1.0f))), rounding, ImDrawFlags_RoundCornersBottomLeft);
+    dl->AddLine(ImVec2(sidebarBb.Max.x - 0.5f, sidebarBb.Min.y), ImVec2(sidebarBb.Max.x - 0.5f, sidebarBb.Max.y),
+        (ImGui::GetColorU32(ImGuiCol_Border)), 1.0f);
     {
-        ImVec2 bpos = ImGui::GetCursorScreenPos();
-        ImVec2 bsz(40, 40);
-        if (widgets::os_circle_toggle("##rail_toggle", bsz))
-            g_tabOpening = !g_tabOpening;
-        ImVec2 center(bpos.x + 20.0f, bpos.y + 20.0f);
+        ImVec4 acc = takeui::accentA(1.0f);
+        ImU32 ac = (ImGui::GetColorU32(ImVec4(acc.x, acc.y, acc.z, 1.0f)));
+        ImU32 ach = (ImGui::GetColorU32(ImVec4(acc.x, acc.y, acc.z, 0.55f)));
+        float logoSz = 30.0f;
+        ImVec2 logoMin(headerBb.Min.x + 16.0f, headerBb.Min.y + (headerH - logoSz) * 0.5f);
+        ImVec2 logoMax(logoMin + ImVec2(logoSz, logoSz));
+        ImVec2 ctr = (logoMin + logoMax) * 0.5f;
+        dl->AddCircleFilled(ctr, 17.0f, (ImGui::GetColorU32(ImVec4(acc.x, acc.y, acc.z, 40.0f / 255.0f))), 32);
+        dl->AddCircleFilled(ctr, 15.0f, (IM_COL32(16, 20, 26, 255)), 32);
         void* av = steamServiceHelper::avatar();
         if (av)
-            dl->AddImageRounded(av, bpos, ImVec2(bpos.x + 40.0f, bpos.y + 40.0f), ImVec2(0, 0), ImVec2(1, 1), fade(IM_COL32_WHITE), 20.0f, ImDrawFlags_RoundCornersAll);
-        else
-            widgets::avatar_tile(bpos, ImVec2(40, 40));
-        float dir = g_tabOpening ? -1.0f : 1.0f;
-        ImVec2 cc(center.x + 26.0f, center.y);
-        dl->AddLine(ImVec2(cc.x - 4.0f * dir, cc.y - 6.0f), ImVec2(cc.x + 2.0f * dir, cc.y), fade(IM_COL32(255, 255, 255, 220)), 2.0f);
-        dl->AddLine(ImVec2(cc.x + 2.0f * dir, cc.y), ImVec2(cc.x - 4.0f * dir, cc.y + 6.0f), fade(IM_COL32(255, 255, 255, 220)), 2.0f);
+            dl->AddImageRounded(av, logoMin, logoMax, ImVec2(0, 0), ImVec2(1, 1), (IM_COL32_WHITE), 15.0f, ImDrawFlags_RoundCornersAll);
+        else {
+            std::string wun = header_name();
+            char ch[2] = { "?" };
+            if (!wun.empty()) ch[0] = (char)toupper((unsigned char)wun[0]);
+            ImVec2 msz = ImGui::CalcTextSize(ch);
+            dl->AddText(ctr - msz * 0.5f - ImVec2(0, 1), (IM_COL32(233, 239, 244, 255)), ch);
+        }
+        dl->AddCircle(ctr, 15.0f, ach, 32, 1.5f);
+        {
+            ImFont* tf = ImGui::GetFont();
+            const float tsz = ImGui::GetFontSize() * 1.6f;
+            const char* t1 = "O";
+            const char* t2 = "AR";
+            ImVec2 s1 = tf->CalcTextSizeA(tsz, FLT_MAX, 0.0f, t1);
+            ImVec2 s2 = tf->CalcTextSizeA(tsz, FLT_MAX, 0.0f, t2);
+            float tw = s1.x + s2.x;
+            float tx = headerBb.Min.x + (headerBb.GetWidth() - tw) * 0.5f;
+            float ty = headerBb.Min.y + (headerH - tsz) * 0.5f;
+            dl->AddText(tf, tsz, ImVec2(tx, ty), ac, t1);
+            dl->AddText(tf, tsz, ImVec2(tx + s1.x, ty), (IM_COL32(255, 255, 255, 255)), t2);
+        }
+        ImGui::SetCursorScreenPos(logoMin - ImVec2(5, 5));
+        if (ImGui::InvisibleButton("##sidebar_toggle", ImVec2(40, 40))) g_tabOpening = !g_tabOpening;
+        if (ImGui::IsItemHovered()) ImGui::SetMouseCursor(ImGuiMouseCursor_Hand);
+        std::string wun = header_name();
+        const char* nm = wun.c_str();
+        ImVec2 np = ImVec2(logoMax.x + 10.0f, headerBb.Min.y + 10.0f);
+        ImVec2 ns = ImGui::CalcTextSize(nm);
+        float nx = ImMin(np.x, headerBb.Max.x - ns.x - 14.0f);
+        dl->AddText(ImVec2(nx, np.y), (IM_COL32(233, 239, 244, 255)), nm);
+        dl->AddText(ImVec2(nx, np.y + ImGui::GetFontSize() + 1.0f), ac, "Lifetime");
     }
-    ImGui::SetCursorPos(ImVec2(5, 70));
-    ImGui::BeginGroup();
-    {
-        for (int s = 0; s < 8; ++s) {
+    if (g_cfg.menuOpen.load() && g_menuAnim > 0.9f) {
+        static bool hdrag = false;
+        static ImVec2 doff(0.0f, 0.0f);
+        bool inHead = io.MousePos.x >= headerBb.Min.x && io.MousePos.x <= headerBb.Max.x &&
+            io.MousePos.y >= headerBb.Min.y && io.MousePos.y <= headerBb.Max.y;
+        if (!hdrag && io.MouseClicked[0] && inHead && !ImGui::IsAnyItemHovered()) {
+            hdrag = true;
+            doff = ImVec2(io.MousePos.x - wpos.x, io.MousePos.y - wpos.y);
+        }
+        if (hdrag) {
+            if (io.MouseDown[0]) {
+                float dnx = io.MousePos.x - doff.x;
+                float dny = io.MousePos.y - doff.y;
+                dnx = (std::max)(0.0f, (std::min)(dnx, io.DisplaySize.x - wsz.x));
+                dny = (std::max)(0.0f, (std::min)(dny, io.DisplaySize.y - wsz.y));
+                g_menuCenter = ImVec2(dnx + wsz.x * 0.5f, dny + wsz.y * 0.5f);
+                ImGui::SetMouseCursor(ImGuiMouseCursor_Hand);
+            } else {
+                hdrag = false;
+            }
+        } else if (inHead && !ImGui::IsAnyItemHovered()) {
+            ImGui::SetMouseCursor(ImGuiMouseCursor_Hand);
+        }
+    }
+    ImGui::SetCursorScreenPos(sidebarBb.Min + ImVec2(10.0f, 10.0f));
+    float sideReserve = (g_tabSize > 100.0f) ? 100.0f : 10.0f;
+    ImVec2 sideSz = sidebarBb.GetSize() - ImVec2(10.0f, 10.0f + sideReserve);
+    if (sideSz.y < 80.0f) sideSz.y = 80.0f;
+    if (ImGui::BeginChild("sidebar", sideSz, ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground)) {
+        for (int s = 0; s < 10; ++s) {
             int ri = ordered_index(all, s);
             if (ri < 0) continue;
             const char* hid = all[ri].id ? all[ri].id : "?";
-            if (widgets::os_tab(cur == ri, tab_glyph(hid), tab_title(hid), tab_hint(hid), ImVec2(40, 40), openT))
+            if (takeui::TabBtn(cur == ri, s, tab_title(hid), tab_hint(hid), g_tabSize))
                 cur = ri;
-            ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 5);
+            ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 4);
         }
-        ImGui::Dummy(ImVec2(0.0f, 100.0f));
+        ImGui::EndChild();
     }
-    ImGui::EndGroup();
-    ImGui::PopClipRect();
     if (g_tabSize > 100.0f) {
-        float footer_y = wpos.y + 500.0f;
-        float left_x = wpos.x + 20.0f;
-        char fpsb[32];
-        snprintf(fpsb, sizeof(fpsb), "%d FPS", (int)io.Framerate);
-        dl->AddText(ImVec2(left_x, footer_y), fade(IM_COL32(204, 204, 204, 255)), "Menu Stats");
-        dl->AddText(ImVec2(left_x, footer_y + 15.0f), fade(IM_COL32(255, 255, 255, 255)), fpsb);
-        char tabb[32];
-        snprintf(tabb, sizeof(tabb), "%d Tabs", (int)all.size());
-        dl->AddText(ImVec2(left_x, footer_y + 30.0f), fade(IM_COL32(255, 255, 255, 255)), tabb);
-        ImVec4 acc = theme::accentA(1.0f);
-        float sepx = left_x + 80.0f;
-        dl->AddLine(ImVec2(sepx, footer_y), ImVec2(sepx, footer_y + 45.0f),
-            fade(IM_COL32((int)(acc.x * 255.0f), (int)(acc.y * 255.0f), (int)(acc.z * 255.0f), 140)), 1.0f);
-        float gx = sepx + 10.0f;
-        dl->AddText(ImVec2(gx, footer_y), fade(IM_COL32(204, 204, 204, 255)), "OAR Stats");
-        std::string wun = cached_user();
-        {
-            auto p = wun.find("##");
-            if (p != std::string::npos) wun.erase(p);
-        }
-        char ubuf[20];
-        snprintf(ubuf, sizeof(ubuf), "%.12s", wun.c_str());
-        dl->AddText(ImVec2(gx, footer_y + 15.0f), fade(IM_COL32(255, 255, 255, 255)), ubuf);
-        bool espOn = g_cfg.espEnabled.load();
-        dl->AddText(ImVec2(gx, footer_y + 30.0f), fade(espOn ? IM_COL32(0, 255, 0, 255) : IM_COL32(110, 110, 110, 255)), espOn ? "ESP On" : "ESP Off");
-    } else {
-        std::string wun = cached_user();
-        {
-            auto p = wun.find("##");
-            if (p != std::string::npos) wun.erase(p);
-        }
-        char ubuf[24];
-        snprintf(ubuf, sizeof(ubuf), "%.12s", wun.c_str());
-        dl->AddText(ImVec2(wpos.x + 66.0f, wpos.y + 14.0f), fade(IM_COL32(255, 255, 255, 255)), ubuf);
-        dl->AddText(ImVec2(wpos.x + 66.0f, wpos.y + 30.0f), fade(IM_COL32(24, 255, 160, 255)), "Lifetime");
+        ImVec4 acc = takeui::accentA(1.0f);
+        ImU32 ac = (ImGui::GetColorU32(ImVec4(acc.x, acc.y, acc.z, 1.0f)));
+        float footerY = sidebarBb.Max.y - 90.0f;
+        dl->AddRectFilled(ImVec2(sidebarBb.Min.x, footerY - 10.0f), sidebarBb.Max,
+            (ImGui::GetColorU32(ImVec4(0.063f, 0.071f, 0.086f, 1.0f))), rounding, ImDrawFlags_RoundCornersBottomLeft);
+        dl->AddLine(ImVec2(sidebarBb.Min.x + 10.0f, footerY - 10.0f), ImVec2(sidebarBb.Max.x - 10.0f, footerY - 10.0f),
+            (ImGui::GetColorU32(ImGuiCol_Border)), 1.0f);
+        float midx = sidebarBb.Min.x + sidebarBb.GetWidth() * 0.44f;
+        int pcn = esp::counts().players;
+        char plb[32]; snprintf(plb, sizeof(plb), "Players: %d", pcn);
+        dl->AddText(ImVec2(sidebarBb.Min.x + 14, footerY), (IM_COL32(139, 151, 165, 255)), plb);
+        char fpsb[32]; snprintf(fpsb, sizeof(fpsb), "%d FPS", (int)io.Framerate);
+        dl->AddText(ImVec2(sidebarBb.Min.x + 14, footerY + 19), (IM_COL32(233, 239, 244, 255)), fpsb);
+        dl->AddText(ImVec2(sidebarBb.Min.x + 14, footerY + 38), ac, "Lifetime");
+        dl->AddLine(ImVec2(midx, footerY - 2), ImVec2(midx, footerY + 62), (IM_COL32(46, 55, 66, 255)), 1.0f);
+        char dateb[16]; char timeb[24];
+        takeui::date_str(dateb, sizeof(dateb));
+        takeui::clock_str(timeb, sizeof(timeb), g_cfg.clock24h.load());
+        dl->AddText(ImVec2(midx + 20, footerY), (IM_COL32(233, 239, 244, 255)), dateb);
+        dl->AddText(ImVec2(midx + 20, footerY + 19), (IM_COL32(233, 239, 244, 255)), timeb);
+#ifdef NDEBUG
+        dl->AddText(ImVec2(midx + 20, footerY + 38), ac, "Release");
+#else
+        dl->AddText(ImVec2(midx + 20, footerY + 38), ac, "Developer");
+#endif
     }
 
-    if (cur != g_activeTab) {
+    if (cur != g_activeTab)
         g_activeTab = cur;
-        g_tabAlpha = 0.0f;
-    }
-    g_tabAlpha = ImClamp(g_tabAlpha + (4.0f * dt), 0.0f, 1.0f);
-    ImGui::PushStyleVar(ImGuiStyleVar_Alpha, g_tabAlpha * ImGui::GetStyle().Alpha);
 
     {
         ImGuiContext& gg = *GImGui;
@@ -398,21 +369,27 @@ void render() {
             if (!inPopup) { io.MouseWheel = 0.0f; io.MouseWheelH = 0.0f; }
         }
     }
-    float contentX = sidebarW + 10.0f;
-    float contentW = totalW - sidebarW - 20.0f;
-    ImGui::SetCursorPos(ImVec2(contentX, 70));
+    ImRect contentBb(ImVec2(sidebarBb.Max.x + 1.0f, headerBb.Max.y), wpos + wsz - ImVec2(10.0f, 10.0f));
+    dl->AddRect(contentBb.Min, contentBb.Max, (ImGui::GetColorU32(ImGuiCol_Border)), ImGui::GetStyle().ChildRounding, 0, 1.0f);
+    ImGui::SetCursorScreenPos(contentBb.Min);
     s_railWin = s_mainWin;
+    static float s_tabFade = 1.0f;
+    static int s_lastTab = -1;
+    if (s_lastTab != cur) { s_lastTab = cur; s_tabFade = 0.0f; }
+    s_tabFade = ImMin(1.0f, s_tabFade + io.DeltaTime * 5.0f);
     ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0, 0, 0, 0));
-    ImGui::BeginChild("ContentArea", ImVec2(contentW, 470), false);
-    s_genWin = ImGui::GetCurrentWindow();
-    {
+    s_genWin = nullptr;
+    if (ImGui::BeginChild("content", contentBb.GetSize(), ImGuiChildFlags_AlwaysUseWindowPadding, ImGuiWindowFlags_NoBackground)) {
+        s_genWin = ImGui::GetCurrentWindow();
+        ImGui::PushStyleVar(ImGuiStyleVar_Alpha, ImMax(s_tabFade, 0.35f));
         ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.08f, 0.08f, 0.08f, 1.0f));
         if (!all.empty() && g_activeTab >= 0 && g_activeTab < (int)all.size() && all[g_activeTab].draw) all[g_activeTab].draw();
         ImGui::PopStyleColor(1);
+        ImGui::PopStyleVar(1);
         ImGui::Spacing();
         ImGui::EndChild();
-        ImGui::PopStyleColor(1);
     }
+    ImGui::PopStyleColor(1);
     if (io.MouseWheel != 0.0f && s_genWin) {
         ImGuiContext& gg = *GImGui;
         ImGuiWindow* hov = gg.HoveredWindow;
@@ -425,11 +402,66 @@ void render() {
         }
     }
     if (g_cfg.particles.load())
-        particles(wpos, wsz);
-    ImGui::PopStyleVar(1);
-
+        takeui::particles();
+    if (g_cfg.borderFx.load()) {
+        float now = (float)ImGui::GetTime();
+        ImVec4 acc = takeui::accentA(1.0f);
+        ImVec4 fx1 = acc, fx2 = acc;
+        if (g_cfg.borderRainbow.load()) {
+            float h = fmodf(now * 0.18f, 1.0f);
+            float r, g, b;
+            ImGui::ColorConvertHSVtoRGB(h, 0.75f, 1.0f, r, g, b);
+            fx1 = ImVec4(r, g, b, 1.0f);
+            float h2 = h + 0.5f;
+            if (h2 >= 1.0f) h2 -= 1.0f;
+            ImGui::ColorConvertHSVtoRGB(h2, 0.75f, 1.0f, r, g, b);
+            fx2 = ImVec4(r, g, b, 1.0f);
+        }
+        float R = rounding, W = wsz.x, H = wsz.y;
+        float bh = W - 2.0f * R, bv = H - 2.0f * R;
+        float arc = 3.14159265f * R * 0.5f;
+        float total = 2.0f * bh + 2.0f * bv + 4.0f * arc;
+        if (total > 1.0f && bh > 0.0f && bv > 0.0f) {
+            auto bpoint = [&](float dist) -> ImVec2 {
+                float d = fmodf(dist, total);
+                if (d < 0.0f) d += total;
+                if (d < bh) return ImVec2(wpos.x + R + d, wpos.y);
+                d -= bh;
+                if (d < arc) { float t = d / R - 3.14159265f * 0.5f; return ImVec2(wpos.x + W - R + cosf(t) * R, wpos.y + R + sinf(t) * R); }
+                d -= arc;
+                if (d < bv) return ImVec2(wpos.x + W, wpos.y + R + d);
+                d -= bv;
+                if (d < arc) { float t = d / R; return ImVec2(wpos.x + W - R + cosf(t) * R, wpos.y + H - R + sinf(t) * R); }
+                d -= arc;
+                if (d < bh) return ImVec2(wpos.x + W - R - d, wpos.y + H);
+                d -= bh;
+                if (d < arc) { float t = d / R + 3.14159265f * 0.5f; return ImVec2(wpos.x + R + cosf(t) * R, wpos.y + H - R + sinf(t) * R); }
+                d -= arc;
+                if (d < bv) return ImVec2(wpos.x, wpos.y + H - R - d);
+                d -= bv;
+                float t = d / R + 3.14159265f;
+                return ImVec2(wpos.x + R + cosf(t) * R, wpos.y + R + sinf(t) * R);
+            };
+            float head1 = now * 220.0f;
+            float head2 = head1 + total * 0.5f;
+            float alen = 220.0f;
+            int steps = 18;
+            for (int k = 0; k < 2; k++) {
+                float head = (k == 0) ? head1 : head2;
+                ImVec4 base = (k == 0) ? fx1 : fx2;
+                ImVec2 px = bpoint(head);
+                for (int j = 1; j <= steps; j++) {
+                    ImVec2 q = bpoint(head - (float)j * (alen / (float)steps));
+                    float f = 1.0f - (float)j / (float)(steps + 1);
+                    dl->AddLine(px, q, (ImGui::GetColorU32(ImVec4(base.x, base.y, base.z, base.w * f * 0.35f))), 12.0f);
+                    dl->AddLine(px, q, (ImGui::GetColorU32(ImVec4(base.x, base.y, base.z, base.w * f * 0.9f))), 5.5f);
+                    dl->AddLine(px, q, (ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 1.0f, base.w * f * 0.6f))), 2.0f);
+                    px = q;
+                }
+            }
+        }
+    }
     ImGui::End();
-    ImGui::PopStyleVar(3);
 }
 
 }

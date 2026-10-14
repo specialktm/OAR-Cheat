@@ -37,4 +37,10 @@ std::vector<std::string> inventory_names();
 bool grant_class(void* uclass);
 int grant_count();
 void coins_legit();
+struct SkillInfo {
+    std::string name;
+    void* cls = nullptr;
+};
+std::vector<SkillInfo> skill_list();
+bool grant_skill(void* uclass);
 }

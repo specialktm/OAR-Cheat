@@ -16,4 +16,6 @@ bool present_hooked();
 void* resize_target();
 bool resize_hooked();
 bool is_unloading();
+void begin_unload();
+void* window();
 }

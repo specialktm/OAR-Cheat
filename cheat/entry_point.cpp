@@ -6,6 +6,7 @@
 #include "config/config.hpp"
 #include "core/loading.hpp"
 #include "logger/logger.hpp"
+#include "util/crashlog.hpp"
 
 static void safe_tick() {
     __try { if (g_cheat) g_cheat->tick(); }
@@ -19,6 +20,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, unsigned long reason, void* lpReserved)
         g_Module = hModule;
         DisableThreadLibraryCalls(g_Module);
         g_MainThread = CreateThread(nullptr, 0, [](void*) -> DWORD {
+            crashlog::init();
             loading::begin(); // injection loading screen (drawn by Present)
             g_logger = new logger();
             g_Initializer = new Initializer();
@@ -50,4 +52,9 @@ BOOL APIENTRY DllMain(HMODULE hModule, unsigned long reason, void* lpReserved)
         }, nullptr, 0, nullptr);
     }
     return TRUE;
+}
+
+extern "C" __declspec(dllexport) void unload()
+{
+    programRunning.store(false);
 }

@@ -2,6 +2,7 @@
 #include "ui/tabs.hpp"
 #include "ui/widgets.hpp"
 #include "ui/menu.hpp"
+#include "ui/take_shell.hpp"
 #include "config/config.hpp"
 #include "world/actor_iter.hpp"
 #include "features/manager.hpp"
@@ -73,7 +74,8 @@ static std::string short_inv(const std::string& n) {
 }
 
 void draw_player() {
-    widgets::header_card("Players", "Stats and inventory");
+    ImGuiStyle& style = ImGui::GetStyle();
+    float gw = ImTrunc((ImGui::GetContentRegionAvail().x - style.ItemSpacing.x) / 2.0f);
     auto* pawn = seh_pawn();
     auto* rc = seh_rc();
     bool inGame = IS_VALID_PTR(pawn) || IS_VALID_PTR(rc);
@@ -82,8 +84,7 @@ void draw_player() {
         return;
     }
 
-    widgets::os_section("Stats", ImVec2(400, 500));
-    {
+    if (widgets::os_section("Stats", ImVec2(gw, 0))) {
         ImGui::SetWindowFontScale(dpi_scale);
         if (!g_statsLoaded) {
             PStats s{};
@@ -92,18 +93,23 @@ void draw_player() {
                 g_statsLoaded = true;
             }
         }
-        ImGui::SetNextItemWidth(140.0f);
-        ImGui::InputInt("Health", &g_hp, 1000, 100000);
-        ImGui::SetNextItemWidth(140.0f);
-        ImGui::InputInt("Max HP", &g_maxhp, 1000, 100000);
-        ImGui::SetNextItemWidth(140.0f);
-        ImGui::InputInt("Cash", &g_cash, 1000, 1000000);
-        ImGui::SetNextItemWidth(140.0f);
-        ImGui::InputInt("Coins", &g_coins, 10, 1000);
-        ImGui::SetNextItemWidth(140.0f);
-        ImGui::InputInt("Level", &g_level, 1, 10);
+        ImGui::TextDisabled("Health");
+        ImGui::SetNextItemWidth(-1.0f);
+        ImGui::InputInt("##health", &g_hp, 1000, 100000);
+        ImGui::TextDisabled("Max HP");
+        ImGui::SetNextItemWidth(-1.0f);
+        ImGui::InputInt("##maxhp", &g_maxhp, 1000, 100000);
+        ImGui::TextDisabled("Cash");
+        ImGui::SetNextItemWidth(-1.0f);
+        ImGui::InputInt("##cash", &g_cash, 1000, 1000000);
+        ImGui::TextDisabled("Coins");
+        ImGui::SetNextItemWidth(-1.0f);
+        ImGui::InputInt("##coins", &g_coins, 10, 1000);
+        ImGui::TextDisabled("Level");
+        ImGui::SetNextItemWidth(-1.0f);
+        ImGui::InputInt("##level", &g_level, 1, 10);
         if (g_maxhp <= 0) g_maxhp = 100;
-        if (ImGui::Button("APPLY STATS", ImVec2(-1, 30))) {
+        if (ImAdd::Button("APPLY STATS", ImVec2(-1, 30))) {
             int hp = g_hp, mx = g_maxhp, ca = g_cash, co = g_coins, lv = g_level;
             feat::queue_keyed("apply_stats", [hp, mx, ca, co, lv] {
                 auto* p = seh_pawn();
@@ -114,47 +120,10 @@ void draw_player() {
         }
         if (ImGui::IsItemHovered()) ImGui::SetTooltip("write + save");
         widgets::check_bridge("Godmode", g_cfg.godMode);
-        if (ImGui::Button("REFETCH", ImVec2(-1, 30)))
+        if (ImAdd::Button("REFETCH", ImVec2(-1, 30)))
             g_statsLoaded = false;
         if (ImGui::IsItemHovered()) ImGui::SetTooltip("read from game");
-    }
-    widgets::os_section_end();
-    ImGui::SetCursorPos(ImVec2(420, 120));
-    widgets::os_section("Selected", ImVec2(400, 500));
-    {
-        ImGui::SetWindowFontScale(dpi_scale);
-        const auto& cat2 = shop::catalog(false);
-        int sel2 = shop::selected();
-        if (sel2 >= 0 && sel2 < (int)cat2.size()) {
-            const auto& it = cat2[sel2];
-            ImGui::TextWrapped("%s", short_inv(it.name).c_str());
-            ImGui::TextDisabled("cash $%d  coins %d", it.cash, it.coin);
-            ImGui::TextDisabled("unlock L%d  def %d", it.level, it.defid);
-            static int priceSel = -2;
-            static int price = -1;
-            if (priceSel != sel2) { priceSel = sel2; price = -1; }
-            if (price < 0 && IS_VALID_PTR(it.cls))
-                price = seh_coin_price(static_cast<SDK::UClass*>(it.cls));
-            if (price >= 0)
-                ImGui::TextDisabled("steam price: %d coins", price);
-            if (ImGui::Button("GRANT", ImVec2(-1, 30))) {
-                void* cls = it.cls;
-                feat::queue_keyed("grant_class", [cls] { shop::grant_class(cls); });
-            }
-            ImVec2 o = ImGui::GetCursorScreenPos();
-            ImVec2 sz(ImGui::GetContentRegionAvail().x, 150);
-            modelview::draw_live_model(o, sz);
-            ImGui::Dummy(ImVec2(sz.x, sz.y));
-        } else {
-            ImGui::TextDisabled("pick an item below");
-        }
-    }
-    widgets::os_section_end();
-
-    ImGui::SetCursorPos(ImVec2(0, 640));
-    widgets::os_section("Inventory", ImVec2(800, 420));
-    {
-        ImGui::SetWindowFontScale(dpi_scale);
+        takeui::CenterSeparator("Catalog + backpack");
         static int seenGrants = -1;
         int gc = shop::grant_count();
         if (seenGrants >= 0 && gc != seenGrants) shop::catalog(true);
@@ -166,8 +135,9 @@ void draw_player() {
             g_invTs = now;
         }
         int sel = shop::selected();
-        ImGui::InputText("Filter", g_filter, sizeof(g_filter));
-        if (ImGui::Button("REFRESH", ImVec2(-1, 26)))
+        ImGui::TextDisabled("Filter");
+        ImGui::InputText("##invfilter", g_filter, sizeof(g_filter));
+        if (ImAdd::Button("REFRESH", ImVec2(-1, 26)))
             feat::queue_fn([] { shop::catalog(true); });
         if (ImGui::IsItemHovered()) ImGui::SetTooltip("reload catalog");
         std::string flt = g_filter;
@@ -218,8 +188,39 @@ void draw_player() {
             if (ImGui::IsItemHovered()) ImGui::SetTooltip("%s", d.c_str());
         }
         ImGui::EndChild();
+        widgets::os_section_end();
     }
-    widgets::os_section_end();
+    ImGui::SameLine();
+    if (widgets::os_section("Selected", ImVec2(gw, 0))) {
+        ImGui::SetWindowFontScale(dpi_scale);
+        const auto& cat2 = shop::catalog(false);
+        int sel2 = shop::selected();
+        if (sel2 >= 0 && sel2 < (int)cat2.size()) {
+            const auto& it = cat2[sel2];
+            ImGui::TextWrapped("%s", short_inv(it.name).c_str());
+            ImGui::TextDisabled("cash $%d  coins %d", it.cash, it.coin);
+            ImGui::TextDisabled("unlock L%d  def %d", it.level, it.defid);
+            static int priceSel = -2;
+            static int price = -1;
+            if (priceSel != sel2) { priceSel = sel2; price = -1; }
+            if (price < 0 && IS_VALID_PTR(it.cls))
+                price = seh_coin_price(static_cast<SDK::UClass*>(it.cls));
+            if (price >= 0)
+                ImGui::TextDisabled("steam price: %d coins", price);
+            if (ImAdd::Button("GRANT", ImVec2(-1, 30))) {
+                void* cls = it.cls;
+                feat::queue_keyed("grant_class", [cls] { shop::grant_class(cls); });
+            }
+            ImVec2 o = ImGui::GetCursorScreenPos();
+            ImVec2 sz(ImGui::GetContentRegionAvail().x, 150);
+            modelview::draw_live_model(o, sz);
+            ImGui::Dummy(ImVec2(sz.x, sz.y));
+        } else {
+            ImGui::TextDisabled("pick an item below");
+        }
+        widgets::os_section_end();
+    }
+
 }
 struct Reg { Reg() { tabs::add({ "player", "Players", draw_player }); } };
 static Reg g_reg;
