@@ -26,7 +26,7 @@ public:
     Detour& operator=(const Detour&) = delete;
 
     bool create(void* target, void* detourFn) {
-        if (!g_init && !init()) return false
+        if (!g_init && !init()) return false;
         target_ = target; detour_ = detourFn;
         MH_STATUS s = MH_CreateHook(target, detourFn, &orig_);
         return s == MH_OK || s == MH_ERROR_ALREADY_CREATED;
